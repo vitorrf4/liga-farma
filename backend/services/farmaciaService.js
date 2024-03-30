@@ -15,8 +15,8 @@ class FarmaciaService {
         return farmacia;
     }
 
-    async cadastrarFarmacia(nome, cnpj, endereco, email, telefone) {
-        return Farmaceutico.create({nome, cnpj, endereco, email, telefone});
+    async cadastrarFarmacia(nome, cnpj, endereco, email, senha, telefone) {
+        return Farmaceutico.create({nome, cnpj, endereco, email, senha, telefone});
     }
 
     async atualizarFarmacia(farmaceutico) {

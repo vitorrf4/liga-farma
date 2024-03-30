@@ -26,6 +26,14 @@ const Farmaceutico = sequelize.define('Farmaceutico', {
         especializacao: {
             type: DataTypes.STRING,
             allowNull: true,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        senha: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }},
     { timestamps: false });
 

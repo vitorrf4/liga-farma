@@ -23,6 +23,10 @@ const Farmacia = sequelize.define('Farmacia', {
             type: DataTypes.STRING,
             allowNull: true,
         },
+        senha: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         telefone: {
             type: DataTypes.STRING,
             allowNull: true,

@@ -15,8 +15,8 @@ class FarmaceuticoService {
         return farmaceutico;
     }
 
-    async cadastrarFarmaceutico(nome, cpf, crf, telefone, especializacao) {
-        return Farmaceutico.create({nome, cpf, crf, telefone, especializacao});
+    async cadastrarFarmaceutico(nome, cpf, crf, telefone, especializacao, email, senha) {
+        return Farmaceutico.create({nome, cpf, crf, telefone, especializacao, email, senha});
     }
 
     async atualizarFarmaceutico(farmaceutico) {
