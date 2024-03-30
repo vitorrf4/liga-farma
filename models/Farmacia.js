@@ -15,15 +15,15 @@ const Farmacia = sequelize.define('Farmacia', {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        crf: {
+        endereco: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        telefone: {
+        email: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        especializacao: {
+        telefone: {
             type: DataTypes.STRING,
             allowNull: true,
         }},
