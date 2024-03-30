@@ -1,55 +1,55 @@
 const service = require('../services/farmaciaService');
 
 class FarmaciaController {
-    async getFarmaceuticos(req, res) {
+    async getFarmacias(req, res) {
         try {
-            const farmaceuticos = await service.getFarmaceuticos();
+            const farmacias = await service.getFarmacia();
 
-            res.status(200).json(farmaceuticos);
+            res.status(200).json(farmacias);
         } catch (error) {
             console.error('Erro na busca:', error);
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }
     }
 
-    async getFarmaceuticoPorId(req, res) {
+    async getFarmaciaPorId(req, res) {
         try {
             const { id } = req.params;
-            const farmaceutico = await service.getFarmaceuticoPorId(id);
+            const farmacia = await service.getFarmaciaPorId(id);
 
-            if (!farmaceutico) {
-                return res.status(200).json({error: "Farmacêutico não encontrado"});
+            if (!farmacia) {
+                return res.status(404).json({error: "Farmácia não encontrado"});
             }
 
-            res.status(200).json(farmaceutico);
+            res.status(200).json(farmacia);
         } catch (error) {
             console.error('Erro na busca:', error);
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }
     }
 
-    async cadastraFarmaceutico(req, res) {
+    async cadastraFarmacia(req, res) {
         try {
-            const { nome, cpf, crf, telefone, especializacao } = req.body;
+            const { nome, cnpj, endereco, email, telefone } = req.body;
 
-            const novoFarmaceutico = await service.cadastrarFarmaceutico(
-                nome, cpf, crf, telefone, especializacao);
+            const novaFarmacia = await service.cadastrarFarmacia(
+                nome, cnpj, endereco, email, telefone);
 
-            res.status(201).json(novoFarmaceutico);
+            res.status(201).json(novaFarmacia);
         } catch (error) {
             console.error('Erro na criação:', error);
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }
     }
 
-    async atualizarFarmaceutico(req, res) {
+    async atualizarFarmacia(req, res) {
         try {
-            const farmaceutico = req.body;
+            const farmacia = req.body;
 
-            const farmaceuticoFoiAtualizado = await service.atualizarFarmaceutico( farmaceutico);
+            const farmaciaFoiAtualizada = await service.atualizarFarmacia(farmacia);
 
-            if (!farmaceuticoFoiAtualizado) {
-                return res.status(404).json({error: "Farmacêutico não encontrado"});
+            if (!farmaciaFoiAtualizada) {
+                return res.status(404).json({error: "Farmácia não encontrado"});
             }
 
             return res.status(204).send();
@@ -59,13 +59,13 @@ class FarmaciaController {
         }
     }
 
-    async deletarFarmaceutico(req, res) {
+    async deletarFarmacia(req, res) {
         try {
             const { id } = req.params;
 
-            const farmaceuticosDeletados = await service.deletarFarmaceutico(id);
-            if (farmaceuticosDeletados <= 0) {
-                return res.status(404).json({error: "Farmacêutico não encontrado"});
+            const farmaciasDeletadas = await service.deletarFarmacia(id);
+            if (farmaciasDeletadas <= 0) {
+                return res.status(404).json({error: "Farmácia não encontrado"});
             }
 
             res.status(204).send();

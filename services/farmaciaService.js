@@ -1,28 +1,28 @@
 const Farmaceutico = require('../models/Farmacia');
 
-class FarmaceuticoService {
-    async getFarmaceuticos() {
+class FarmaciaService {
+    async getFarmacia() {
         return await Farmaceutico.findAll();
     }
 
-    async getFarmaceuticoPorId(id) {
-        const farmaceutico = await Farmaceutico.findOne({ where: { id: id } });
+    async getFarmaciaPorId(id) {
+        const farmacia = await Farmaceutico.findOne({ where: { id: id } });
 
-        if (!farmaceutico) {
+        if (!farmacia) {
             return null;
         }
 
-        return farmaceutico;
+        return farmacia;
     }
 
-    async cadastrarFarmaceutico(nome, cpf, crf, telefone, especializacao) {
-        return Farmaceutico.create({nome, cpf, crf, telefone, especializacao});
+    async cadastrarFarmacia(nome, cnpj, endereco, email, telefone) {
+        return Farmaceutico.create({nome, cnpj, endereco, email, telefone});
     }
 
-    async atualizarFarmaceutico(farmaceutico) {
-        const farmaceuticoDb = await this.getFarmaceuticoPorId(farmaceutico.id);
+    async atualizarFarmacia(farmaceutico) {
+        const farmaciaDb = await this.getFarmaciaPorId(farmaceutico.id);
 
-        if (!farmaceuticoDb) {
+        if (!farmaciaDb) {
             return false;
         }
 
@@ -34,11 +34,11 @@ class FarmaceuticoService {
         return true;
     }
 
-    async deletarFarmaceutico(id) {
+    async deletarFarmacia(id) {
         return Farmaceutico.destroy({
             where: { id: id }
         });
     }
 }
 
-module.exports = new FarmaceuticoService();
+module.exports = new FarmaciaService();

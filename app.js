@@ -21,4 +21,7 @@ app.all("*", (req, res, next) => {
 });
 
 const farmaceuticoRouter = require('./routers/farmaceuticoRouter');
-app.use (farmaceuticoRouter);
+app.use(farmaceuticoRouter);
+
+const farmaciaRouter = require('./routers/farmaciaRouter');
+app.use(farmaciaRouter);

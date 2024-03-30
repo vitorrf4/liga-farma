@@ -18,7 +18,7 @@ class FarmaceuticoController {
             const farmaceutico = await service.getFarmaceuticoPorId(id);
 
             if (!farmaceutico) {
-                return res.status(200).json({error: "Farmacêutico não encontrado"});
+                return res.status(404).json({error: "Farmacêutico não encontrado"});
             }
 
             res.status(200).json(farmaceutico);
