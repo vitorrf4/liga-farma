@@ -28,7 +28,7 @@ class FarmaciaController {
         }
     }
 
-    async cadastraFarmacia(req, res) {
+    async cadastrarFarmacia(req, res) {
         try {
             const { nome, cnpj, endereco, email, senha, telefone } = req.body;
 
