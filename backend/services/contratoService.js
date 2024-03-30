@@ -1,7 +1,7 @@
 const Contrato = require('../models/Contrato');
 
 class ContratoService {
-    async getContrato() {
+    async getContratos() {
         return await Contrato.findAll();
     }
 
