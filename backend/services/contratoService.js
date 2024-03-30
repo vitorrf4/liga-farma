@@ -2,11 +2,13 @@ const Contrato = require('../models/Contrato');
 
 class ContratoService {
     async getContratos() {
-        return await Contrato.findAll();
+        return await Contrato.findAll({
+            include: ['farmacia', 'farmaceutico']
+        });
     }
 
     async getContratoPorId(id) {
-        const contrato = await Contrato.findOne({ where: { id: id } });
+        const contrato = await Contrato.findOne({ where: { id: id }});
 
         if (!contrato) {
             return null;
