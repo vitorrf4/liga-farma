@@ -46,7 +46,7 @@ class ContratoController {
         try {
             const contrato = req.body;
 
-            const contratoFoiAtualizado = await service.cadastrarContrato(contrato);
+            const contratoFoiAtualizado = await service.atualizarContrato(contrato);
 
             if (!contratoFoiAtualizado) {
                 return res.status(404).json({error: "Item não encontrado"});

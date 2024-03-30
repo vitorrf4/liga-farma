@@ -6,7 +6,7 @@ require('./database/sequelize');
 
 app.use(express.json());
 
-app.listen(port, () => {
+app.listen(port, async () => {
     console.log(`Servidor iniciado na porta ${port}`);
 });
 

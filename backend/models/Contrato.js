@@ -9,14 +9,6 @@ const Contrato = sequelize.define('Contrato', {
             autoIncrement: true,
             primaryKey: true
         },
-        nome: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        cpf: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         dataInicio: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,13 +20,13 @@ const Contrato = sequelize.define('Contrato', {
     { timestamps: false });
 
 Contrato.belongsTo(farmacia, {
-    as: "farmaciaId",
+    as: "farmacia",
     foreignKey: {
         allowNull: false
     }
 });
 Contrato.belongsTo(farmaceutico, {
-    as: "farmaceuticoId",
+    as: "farmaceutico",
     foreignKey: {
         allowNull: false
     }
