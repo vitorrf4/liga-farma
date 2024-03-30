@@ -25,3 +25,6 @@ app.use(farmaceuticoRouter);
 
 const farmaciaRouter = require('./routers/farmaciaRouter');
 app.use(farmaciaRouter);
+
+const contratoRouter = require('./routers/contratoController');
+app.use(contratoRouter);
