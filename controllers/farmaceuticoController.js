@@ -1,6 +1,6 @@
 const service = require('../services/farmaceuticoService');
 
-class ProdutoController {
+class FarmaceuticoController {
     async getFarmaceuticos(req, res) {
         try {
             const farmaceuticos = await service.getFarmaceuticos();
@@ -76,4 +76,4 @@ class ProdutoController {
     }
 }
 
-module.exports = new ProdutoController();
+module.exports = new FarmaceuticoController();
