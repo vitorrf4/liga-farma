@@ -2,6 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../database/sequelize');
 const farmacia = require('./Farmacia');
 const farmaceutico = require('./Farmaceutico');
+const vaga = require('./Vaga');
 
 const Contrato = sequelize.define('Contrato', {
         id: {
@@ -16,7 +17,8 @@ const Contrato = sequelize.define('Contrato', {
         dataFim: {
             type: DataTypes.STRING,
             allowNull: true,
-        }},
+        }
+    },
     { timestamps: false });
 
 Contrato.belongsTo(farmacia, {
@@ -27,6 +29,12 @@ Contrato.belongsTo(farmacia, {
 });
 Contrato.belongsTo(farmaceutico, {
     as: "farmaceutico",
+    foreignKey: {
+        allowNull: false
+    }
+});
+Contrato.belongsTo(vaga, {
+    as: "vaga",
     foreignKey: {
         allowNull: false
     }

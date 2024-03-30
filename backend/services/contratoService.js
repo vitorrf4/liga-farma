@@ -17,9 +17,9 @@ class ContratoService {
         return contrato;
     }
 
-    async cadastrarContrato(farmaciaId, farmaceuticoId, dataInicio, dataFim) {
+    async cadastrarContrato(farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim) {
         return Contrato.create({ 
-            farmaciaId, farmaceuticoId, dataInicio, dataFim
+            farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim
         });
     }
 

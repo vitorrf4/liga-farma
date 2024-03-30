@@ -30,10 +30,10 @@ class ContratoController {
 
     async cadastrarContrato(req, res) {
         try {
-            const { farmaceuticoId, farmaciaId, dataInicio, dataFim } = req.body;
+            const { farmaceuticoId, farmaciaId, vaga, dataInicio, dataFim } = req.body;
 
             const novoFarmaceutico = await service.cadastrarContrato(
-                farmaciaId, farmaceuticoId, dataInicio, dataFim);
+                farmaciaId, farmaceuticoId, vaga, dataInicio, dataFim);
 
             res.status(201).json(novoFarmaceutico);
         } catch (error) {
