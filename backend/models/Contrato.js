@@ -28,13 +28,13 @@ const Contrato = sequelize.define('Contrato', {
     { timestamps: false });
 
 Contrato.belongsTo(farmacia, {
-    as: "farmacia_id",
+    as: "farmaciaId",
     foreignKey: {
         allowNull: false
     }
 });
 Contrato.belongsTo(farmaceutico, {
-    as: "farmaceutico_id",
+    as: "farmaceuticoId",
     foreignKey: {
         allowNull: false
     }
