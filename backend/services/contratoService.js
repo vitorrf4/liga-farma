@@ -8,7 +8,10 @@ class ContratoService {
     }
 
     async getContratoPorId(id) {
-        const contrato = await Contrato.findOne({ where: { id: id }});
+        const contrato = await Contrato.findOne({ 
+            where: { id: id },
+            include: ['farmacia', 'farmaceutico']
+        });
 
         if (!contrato) {
             return null;

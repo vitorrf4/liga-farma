@@ -2,11 +2,14 @@ const Vaga = require('../models/Vaga');
 
 class VagaService {
     async getVagas() {
-        return await Vaga.findAll();
+        return await Vaga.findAll({include: 'farmacia'});
     }
 
     async getVagaPorId(id) {
-        const vaga = await Vaga.findOne({ where: { id: id } });
+        const vaga = await Vaga.findOne({ 
+            where: { id: id },  
+            include: 'farmacia'
+        });
 
         if (!vaga) {
             return null;
