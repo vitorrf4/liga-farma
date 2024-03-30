@@ -1,4 +1,5 @@
 const Contrato = require('../models/Contrato');
+const Vaga = require('../models/Vaga');
 
 class ContratoService {
     async getContratos() {
@@ -21,9 +22,29 @@ class ContratoService {
     }
 
     async cadastrarContrato(farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim) {
-        return Contrato.create({ 
+        const contrato =  Contrato.create({ 
             farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim
         });
+
+        const vagasAtualizadas = await this.atualizarQuantidadeVagas(vagaId);
+        if (!vagasAtualizadas) {
+            return null;
+        }
+        
+        return contrato;
+    }
+    
+    async atualizarQuantidadeVagas(vagaId) {
+        const vaga = await Vaga.findByPk(vagaId);
+        if (vaga.quantidadeVagas <= 0) {
+            return false;
+        }
+        vaga.quantidadeVagas -= 1;
+
+        await vaga.decrement('quantidadeVagas');
+        await vaga.save();
+        
+        return true;
     }
 
     async atualizarContrato(contrato) {

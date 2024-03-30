@@ -32,10 +32,14 @@ class ContratoController {
         try {
             const { farmaceuticoId, farmaciaId, vaga, dataInicio, dataFim } = req.body;
 
-            const novoFarmaceutico = await service.cadastrarContrato(
+            const novoContrato = await service.cadastrarContrato(
                 farmaciaId, farmaceuticoId, vaga, dataInicio, dataFim);
+            
+            if (!novoContrato) {
+                return res.status(400).json({error: 'Vaga já preenchida'});
+            }
 
-            res.status(201).json(novoFarmaceutico);
+            res.status(201).json(novoContrato);
         } catch (error) {
             console.error('Erro na criação:', error);
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
