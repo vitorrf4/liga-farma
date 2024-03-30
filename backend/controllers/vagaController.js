@@ -1,7 +1,7 @@
 const service = require('../services/vagaService');
 
 class VagaController {
-    async getFarmacias(req, res) {
+    async getVagas(req, res) {
         try {
             const vagas = await service.getVagas();
 
@@ -12,7 +12,7 @@ class VagaController {
         }
     }
 
-    async getFarmaciaPorId(req, res) {
+    async getVagaPorId(req, res) {
         try {
             const { id } = req.params;
             const vaga = await service.getVagaPorId(id);
@@ -28,7 +28,7 @@ class VagaController {
         }
     }
 
-    async cadastrarFarmacia(req, res) {
+    async criarVaga(req, res) {
         try {
             const { titulo, descricao, salario, estado, 
                 cidade, quantidadeVagas, farmaciaId } = req.body;
@@ -43,7 +43,7 @@ class VagaController {
         }
     }
 
-    async atualizarFarmacia(req, res) {
+    async atualizarVaga(req, res) {
         try {
             const farmacia = req.body;
 
@@ -60,7 +60,7 @@ class VagaController {
         }
     }
 
-    async deletarFarmacia(req, res) {
+    async deletarVaga(req, res) {
         try {
             const { id } = req.params;
 
