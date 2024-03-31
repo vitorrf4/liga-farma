@@ -31,3 +31,6 @@ app.use(contratoRouter);
 
 const vagaRouter = require('./routers/vagaRouter');
 app.use(vagaRouter);
+
+const candidaturaRouter = require('./routers/candidaturaRouter');
+app.use(candidaturaRouter);

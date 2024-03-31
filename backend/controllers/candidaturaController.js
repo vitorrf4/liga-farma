@@ -58,6 +58,22 @@ class CandidaturaController {
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }
     }
+    
+    async deletarCandidatura(req, res) {
+        try {
+            const { id } = req.params;
+
+            const candidaturasDeletadas = await service.deletarCandidatura(id);
+            if (candidaturasDeletadas <= 0) {
+                return res.status(404).json({error: "Item não encontrado"});
+            }
+
+            res.status(204).send();
+        } catch(error) {
+            console.error('Erro na exclusão:', error);
+            res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
+        }
+    }
 }
 
 module.exports = new CandidaturaController();
