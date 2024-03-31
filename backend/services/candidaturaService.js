@@ -1,7 +1,7 @@
 const Candidatura = require('../models/Candidatura');
 
 class CandidaturaService {
-    async getCandidatura() {
+    async getCandidaturas() {
         return await Candidatura.findAll();
     }
 
