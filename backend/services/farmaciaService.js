@@ -1,16 +1,16 @@
-const Farmaceutico = require('../models/Farmacia');
+const Farmacia = require('../models/Farmacia');
 
 class FarmaciaService {
     async getFarmacia() {
-        return await Farmaceutico.findAll();
+        return await Farmacia.findAll();
     }
 
     async getFarmaciaPorId(id) {
-        return await Farmaceutico.findOne({where: {id: id}});
+        return await Farmacia.findByPk(id);
     }
 
     async cadastrarFarmacia(nome, cnpj, endereco, email, senha, telefone) {
-        return Farmaceutico.create({nome, cnpj, endereco, email, senha, telefone});
+        return Farmacia.create({nome, cnpj, endereco, email, senha, telefone});
     }
 
     async atualizarFarmacia(farmaceutico) {
@@ -20,7 +20,7 @@ class FarmaciaService {
             return false;
         }
 
-        await Farmaceutico.update(
+        await Farmacia.update(
             farmaceutico,
             { where: { id: farmaceutico.id } }
         );
@@ -29,7 +29,7 @@ class FarmaciaService {
     }
 
     async deletarFarmacia(id) {
-        return Farmaceutico.destroy({
+        return Farmacia.destroy({
             where: { id: id }
         });
     }

@@ -6,7 +6,7 @@ class FarmaceuticoService {
     }
 
     async getFarmaceuticoPorId(id) {
-        return await Farmaceutico.findOne({where: {id: id}});
+        return await Farmaceutico.findByPk(id);
     }
 
     async cadastrarFarmaceutico(nome, cpf, crf, telefone, especializacao, email, senha) {
