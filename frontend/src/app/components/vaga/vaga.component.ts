@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-vaga-component',
   standalone: true,
   imports: [],
-  templateUrl: './vaga-component.component.html',
-  styleUrl: './vaga-component.component.css'
+  templateUrl: './vaga.component.html',
+  styleUrl: './vaga.component.css'
 })
-export class VagaComponentComponent {
+export class VagaComponent {
 
   id: number = 0;
   titulo: string = "";
@@ -20,6 +20,6 @@ export class VagaComponentComponent {
   constructor(){}
 
   ngOnInit(): void {
-      
+
   }
 }

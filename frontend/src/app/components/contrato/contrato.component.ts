@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-contrato-component',
   standalone: true,
   imports: [],
-  templateUrl: './contrato-component.component.html',
-  styleUrl: './contrato-component.component.css'
+  templateUrl: './contrato.component.html',
+  styleUrl: './contrato.component.css'
 })
-export class ContratoComponentComponent {
+export class ContratoComponent {
 
   id: number = 0;
   dataInicio: string = "";
@@ -16,6 +16,6 @@ export class ContratoComponentComponent {
   constructor(){}
 
   ngOnInit(): void {
-      
+
   }
 }

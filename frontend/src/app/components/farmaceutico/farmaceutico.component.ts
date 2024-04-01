@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-farmaceutico-component',
   standalone: true,
   imports: [],
-  templateUrl: './farmaceutico-component.component.html',
-  styleUrl: './farmaceutico-component.component.css'
+  templateUrl: './farmaceutico.component.html',
+  styleUrl: './farmaceutico.component.css'
 })
-export class FarmaceuticoComponentComponent implements OnInit {
-  
+export class FarmaceuticoComponent implements OnInit {
+
   id: number = 0;
   nome: string = "";
   cpf: string = "";
@@ -22,6 +22,6 @@ export class FarmaceuticoComponentComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void {
-      
+
   }
 }

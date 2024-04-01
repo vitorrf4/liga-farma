@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-farmacia-component',
   standalone: true,
   imports: [],
-  templateUrl: './farmacia-component.component.html',
-  styleUrl: './farmacia-component.component.css'
+  templateUrl: './farmacia.component.html',
+  styleUrl: './farmacia.component.css'
 })
-export class FarmaciaComponentComponent {
+export class FarmaciaComponent {
 
   id: number = 0;
   nome: string = "";
@@ -21,6 +21,6 @@ export class FarmaciaComponentComponent {
   constructor(){}
 
   ngOnInit(): void {
-      
+
   }
 }
