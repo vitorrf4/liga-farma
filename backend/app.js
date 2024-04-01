@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-require('dotenv').config();
-const port = process.env.PORT || 3000;
+const env = process.env.NODE_ENV || 'development';
+require('dotenv').config({ path: `.env.${env}`});
+const port = process.env.port || 3000;
 require('./database/sequelize');
 
 app.use(express.json());
@@ -10,6 +11,7 @@ app.use(cors());
 
 app.listen(port, async () => {
     console.log(`Servidor iniciado na porta ${port}`);
+    console.log(`Ambiente: ${env}`);
 });
 
 // middleware de debug
