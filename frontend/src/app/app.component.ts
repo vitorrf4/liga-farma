@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 import { FarmaceuticoComponent } from './components/farmaceutico/farmaceutico.component';
 import { FarmaciaComponent } from './components/farmacia/farmacia.component';
@@ -14,11 +14,11 @@ import { ContratoComponent } from './components/contrato/contrato.component';
     FarmaceuticoComponent,
     FarmaciaComponent,
     VagaComponent,
-    ContratoComponent
+    ContratoComponent,
+    RouterLink
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'liga-farma';
 }
