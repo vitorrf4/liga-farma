@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const env = process.env.NODE_ENV || 'development';
-require('dotenv').config({ path: `.env.${env}`});
+require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
 require('./database/sequelize');
 
