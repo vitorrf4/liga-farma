@@ -50,7 +50,7 @@ npm install
 
 Na pasta Backend:
 ```
-node app.js
+node server.js
 ```
 Na pasta Frontend:
 

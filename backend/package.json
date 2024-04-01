@@ -2,12 +2,12 @@
   "name": "liga-farma",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "nodemon": "../node_modules/.bin/nodemon app.js",
+    "nodemon": "../node_modules/.bin/nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "mysql": "NODE_ENV=production nodemon app.js"
+    "start": "node server.js",
+    "mysql": "NODE_ENV=production nodemon server.js"
   },
   "keywords": [],
   "author": "",
