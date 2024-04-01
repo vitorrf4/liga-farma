@@ -6,13 +6,7 @@ class CandidaturaService {
     }
 
     async getCandidaturaPorId(id) {
-        const candidatura = await Candidatura.findOne({ where: { id: id } });
-
-        if (!candidatura) {
-            return null;
-        }
-
-        return candidatura;
+        return await Candidatura.findOne({where: {id: id}});
     }
 
     async cadastrarCandidatura(vagaId, farmaceuticoId, mensagem) {

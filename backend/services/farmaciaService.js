@@ -6,13 +6,7 @@ class FarmaciaService {
     }
 
     async getFarmaciaPorId(id) {
-        const farmacia = await Farmaceutico.findOne({ where: { id: id } });
-
-        if (!farmacia) {
-            return null;
-        }
-
-        return farmacia;
+        return await Farmaceutico.findOne({where: {id: id}});
     }
 
     async cadastrarFarmacia(nome, cnpj, endereco, email, senha, telefone) {

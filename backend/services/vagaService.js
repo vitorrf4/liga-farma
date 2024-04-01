@@ -6,16 +6,10 @@ class VagaService {
     }
 
     async getVagaPorId(id) {
-        const vaga = await Vaga.findOne({ 
-            where: { id: id },  
+        return await Vaga.findOne({
+            where: {id: id},
             include: 'farmacia'
         });
-
-        if (!vaga) {
-            return null;
-        }
-
-        return vaga;
     }
 
     async cadastrarVaga(titulo, descricao, salario, estado,
