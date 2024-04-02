@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 
-import { FarmaceuticoComponent } from '../components/farmaceutico/farmaceutico.component';
-import { FarmaciaComponent } from '../components/farmacia/farmacia.component';
-import { ContratoComponent } from '../components/contrato/contrato.component';
-import {ListaVagasComponent} from "../components/lista-vagas/lista-vagas.component";
+import { FarmaceuticoComponent } from '../farmaceutico/farmaceutico.component';
+import { FarmaciaComponent } from '../farmacia/farmacia.component';
+import { ContratoComponent } from '../contrato/contrato.component';
+import {ListaVagasComponent} from "../lista-vagas/lista-vagas.component";
 
 @Component({
   selector: 'app-root',
