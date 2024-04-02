@@ -1,4 +1,32 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  cursor: pointer;
+}
+
 #barra-filtros {
   border: 2px solid gray;
   padding: 5px;
+}
+
+#container {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  /*margin-left: 5em;*/
+  /*margin-right: 5em;*/
+}
+
+#lista {
+  flex-direction: column;
+  margin-right: 2em;
+}
+
+#vaga {
+  border: 2px blue solid;
+  width: 50%;
 }
