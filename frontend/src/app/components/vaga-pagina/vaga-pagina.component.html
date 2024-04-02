@@ -1,0 +1,11 @@
+<p *ngIf="vaga">
+  <button (click)="deselecionarVaga()">Fechar</button>
+  <br><br>
+
+  <strong>Vaga {{vaga.id}}</strong>
+  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
+  <li>Descricao: {{vaga.descricao}}</li>
+  <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
+  <li>Salario: {{vaga.salario}}</li>
+
+</p>
