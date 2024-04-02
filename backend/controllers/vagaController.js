@@ -30,11 +30,12 @@ class VagaController {
 
     async criarVaga(req, res) {
         try {
+            // TODO mudar extracao para service
             const { titulo, descricao, salario, estado, 
-                cidade, quantidadeVagas, farmaciaId } = req.body;
+                cidade, quantidadeVagas, tipo, turno, farmaciaId } = req.body;
 
             const novaFarmacia = await service.cadastrarVaga(
-                titulo, descricao, salario, estado, cidade, quantidadeVagas, farmaciaId);
+                titulo, descricao, salario, estado, cidade, quantidadeVagas, tipo, turno, farmaciaId);
 
             res.status(201).json(novaFarmacia);
         } catch (error) {

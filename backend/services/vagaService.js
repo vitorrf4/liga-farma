@@ -13,9 +13,9 @@ class VagaService {
     }
 
     async cadastrarVaga(titulo, descricao, salario, estado,
-                        cidade, quantidadeVagas, farmaciaId) {
+                        cidade, quantidadeVagas, tipo,turno, farmaciaId) {
         return Vaga.create({titulo, descricao, salario, 
-            estado, cidade, quantidadeVagas, farmaciaId});
+            estado, cidade, quantidadeVagas, tipo, turno, farmaciaId});
     }
 
     async atualizarVaga(vaga) {
