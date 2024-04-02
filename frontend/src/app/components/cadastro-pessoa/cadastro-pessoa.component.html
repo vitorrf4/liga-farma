@@ -1,3 +1,57 @@
-<form>
-  pessoa
+<form style="width: 23rem;" [formGroup]="form" >
+  <h3>Cliente</h3>
+
+  <div class="form-outline ">
+    <label class="form-label">Email</label>
+    <input type="text" class="form-control" formControlName="email" required/>
+  </div>
+
+  <div class="form-outline ">
+    <label class="form-label">Senha</label>
+    <input type="password" class="form-control" formControlName="senha" required/>
+  </div>
+
+  <div class="form-outline">
+    <label class="form-label">Nome</label>
+    <input type="text" class="form-control" formControlName="nome" required />
+  </div>
+
+  <div class="form-outline">
+    <label class="form-label">Telefone</label>
+    <input type="text" class="form-control" formControlName="telefone" required />
+  </div>
+
+  <fieldset formGroupName="endereco">
+    <h3>Endereço</h3>
+    <div>
+      <label class="form-label d-block">CEP</label>
+      <input type="text" class="form-control d-inline" style="width: 16rem" formControlName="cep" required />
+      <button class="btn btn-info d-inline ml-2">Buscar CEP</button>
+    </div>
+
+    <div formGroupName="regiao">
+      <label class="form-label">Regiao</label>
+      <input type="text" class="form-control"  formControlName="nome" required />
+    </div>
+
+    <div>
+      <label class="form-label">Rua</label>
+      <input type="text" class="form-control" formControlName="rua" required />
+    </div>
+
+    <div>
+      <label class="form-label">Numero</label>
+      <input type="number" class="form-control" formControlName="numero" required />
+    </div>
+
+    <div class="form-outline">
+      <label class="form-label">Complemento</label>
+      <input type="text" class="form-control" formControlName="complemento" />
+    </div>
+
+    <button class="btn btn-info btn-lg btn-block" type="submit" (click)="cadastrarCliente()">Cadastrar</button>
+  </fieldset>
+
 </form>
+
+<p>{{debug | json}}</p>
