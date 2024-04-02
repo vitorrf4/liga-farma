@@ -26,14 +26,11 @@ export class ListaVagasComponent implements OnInit {
   ngOnInit() {
     this.service.listar().subscribe(res => {
       this.vagas = res;
+      console.log(res);
     });
   }
 
-  mudarVagaSelecionada(vaga: Vaga) {
+  mudarVagaSelecionada(vaga: Vaga | null) {
     this.vagaSelecionada = vaga;
-  }
-
-  deselecionarVaga() {
-    this.vagaSelecionada = null;
   }
 }

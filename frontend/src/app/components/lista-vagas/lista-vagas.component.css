@@ -14,14 +14,11 @@ a:hover {
 #container {
   display: inline-flex;
   flex-wrap: nowrap;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
-  /*margin-left: 5em;*/
-  /*margin-right: 5em;*/
 }
 
 #lista {
+  display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   margin-right: 2em;
 }
