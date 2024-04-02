@@ -3,19 +3,18 @@
 <div id="container">
   <div id="lista">
     <ul *ngFor="let vaga of vagas" class="square">
-      <a routerLink="/farmacia">
+      <a (click)="mudarVagaSelecionada(vaga)">
         <strong>Vaga {{vaga.id}}</strong>
         <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
-<!--        <li>Descricao: {{vaga.descricao}}</li>-->
         <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
         <li>Salario: {{vaga.salario}}</li>
       </a>
     </ul>
   </div>
 
-  <div id="vaga">
-    <h2>Vaga</h2>
-    <p>"descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis metus, sodales vitae efficitur sed, ornare sagittis arcu. Quisque aliquet leo nec lectus eleifend, non varius purus consectetur. Vivamus sit amet orci at leo convallis facilisis et vitae metus. Maecenas mollis nunc eu vehicula venenatis. Vestibulum sed rhoncus arcu, quis tempus dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut dictum pellentesque lorem, sit amet lacinia ligula convallis sit amet. Morbi ac nibh bibendum, eleifend ex vel, viverra nisl. Aenean arcu enim, fringilla consectetur consectetur at, hendrerit sit amet risus."</p>
+  <div id="vaga" *ngIf="vagaSelecionada">
+    <app-vaga-pagina [vaga]="vagaSelecionada" (vagaDeselecionadaEvent)="deselecionarVaga()">
+    </app-vaga-pagina>
   </div>
 </div>
 
