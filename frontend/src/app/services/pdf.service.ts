@@ -14,7 +14,7 @@ export class PdfService {
     return this.http.get<any>(`${this.apiUrl}/pdfs`);
   }
 
-  getPdfByUserId(userId: string) {
+  getPdfByUsuarioId(userId: string) {
     return this.http.get<any>(`${this.apiUrl}/pdfs/${userId}`);
   }
 

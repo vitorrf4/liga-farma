@@ -20,14 +20,13 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 })
 export class CadastroPessoaComponent implements OnInit{
   form!: FormGroup;
-  selectedFile!: File;
-  pdfs: any[] = [];
-  selectedPdf: any;
+  selectedFile: any;
+  fileUrl: any = '';
 
   constructor(private pdfService: PdfService,
               private formBuilder: FormBuilder) { }
 
-  get debug() {return this.form};
+  get debug() { return this.selectedFile.filename }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -38,18 +37,23 @@ export class CadastroPessoaComponent implements OnInit{
     });
   }
 
-  onFileSelected(target: any): void {
-    target = target as EventTarget;
-
-    let element = target as HTMLInputElement;
-    let files = element.files;
-
-    if (files) {
-      this.selectedFile = files[0]
-    }
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    this.loadFile();
   }
 
-  onSubmit(): void {
+  loadFile(): void {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      if (e.target && e.target.result) {
+        this.fileUrl = e.target.result;
+      }
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
+
+  onSubmit() {
     const pdfForm = new FormData();
     pdfForm.append('pdf', this.selectedFile);
     pdfForm.append('usuarioId', '1');
@@ -57,25 +61,6 @@ export class CadastroPessoaComponent implements OnInit{
     this.pdfService.uploadPdf(pdfForm).subscribe(res => {
       console.log(res);
     });
-  }
-
-  //
-  loadPdfs(): void {
-    this.pdfService.getPdfs().subscribe({
-      next: pdfs => {
-        this.pdfs = pdfs;
-        if (pdfs.length > 0) {
-          this.selectedPdf = pdfs[0];
-        }
-      },
-      error: (err) => {
-        console.error('Error loading PDFs', err);
-      }}
-    );
-  }
-
-  onSelectPdf(pdf: any): void {
-    this.selectedPdf = pdf;
   }
 
   cadastrarCliente() {
