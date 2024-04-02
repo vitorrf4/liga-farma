@@ -26,7 +26,6 @@ export class ListaVagasComponent implements OnInit {
   ngOnInit() {
     this.service.listar().subscribe(res => {
       this.vagas = res;
-      console.log(res);
     });
   }
 

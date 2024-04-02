@@ -1,3 +1,5 @@
+import {Farmacia} from "./farmacia";
+
 export class Vaga {
   id: number = 0;
   titulo: string = "";
@@ -8,4 +10,5 @@ export class Vaga {
   quantidadeVagas: number = 0;
   tipo: string = "";
   turno: string = "";
+  farmacia: Farmacia = new Farmacia();
 }
