@@ -13,7 +13,7 @@ const Vaga = sequelize.define('Vaga', {
             allowNull: false,
         },
         descricao: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true,
         },
         salario: {
