@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.development";
-import {Observable} from "rxjs";
 import {Farmaceutico} from "../model/farmaceutico";
 
 @Injectable({
@@ -13,7 +12,11 @@ export class FarmaceuticoService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Farmaceutico[]> {
+  listar() {
     return this.http.get<Farmaceutico[]>(`${this.urlBase}/${this.farmaceuticoUrl}`);
+  }
+
+  cadastrar(farmaceutico: Farmaceutico) {
+    return this.http.post<Farmaceutico>(`${this.urlBase}/${this.farmaceuticoUrl}`, farmaceutico);
   }
 }
