@@ -1,1 +1,4 @@
-<p>cadastro-empresa works!</p>
+<form (ngSubmit)="onSubmit()">
+  <input type="file" (change)="onFileSelected($event.target)" accept=".pdf">
+  <button type="submit">Upload</button>
+</form>

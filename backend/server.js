@@ -4,12 +4,13 @@ const cors = require('cors');
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
-require('./database/sequelize');
+const s = require('./database/sequelize');
 
 server.use(express.json());
 server.use(cors());
 
 server.listen(port, async () => {
+    await s.sync();
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
 });
@@ -38,3 +39,6 @@ server.use(vagaRouter);
 
 const candidaturaRouter = require('./routers/candidaturaRouter');
 server.use(candidaturaRouter);
+
+const pdf = require('./pdf');
+server.use(pdf);
