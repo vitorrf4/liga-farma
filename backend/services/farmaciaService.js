@@ -2,11 +2,11 @@ const Farmacia = require('../models/Farmacia');
 
 class FarmaciaService {
     async getFarmacia() {
-        return await Farmacia.findAll({include: 'farmacia'});
+        return await Farmacia.findAll();
     }
 
     async getFarmaciaPorId(id) {
-        return await Farmacia.findOne({where: id, include: 'farmacia'});
+        return await Farmacia.findOne({where: {id: id}});
     }
 
     async cadastrarFarmacia(nome, cnpj, endereco, email, senha, telefone) {
