@@ -1,0 +1,9 @@
+<p id="barra-filtros">Barra de filtros placeholder</p>
+
+<ul *ngFor="let vaga of vagas" class="square">
+  <strong>Vaga {{vaga.id}}</strong>
+  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
+  <li>Descricao: {{vaga.descricao}}</li>
+  <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
+  <li>Salario: {{vaga.salario}}</li>
+</ul>
