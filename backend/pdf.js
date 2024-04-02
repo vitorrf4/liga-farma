@@ -29,6 +29,19 @@ router.post('/upload', upload.single('pdf'), async (req, res) => {
     }
 });
 
+router.get('/pdfs', async (req, res) => {
+    const userId = req.params.userId;
+
+    try {
+        const pdfs = await PdfModel.findAll();
+
+        res.json(pdfs);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 router.get('/pdfs/:userId', async (req, res) => {
     const userId = req.params.userId;
 
