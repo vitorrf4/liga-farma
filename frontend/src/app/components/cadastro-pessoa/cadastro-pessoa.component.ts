@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {PdfService} from "../../services/pdf.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
+import {FarmaceuticoService} from "../../services/farmaceutico.service";
+import {Farmaceutico} from "../../model/farmaceutico";
 
 @Component({
   selector: 'app-cadastro-farmaceutico',
@@ -24,15 +26,16 @@ export class CadastroPessoaComponent implements OnInit{
   fileUrl: any = '';
 
   constructor(private pdfService: PdfService,
+              private cadastroService: FarmaceuticoService,
               private formBuilder: FormBuilder) { }
-
-  get debug() { return this.selectedFile.filename }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
+      nome: ["", Validators.required],
+      cpf: ["", Validators.required],
+      crf: ["", Validators.required],
       email: ["", Validators.required],
       senha: ["", Validators.required],
-      nome: ["", Validators.required],
       telefone: ["", Validators.required]
     });
   }
@@ -64,6 +67,12 @@ export class CadastroPessoaComponent implements OnInit{
   }
 
   cadastrarCliente() {
+    let farmaceutico = new Farmaceutico();
+    farmaceutico = this.form.getRawValue();
+    console.log(farmaceutico);
 
+    this.cadastroService.cadastrar(farmaceutico).subscribe(res => {
+      console.log(res);
+    })
   }
 }
