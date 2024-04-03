@@ -48,11 +48,11 @@ class AuthController {
                 return res.status(401).json({error: 'Credenciais inválidas'});
             }
             
-            delete entidade.senha;
+            delete entidade.dataValues.senha;
             
             const usuario = {
                 tipo: tipo, 
-                informacoes: entidade
+                informacoes: entidade.dataValues
             };
             
             return res.status(200).json(usuario);
