@@ -5,6 +5,7 @@ export class Usuario {
   email = '';
   senha = '';
   tipo = '';
+  entidadeId?: string;
   informacoes?: Farmacia | Farmaceutico;
 
   constructor(email: string, senha: string, tipo: string, informacoes?: Farmacia | Farmaceutico) {

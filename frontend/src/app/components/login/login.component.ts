@@ -6,6 +6,7 @@ import {PdfService} from "../../services/pdf.service";
 import {AuthService} from "../../services/auth.service";
 import {Farmaceutico} from "../../models/farmaceutico";
 import {Usuario} from "../../models/usuario";
+import {FarmaceuticoService} from "../../services/farmaceutico.service";
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private cadastroService: AuthService,
+              private farmaceuticoService: FarmaceuticoService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -44,6 +46,13 @@ export class LoginComponent implements OnInit {
 
     this.cadastroService.login(usuario).subscribe({
       next: res => {
+        const usuario = res;
+        this.farmaceuticoService.getById(res.entidadeId?.toString() || "").subscribe({
+          next: res => {
+            usuario.informacoes = res;
+            this.cadastroService.setUsuario(usuario);
+          }
+        })
         this.cadastroService.setUsuario(res);
         console.log('login success');
         console.log(res);

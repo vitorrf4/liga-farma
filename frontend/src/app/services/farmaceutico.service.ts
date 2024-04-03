@@ -16,6 +16,10 @@ export class FarmaceuticoService {
     return this.http.get<Farmaceutico[]>(`${this.urlBase}/${this.farmaceuticoUrl}`);
   }
 
+  getById(id: string) {
+    return this.http.get<Farmaceutico>(`${this.urlBase}/${this.farmaceuticoUrl}/${id}`);
+  }
+
   cadastrar(farmaceutico: Farmaceutico) {
     return this.http.post<Farmaceutico>(`${this.urlBase}/${this.farmaceuticoUrl}`, farmaceutico);
   }
