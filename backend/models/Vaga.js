@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/sequelize');
-const farmacia = require('./Farmacia');
+const {sequelize} = require('../database/sequelize');
+const Farmacia = require('./Farmacia');
 
 const Vaga = sequelize.define('Vaga', {
         id: {
@@ -43,13 +43,14 @@ const Vaga = sequelize.define('Vaga', {
     },
     { timestamps: false });
 
-Vaga.belongsTo(farmacia, {
-    as: "farmacia",
-    foreignKey: {
-        allowNull: false
-    }
-});
+async function createAssociation() {
+    Vaga.belongsTo(Farmacia, {
+        as: "farmacia",
+        foreignKey: {
+            allowNull: false
+        }
+    });
+    await Vaga.sync(); // Sincroniza o modelo com o banco de dados
+}
 
-Vaga.sync(); // Sincroniza o modelo com o banco de dados
-
-module.exports = Vaga;
+module.exports = {Vaga, createAssociation};

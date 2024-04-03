@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/sequelize');
+const {sequelize} = require('../database/sequelize');
 
 const Farmacia = sequelize.define('Farmacia', {
         id: {
@@ -32,7 +32,5 @@ const Farmacia = sequelize.define('Farmacia', {
             allowNull: true,
         }},
     { timestamps: false });
-
-Farmacia.sync(); // Sincroniza o modelo com o banco de dados
 
 module.exports = Farmacia;

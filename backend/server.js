@@ -4,15 +4,16 @@ const cors = require('cors');
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
-const sequelize = require('./database/sequelize');
+const { createAssociations } = require('./database/sequelize');
 const seed = require('./seed');
 
 server.use(express.json());
 server.use(cors());
 
 server.listen(port, async () => {
-    await sequelize.sync();
+    await createAssociations();
     await seed.seedTodos();
+    
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
 });

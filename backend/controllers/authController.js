@@ -1,5 +1,5 @@
 const Usuario = require('../models/Usuario');
-const Farmaceutico = require('../models/Farmaceutico');
+const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
 const bcrypt = require('bcryptjs');
 const PdfService = require("../routers/pdfService");
@@ -31,8 +31,9 @@ class AuthController {
         return res.status(200).json(usuario);
     }
     
-    getUploadMiddleware() {
-        return PdfService.getUploadMiddleware();
+    getUploadMiddleware(req, res, next) {
+        PdfService.getUploadMiddleware();
+        next();
     }
 
     async logarUsuario(req, res) {

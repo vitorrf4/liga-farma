@@ -1,4 +1,4 @@
-const Candidatura = require('../models/Candidatura');
+const {Candidatura} = require('../models/Candidatura');
 
 class CandidaturaService {
     async getCandidaturas() {

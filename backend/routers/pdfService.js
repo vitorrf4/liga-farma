@@ -1,7 +1,7 @@
 const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
-const PdfModel = require('../models/Pdf');
+const {PdfModel} = require('../models/Pdf');
 
 class PdfService {
     async getPdfByUserId(usuarioId) {

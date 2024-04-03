@@ -1,5 +1,5 @@
-const Contrato = require('../models/Contrato');
-const Vaga = require('../models/Vaga');
+const {Contrato} = require('../models/Contrato');
+const {Vaga} = require('../models/Vaga');
 
 class ContratoService {
     async getContratos() {

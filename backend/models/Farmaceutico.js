@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/sequelize');
-// const pdf = require('./Pdf');
+const {sequelize} = require('../database/sequelize');
 
 const Farmaceutico = sequelize.define('Farmaceutico', {
         id: {
@@ -38,13 +37,18 @@ const Farmaceutico = sequelize.define('Farmaceutico', {
         }},
     { timestamps: false });
 
-// Farmaceutico.hasOne(pdf, {
-//     as: 'curriculo',
-//     foreignKey: {
-//         allowNull: true
-//     }
-// });   
+async function createAssociation() {
+    const { PdfModel } = require('./Pdf');
 
-Farmaceutico.sync();
+    Farmaceutico.hasOne(PdfModel, {
+        as: 'curriculo',
+        foreignKey: {
+            allowNull: true
+        }
+    });
+    
+    await sequelize.sync();
 
-module.exports = Farmaceutico;
+}
+
+module.exports = {Farmaceutico, createAssociation};

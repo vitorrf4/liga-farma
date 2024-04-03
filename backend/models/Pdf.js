@@ -1,14 +1,16 @@
-const sequelize = require("../database/sequelize");
+const {sequelize} = require("../database/sequelize");
 const {DataTypes} = require("sequelize");
-const farmaceutico = require('./Farmaceutico');
+const {Farmaceutico} = require('./Farmaceutico');
 
 const PdfModel = sequelize.define('pdf', {
     filename: DataTypes.STRING,
     data: DataTypes.BLOB,
 });
 
-PdfModel.belongsTo(farmaceutico, {
-    as: 'usuario'
-});
+async function createAssociation() {
+    PdfModel.belongsTo(Farmaceutico, {
+        as: 'usuario'
+    });
+}
 
-module.exports = PdfModel;
+module.exports = {PdfModel, createAssociation};

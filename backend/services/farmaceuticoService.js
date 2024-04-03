@@ -1,4 +1,4 @@
-const Farmaceutico = require('../models/Farmaceutico');
+const {Farmaceutico} = require('../models/Farmaceutico');
 
 class FarmaceuticoService {
     async getFarmaceuticos() {

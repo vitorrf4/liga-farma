@@ -1,4 +1,4 @@
-const Vaga = require('../models/Vaga');
+const {Vaga} = require('../models/Vaga');
 
 class VagaService {
     async getVagas() {

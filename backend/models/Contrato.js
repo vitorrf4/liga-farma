@@ -1,8 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../database/sequelize');
-const farmacia = require('./Farmacia');
-const farmaceutico = require('./Farmaceutico');
-const vaga = require('./Vaga');
+const {sequelize} = require('../database/sequelize');
 
 const Contrato = sequelize.define('Contrato', {
         id: {
@@ -21,25 +18,30 @@ const Contrato = sequelize.define('Contrato', {
     },
     { timestamps: false });
 
-Contrato.belongsTo(farmacia, {
-    as: "farmacia",
-    foreignKey: {
-        allowNull: false
-    }
-});
-Contrato.belongsTo(farmaceutico, {
-    as: "farmaceutico",
-    foreignKey: {
-        allowNull: false
-    }
-});
-Contrato.belongsTo(vaga, {
-    as: "vaga",
-    foreignKey: {
-        allowNull: false
-    }
-});
+async function createAssociation() {
+    const farmacia = require('./Farmacia');
+    const {Farmaceutico} = require('./Farmaceutico');
+    const {Vaga} = require('./Vaga');
+    
+    Contrato.belongsTo(farmacia, {
+        as: "farmacia",
+        foreignKey: {
+            allowNull: false
+        }
+    });
+    Contrato.belongsTo(Farmaceutico, {
+        as: "farmaceutico",
+        foreignKey: {
+            allowNull: false
+        }
+    });
+    Contrato.belongsTo(Vaga, {
+        as: "vaga",
+        foreignKey: {
+            allowNull: false
+        }
+    });
+    
+}
 
-Contrato.sync(); // Sincroniza o modelo com o banco de dados
-
-module.exports = Contrato;
+module.exports = {Contrato, createAssociation};
