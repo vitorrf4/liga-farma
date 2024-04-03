@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Usuario} from "../../models/usuario";
 import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {AuthService} from "../../services/auth.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {Farmaceutico} from "../../models/farmaceutico";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-perfil',
@@ -17,19 +18,23 @@ import {Farmaceutico} from "../../models/farmaceutico";
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css'
 })
-export class PerfilComponent {
-  usuario: Usuario;
+export class PerfilComponent implements OnInit {
+  usuario?: Usuario;
   file: any;
 
-  constructor(private authService: AuthService) {
-    this.usuario = authService.usuario;
-    console.log(this.usuario);
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
-    if (this.usuario) {
-      const farma = this.usuario.informacoes as Farmaceutico;
-      this.file = farma.curriculo;
+  async ngOnInit() {
+    this.usuario = this.authService.usuario;
 
-      console.log(this.file);
+    if (!this.usuario) {
+      return await this.router.navigateByUrl('/login');
     }
+
+    const farma = this.usuario.informacoes as Farmaceutico;
+    this.file = farma.curriculo;
+
+    return;
   }
 }

@@ -1,4 +1,3 @@
-const Usuario = require('../models/Usuario');
 const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
 const bcrypt = require('bcryptjs');

@@ -7,16 +7,15 @@ import {Usuario} from "../models/usuario";
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = environment.urlApi;
-  apiUrl = 'auth';
-  usuario!: Usuario;
+  private baseUrl = environment.urlApi;
+  private apiUrl = 'auth';
+  usuario?: Usuario;
 
   constructor(private http: HttpClient) { }
 
   setUsuario(usuario: Usuario) {
     this.usuario = usuario;
     sessionStorage.setItem('usuario', JSON.stringify(usuario));
-    console.log(this.usuario);
   }
 
   cadastrar(usuario: Usuario) {

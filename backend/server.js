@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
 const { createAssociations } = require('./database/sequelize');
-const seed = require('./seed');
+const seed = require('./database/seed');
 
 server.use(express.json());
 server.use(cors());

@@ -1,17 +1,18 @@
-<h1>Farmaceuticos</h1>
-<ul>
-  <li>Nome: {{usuario.informacoes.nome}}</li>
-<!--  <li>CPF: {{usuario.informacoes?.cpf}}</li>-->
-<!--  <li>CRF: {{usuario.informacoes?.crf}}</li>-->
-  <li>Email: {{usuario.informacoes.email}}</li>
-  <li>Email: {{usuario.informacoes.telefone}}</li>
-<!--  <li>Especializacao: {{usuario.informacoes}}</li>-->
-</ul>
+<div *ngIf="usuario">
+  <h1>Farmaceuticos</h1>
+  <ul>
+    <li>Nome: {{usuario.informacoes.nome}}</li>
+    <li>Email: {{usuario.informacoes.email}}</li>
+    <li>Telefone: {{usuario.informacoes.telefone}}</li>
+    <li>Senha: {{usuario.informacoes.senha}}</li>
+  </ul>
 
-<h1>Curriculo</h1>
-<div *ngIf="file" id="curriculo">
-  <pdf-viewer [src]="file.data"
-              [original-size]="false"
-              [autoresize]="true"
-              style="width: 40vh; height: 45vh;"></pdf-viewer>
+  <h1>Curriculo</h1>
+  <div *ngIf="file" id="curriculo">
+    <pdf-viewer [src]="file.data"
+                [original-size]="false"
+                [autoresize]="true"
+                style="width: 40vh; height: 45vh;"></pdf-viewer>
+  </div>
+
 </div>
