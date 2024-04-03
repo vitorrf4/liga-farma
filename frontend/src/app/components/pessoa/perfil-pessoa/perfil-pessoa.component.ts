@@ -21,6 +21,7 @@ import {Router} from "@angular/router";
 export class PerfilPessoaComponent implements OnInit {
   usuario?: Usuario;
   file: any;
+  tipo: string = '';
 
   constructor(private authService: AuthService,
               private router: Router) { }
@@ -31,6 +32,8 @@ export class PerfilPessoaComponent implements OnInit {
     if (!this.usuario) {
       return await this.router.navigateByUrl('/login');
     }
+
+    this.tipo = this.usuario.tipo;
 
     const farma = this.usuario.informacoes as Farmaceutico;
     this.file = farma.curriculo;

@@ -9,8 +9,4 @@ export class Usuario {
     this.tipo = tipo;
     this.informacoes = informacoes;
   }
-
-  get isPessoa() {
-    return (this.informacoes instanceof Farmaceutico)
-  }
 }
