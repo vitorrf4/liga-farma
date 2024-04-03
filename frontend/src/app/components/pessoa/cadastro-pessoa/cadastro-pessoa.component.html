@@ -1,4 +1,4 @@
-<h3>Usuário</h3>
+<h3>Farmacêutico</h3>
 
 <form [formGroup]="form" (submit)="cadastrarCliente()">
   <div class="form-outline">
@@ -31,7 +31,9 @@
     <input type="text" class="form-control" formControlName="telefone" required />
   </div>
 
-  <input type="file" (change)="onFileSelected($event)" accept=".pdf">
+  <p>Curriculo:
+    <input type="file" (change)="onFileSelected($event)" accept=".pdf">
+  </p>
   <div *ngIf="selectedFile" id="curriculo">
     <pdf-viewer [src]="fileUrl"
                 [original-size]="false"
