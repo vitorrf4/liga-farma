@@ -2,21 +2,21 @@ const { DataTypes } = require('sequelize');
 const {sequelize} = require('../database/sequelize');
 
 const Contrato = sequelize.define('Contrato', {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        dataInicio: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        dataFim: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        }
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
     },
-    { timestamps: false });
+    dataInicio: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    dataFim: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
+},
+{ timestamps: false });
 
 async function createAssociation() {
     const farmacia = require('./Farmacia');
