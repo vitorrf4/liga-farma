@@ -10,5 +10,6 @@ export class Vaga {
   quantidadeVagas: number = 0;
   tipo: string = "";
   turno: string = "";
+  dataPublicada!: Date;
   farmacia: Farmacia = new Farmacia();
 }

@@ -10,6 +10,9 @@ const Candidatura = sequelize.define('Candidatura', {
     mensagem: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    dataEnviada: {
+        type: DataTypes.DATE,
     }
 },
 { timestamps: false });

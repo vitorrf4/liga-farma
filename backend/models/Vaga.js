@@ -38,6 +38,9 @@ const Vaga = sequelize.define('Vaga', {
     turno: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    dataPublicada: {
+        type: DataTypes.DATE
     }
 },
 { timestamps: false });
