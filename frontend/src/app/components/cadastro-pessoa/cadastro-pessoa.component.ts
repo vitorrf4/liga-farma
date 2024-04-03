@@ -5,6 +5,8 @@ import {PdfService} from "../../services/pdf.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {FarmaceuticoService} from "../../services/farmaceutico.service";
 import {Farmaceutico} from "../../model/farmaceutico";
+import {AuthService} from "../../services/auth.service";
+import {Usuario} from "../../model/usuario";
 
 @Component({
   selector: 'app-cadastro-farmaceutico',
@@ -26,7 +28,7 @@ export class CadastroPessoaComponent implements OnInit{
   fileUrl: any = '';
 
   constructor(private pdfService: PdfService,
-              private cadastroService: FarmaceuticoService,
+              private cadastroService: AuthService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -67,11 +69,17 @@ export class CadastroPessoaComponent implements OnInit{
   }
 
   cadastrarCliente() {
-    let farmaceutico = new Farmaceutico();
+    let farmaceutico : Farmaceutico;
     farmaceutico = this.form.getRawValue();
-    console.log(farmaceutico);
 
-    this.cadastroService.cadastrar(farmaceutico).subscribe(res => {
+    let usuario = new Usuario(
+      this.form.get('email')!.value,
+      this.form.get('senha')!.value,
+      'PESSOA',
+      farmaceutico
+    );
+
+    this.cadastroService.cadastrar(usuario).subscribe(res => {
       console.log(res);
     })
   }
