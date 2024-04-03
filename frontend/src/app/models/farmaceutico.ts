@@ -7,4 +7,5 @@ export class Farmaceutico {
   especializacao: string = "";
   email: string = "";
   senha: string = "";
+  curriculo?: Object;
 }

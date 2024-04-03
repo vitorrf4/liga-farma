@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FarmaceuticoService} from "../../services/farmaceutico.service";
-import {Farmaceutico} from "../../model/farmaceutico";
+import {Farmaceutico} from "../../models/farmaceutico";
 import {NgForOf} from "@angular/common";
 
 @Component({

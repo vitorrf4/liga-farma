@@ -3,10 +3,9 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {PdfService} from "../../services/pdf.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
-import {FarmaceuticoService} from "../../services/farmaceutico.service";
-import {Farmaceutico} from "../../model/farmaceutico";
+import {Farmaceutico} from "../../models/farmaceutico";
 import {AuthService} from "../../services/auth.service";
-import {Usuario} from "../../model/usuario";
+import {Usuario} from "../../models/usuario";
 
 @Component({
   selector: 'app-cadastro-farmaceutico',
@@ -58,10 +57,10 @@ export class CadastroPessoaComponent implements OnInit{
     reader.readAsDataURL(this.selectedFile);
   }
 
-  onSubmit() {
+  onSubmit(usuarioId: string) {
     const pdfForm = new FormData();
     pdfForm.append('pdf', this.selectedFile);
-    pdfForm.append('usuarioId', '1');
+    pdfForm.append('usuarioId', usuarioId.toString());
 
     this.pdfService.uploadPdf(pdfForm).subscribe(res => {
       console.log(res);
@@ -72,7 +71,7 @@ export class CadastroPessoaComponent implements OnInit{
     let farmaceutico : Farmaceutico;
     farmaceutico = this.form.getRawValue();
 
-    let usuario = new Usuario(
+    const usuario = new Usuario(
       this.form.get('email')!.value,
       this.form.get('senha')!.value,
       'PESSOA',
@@ -80,7 +79,9 @@ export class CadastroPessoaComponent implements OnInit{
     );
 
     this.cadastroService.cadastrar(usuario).subscribe(res => {
-      console.log(res);
+      const a = res as {entidadeId: string};
+      console.log(a.entidadeId);
+      this.onSubmit(a.entidadeId);
     })
   }
 }

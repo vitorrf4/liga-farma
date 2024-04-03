@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment.development";
 import {HttpClient} from "@angular/common/http";
-import {Usuario} from "../model/usuario";
+import {Usuario} from "../models/usuario";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   cadastrar(usuario: Usuario) {
-    return this.http.post(`${this.baseUrl}/${this.apiUrl}/cadastro`, usuario);
+    return this.http.post<Object>(`${this.baseUrl}/${this.apiUrl}/cadastro`, usuario);
   }
 
   login(usuario: Usuario) {

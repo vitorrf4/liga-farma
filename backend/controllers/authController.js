@@ -2,7 +2,7 @@ const Usuario = require('../models/Usuario');
 const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
 const bcrypt = require('bcryptjs');
-const PdfService = require("../routers/pdfService");
+const PdfService = require("../services/pdfService");
 
 class AuthController {
     async cadastrarUsuario(req, res) {
@@ -17,7 +17,6 @@ class AuthController {
                 break;
             case 'PESSOA':
                 entidade = await Farmaceutico.create(informacoes);
-                
                 break;
             default:
                 return res.status(404).json({error: 'Tipo de usuario invalido'});

@@ -4,8 +4,8 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {PdfService} from "../../services/pdf.service";
 import {AuthService} from "../../services/auth.service";
-import {Farmaceutico} from "../../model/farmaceutico";
-import {Usuario} from "../../model/usuario";
+import {Farmaceutico} from "../../models/farmaceutico";
+import {Usuario} from "../../models/usuario";
 
 @Component({
   selector: 'app-login',

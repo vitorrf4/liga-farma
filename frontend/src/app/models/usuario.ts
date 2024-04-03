@@ -1,4 +1,4 @@
-import {Farmacia} from "../models/farmacia";
+import {Farmacia} from "./farmacia";
 import {Farmaceutico} from "./farmaceutico";
 
 export class Usuario {

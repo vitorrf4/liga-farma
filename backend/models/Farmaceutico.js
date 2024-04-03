@@ -40,7 +40,7 @@ const Farmaceutico = sequelize.define('Farmaceutico', {
 async function createAssociation() {
     const { PdfModel } = require('./Pdf');
 
-    Farmaceutico.hasOne(PdfModel, {
+    Farmaceutico.belongsTo(PdfModel, {
         as: 'curriculo',
         foreignKey: {
             allowNull: true

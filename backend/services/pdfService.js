@@ -2,6 +2,7 @@ const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const {PdfModel} = require('../models/Pdf');
+const {Farmaceutico} = require('../models/Farmaceutico');
 
 class PdfService {
     async getPdfByUserId(usuarioId) {
@@ -9,7 +10,7 @@ class PdfService {
             const pdf = await PdfModel.findOne({ where: { usuarioId: usuarioId } });
 
             if (!pdf) {
-                throw new Error('Item não encontrado');
+                return null;
             }
 
             return pdf;
@@ -19,22 +20,30 @@ class PdfService {
         }
     }
 
-    async uploadPdf(file, usuarioId) {
+    async uploadPdf(req, res) {
+        const file = req.file;
+        console.log(file);
         if (file.mimetype !== 'application/pdf') {
-            throw new Error('Arquivo não é um PDF');
+            return res.status(400).send();
         }
 
         try {
-            await PdfModel.create({
+            const pdf = await PdfModel.create({
                 filename: file.originalname,
                 data: file.buffer,
-                usuarioId: usuarioId
+                usuarioId: req.body.usuarioId
+            });
+            
+            await Farmaceutico.update({
+                curriculoId: pdf.id
+            }, {
+                where: {id: req.body.usuarioId}
             });
 
-            return 'Arquivo salvo com sucesso';
+            return res.status(200).send();
         } catch (error) {
             console.error(error);
-            throw new Error('Erro ao salvar');
+            return res.status(500).send();
         }
     }
 
