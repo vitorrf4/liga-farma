@@ -17,6 +17,6 @@ export class AuthService {
   }
 
   login(usuario: Usuario) {
-    return this.http.post(`${this.baseUrl}/${this.apiUrl}/cadastro`, usuario);
+    return this.http.post(`${this.baseUrl}/${this.apiUrl}/login`, usuario);
   }
 }

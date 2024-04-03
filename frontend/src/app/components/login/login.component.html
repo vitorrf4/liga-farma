@@ -1,0 +1,15 @@
+<h3>Usuário</h3>
+
+<form [formGroup]="form" (submit)="logarCliente()">
+  <div>
+    <label class="form-label">Email</label>
+    <input type="text" class="form-control" formControlName="email" required/>
+  </div>
+
+  <div >
+    <label class="form-label">Senha</label>
+    <input type="password" class="form-control" formControlName="senha" required/>
+  </div>
+
+  <button type="submit">Cadastrar</button>
+</form>

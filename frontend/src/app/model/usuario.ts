@@ -7,7 +7,7 @@ export class Usuario {
   tipo = '';
   informacoes?: Farmacia | Farmaceutico;
 
-  constructor(email: string, senha: string, tipo: string, informacoes: Farmacia | Farmaceutico) {
+  constructor(email: string, senha: string, tipo: string, informacoes?: Farmacia | Farmaceutico) {
     this.email = email;
     this.senha = senha;
     this.tipo = tipo;
