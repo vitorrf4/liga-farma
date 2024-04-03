@@ -20,7 +20,7 @@ export class VagaPaginaComponent {
   constructor(private router: Router) { }
 
   async irParaCandidatura() {
-    await this.router.navigateByUrl('candidatura');
+    await this.router.navigateByUrl('candidatura', {state: {vaga: this.vaga}});
   }
 
   deselecionarVaga() {

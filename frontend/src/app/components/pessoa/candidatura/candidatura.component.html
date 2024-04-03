@@ -1,1 +1,32 @@
-<p>candidatura works!</p>
+<p *ngIf="vaga">
+  <strong>Vaga {{vaga.id}}</strong>
+  <li>Empresa: {{vaga.farmacia.nome}}</li>
+  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
+  <li>Descricao: {{vaga.descricao}}</li>
+  <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
+  <li>Salario: {{vaga.salario}}</li>
+  <li>Tipo: {{vaga.tipo}}</li>
+  <li>Turno: {{vaga.turno}}</li>
+  <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
+
+
+</p>
+<div *ngIf="perfil">
+  <h1>Meu Perfil</h1>
+  <ul>
+    <li>Nome: {{perfil.nome}}</li>
+    <li>Email: {{perfil.email}}</li>
+    <li>Telefone: {{perfil.telefone}}</li>
+  </ul>
+
+  <div *ngIf="file" id="curriculo">
+    <h1>Curriculo</h1>
+    <pdf-viewer [src]="file.data"
+                [original-size]="false"
+                [autoresize]="true"
+                style="width: 40vh; height: 45vh;">
+    </pdf-viewer>
+  </div>
+</div>
+
+<button (click)="enviarCandidatura()">Enviar</button>
