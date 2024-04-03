@@ -2,13 +2,12 @@ const Usuario = require('../models/Usuario');
 const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
 const bcrypt = require('bcryptjs');
-const PdfService = require("../services/pdfService");
 
 class AuthController {
     async cadastrarUsuario(req, res) {
-        const {email, senha, tipo, informacoes} = req.body;
+        const {tipo, informacoes} = req.body;
 
-        const hashedSenha = await bcrypt.hash(senha, 10);
+        informacoes.senha = await bcrypt.hash(informacoes.senha, 10);
 
         let entidade;
         switch (tipo) {
@@ -19,53 +18,45 @@ class AuthController {
                 entidade = await Farmaceutico.create(informacoes);
                 break;
             default:
-                return res.status(404).json({error: 'Tipo de usuario invalido'});
+                return res.status(400).json({error: 'Tipo de usuario invalido'});
         }
-
-        const entidadeId = entidade.id;
-        const usuario = await Usuario.create({email, senha: hashedSenha, tipo, entidadeId});
         
-        delete usuario.dataValues.senha;
-
+        const usuario = {
+            tipo: tipo,
+            informacoes: entidade
+        }
+        
         return res.status(200).json(usuario);
-    }
-    
-    getUploadMiddleware(req, res, next) {
-        PdfService.getUploadMiddleware();
-        next();
     }
 
     async logarUsuario(req, res) {
         try {
             const {email, senha} = req.body;
-            const usuario = await Usuario.findOne({where: {email: email}});
-
-            if (!usuario) {
+            let entidade = await Farmaceutico.findOne({where: {email: email}});
+            let tipo = 'PESSOA';
+                
+            if (!entidade) {
+                entidade = await Farmacia.findOne({where: {email: email}});
+                tipo = 'EMPRESA';
+            }
+            
+            if (!entidade) {
                 return res.status(404).json({error: 'Credenciais inválidas'});
             }
 
-            const senhaMatch = await bcrypt.compare(senha, usuario.senha);
-
+            const senhaMatch = await bcrypt.compare(senha, entidade.senha);
             if (!senhaMatch) {
                 return res.status(401).json({error: 'Credenciais inválidas'});
             }
-
-            delete usuario.dataValues.senha;
-
-            const usuarioJson = usuario.dataValues;
-
-            switch (usuarioJson.tipo) {
-                case 'EMPRESA':
-                    const farmacia = await Farmacia.findByPk(usuario.entidadeId);
-                    usuarioJson.informacoes = farmacia;
-                    break;
-                case 'PESSOA':
-                    const farmaceutico = await Farmaceutico.findByPk(usuario.entidadeId);
-                    usuarioJson.informacoes = farmaceutico;
-                    break;
-            }
-
-            return res.status(200).json(usuarioJson);
+            
+            delete entidade.senha;
+            
+            const usuario = {
+                tipo: tipo, 
+                informacoes: entidade
+            };
+            
+            return res.status(200).json(usuario);
         } catch (error) {
             console.log(error);
             return res.status(500).json({error: 'Erro do servidor'});

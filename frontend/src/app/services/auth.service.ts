@@ -16,13 +16,14 @@ export class AuthService {
   setUsuario(usuario: Usuario) {
     this.usuario = usuario;
     sessionStorage.setItem('usuario', JSON.stringify(usuario));
+    console.log(this.usuario);
   }
 
   cadastrar(usuario: Usuario) {
-    return this.http.post<Object>(`${this.baseUrl}/${this.apiUrl}/cadastro`, usuario);
+    return this.http.post<Usuario>(`${this.baseUrl}/${this.apiUrl}/cadastro`, usuario);
   }
 
-  login(usuario: Usuario) {
+  login(usuario: {email: string, senha: string}) {
     return this.http.post<Usuario>(`${this.baseUrl}/${this.apiUrl}/login`, usuario);
   }
 }

@@ -9,13 +9,18 @@ class Seeds {
     
     async seedFarmaceutico() {
         const body = {
-            nome: "João Silva",
-            cpf: "111111111-11",
-            crf: "1234-5",
-            telefone: "98412-2983",
-            especializacao: null
+            tipo: 'PESSOA',
+            informacoes: {
+                nome: "João Silva",
+                    cpf: "111111111-11",
+                    crf: "1234-5",
+                    telefone: "98412-2983",
+                    email: 'a',
+                    senha: 'a',
+                    especializacao: null
+            }
         }
-        await this.executarPost(body, 'farmaceutico');
+        await this.executarPost(body, 'auth/cadastro');
     }
 
     async seedFarmacia() {

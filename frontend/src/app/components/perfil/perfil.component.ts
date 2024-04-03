@@ -18,11 +18,12 @@ import {Farmaceutico} from "../../models/farmaceutico";
   styleUrl: './perfil.component.css'
 })
 export class PerfilComponent {
-  usuario!: Usuario;
+  usuario: Usuario;
   file: any;
 
   constructor(private authService: AuthService) {
     this.usuario = authService.usuario;
+    console.log(this.usuario);
 
     if (this.usuario) {
       const farma = this.usuario.informacoes as Farmaceutico;

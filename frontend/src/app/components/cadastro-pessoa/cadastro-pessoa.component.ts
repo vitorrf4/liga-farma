@@ -57,7 +57,7 @@ export class CadastroPessoaComponent implements OnInit{
     reader.readAsDataURL(this.selectedFile);
   }
 
-  onSubmit(usuarioId: string) {
+  cadastrarCurriculo(usuarioId: string) {
     const pdfForm = new FormData();
     pdfForm.append('pdf', this.selectedFile);
     pdfForm.append('usuarioId', usuarioId.toString());
@@ -72,16 +72,13 @@ export class CadastroPessoaComponent implements OnInit{
     farmaceutico = this.form.getRawValue();
 
     const usuario = new Usuario(
-      this.form.get('email')!.value,
-      this.form.get('senha')!.value,
       'PESSOA',
       farmaceutico
     );
 
     this.cadastroService.cadastrar(usuario).subscribe(res => {
-      const a = res as {entidadeId: string};
-      console.log(a.entidadeId);
-      this.onSubmit(a.entidadeId);
+      console.log(res);
+      this.cadastrarCurriculo(res.informacoes.id.toString());
     })
   }
 }

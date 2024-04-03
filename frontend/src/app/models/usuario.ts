@@ -2,16 +2,15 @@ import {Farmacia} from "./farmacia";
 import {Farmaceutico} from "./farmaceutico";
 
 export class Usuario {
-  email = '';
-  senha = '';
   tipo = '';
-  entidadeId?: string;
-  informacoes?: Farmacia | Farmaceutico;
+  informacoes: Farmacia | Farmaceutico;
 
-  constructor(email: string, senha: string, tipo: string, informacoes?: Farmacia | Farmaceutico) {
-    this.email = email;
-    this.senha = senha;
+  constructor(tipo: string, informacoes: Farmacia | Farmaceutico) {
     this.tipo = tipo;
     this.informacoes = informacoes;
+  }
+
+  get isPessoa() {
+    return (this.informacoes instanceof Farmaceutico)
   }
 }

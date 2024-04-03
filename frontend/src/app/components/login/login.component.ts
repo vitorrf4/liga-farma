@@ -22,7 +22,7 @@ import {FarmaceuticoService} from "../../services/farmaceutico.service";
 export class LoginComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private cadastroService: AuthService,
+  constructor(private authService: AuthService,
               private farmaceuticoService: FarmaceuticoService,
               private formBuilder: FormBuilder) { }
 
@@ -38,24 +38,15 @@ export class LoginComponent implements OnInit {
   }
 
   logarCliente() {
-    let usuario = new Usuario(
-      this.form.get('email')!.value,
-      this.form.get('senha')!.value,
-      'PESSOA',
-    );
+    let usuario = {
+      email: this.form.get('email')!.value,
+      senha: this.form.get('senha')!.value,
+    }
 
-    this.cadastroService.login(usuario).subscribe({
+    this.authService.login(usuario).subscribe({
       next: res => {
-        const usuario = res;
-        this.farmaceuticoService.getById(res.entidadeId?.toString() || "").subscribe({
-          next: res => {
-            usuario.informacoes = res;
-            this.cadastroService.setUsuario(usuario);
-          }
-        })
-        this.cadastroService.setUsuario(res);
+        this.authService.setUsuario(res);
         console.log('login success');
-        console.log(res);
       },
       error: err => { console.log("erro login") }
     })
