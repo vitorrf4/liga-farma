@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/sequelize');
+// const pdf = require('./Pdf');
 
 const Farmaceutico = sequelize.define('Farmaceutico', {
         id: {
@@ -37,6 +38,13 @@ const Farmaceutico = sequelize.define('Farmaceutico', {
         }},
     { timestamps: false });
 
-Farmaceutico.sync(); // Sincroniza o modelo com o banco de dados
+// Farmaceutico.hasOne(pdf, {
+//     as: 'curriculo',
+//     foreignKey: {
+//         allowNull: true
+//     }
+// });   
+
+Farmaceutico.sync();
 
 module.exports = Farmaceutico;

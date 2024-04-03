@@ -42,8 +42,8 @@ server.use(vagaRouter);
 const candidaturaRouter = require('./routers/candidaturaRouter');
 server.use(candidaturaRouter);
 
-const pdf = require('./routers/pdfRouter');
-server.use(pdf);
+// const pdf = require('./routers/pdfService');
+// server.use(pdf);
 
 const auth = require('./routers/authRouter');
 server.use(auth);
