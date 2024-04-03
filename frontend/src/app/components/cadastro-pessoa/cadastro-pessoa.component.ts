@@ -77,8 +77,8 @@ export class CadastroPessoaComponent implements OnInit{
     );
 
     this.cadastroService.cadastrar(usuario).subscribe(res => {
-      console.log(res);
-      this.cadastrarCurriculo(res.informacoes.id.toString());
+      if (this.selectedFile)
+        this.cadastrarCurriculo(res.informacoes.id.toString());
     })
   }
 }

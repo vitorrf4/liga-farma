@@ -1,6 +1,3 @@
-const multer = require('multer');
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 const {PdfModel} = require('../models/Pdf');
 const {Farmaceutico} = require('../models/Farmaceutico');
 
@@ -24,7 +21,7 @@ class PdfService {
         const file = req.file;
         console.log(file);
         if (file.mimetype !== 'application/pdf') {
-            return res.status(400).send();
+            return res.status(400).json({message: 'Arquivo não é um pdf'});
         }
 
         try {
@@ -40,15 +37,11 @@ class PdfService {
                 where: {id: req.body.usuarioId}
             });
 
-            return res.status(200).send();
+            return res.status(200).json({message: 'Curriculo salvo'});
         } catch (error) {
             console.error(error);
-            return res.status(500).send();
+            return res.status(500).json({message: 'Erro no servidor'});
         }
-    }
-
-    getUploadMiddleware() {
-        return upload.single('pdf');
     }
 }
 

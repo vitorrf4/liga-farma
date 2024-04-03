@@ -19,10 +19,11 @@ class AuthController {
             default:
                 return res.status(400).json({error: 'Tipo de usuario invalido'});
         }
-        
+
+        delete entidade.dataValues.senha;
         const usuario = {
             tipo: tipo,
-            informacoes: entidade
+            informacoes: entidade.dataValues
         }
         
         return res.status(200).json(usuario);
@@ -31,7 +32,10 @@ class AuthController {
     async logarUsuario(req, res) {
         try {
             const {email, senha} = req.body;
-            let entidade = await Farmaceutico.findOne({where: {email: email}});
+            let entidade = await Farmaceutico.findOne(
+                {where: {email: email},
+                include: 'curriculo'
+            });
             let tipo = 'PESSOA';
                 
             if (!entidade) {
