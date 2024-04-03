@@ -15,10 +15,10 @@ import {Router} from "@angular/router";
     PdfViewerModule,
     NgForOf
   ],
-  templateUrl: './perfil-pessoa.component.html',
-  styleUrl: './perfil-pessoa.component.css'
+  templateUrl: './meu-perfil.component.html',
+  styleUrl: './meu-perfil.component.css'
 })
-export class PerfilPessoaComponent implements OnInit {
+export class MeuPerfilComponent implements OnInit {
   usuario?: Usuario;
   file: any;
   tipo: string = '';

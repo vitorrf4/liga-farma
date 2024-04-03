@@ -4,12 +4,12 @@ import {CadastroComponent} from "./components/geral/cadastro/cadastro.component"
 import {CadastroPessoaComponent} from "./components/pessoa/cadastro-pessoa/cadastro-pessoa.component";
 import {CadastroEmpresaComponent} from "./components/empresa/cadastro-empresa/cadastro-empresa.component";
 import {LoginComponent} from "./components/geral/login/login.component";
-import {PerfilPessoaComponent} from "./components/pessoa/perfil-pessoa/perfil-pessoa.component";
+import {MeuPerfilComponent} from "./components/geral/meu-perfil/meu-perfil.component";
 import {SobreNosComponent} from "./components/sobre-nos/sobre-nos.component";
 
 export const routes: Routes = [
   {path: "vagas", component: ListaVagasComponent},
-  {path: "perfil", component: PerfilPessoaComponent},
+  {path: "perfil", component: MeuPerfilComponent},
   {path: "sobre-nos", component: SobreNosComponent},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent, children: [

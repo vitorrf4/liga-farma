@@ -1,9 +1,14 @@
 <h1>Liga Farma</h1>
 <table>
   <tr>
-    <td><button routerLink="/cadastro/pessoa">Cadastro</button></td>
-    <td><button routerLink="/login">Login</button></td>
-    <td><button routerLink="/perfil">Perfil</button></td>
+    <div *ngIf="!usuario">
+      <td><button routerLink="/cadastro/pessoa">Cadastro</button></td>
+      <td><button routerLink="/login">Login</button></td>
+    </div>
+    <div *ngIf="usuario">
+      <td><button routerLink="/perfil">Perfil</button></td>
+      <td><button (click)="logout()">Logout</button></td>
+    </div>
     <td><button routerLink="/vagas">Ver Vagas</button></td>
     <td><button routerLink="/sobre-nos">Sobre Nós</button></td>
   </tr>
