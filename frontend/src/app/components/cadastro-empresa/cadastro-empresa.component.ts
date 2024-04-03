@@ -1,7 +1,10 @@
-import {Component} from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
+import {AuthService} from "../../services/auth.service";
+import {Farmaceutico} from "../../models/farmaceutico";
+import {Usuario} from "../../models/usuario";
 
 @Component({
   selector: 'app-cadastro-empresa',
@@ -10,12 +13,41 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
     FormsModule,
     NgForOf,
     NgIf,
-    PdfViewerModule
+    PdfViewerModule,
+    ReactiveFormsModule
   ],
   templateUrl: './cadastro-empresa.component.html',
   styleUrl: './cadastro-empresa.component.css'
 })
-export class CadastroEmpresaComponent {
+export class CadastroEmpresaComponent implements OnInit {
+  form!: FormGroup;
 
-  constructor() {}
+  constructor(private cadastroService: AuthService,
+              private formBuilder: FormBuilder) {}
+
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      nome: ["", Validators.required],
+      cnpj: ["", Validators.required],
+      endereco: ["", Validators.required],
+      email: ["", Validators.required],
+      senha: ["", Validators.required],
+      telefone: ["", Validators.required]
+    });
+  }
+
+  cadastrarCliente() {
+    let farmaceutico : Farmaceutico;
+    farmaceutico = this.form.getRawValue();
+
+    const usuario = new Usuario(
+      'EMPRESA',
+      farmaceutico
+    );
+
+    this.cadastroService.cadastrar(usuario).subscribe(res => {
+      console.log(res);
+    })
+  }
 }

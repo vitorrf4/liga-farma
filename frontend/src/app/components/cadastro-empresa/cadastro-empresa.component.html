@@ -1,0 +1,36 @@
+<h3>Usuário</h3>
+
+<form [formGroup]="form" (submit)="cadastrarCliente()">
+  <div class="form-outline">
+    <label class="form-label">Nome</label>
+    <input type="text" class="form-control" formControlName="nome" required />
+  </div>
+
+  <div class="form-outline">
+    <label class="form-label">CNPJ</label>
+    <input type="text" class="form-control" formControlName="cnpj" required />
+  </div>
+
+  <div class="form-outline">
+    <label class="form-label">Endereco</label>
+    <input type="text" class="form-control" formControlName="endereco" required />
+  </div>
+
+  <div>
+    <label class="form-label">Email</label>
+    <input type="text" class="form-control" formControlName="email" required/>
+  </div>
+
+  <div >
+    <label class="form-label">Senha</label>
+    <input type="password" class="form-control" formControlName="senha" required/>
+  </div>
+
+  <div class="form-outline">
+    <label class="form-label">Telefone</label>
+    <input type="text" class="form-control" formControlName="telefone" required />
+  </div>
+
+  <button type="submit">Cadastrar</button>
+</form>
+

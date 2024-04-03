@@ -33,7 +33,6 @@ class ContratoService {
         if (vaga.quantidadeVagas <= 0) {
             return false;
         }
-        vaga.quantidadeVagas -= 1;
 
         await vaga.decrement('quantidadeVagas');
         await vaga.save();
