@@ -7,8 +7,6 @@ const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-// router.get('/pdfs', async (req, res) => service.uploadPdf());
-
 router.get('/pdfs/:usuarioId', async (req, res) => {
     const usuarioId = req.params.usuarioId;
     console.log(usuarioId);
@@ -27,6 +25,6 @@ router.get('/pdfs/:usuarioId', async (req, res) => {
     }
 });
 
-router.post('/upload', upload.single('pdf'), (req, res) =>  service.uploadPdf(req, res));
+router.post('/upload', upload.single('pdf'), (req, res) => service.uploadPdf(req, res));
 
 module.exports = router;

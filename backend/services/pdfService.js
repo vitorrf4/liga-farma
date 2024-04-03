@@ -19,7 +19,6 @@ class PdfService {
 
     async uploadPdf(req, res) {
         const file = req.file;
-        console.log(file);
         if (file.mimetype !== 'application/pdf') {
             return res.status(400).json({message: 'Arquivo não é um pdf'});
         }

@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const cors = require('cors');
+// decide qual env usar
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
@@ -11,7 +12,9 @@ server.use(express.json());
 server.use(cors());
 
 server.listen(port, async () => {
+    // cria associacoes das entidades
     await createAssociations();
+    // inclui valores inicias na database
     await seed.seedTodos();
     
     console.log(`Servidor iniciado na porta ${port}`);
@@ -28,6 +31,7 @@ server.all("*", (req, res, next) => {
     next();
 });
 
+// rotas
 const farmaceuticoRouter = require('./routers/farmaceuticoRouter');
 server.use(farmaceuticoRouter);
 

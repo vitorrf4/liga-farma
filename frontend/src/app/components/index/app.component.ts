@@ -23,7 +23,7 @@ export class AppComponent {
   constructor(private authService: AuthService) {
     authService.usuarioObservable.subscribe(res => {
       this.usuario = res;
-    })
+    });
   }
 
   logout() {

@@ -11,6 +11,7 @@ export class AuthService {
   private baseUrl = environment.urlApi;
   private apiUrl = 'auth';
   usuario?: Usuario;
+  // envia automaticamente os novos valores de usuario
   usuarioObservable = new Subject<Usuario | undefined>();
 
   constructor(private http: HttpClient) { }
