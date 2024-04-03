@@ -8,9 +8,8 @@
   <li>Tipo: {{vaga.tipo}}</li>
   <li>Turno: {{vaga.turno}}</li>
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
-
-
 </p>
+
 <div *ngIf="perfil">
   <h1>Meu Perfil</h1>
   <ul>
@@ -27,6 +26,11 @@
                 style="width: 40vh; height: 45vh;">
     </pdf-viewer>
   </div>
+
+  <form [formGroup]="perfilForm">
+    <label>Mensagem a empresa:</label><br>
+    <textarea formControlName="mensagem"></textarea>
+  </form>
 </div>
 
 <button (click)="enviarCandidatura()">Enviar</button>

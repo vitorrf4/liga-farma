@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment.development";
 import {HttpClient} from "@angular/common/http";
-import {Farmaceutico} from "../models/farmaceutico";
+import {Candidatura} from "../models/candidatura";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class CandidaturaService {
 
   constructor(private http: HttpClient) { }
 
-  listar() {
-    return this.http.get<Farmaceutico[]>(`${this.urlBase}/${this.candidaturaUrl}`);
+  cadastrar(candidatura: Candidatura) {
+    return this.http.post<Candidatura>(`${this.urlBase}/${this.candidaturaUrl}`, candidatura);
   }
 }
