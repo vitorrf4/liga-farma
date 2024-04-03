@@ -21,11 +21,11 @@ const Farmacia = sequelize.define('Farmacia', {
     },
     email: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     senha: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     telefone: {
         type: DataTypes.STRING,

@@ -15,8 +15,8 @@ class Seeds {
                     cpf: "111111111-11",
                     crf: "1234-5",
                     telefone: "98412-2983",
-                    email: 'a',
-                    senha: 'a',
+                    email: 'p',
+                    senha: 'p',
                     especializacao: null
             }
         }
@@ -25,13 +25,17 @@ class Seeds {
 
     async seedFarmacia() {
         const body = {
-            nome: "nome2",
-            cnpj: "cpf",
-            endereco: "endereco",
-            email: null,
-            telefone: null
+            tipo: 'EMPRESA',
+            informacoes: {
+                nome: "nome2",
+                cnpj: "cpf",
+                endereco: "endereco",
+                email: 'e',
+                senha: 'e',
+                telefone: null
+            }
         }
-        await this.executarPost(body, 'farmacia');
+        await this.executarPost(body, 'auth/cadastro');
     }
 
     async seedVaga() {
