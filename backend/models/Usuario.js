@@ -19,9 +19,14 @@ const Usuario = sequelize.define('Usuario', {
             type: DataTypes.ENUM,
             values: ['EMPRESA', 'PESSOA'],
             allowNull: false,
-        },},
+        },
+        entidadeId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
+    },
     { timestamps: false });
-
+  
 Usuario.sync();
 
 module.exports = Usuario;
