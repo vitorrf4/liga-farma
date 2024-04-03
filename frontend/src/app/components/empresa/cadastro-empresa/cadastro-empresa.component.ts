@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
-import {AuthService} from "../../services/auth.service";
-import {Farmaceutico} from "../../models/farmaceutico";
-import {Usuario} from "../../models/usuario";
+import {AuthService} from "../../../services/auth.service";
+import {Farmaceutico} from "../../../models/farmaceutico";
+import {Usuario} from "../../../models/usuario";
 
 @Component({
   selector: 'app-cadastro-empresa',

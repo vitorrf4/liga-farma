@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Vaga} from "../../models/vaga";
-import {VagaService} from "../../services/vaga.service";
+import {Vaga} from "../../../models/vaga";
+import {VagaService} from "../../../services/vaga.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {VagaPaginaComponent} from "../vaga-pagina/vaga-pagina.component";

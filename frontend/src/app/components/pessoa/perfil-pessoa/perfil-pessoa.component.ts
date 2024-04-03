@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Usuario} from "../../models/usuario";
+import {Usuario} from "../../../models/usuario";
 import {JsonPipe, NgForOf, NgIf} from "@angular/common";
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from "../../../services/auth.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
-import {Farmaceutico} from "../../models/farmaceutico";
+import {Farmaceutico} from "../../../models/farmaceutico";
 import {Router} from "@angular/router";
 
 @Component({
@@ -15,10 +15,10 @@ import {Router} from "@angular/router";
     PdfViewerModule,
     NgForOf
   ],
-  templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.css'
+  templateUrl: './perfil-pessoa.component.html',
+  styleUrl: './perfil-pessoa.component.css'
 })
-export class PerfilComponent implements OnInit {
+export class PerfilPessoaComponent implements OnInit {
   usuario?: Usuario;
   file: any;
 

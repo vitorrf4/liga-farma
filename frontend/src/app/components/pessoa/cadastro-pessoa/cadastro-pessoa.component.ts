@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {JsonPipe, NgForOf, NgIf} from "@angular/common";
-import {PdfService} from "../../services/pdf.service";
+import {PdfService} from "../../../services/pdf.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
-import {Farmaceutico} from "../../models/farmaceutico";
-import {AuthService} from "../../services/auth.service";
-import {Usuario} from "../../models/usuario";
+import {Farmaceutico} from "../../../models/farmaceutico";
+import {AuthService} from "../../../services/auth.service";
+import {Usuario} from "../../../models/usuario";
 
 @Component({
   selector: 'app-cadastro-farmaceutico',

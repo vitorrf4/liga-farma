@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Vaga} from "../../models/vaga";
+import {Vaga} from "../../../models/vaga";
 import {NgIf} from "@angular/common";
 
 @Component({

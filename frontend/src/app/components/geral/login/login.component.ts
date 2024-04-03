@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {PdfService} from "../../services/pdf.service";
-import {AuthService} from "../../services/auth.service";
-import {Farmaceutico} from "../../models/farmaceutico";
-import {Usuario} from "../../models/usuario";
-import {FarmaceuticoService} from "../../services/farmaceutico.service";
+import {PdfService} from "../../../services/pdf.service";
+import {AuthService} from "../../../services/auth.service";
+import {Farmaceutico} from "../../../models/farmaceutico";
+import {Usuario} from "../../../models/usuario";
+import {FarmaceuticoService} from "../../../services/farmaceutico.service";
 
 @Component({
   selector: 'app-login',
