@@ -9,14 +9,20 @@ import {Usuario} from "../models/usuario";
 export class AuthService {
   baseUrl = environment.urlApi;
   apiUrl = 'auth';
+  usuario!: Usuario;
 
   constructor(private http: HttpClient) { }
+
+  setUsuario(usuario: Usuario) {
+    this.usuario = usuario;
+    sessionStorage.setItem('usuario', JSON.stringify(usuario));
+  }
 
   cadastrar(usuario: Usuario) {
     return this.http.post<Object>(`${this.baseUrl}/${this.apiUrl}/cadastro`, usuario);
   }
 
   login(usuario: Usuario) {
-    return this.http.post(`${this.baseUrl}/${this.apiUrl}/login`, usuario);
+    return this.http.post<Usuario>(`${this.baseUrl}/${this.apiUrl}/login`, usuario);
   }
 }

@@ -42,8 +42,13 @@ export class LoginComponent implements OnInit {
       'PESSOA',
     );
 
-    this.cadastroService.login(usuario).subscribe(res => {
-      console.log(res);
+    this.cadastroService.login(usuario).subscribe({
+      next: res => {
+        this.cadastroService.setUsuario(res);
+        console.log('login success');
+        console.log(res);
+      },
+      error: err => { console.log("erro login") }
     })
   }
 }
