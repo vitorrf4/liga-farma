@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment.development";
 import {HttpClient} from "@angular/common/http";
 import {Usuario} from "../models/usuario";
-import {BehaviorSubject, Observable, Subject} from "rxjs";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'

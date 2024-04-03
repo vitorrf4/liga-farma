@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
 import {DatePipe, NgIf} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vaga-pagina',
@@ -15,6 +16,12 @@ import {DatePipe, NgIf} from "@angular/common";
 export class VagaPaginaComponent {
   @Input() vaga: Vaga | null = null;
   @Output() vagaDeselecionadaEvent = new EventEmitter();
+
+  constructor(private router: Router) { }
+
+  async irParaCandidatura() {
+    await this.router.navigateByUrl('candidatura');
+  }
 
   deselecionarVaga() {
     this.vagaDeselecionadaEvent.emit();
