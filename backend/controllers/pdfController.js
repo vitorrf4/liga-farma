@@ -1,29 +1,31 @@
 const {PdfModel} = require('../models/Pdf');
 const {Farmaceutico} = require('../models/Farmaceutico');
 
-class PdfService {
-    async getPdfByUserId(usuarioId) {
+class PdfController {
+    async getPdfByUserId(req, res) {
         try {
+            const usuarioId = req.params.usuarioId;
+
             const pdf = await PdfModel.findOne({ where: { usuarioId: usuarioId } });
 
             if (!pdf) {
-                return null;
+                return res.status(404).send('Item não encontrado');
             }
 
-            return pdf;
+            return res.status(200).json(pdf);
         } catch (error) {
             console.error(error);
-            throw new Error('Erro na busca');
+            res.status(500).send('Erro na busca');
         }
     }
 
     async uploadPdf(req, res) {
-        const file = req.file;
-        if (file.mimetype !== 'application/pdf') {
-            return res.status(400).json({message: 'Arquivo não é um pdf'});
-        }
-
         try {
+            const file = req.file;
+            if (file.mimetype !== 'application/pdf') {
+                return res.status(400).json({message: 'Arquivo não é um pdf'});
+            }
+
             const pdf = await PdfModel.create({
                 filename: file.originalname,
                 data: file.buffer,
@@ -44,4 +46,4 @@ class PdfService {
     }
 }
 
-module.exports = new PdfService();
+module.exports = new PdfController();
