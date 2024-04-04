@@ -1,4 +1,20 @@
 <p>contrato works!</p>
 
+<strong>Vaga</strong>
 <p>{{vaga | json}}</p>
-<p>{{candidatura | json}}</p>
+<strong>Candidato</strong>
+<p>{{candidatura.farmaceutico | json}}</p>
+
+<strong>Contrato</strong>
+<p>{{contrato | json}}</p>
+
+<form [formGroup]="form" (ngSubmit)="enviarContrato()">
+  <label>Data Inicio:</label>
+  <input type="date" formControlName="dataInicio">
+  <br>
+  <label>Data de término:</label>
+  <input type="date" formControlName="dataFim">
+  <br>
+
+  <button>Enviar contrato</button>
+</form>
