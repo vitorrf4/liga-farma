@@ -57,8 +57,8 @@ class Seeds {
     
     async seedCandidatura() {
         const body = {
-            vagaId: 2,
-            farmaceuticoId: 2,
+            vagaId: 3,
+            farmaceuticoId: 1,
             mensage : 'teste mensagem'
         }
         await this.executarPost(body, 'candidatura');

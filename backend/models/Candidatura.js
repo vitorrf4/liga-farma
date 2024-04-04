@@ -22,8 +22,9 @@ async function createAssociation() {
     const {Vaga} = require('./Vaga');
     
     Candidatura.belongsTo(Vaga, {
-        // as: "vagas",
+        as: "vaga",
         foreignKey: {
+            name: 'vagaId',
             allowNull: false
         }
     });

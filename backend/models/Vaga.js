@@ -57,7 +57,7 @@ async function createAssociation() {
     });
     
     Vaga.hasMany(Candidatura, {
-        as: 'candidaturas'
+        foreignKey: 'vagaId'
     });
 }
 

@@ -10,6 +10,9 @@ const dialect = process.env.DB_DIALECT;
 const sequelize = new Sequelize(database, username, password, {
     host: host,
     dialect: dialect,
+    define: {
+        freezeTableName: true
+    }
 });
 
 async function createAssociations() {
