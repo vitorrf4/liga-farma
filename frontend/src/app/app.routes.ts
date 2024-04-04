@@ -8,12 +8,14 @@ import {MeuPerfilComponent} from "./components/geral/meu-perfil/meu-perfil.compo
 import {SobreNosComponent} from "./components/sobre-nos/sobre-nos.component";
 import {CandidaturaComponent} from "./components/pessoa/candidatura/candidatura.component";
 import {MinhasVagasComponent} from "./components/empresa/minhas-vagas/minhas-vagas.component";
+import {ContratoComponent} from "./components/empresa/contrato/contrato.component";
 
 export const routes: Routes = [
   {path: "vagas", component: ListaVagasComponent},
   {path: "perfil", component: MeuPerfilComponent},
   {path: "sobre-nos", component: SobreNosComponent},
   {path: "candidatura", component: CandidaturaComponent},
+  {path: "contrato", component: ContratoComponent},
   {path: "minhas-vagas", component: MinhasVagasComponent},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent, children: [

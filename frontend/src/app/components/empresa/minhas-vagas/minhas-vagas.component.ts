@@ -4,6 +4,8 @@ import {Vaga} from "../../../models/vaga";
 import {AuthService} from "../../../services/auth.service";
 import {Farmacia} from "../../../models/farmacia";
 import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
+import {Router} from "@angular/router";
+import {Candidatura} from "../../../models/candidatura";
 
 @Component({
   selector: 'app-minhas-vagas',
@@ -21,7 +23,8 @@ export class MinhasVagasComponent implements OnInit {
   vagas: Vaga[] = [];
 
   constructor(private vagaService: VagaService,
-              private authService: AuthService) {}
+              private authService: AuthService,
+              private router: Router) {}
 
   ngOnInit(): void {
     const empresa = this.authService.usuario?.informacoes as Farmacia;
@@ -30,11 +33,16 @@ export class MinhasVagasComponent implements OnInit {
     }
 
     this.vagaService.listarVagasPorEmpresa(empresa.id).subscribe(res => {
-      // console.log(res);
       this.vagas = res;
-      console.log(this.vagas);
     });
   }
 
+  async aceitarCandidatura(candidatura: Candidatura, vaga: Vaga) {
+    await this.router.navigateByUrl('contrato', {
+      state: {
+        candidatura: candidatura,
+        vaga: vaga
+      }});
+  }
 
 }

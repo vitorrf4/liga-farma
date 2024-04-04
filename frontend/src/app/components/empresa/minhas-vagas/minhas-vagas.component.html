@@ -15,6 +15,8 @@
     <ul *ngFor="let candidatura of vaga.candidaturas">
       <li>Candidato: {{candidatura.farmaceutico.nome}}</li>
       <li>Mensagem:{{candidatura.mensagem}}</li>
+
+      <button (click)="aceitarCandidatura(candidatura, vaga)">Aceitar candidatura</button>
     </ul>
   </div>
 </ul>
