@@ -6,19 +6,15 @@ import {environment} from "../../environments/environment.development";
   providedIn: 'root'
 })
 export class PdfService {
-  apiUrl = environment.urlApi;
+  urlBase = environment.urlApi;
 
   constructor(private http: HttpClient) { }
 
-  getPdfs() {
-    return this.http.get<any>(`${this.apiUrl}/pdfs`);
-  }
-
   getPdfByUsuarioId(userId: string) {
-    return this.http.get<any>(`${this.apiUrl}/pdfs/${userId}`);
+    return this.http.get<any>(`${this.urlBase}/pdf/${userId}`);
   }
 
   uploadPdf(pdf: FormData) {
-    return this.http.post<{message: string}>('http://localhost:3000/upload', pdf);
+    return this.http.post<{message: string}>(`${this.urlBase}/pdf/upload`, pdf);
   }
 }
