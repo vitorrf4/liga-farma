@@ -47,12 +47,17 @@ const Vaga = sequelize.define('Vaga', {
 
 async function createAssociation() {
     const Farmacia = require('./Farmacia');
+    const {Candidatura} = require('./Candidatura');
     
     Vaga.belongsTo(Farmacia, {
         as: "farmacia",
         foreignKey: {
             allowNull: false
         }
+    });
+    
+    Vaga.hasMany(Candidatura, {
+        as: 'candidaturas'
     });
 }
 

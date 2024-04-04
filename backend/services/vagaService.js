@@ -8,7 +8,7 @@ class VagaService {
     async getVagaPorId(id) {
         return await Vaga.findOne({
             where: {id: id},
-            include: 'farmacia'
+            include: ['farmacia', 'candidaturas']
         });
     }
 
