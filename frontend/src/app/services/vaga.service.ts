@@ -15,4 +15,8 @@ export class VagaService {
   listar() {
     return this.http.get<Vaga[]>(`${this.urlBase}/${this.urlVaga}`);
   }
+
+  listarVagasPorEmpresa(empresaId: number) {
+    return this.http.get<Vaga[]>(`${this.urlBase}/${this.urlVaga}/empresa/${empresaId}`);
+  }
 }

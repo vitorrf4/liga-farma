@@ -12,6 +12,13 @@ class VagaService {
         });
     }
 
+    async getVagaPorEmpresaId(id) {
+        return await Vaga.findAll({
+            where: {id: id},
+            include: ['farmacia', 'candidaturas']
+        });
+    }
+
     async cadastrarVaga(titulo, descricao, salario, estado,
                         cidade, quantidadeVagas, tipo,turno, farmaciaId) {
         return Vaga.create({titulo, descricao, salario, 

@@ -11,6 +11,22 @@ class VagaController {
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }
     }
+    
+    async getVagaPorEmpresaId(req, res) {
+        try {
+            const { id } = req.params;
+            const vaga = await service.getVagaPorEmpresaId(id);
+
+            if (!vaga) {
+                return res.status(404).json({error: "Item não encontrado"});
+            }
+
+            res.status(200).json(vaga);
+        } catch (error) {
+            console.error('Erro na busca:', error);
+            res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
+        }
+    }
 
     async getVagaPorId(req, res) {
         try {

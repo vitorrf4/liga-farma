@@ -1,1 +1,16 @@
-<p>minhas-vagas works!</p>
+<ul *ngFor="let vaga of vagas">
+  <strong>Vaga {{vaga.id}}</strong>
+  <li>Empresa: {{vaga.farmacia.nome}}</li>
+  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
+  <li>Descricao: {{vaga.descricao}}</li>
+  <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
+  <li>Salario: {{vaga.salario}}</li>
+  <li>Tipo: {{vaga.tipo}}</li>
+  <li>Turno: {{vaga.turno}}</li>
+  <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
+
+  <ul *ngFor="let candidatura of vaga.candidaturas">
+<!--    <li>{{candidatura.}}</li>-->
+    <li>Mensagem:{{candidatura.mensagem}}</li>
+  </ul>
+</ul>
