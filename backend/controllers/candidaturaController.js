@@ -32,8 +32,7 @@ class CandidaturaController {
         try {
             const { farmaceuticoId, vagaId, mensagem } = req.body;
 
-            const novaCandidatura = await service.cadastrarCandidatura(
-                farmaceuticoId, vagaId, mensagem);
+            const novaCandidatura = await service.cadastrarCandidatura(farmaceuticoId, vagaId, mensagem);
 
             res.status(201).json(novaCandidatura);
         } catch (error) {

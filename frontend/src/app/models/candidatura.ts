@@ -1,6 +1,8 @@
+import {Farmaceutico} from "./farmaceutico";
+
 export class Candidatura {
   id = '';
   vagaId = '';
-  farmaceuticoId = '';
+  farmaceutico = new Farmaceutico();
   mensagem = '';
 }

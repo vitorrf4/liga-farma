@@ -1,4 +1,5 @@
 const {Vaga} = require('../models/Vaga');
+const {Candidatura} = require("../models/Candidatura");
 
 class VagaService {
     async getVagas() {
@@ -15,7 +16,9 @@ class VagaService {
     async getVagaPorEmpresaId(id) {
         return await Vaga.findAll({
             where: {id: id},
-            include: ['farmacia', 'candidaturas']
+            include: {all: true, nested: true}
+                
+            
         });
     }
 

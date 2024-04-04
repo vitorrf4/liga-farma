@@ -3,7 +3,7 @@ import {VagaService} from "../../../services/vaga.service";
 import {Vaga} from "../../../models/vaga";
 import {AuthService} from "../../../services/auth.service";
 import {Farmacia} from "../../../models/farmacia";
-import {DatePipe, JsonPipe, NgForOf} from "@angular/common";
+import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-minhas-vagas',
@@ -11,7 +11,8 @@ import {DatePipe, JsonPipe, NgForOf} from "@angular/common";
   imports: [
     JsonPipe,
     NgForOf,
-    DatePipe
+    DatePipe,
+    NgIf
   ],
   templateUrl: './minhas-vagas.component.html',
   styleUrl: './minhas-vagas.component.css'
@@ -29,6 +30,7 @@ export class MinhasVagasComponent implements OnInit {
     }
 
     this.vagaService.listarVagasPorEmpresa(empresa.id).subscribe(res => {
+      console.log(res);
       this.vagas = res;
     });
   }

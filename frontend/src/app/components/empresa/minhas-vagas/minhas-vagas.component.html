@@ -9,8 +9,12 @@
   <li>Turno: {{vaga.turno}}</li>
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
 
-  <ul *ngFor="let candidatura of vaga.candidaturas">
-<!--    <li>{{candidatura.}}</li>-->
-    <li>Mensagem:{{candidatura.mensagem}}</li>
-  </ul>
+  <div *ngIf="vaga.candidaturas.length">
+    <strong>Candidaturas</strong>
+
+    <ul *ngFor="let candidatura of vaga.candidaturas">
+      <li>Candidato: {{candidatura.farmaceutico.nome}}</li>
+      <li>Mensagem:{{candidatura.mensagem}}</li>
+    </ul>
+  </div>
 </ul>
