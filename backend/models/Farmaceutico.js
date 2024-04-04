@@ -35,7 +35,16 @@ const Farmaceutico = sequelize.define('Farmaceutico', {
         type: DataTypes.STRING,
         allowNull: false,
     }},
-{ timestamps: false });
+    { 
+    timestamps: false,
+    // Configura o sequelize para não retornar o campo senha por padrão
+    defaultScope: {
+        attributes: { exclude: ['senha'] }
+    },
+    scopes: {
+        comSenha: {attributes: {}}
+    } 
+});
 
 async function createAssociation() {
     const { PdfModel } = require('./Pdf');

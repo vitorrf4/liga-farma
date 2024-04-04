@@ -32,14 +32,14 @@ class AuthController {
     async logarUsuario(req, res) {
         try {
             const {email, senha} = req.body;
-            let entidade = await Farmaceutico.findOne(
+            let entidade = await Farmaceutico.scope('comSenha').findOne(
                 {where: {email: email},
                 include: 'curriculo'
             });
             let tipo = 'PESSOA';
                 
             if (!entidade) {
-                entidade = await Farmacia.findOne({where: {email: email}});
+                entidade = await Farmacia.scope('comSenha').findOne({where: {email: email}});
                 tipo = 'EMPRESA';
             }
             

@@ -30,7 +30,16 @@ const Farmacia = sequelize.define('Farmacia', {
     telefone: {
         type: DataTypes.STRING,
         allowNull: true,
-    }},
-{ timestamps: false });
+    }
+}, { 
+    timestamps: false,
+    // Configura o sequelize para não retornar o campo senha por padrão
+    defaultScope: {
+        attributes: { exclude: ['senha'] }
+    },
+    scopes: {
+        comSenha: {attributes: {}}
+    }
+});
 
 module.exports = Farmacia;
