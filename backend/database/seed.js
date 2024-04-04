@@ -1,10 +1,12 @@
 class Seeds {
     async seedTodos() {
         await this.seedFarmaceutico();
+        await this.seedFarmaceutico();
         await this.seedFarmacia();
         await this.seedVaga();
         await this.seedVaga();
         await this.seedVaga();
+        await this.seedCandidatura();
     }
     
     async seedFarmaceutico() {
@@ -51,6 +53,15 @@ class Seeds {
             turno: "Noturno"
         }
         await this.executarPost(body, 'vaga');
+    }
+    
+    async seedCandidatura() {
+        const body = {
+            vagaId: 2,
+            farmaceuticoId: 2,
+            mensage : 'teste mensagem'
+        }
+        await this.executarPost(body, 'candidatura');
     }
     
     async executarPost(body, url) {

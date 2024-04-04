@@ -15,10 +15,8 @@ class VagaService {
 
     async getVagaPorEmpresaId(id) {
         return await Vaga.findAll({
-            where: {id: id},
+            where: {farmaciaId: id},
             include: {all: true, nested: true}
-                
-            
         });
     }
 
