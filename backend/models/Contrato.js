@@ -14,6 +14,11 @@ const Contrato = sequelize.define('Contrato', {
     dataFim: {
         type: DataTypes.STRING,
         allowNull: true,
+    },
+    status: {
+        type: DataTypes.ENUM,
+        values: ['ENVIADO', 'ACEITO', 'FINALIZADO'],
+        defaultValue: 'ENVIADO'
     }
 },
 { timestamps: false });
