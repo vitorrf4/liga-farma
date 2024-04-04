@@ -11,6 +11,9 @@
     </div>
     <td><button routerLink="/vagas">Ver Vagas</button></td>
     <td><button routerLink="/sobre-nos">Sobre Nós</button></td>
+    <div *ngIf="usuario?.tipo == 'EMPRESA'">
+      <button>Minhas Vagas</button>
+    </div>
   </tr>
 </table>
 
