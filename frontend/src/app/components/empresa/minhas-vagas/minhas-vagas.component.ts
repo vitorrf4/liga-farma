@@ -30,8 +30,9 @@ export class MinhasVagasComponent implements OnInit {
     }
 
     this.vagaService.listarVagasPorEmpresa(empresa.id).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.vagas = res;
+      console.log(this.vagas);
     });
   }
 

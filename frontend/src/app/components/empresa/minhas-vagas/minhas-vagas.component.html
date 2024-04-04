@@ -9,7 +9,7 @@
   <li>Turno: {{vaga.turno}}</li>
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
 
-  <div *ngIf="vaga.candidaturas.length">
+  <div *ngIf="vaga.candidaturas">
     <strong>Candidaturas</strong>
 
     <ul *ngFor="let candidatura of vaga.candidaturas">
