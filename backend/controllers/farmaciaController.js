@@ -30,10 +30,10 @@ class FarmaciaController {
 
     async cadastrarFarmacia(req, res) {
         try {
-            const { nome, cnpj, endereco, email, senha, telefone } = req.body;
+            const { nome, cnpj, endereco, descricao, email, senha, telefone } = req.body;
 
             const novaFarmacia = await service.cadastrarFarmacia(
-                nome, cnpj, endereco, email, senha, telefone);
+                nome, cnpj, endereco, descricao, email, senha, telefone);
 
             res.status(201).json(novaFarmacia);
         } catch (error) {

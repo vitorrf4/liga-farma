@@ -15,6 +15,10 @@ const Farmacia = sequelize.define('Farmacia', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    descricao: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     endereco: {
         type: DataTypes.STRING,
         allowNull: false,

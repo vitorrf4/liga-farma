@@ -4,6 +4,9 @@
     <li>Nome: {{usuario.informacoes.nome}}</li>
     <li>Email: {{usuario.informacoes.email}}</li>
     <li>Telefone: {{usuario.informacoes.telefone}}</li>
+    <div *ngIf=farmacia>
+      <li>Descricao da empresa: {{farmacia.descricao}}</li>
+    </div>
   </ul>
 
   <div *ngIf="file" id="curriculo">

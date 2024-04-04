@@ -32,6 +32,7 @@ class Seeds {
                 nome: "nome2",
                 cnpj: "cpf",
                 endereco: "endereco",
+                descricao: 'empresa farmaceutico descricao placeholder',
                 email: 'e',
                 senha: 'e',
                 telefone: null

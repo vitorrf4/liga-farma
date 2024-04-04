@@ -5,6 +5,7 @@ import {AuthService} from "../../../services/auth.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {Farmaceutico} from "../../../models/farmaceutico";
 import {Router} from "@angular/router";
+import {Farmacia} from "../../../models/farmacia";
 
 @Component({
   selector: 'app-perfil',
@@ -22,6 +23,7 @@ export class MeuPerfilComponent implements OnInit {
   usuario?: Usuario;
   file: any;
   tipo: string = '';
+  farmacia?: Farmacia;
 
   constructor(private authService: AuthService,
               private router: Router) { }
@@ -34,6 +36,10 @@ export class MeuPerfilComponent implements OnInit {
     }
 
     this.tipo = this.usuario.tipo;
+
+    if (this.tipo === 'EMPRESA') {
+      return this.farmacia = this.usuario.informacoes as Farmacia;
+    }
 
     const farma = this.usuario.informacoes as Farmaceutico;
     this.file = farma.curriculo;

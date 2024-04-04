@@ -9,8 +9,8 @@ class FarmaciaService {
         return await Farmacia.findOne({where: {id: id}});
     }
 
-    async cadastrarFarmacia(nome, cnpj, endereco, email, senha, telefone) {
-        return Farmacia.create({nome, cnpj, endereco, email, senha, telefone});
+    async cadastrarFarmacia(nome, cnpj, endereco, descricao, email, senha, telefone) {
+        return Farmacia.create({nome, cnpj, endereco, descricao, email, senha, telefone});
     }
 
     async atualizarFarmacia(farmaceutico) {
