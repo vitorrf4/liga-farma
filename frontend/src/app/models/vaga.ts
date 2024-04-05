@@ -11,6 +11,7 @@ export class Vaga {
   quantidadeVagas: number = 0;
   tipo: string = "";
   turno: string = "";
+  status: string = '';
   dataPublicada!: Date;
   farmacia: Farmacia = new Farmacia();
   candidaturas: Candidatura[] = [];

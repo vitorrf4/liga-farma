@@ -5,5 +5,5 @@ export class Contrato {
   vagaId: number = 0;
   dataInicio: Date = new Date();
   dataFim: Date = new Date();
-  // TODO adicionar status
+  status: string = '';
 }
