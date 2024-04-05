@@ -9,6 +9,7 @@ import {SobreNosComponent} from "./components/geral/sobre-nos/sobre-nos.componen
 import {CandidaturaComponent} from "./components/pessoa/candidatura/candidatura.component";
 import {MinhasVagasComponent} from "./components/empresa/minhas-vagas/minhas-vagas.component";
 import {ContratoComponent} from "./components/empresa/contrato/contrato.component";
+import {MinhasCandidaturasComponent} from "./components/pessoa/minhas-candidaturas/minhas-candidaturas.component";
 
 export const routes: Routes = [
   {path: "vagas", component: ListaVagasComponent},
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {path: "candidatura", component: CandidaturaComponent},
   {path: "contrato", component: ContratoComponent},
   {path: "minhas-vagas", component: MinhasVagasComponent},
+  {path: "minhas-candidaturas", component: MinhasCandidaturasComponent},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent, children: [
       {path:'pessoa', component: CadastroPessoaComponent},

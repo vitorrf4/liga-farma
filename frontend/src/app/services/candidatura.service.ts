@@ -12,6 +12,10 @@ export class CandidaturaService {
 
   constructor(private http: HttpClient) { }
 
+  listarPorPessoaId(pessoaId: number) {
+    return this.http.get<Candidatura[]>(`${this.urlBase}/${this.candidaturaUrl}/pessoa/${pessoaId}`);
+  }
+
   cadastrar(candidatura: Candidatura) {
     return this.http.post<Candidatura>(`${this.urlBase}/${this.candidaturaUrl}`, candidatura);
   }

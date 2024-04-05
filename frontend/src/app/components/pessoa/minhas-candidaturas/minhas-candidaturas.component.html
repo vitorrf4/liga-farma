@@ -1,0 +1,21 @@
+<h2>Candidaturas</h2>
+<ul *ngFor="let candidatura of candidaturas">
+  <strong>Candidatura {{candidatura.id}}</strong>
+  <li>Empresa: {{candidatura.vaga.farmacia.nome}}</li>
+  <li>Local: {{candidatura.vaga.cidade}} - {{candidatura.vaga.estado}}</li>
+  <li>Descricao: {{candidatura.vaga.descricao}}</li>
+  <li>Salario: {{candidatura.vaga.salario}}</li>
+  <li>Tipo: {{candidatura.vaga.tipo}}</li>
+  <li>Turno: {{candidatura.vaga.turno}}</li>
+  <li>Status da Vaga: {{candidatura.vaga.status}}</li>
+
+  <div *ngIf="candidatura.contrato">
+    <strong>Contrato</strong>
+    <li>Data Inicio: {{candidatura.contrato.dataInicio}}</li>
+    <li>Data Fim: {{candidatura.contrato.dataFim}}</li>
+
+    <button (click)="aceitarContrato(candidatura, candidatura.contrato)">
+      Aceitar contrato
+    </button>
+  </div>
+</ul>

@@ -15,7 +15,7 @@ class CandidaturaService {
     async getCandidaturaPorPessoaId(id) {
         return await Candidatura.findAll({
             where: {farmaceuticoId: id},
-            include: ['vaga', 'contrato']
+            include: {all: true, nested: true}
         });
     }
     
