@@ -1,17 +1,18 @@
 const {Contrato} = require('../models/Contrato');
 const {Vaga} = require('../models/Vaga');
+const {Candidatura} = require('../models/Candidatura');
 
 class ContratoService {
     async getContratos() {
         return await Contrato.findAll({
-            include: ['farmacia', 'vaga']
+            include: [Candidatura, Vaga]
         });
     }
 
     async getContratoPorId(id) {
         return await Contrato.findOne({
             where: {id: id},
-            include: ['farmacia', 'vaga']
+            include: [Candidatura, Vaga]
         });
     }
 

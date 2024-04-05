@@ -38,6 +38,7 @@ async function createAssociation() {
     Candidatura.hasOne(Contrato, {
         as: 'contrato',
         foreignKey: {
+            name: 'id',
             allowNull: true
         }
     });

@@ -7,6 +7,7 @@ class Seeds {
         await this.seedVaga();
         await this.seedVaga();
         await this.seedCandidatura();
+        await this.seedContrato();
     }
     
     async seedFarmaceutico() {
@@ -56,11 +57,23 @@ class Seeds {
         await this.executarPost(body, 'vaga');
     }
     
+    async seedContrato() {
+        const body = {
+            farmaciaId: 1,
+            candidaturaId: 1,
+            vagaId: 3,
+            dataInicio: "2024-04-18",
+            dataFim: "2024-04-17",
+            status: ""
+        }
+        await this.executarPost(body, 'contrato');
+    }
+    
     async seedCandidatura() {
         const body = {
             vagaId: 3,
             farmaceuticoId: 1,
-            mensage : 'teste mensagem'
+            mensagem: 'teste mensagem'
         }
         await this.executarPost(body, 'candidatura');
     }
