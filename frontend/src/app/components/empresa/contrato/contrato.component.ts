@@ -28,7 +28,6 @@ export class ContratoComponent {
     this.candidatura = history.state.candidatura;
 
     this.contrato.candidaturaId = this.candidatura.id;
-    this.contrato.farmaciaId = this.vaga.farmacia.id;
     this.contrato.vagaId = this.vaga.id;
 
     this.form = builder.group({

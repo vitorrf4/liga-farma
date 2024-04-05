@@ -28,12 +28,14 @@ async function createAssociation() {
     const {Candidatura} = require('./Candidatura');
     
     Contrato.belongsTo(Candidatura, {
+        as: 'candidatura',
         foreignKey: {
             name: 'candidaturaId',
             allowNull: false
         }
     });
     Contrato.belongsTo(Vaga, {
+        as: 'vaga',
         foreignKey: {
             name: 'vagaId',
             allowNull: false

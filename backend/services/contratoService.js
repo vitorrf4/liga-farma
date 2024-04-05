@@ -5,21 +5,24 @@ const {Candidatura} = require('../models/Candidatura');
 class ContratoService {
     async getContratos() {
         return await Contrato.findAll({
-            include: [Candidatura, Vaga]
+            include: ['candidatura', 'vaga']
         });
     }
 
     async getContratoPorId(id) {
         return await Contrato.findOne({
             where: {id: id},
-            include: [Candidatura, Vaga]
+            include: ['candidatura', 'vaga']
         });
     }
-
+    
     async cadastrarContrato(json) {
-        const {farmaciaId, candidaturaId, vagaId, dataInicio, dataFim} = json;
+        const {candidaturaId, vagaId, dataInicio, dataFim} = json;
+        if (await this.candidaturaJaTemContrato(candidaturaId)) {
+            return null;
+        }
         
-        const contrato =  Contrato.create({farmaciaId, candidaturaId, vagaId, dataInicio, dataFim});
+        const contrato =  Contrato.create({dataInicio, dataFim, candidaturaId, vagaId});
 
         const vagasAtualizadas = await this.atualizarQuantidadeVagas(vagaId);
         if (!vagasAtualizadas) {
@@ -27,6 +30,11 @@ class ContratoService {
         }
         
         return contrato;
+    }
+
+    async candidaturaJaTemContrato(candidaturaId) {
+        const candidatura = await Candidatura.findByPk(candidaturaId, {include: 'contrato'});
+        return candidatura.contrato;
     }
     
     async atualizarQuantidadeVagas(vagaId) {

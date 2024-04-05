@@ -6,13 +6,16 @@ class CandidaturaService {
     }
 
     async getCandidaturaPorId(id) {
-        return await Candidatura.findOne({where: {id: id}});
+        return await Candidatura.findOne({
+            where: {id: id},
+            include: ['vaga', 'contrato']
+        });
     }
 
     async getCandidaturaPorPessoaId(id) {
         return await Candidatura.findAll({
             where: {farmaceuticoId: id},
-            include: 'vaga'
+            include: ['vaga', 'contrato']
         });
     }
     
