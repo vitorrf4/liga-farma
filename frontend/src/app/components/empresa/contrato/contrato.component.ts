@@ -27,7 +27,7 @@ export class ContratoComponent {
     this.vaga = history.state.vaga;
     this.candidatura = history.state.candidatura;
 
-    this.contrato.farmaceuticoId = this.candidatura.farmaceutico.id;
+    this.contrato.candidaturaId = this.candidatura.id;
     this.contrato.farmaciaId = this.vaga.farmacia.id;
     this.contrato.vagaId = this.vaga.id;
 

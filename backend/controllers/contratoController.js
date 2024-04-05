@@ -30,10 +30,9 @@ class ContratoController {
 
     async cadastrarContrato(req, res) {
         try {
-            const { farmaceuticoId, farmaciaId, vagaId, dataInicio, dataFim } = req.body;
+            const json = req.body;
 
-            const novoContrato = await service.cadastrarContrato(
-                farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim);
+            const novoContrato = await service.cadastrarContrato(json);
             
             if (!novoContrato) {
                 return res.status(400).json({error: 'Vaga já preenchida'});

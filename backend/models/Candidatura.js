@@ -20,6 +20,7 @@ const Candidatura = sequelize.define('candidatura', {
 async function createAssociation() {
     const {Farmaceutico} = require('./Farmaceutico');
     const {Vaga} = require('./Vaga');
+    const {Contrato} = require('./Contrato');
     
     Candidatura.belongsTo(Vaga, {
         as: "vaga",
@@ -32,6 +33,12 @@ async function createAssociation() {
         as: "farmaceutico",
         foreignKey: {
             allowNull: false
+        }
+    });
+    Candidatura.hasOne(Contrato, {
+        as: 'contrato',
+        foreignKey: {
+            allowNull: true
         }
     });
 }

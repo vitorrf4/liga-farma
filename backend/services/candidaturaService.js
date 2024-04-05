@@ -1,5 +1,4 @@
 const {Candidatura} = require('../models/Candidatura');
-const {Vaga} = require("../models/Vaga");
 
 class CandidaturaService {
     async getCandidaturas() {

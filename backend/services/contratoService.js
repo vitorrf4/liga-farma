@@ -4,21 +4,21 @@ const {Vaga} = require('../models/Vaga');
 class ContratoService {
     async getContratos() {
         return await Contrato.findAll({
-            include: ['farmacia', 'farmaceutico']
+            include: ['farmacia', 'vaga']
         });
     }
 
     async getContratoPorId(id) {
         return await Contrato.findOne({
             where: {id: id},
-            include: ['farmacia', 'farmaceutico']
+            include: ['farmacia', 'vaga']
         });
     }
 
-    async cadastrarContrato(farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim) {
-        const contrato =  Contrato.create({ 
-            farmaciaId, farmaceuticoId, vagaId, dataInicio, dataFim
-        });
+    async cadastrarContrato(json) {
+        const {farmaciaId, candidaturaId, vagaId, dataInicio, dataFim} = json;
+        
+        const contrato =  Contrato.create({farmaciaId, candidaturaId, vagaId, dataInicio, dataFim});
 
         const vagasAtualizadas = await this.atualizarQuantidadeVagas(vagaId);
         if (!vagasAtualizadas) {
