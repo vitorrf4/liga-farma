@@ -17,7 +17,13 @@
       <li>Candidato: {{candidatura.farmaceutico.nome}}</li>
       <li>Mensagem:{{candidatura.mensagem}}</li>
 
-      <button (click)="aceitarCandidatura(candidatura, vaga)">Aceitar candidatura</button>
+      <div *ngIf="candidatura.contrato; else enviar">
+        <li>Status:{{candidatura.contrato.status}}</li>
+      </div>
+      <ng-template #enviar>
+        <button (click)="aceitarCandidatura(candidatura, vaga)">Aceitar candidatura</button>
+      </ng-template>
+
     </ul>
   </div>
 </ul>
