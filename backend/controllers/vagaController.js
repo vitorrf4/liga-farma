@@ -43,10 +43,10 @@ class VagaController {
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }
     }
-
+    
     async criarVaga(req, res) {
         try {
-            // TODO mudar extracao para service
+            // TODO mudar destructuring para service
             const { titulo, descricao, salario, estado, 
                 cidade, quantidadeVagas, tipo, turno, farmaciaId } = req.body;
 

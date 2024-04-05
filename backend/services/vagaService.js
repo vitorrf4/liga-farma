@@ -12,7 +12,7 @@ class VagaService {
             include: ['farmacia', 'candidaturas']
         });
     }
-
+    
     async getVagaPorEmpresaId(id) {
         return await Vaga.findAll({
             where: {farmaciaId: id},

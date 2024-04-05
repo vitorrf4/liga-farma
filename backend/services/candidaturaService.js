@@ -1,4 +1,5 @@
 const {Candidatura} = require('../models/Candidatura');
+const {Vaga} = require("../models/Vaga");
 
 class CandidaturaService {
     async getCandidaturas() {
@@ -9,6 +10,13 @@ class CandidaturaService {
         return await Candidatura.findOne({where: {id: id}});
     }
 
+    async getCandidaturaPorPessoaId(id) {
+        return await Candidatura.findAll({
+            where: {farmaceuticoId: id},
+            include: 'vaga'
+        });
+    }
+    
     async cadastrarCandidatura(vagaId, farmaceuticoId, mensagem) {
         // TODO verificar quantidade de vagas antes de cadastrar
         return Candidatura.create({vagaId, farmaceuticoId, mensagem, 
