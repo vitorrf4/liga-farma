@@ -13,9 +13,13 @@
     <strong>Contrato</strong>
     <li>Data Inicio: {{candidatura.contrato.dataInicio}}</li>
     <li>Data Fim: {{candidatura.contrato.dataFim}}</li>
+    <li>Status do contrato: {{candidatura.contrato.status}}</li>
 
-    <button (click)="aceitarContrato(candidatura, candidatura.contrato)">
-      Aceitar contrato
-    </button>
+    <div *ngIf="candidatura.contrato.status == 'ENVIADO'">
+      <button (click)="aceitarContrato(candidatura.contrato)">
+        Aceitar contrato
+      </button>
+    </div>
+
   </div>
 </ul>

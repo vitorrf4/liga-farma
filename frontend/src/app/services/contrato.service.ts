@@ -15,4 +15,8 @@ export class ContratoService {
   cadastrar(contrato: Contrato) {
     return this.http.post<Contrato>(`${this.urlBase}/${this.urlApi}`, contrato);
   }
+
+  atualizar(contrato: Contrato) {
+    return this.http.put(`${this.urlBase}/${this.urlApi}`, contrato);
+  }
 }
