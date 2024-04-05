@@ -10,6 +10,7 @@ import {CandidaturaComponent} from "./components/pessoa/candidatura/candidatura.
 import {MinhasVagasComponent} from "./components/empresa/minhas-vagas/minhas-vagas.component";
 import {ContratoComponent} from "./components/empresa/contrato/contrato.component";
 import {MinhasCandidaturasComponent} from "./components/pessoa/minhas-candidaturas/minhas-candidaturas.component";
+import {CriarVagaComponent} from "./components/empresa/criar-vaga/criar-vaga.component";
 
 export const routes: Routes = [
   {path: "vagas", component: ListaVagasComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
   {path: "candidatura", component: CandidaturaComponent},
   {path: "contrato", component: ContratoComponent},
   {path: "minhas-vagas", component: MinhasVagasComponent},
+  {path: "criar-vaga", component: CriarVagaComponent},
   {path: "minhas-candidaturas", component: MinhasCandidaturasComponent},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent, children: [

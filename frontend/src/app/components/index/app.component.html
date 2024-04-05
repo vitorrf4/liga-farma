@@ -11,11 +11,13 @@
     </div>
     <td><button routerLink="/vagas">Ver Vagas</button></td>
     <td><button routerLink="/sobre-nos">Sobre Nós</button></td>
+
     <div *ngIf="usuario?.tipo == 'EMPRESA'">
-      <button routerLink="/minhas-vagas">Minhas Vagas</button>
+      <td><button routerLink="/minhas-vagas">Minhas Vagas</button></td>
+      <td><button routerLink="/criar-vaga">Criar Vaga</button></td>
     </div>
     <div *ngIf="usuario?.tipo == 'PESSOA'">
-      <button routerLink="/minhas-candidaturas">Minhas Candidaturas</button>
+      <td><button routerLink="/minhas-candidaturas">Minhas Candidaturas</button></td>
     </div>
   </tr>
 </table>

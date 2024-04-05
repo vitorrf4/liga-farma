@@ -19,4 +19,8 @@ export class VagaService {
   listarVagasPorEmpresa(empresaId: number) {
     return this.http.get<Vaga[]>(`${this.urlBase}/${this.urlVaga}/empresa/${empresaId}`);
   }
+
+  cadastrar(vaga: Vaga) {
+    return this.http.post<Vaga>(`${this.urlBase}/${this.urlVaga}`, vaga);
+  }
 }

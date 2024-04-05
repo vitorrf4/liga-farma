@@ -1,0 +1,38 @@
+<form [formGroup]="vagaForm" (submit)="criarVaga()">
+  <label> Titulo:
+    <input type="text" formControlName="titulo">
+  </label><br>
+  <label> Estado:
+    <input type="text" formControlName="estado">
+  </label><br>
+  <label> Cidade:
+    <input type="text" formControlName="cidade">
+  </label><br>
+  <label> Quantidade de vagas:
+    <input type="number" formControlName="quantidadeVagas">
+  </label><br>
+  <label>
+    Descrição:
+    <textarea type="text" formControlName="descricao"> </textarea>
+  </label><br>
+  <label> Turno:
+    <input type="text" formControlName="turno">
+  </label><br>
+  <label> Salário:
+    <input type="text" formControlName="salario">
+  </label><br>
+  <label> Tipo:
+    <input type="text" formControlName="tipo">
+  </label><br>
+
+  <button type="submit">Criar</button>
+</form>
+
+<!--// titulo: [''],-->
+<!--estado: [''],-->
+<!--cidade: [''],-->
+<!--quantidadeVagas: [1],-->
+<!--descricao: [''],-->
+<!--turno: [''],-->
+<!--salario: [0],-->
+<!--tipo: [''],-->
