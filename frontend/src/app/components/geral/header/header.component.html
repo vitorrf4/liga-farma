@@ -1,7 +1,6 @@
 <header>
     <div class="header-menu">
         <nav>
-            
             <table>
             <tr>
                 <div class="general-menu">
@@ -16,10 +15,12 @@
                         <td><button routerLink="/criar-vaga">Criar Vaga</button></td>
                     </div>
                     <div *ngIf="usuario?.tipo == 'PESSOA'">
-                        <td><button class="btn-candidaturas" routerLink="/minhas-candidaturas">Minhas Candidaturas</button></td>
+                        <td><button class="btn-candidaturas" routerLink="/minhas-candidaturas">
+                          Minhas Candidaturas
+                        </button></td>
                     </div>
                     <div class="div-login-cadastro" *ngIf="!usuario">
-                        <td><button class="btn-login" crouterLink="/login">Entrar</button></td>
+                        <td><button class="btn-login" routerLink="/login">Entrar</button></td>
                         <td><button class="btn-cadastro" routerLink="/cadastro/pessoa">Cadastre-se</button></td>
                     </div>
                     <div class="div-perfil-logout" *ngIf="usuario">

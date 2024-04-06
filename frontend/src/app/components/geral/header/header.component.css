@@ -14,7 +14,7 @@ header{
 }
 
 nav{
-    width: 1440px;
+    width: 100%;
     margin: 0 auto !important;
 }
 
@@ -54,7 +54,6 @@ button{
     cursor: pointer;
     overflow: hidden;
     outline: none;
-    cursor: pointer;
 }
 
 button:not(.btn-home){
