@@ -6,6 +6,8 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import {Farmaceutico} from "../../../models/farmaceutico";
 import {AuthService} from "../../../services/auth.service";
 import {Usuario} from "../../../models/usuario";
+import {LoginService} from "../../../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cadastro-farmaceutico',
@@ -27,7 +29,9 @@ export class CadastroPessoaComponent implements OnInit{
   fileUrl: any = '';
 
   constructor(private pdfService: PdfService,
-              private cadastroService: AuthService,
+              private authService: AuthService,
+              private loginService: LoginService,
+              private router: Router,
               private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -76,9 +80,27 @@ export class CadastroPessoaComponent implements OnInit{
       farmaceutico
     );
 
-    this.cadastroService.cadastrar(usuario).subscribe(res => {
-      if (this.selectedFile)
-        this.cadastrarCurriculo(res.informacoes.id.toString());
+    this.authService.cadastrar(usuario).subscribe({
+      next: res => {
+        if (this.selectedFile)
+          this.cadastrarCurriculo(res.informacoes.id.toString());
+
+        this.logarUsuario(usuario);
+      },
+      error: () => alert('Email já cadastrado')
+    })
+  }
+
+  logarUsuario(usuario: Usuario) {
+    const email = usuario.informacoes.email;
+    const senha = usuario.informacoes.senha;
+
+    this.authService.login({email, senha}).subscribe({
+      next: async res => {
+        this.loginService.setUsuario(res);
+        await this.router.navigateByUrl('perfil');
+      },
+      error: () => { console.log('erro ao logar')}
     })
   }
 }
