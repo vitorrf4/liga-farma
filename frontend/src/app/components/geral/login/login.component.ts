@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {AuthService} from "../../../services/auth.service";
 import {FarmaceuticoService} from "../../../services/farmaceutico.service";
 import {LoginService} from "../../../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private loginService: LoginService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private router: Router) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -42,9 +44,9 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(usuario).subscribe({
-      next: res => {
+      next: async res => {
         this.loginService.setUsuario(res);
-        console.log('login success');
+        await this.router.navigateByUrl('/perfil');
       },
       error: err => { console.log(err) }
     })
