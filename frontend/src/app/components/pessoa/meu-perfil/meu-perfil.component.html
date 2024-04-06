@@ -1,21 +1,33 @@
 <div *ngIf="usuario">
   <h1>Meu Perfil - {{tipo}}</h1>
   <ul>
+    <!-- Informacoes gerais -->
     <li>Nome: {{usuario.informacoes.nome}}</li>
     <li>Email: {{usuario.informacoes.email}}</li>
     <li>Telefone: {{usuario.informacoes.telefone}}</li>
-    <div *ngIf=farmacia>
-      <li>Descricao da empresa: {{farmacia.descricao}}</li>
+
+    <!-- Informacoes pessoa -->
+    <div *ngIf='isPessoa;else empresa_div'>
+      <li>CRF: {{pessoa.crf}}</li>
+      <li *ngIf="pessoa.especializacao">
+        Especialização: {{pessoa.especializacao}}
+      </li>
+
+      <div *ngIf="file" id="curriculo">
+        <h1>Curriculo</h1>
+        <pdf-viewer [src]="file.data"
+                    [original-size]="false"
+                    [autoresize]="true"
+                    style="width: 40vh; height: 45vh;">
+        </pdf-viewer>
+      </div>
     </div>
+
+    <!-- Informacoes empresa -->
+    <ng-template #empresa_div>
+      <li>Descricao da empresa: {{empresa.descricao}}</li>
+      <li>Endereço: {{empresa.endereco}}</li>
+
+    </ng-template>
   </ul>
-
-  <div *ngIf="file" id="curriculo">
-    <h1>Curriculo</h1>
-    <pdf-viewer [src]="file.data"
-                [original-size]="false"
-                [autoresize]="true"
-                style="width: 40vh; height: 45vh;">
-    </pdf-viewer>
-  </div>
-
 </div>

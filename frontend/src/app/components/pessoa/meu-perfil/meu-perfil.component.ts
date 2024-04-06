@@ -21,30 +21,40 @@ import {LoginService} from "../../../services/login.service";
   styleUrl: './meu-perfil.component.css'
 })
 export class MeuPerfilComponent implements OnInit {
-  usuario?: Usuario;
-  file: any;
+  usuario!: Usuario;
   tipo: string = '';
-  farmacia?: Farmacia;
+  file: any;
 
   constructor(private loginService: LoginService,
               private router: Router) { }
 
   async ngOnInit() {
-    this.usuario = this.loginService.usuario;
-
-    if (!this.usuario) {
+    const usuario = this.loginService.usuario;
+    if (!usuario) {
       return await this.router.navigateByUrl('/login');
     }
 
+    this.usuario = usuario;
     this.tipo = this.usuario.tipo;
 
-    if (this.tipo === 'EMPRESA') {
-      return this.farmacia = this.usuario.informacoes as Farmacia;
+    if (this.tipo === 'PESSOA') {
+      const farma = this.usuario.informacoes as Farmaceutico;
+      this.file = farma.curriculo;
     }
 
-    const farma = this.usuario.informacoes as Farmaceutico;
-    this.file = farma.curriculo;
-
+    console.log(this.empresa);
     return;
+  }
+
+  get isPessoa() {
+    return this.tipo == 'PESSOA';
+  }
+
+  get pessoa() {
+    return this.usuario.informacoes as Farmaceutico;
+  }
+
+  get empresa() {
+    return this.usuario.informacoes as Farmacia;
   }
 }

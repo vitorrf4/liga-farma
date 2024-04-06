@@ -35,20 +35,20 @@ server.all("*", (req, res, next) => {
 const auth = require('./routers/authRouter');
 server.use(auth);
 
+const pdf = require('./routers/pdfRouter');
+server.use(pdf);
+
 const farmaceuticoRouter = require('./routers/farmaceuticoRouter');
 server.use(farmaceuticoRouter);
 
 const farmaciaRouter = require('./routers/farmaciaRouter');
 server.use(farmaciaRouter);
 
-const contratoRouter = require('./routers/contratoController');
-server.use(contratoRouter);
-
 const vagaRouter = require('./routers/vagaRouter');
 server.use(vagaRouter);
 
+const contratoRouter = require('./routers/contratoController');
+server.use(contratoRouter);
+
 const candidaturaRouter = require('./routers/candidaturaRouter');
 server.use(candidaturaRouter);
-
-const pdf = require('./routers/pdfRouter');
-server.use(pdf);

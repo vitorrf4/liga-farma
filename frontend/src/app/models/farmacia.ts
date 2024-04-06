@@ -3,6 +3,7 @@ export class Farmacia {
   nome: string = '';
   cnpj: string = '';
   descricao: string = '';
+  endereco: string = '';
   email: string = '';
   senha: string = '';
   telefone: string = '';
