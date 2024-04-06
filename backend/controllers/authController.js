@@ -9,6 +9,10 @@ class AuthController {
         const {tipo, informacoes} = req.body;
 
         informacoes.senha = await bcrypt.hash(informacoes.senha, 10);
+        
+        if (await this.emailJaExiste(informacoes.email)) {
+            return res.status(400).json({error: 'Informações inválidas'});
+        }
 
         let entidade;
         switch (tipo) {
@@ -29,6 +33,14 @@ class AuthController {
         }
         
         return res.status(200).json(usuario);
+    }
+    
+    async emailJaExiste(email) {
+        let entidade = await Farmaceutico.findOne({where: {email: email}});
+        if (entidade) 
+            return true;
+        
+        return await Farmacia.findOne({where: {email: email}});
     }
 
     async logarUsuario(req, res) {

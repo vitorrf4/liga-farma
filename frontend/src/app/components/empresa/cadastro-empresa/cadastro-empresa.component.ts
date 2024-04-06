@@ -5,6 +5,7 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import {AuthService} from "../../../services/auth.service";
 import {Farmaceutico} from "../../../models/farmaceutico";
 import {Usuario} from "../../../models/usuario";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cadastro-empresa',
@@ -23,7 +24,8 @@ export class CadastroEmpresaComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private cadastroService: AuthService,
-              private formBuilder: FormBuilder) {}
+              private formBuilder: FormBuilder,
+              private router: Router) { }
 
 
   ngOnInit() {
