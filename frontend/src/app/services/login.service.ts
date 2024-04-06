@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import {Usuario} from "../models/usuario";
 import {Subject} from "rxjs";
-import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  usuario?: Usuario;
-  // Classe que envia automaticamente os novos valores de usuario
+  // Classe que envia automaticamente novos valores de usuario
   usuarioObservable = new Subject<Usuario | undefined>();
+  usuario?: Usuario;
 
-  constructor(private http: HttpClient) {
+  constructor() {
     this.usuario = JSON.parse(sessionStorage.getItem("usuario")!) || undefined;
-    if (this.usuario) {
-      this.usuarioObservable.next(this.usuario);
-    }
+    this.usuarioObservable.next(this.usuario);
+  }
+
+  get estaLogado() {
+    return this.usuario;
   }
 
   get authToken() {
