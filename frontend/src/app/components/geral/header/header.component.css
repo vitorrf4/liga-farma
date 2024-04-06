@@ -1,0 +1,96 @@
+.sora-webfont{
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+header{
+    width: 100%;
+    height: 135px;
+    background-color: #FFF;
+    padding: 0;
+    margin: 0 auto !important;
+}
+
+nav{
+    width: 1440px;
+    margin: 0 auto !important;
+}
+
+table {
+    width: 100%;
+}
+
+table tr div{
+    float: left;
+}
+
+table tr .user-menu{
+    float: right;
+}
+
+.general-menu td{
+    padding-right: 20px;
+}
+
+table tr .user-menu td{
+    padding-left: 30px;
+}
+
+table td {
+    vertical-align: middle;
+    height: 135px
+}
+
+
+button{
+    font-size: 20px;
+    color: #181818;
+    text-transform: uppercase;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+}
+
+button:not(.btn-home){
+    padding: 20px 10px;
+}
+
+button:hover{
+    color: #16C1EB;
+}
+
+button:active{
+    color: #336699;
+}
+
+.btn-login, .btn-perfil, .btn-candidaturas{
+    background-color: #FFF;
+    color: #16C1EB;
+    border: 1px solid #16C1EB;
+}
+
+.btn-cadastro{
+    background-color: #16C1EB;
+    color: #FFF;
+}
+
+.btn-logout{
+    background-color: #878b8c;
+    color: #FFF;
+}
+
+.btn-logout:hover, .btn-cadastro:hover, .btn-login:hover, .btn-perfil:hover, .btn-candidaturas:hover{
+    background-color: #336699;
+    color: #FFF;
+    border: none;
+}
+
+table tr .user-menu button{
+    text-transform: initial;
+}

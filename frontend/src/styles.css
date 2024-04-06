@@ -2,3 +2,41 @@
 .square {
   border: red 2px solid;
 }
+
+.sora-webfont{
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  max-width: 100%;
+  font-family: "Sora", sans-serif;
+  font-size: 18px;
+  padding: 0;
+  margin: 0 auto !important;
+  background-color: #f6feff;
+}
+
+h1{
+  font-size: 52px;
+  font-weight: 700;
+  color: #0EBFEB;
+}
+
+h2{
+  font-size: 40px;
+  font-weight: 700;
+  color: #181818;
+}
+
+p{
+  font-size: 18 px;
+  font-weight: 400;
+  color: #878b8c;
+}
