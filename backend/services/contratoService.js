@@ -21,37 +21,17 @@ class ContratoService {
         if (await this.candidaturaJaTemContrato(candidaturaId)) {
             return null;
         }
-        
-        const contrato =  Contrato.create({dataInicio, dataFim, candidaturaId, vagaId});
 
-        const vagasAtualizadas = await this.atualizarQuantidadeVagas(vagaId);
-        if (!vagasAtualizadas) {
-            return null;
-        }
-        
-        return contrato;
+        return Contrato.create({dataInicio, dataFim, candidaturaId, vagaId});
     }
 
     async candidaturaJaTemContrato(candidaturaId) {
         const candidatura = await Candidatura.findByPk(candidaturaId, {include: 'contrato'});
         return candidatura.contrato;
     }
-    
-    async atualizarQuantidadeVagas(vagaId) {
-        const vaga = await Vaga.findByPk(vagaId);
-        if (vaga.quantidadeVagas <= 0) {
-            return false;
-        }
-
-        await vaga.decrement('quantidadeVagas');
-        await vaga.save();
-        
-        return true;
-    }
 
     async atualizarContrato(contrato) {
         const contratoDb = await this.getContratoPorId(contrato.id);
-
         if (!contratoDb) {
             return false;
         }
@@ -60,6 +40,18 @@ class ContratoService {
             contrato,
             { where: { id: contrato.id } }
         );
+
+        return await this.atualizarQuantidadeVagas(contratoDb.vagaId);
+    }
+
+    async atualizarQuantidadeVagas(vagaId) {
+        const vaga = await Vaga.findByPk(vagaId);
+        if (vaga.quantidadeVagas <= 0) {
+            return false;
+        }
+
+        await vaga.decrement('quantidadeVagas');
+        await vaga.save();
 
         return true;
     }
