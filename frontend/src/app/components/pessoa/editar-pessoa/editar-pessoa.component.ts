@@ -45,6 +45,7 @@ export class EditarPessoaComponent implements OnInit {
       telefone: [this.pessoa.telefone],
       especializacao: [this.pessoa.especializacao],
       curriculo: [null],
+      curriculoId: [this.pessoa.curriculoId],
     });
   }
 

@@ -8,6 +8,7 @@ import {Router, RouterLink} from "@angular/router";
 import {Farmacia} from "../../../models/farmacia";
 import {LoginService} from "../../../services/login.service";
 import {PdfService} from "../../../services/pdf.service";
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
   selector: 'app-perfil',
@@ -40,11 +41,14 @@ export class MeuPerfilComponent implements OnInit {
     this.usuario = usuario;
     this.tipo = this.usuario.tipo;
 
-    if (this.tipo === 'PESSOA') {
-      this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
-        next: res => this.curriculo = res,
-      });
-    }
+    if (this.tipo !== 'PESSOA') return;
+    if (!this.pessoa.curriculoId) return;
+
+    // carrega curriculo se o usuário tiver um
+    this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
+      next: res => this.curriculo = res,
+      error: () => console.log('Erro ao carregar curriculo')
+    });
 
     return;
   }

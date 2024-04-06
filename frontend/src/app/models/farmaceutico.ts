@@ -8,4 +8,5 @@ export class Farmaceutico {
   email: string = "";
   senha: string = "";
   curriculo?: Object;
+  curriculoId: number = 0;
 }
