@@ -31,4 +31,5 @@ export const routes: Routes = [
   {path: "minhas-vagas", component: MinhasVagasComponent, canActivate: [authGuard]},
   {path: "criar-vaga", component: CriarVagaComponent, canActivate: [authGuard]},
   {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, canActivate: [authGuard]},
+  {path: "**", redirectTo: ''},
 ];
