@@ -12,6 +12,8 @@
   <li>Turno: {{vaga.turno}}</li>
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
 
-  <button (click)="irParaCandidatura()">Candidatar-se</button>
+  <button (click)="irParaCandidatura()" [disabled]="!isPessoa">
+    Candidatar-se
+  </button>
 
 </p>
