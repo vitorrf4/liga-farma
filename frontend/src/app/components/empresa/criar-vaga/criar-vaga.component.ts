@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "../../../services/auth.service";
 import {Farmacia} from "../../../models/farmacia";
 import {VagaService} from "../../../services/vaga.service";
+import {LoginService} from "../../../services/login.service";
 
 @Component({
   selector: 'app-criar-vaga',
@@ -17,11 +18,11 @@ export class CriarVagaComponent implements OnInit {
   vagaForm!: FormGroup;
 
   constructor(private builder: FormBuilder,
-              private authService: AuthService,
+              private loginService: LoginService,
               private vagaService: VagaService) { }
 
   ngOnInit(): void {
-    const farmacia = this.authService.usuario?.informacoes as Farmacia;
+    const farmacia = this.loginService.usuario?.informacoes as Farmacia;
 
     this.vagaForm = this.builder.group({
       farmaciaId: farmacia.id,

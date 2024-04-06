@@ -1,10 +1,10 @@
 import {HttpHandlerFn, HttpRequest} from "@angular/common/http";
 import {inject} from "@angular/core";
-import {AuthService} from "./services/auth.service";
+import {LoginService} from "./services/login.service";
 
 // Função que intercepta todas as requisições e adiciona o token de autorização
 export function JwtInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) {
-  const token = inject(AuthService).authToken;
+  const token = inject(LoginService).authToken;
 
   // Se o token existir, adiciona no header da requisição
   if (token) {

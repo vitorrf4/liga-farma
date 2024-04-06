@@ -5,6 +5,7 @@ import {CandidaturaService} from "../../../services/candidatura.service";
 import {AuthService} from "../../../services/auth.service";
 import {Contrato} from "../../../models/contrato";
 import {ContratoService} from "../../../services/contrato.service";
+import {LoginService} from "../../../services/login.service";
 
 @Component({
   selector: 'app-minhas-candidaturas',
@@ -21,12 +22,12 @@ export class MinhasCandidaturasComponent implements OnInit {
   candidaturas: Candidatura[] = [];
 
   constructor(private candidaturaService: CandidaturaService,
-              private authService: AuthService,
+              private loginService: LoginService,
               private contratoService: ContratoService) {
   }
 
   ngOnInit(): void {
-    const pessoaId = this.authService.usuario?.informacoes.id || 0;
+    const pessoaId = this.loginService.usuario?.informacoes.id || 0;
     this.candidaturaService.listarPorPessoaId(pessoaId).subscribe(res => {
       this.candidaturas = res;
     });

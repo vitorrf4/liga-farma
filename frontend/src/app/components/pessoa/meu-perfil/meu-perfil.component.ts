@@ -6,6 +6,7 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import {Farmaceutico} from "../../../models/farmaceutico";
 import {Router} from "@angular/router";
 import {Farmacia} from "../../../models/farmacia";
+import {LoginService} from "../../../services/login.service";
 
 @Component({
   selector: 'app-perfil',
@@ -25,11 +26,11 @@ export class MeuPerfilComponent implements OnInit {
   tipo: string = '';
   farmacia?: Farmacia;
 
-  constructor(private authService: AuthService,
+  constructor(private loginService: LoginService,
               private router: Router) { }
 
   async ngOnInit() {
-    this.usuario = this.authService.usuario;
+    this.usuario = this.loginService.usuario;
 
     if (!this.usuario) {
       return await this.router.navigateByUrl('/login');

@@ -4,6 +4,7 @@ import {ListaVagasComponent} from "../geral/lista-vagas/lista-vagas.component";
 import {Usuario} from "../../models/usuario";
 import {AuthService} from "../../services/auth.service";
 import {NgIf} from "@angular/common";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ import {NgIf} from "@angular/common";
 export class AppComponent {
   usuario?: Usuario
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: LoginService) {
     authService.usuarioObservable.subscribe(res => {
       this.usuario = res;
     });

@@ -6,6 +6,7 @@ import {Farmacia} from "../../../models/farmacia";
 import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {Router} from "@angular/router";
 import {Candidatura} from "../../../models/candidatura";
+import {LoginService} from "../../../services/login.service";
 
 @Component({
   selector: 'app-minhas-vagas',
@@ -23,11 +24,11 @@ export class MinhasVagasComponent implements OnInit {
   vagas: Vaga[] = [];
 
   constructor(private vagaService: VagaService,
-              private authService: AuthService,
+              private loginService: LoginService,
               private router: Router) {}
 
   ngOnInit(): void {
-    const empresa = this.authService.usuario?.informacoes as Farmacia;
+    const empresa = this.loginService.usuario?.informacoes as Farmacia;
     if (!empresa) {
       return;
     }
