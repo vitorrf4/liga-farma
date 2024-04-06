@@ -6,6 +6,7 @@ import {AuthService} from "../../../services/auth.service";
 import {Farmaceutico} from "../../../models/farmaceutico";
 import {Usuario} from "../../../models/usuario";
 import {Router} from "@angular/router";
+import {LoginService} from "../../../services/login.service";
 
 @Component({
   selector: 'app-cadastro-empresa',
@@ -25,6 +26,8 @@ export class CadastroEmpresaComponent implements OnInit {
 
   constructor(private cadastroService: AuthService,
               private formBuilder: FormBuilder,
+              private authService: AuthService,
+              private loginService: LoginService,
               private router: Router) { }
 
 
@@ -49,8 +52,22 @@ export class CadastroEmpresaComponent implements OnInit {
       farmaceutico
     );
 
-    this.cadastroService.cadastrar(usuario).subscribe(res => {
-      console.log(res);
+    this.cadastroService.cadastrar(usuario).subscribe({
+      next: res => this.logarUsuario(usuario),
+      error: () => alert('Email já cadastrado')
+    })
+  }
+
+  logarUsuario(usuario: Usuario) {
+    const email = usuario.informacoes.email;
+    const senha = usuario.informacoes.senha;
+
+    this.authService.login({email, senha}).subscribe({
+      next: async res => {
+        this.loginService.setUsuario(res);
+        await this.router.navigateByUrl('perfil');
+      },
+      error: () => { console.log('erro ao logar')}
     })
   }
 }
