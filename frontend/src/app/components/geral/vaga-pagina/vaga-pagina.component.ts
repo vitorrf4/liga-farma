@@ -4,6 +4,7 @@ import {DatePipe, NgIf} from "@angular/common";
 import {Router} from "@angular/router";
 import {LoginService} from "../../../services/login.service";
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
+import {Usuario} from "../../../models/usuario";
 
 @Component({
   selector: 'app-vaga-pagina',
@@ -18,15 +19,29 @@ import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 export class VagaPaginaComponent {
   @Input() vaga: Vaga | null = null;
   @Output() vagaDeselecionadaEvent = new EventEmitter();
-  tipo: string | undefined = '';
+  usuario?: Usuario;
 
   constructor(private router: Router,
               loginService: LoginService) {
-    this.tipo = loginService.usuario?.tipo;
+    this.usuario = loginService.usuario;
   }
 
   get isPessoa() {
-    return this.tipo === 'PESSOA';
+    return this.usuario?.tipo === 'PESSOA';
+  }
+
+  get jaCandidadato() {
+    const id = this.usuario?.informacoes.id;
+    let estaCandidato = false;
+
+    console.log(this.vaga);
+    this.vaga?.candidaturas.forEach(c => {
+      if (c.farmaceuticoId === id) {
+        estaCandidato = true;
+      }
+    });
+
+    return estaCandidato;
   }
 
   async irParaCandidatura() {

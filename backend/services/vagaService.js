@@ -3,7 +3,7 @@ const {Candidatura} = require("../models/Candidatura");
 
 class VagaService {
     async getVagas() {
-        return await Vaga.findAll({include: 'farmacia'});
+        return await Vaga.findAll({include: ['farmacia', 'candidaturas']});
     }
 
     async getVagaPorId(id) {
