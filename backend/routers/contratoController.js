@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express();
-const controller = require('../controllers/contratoController')
+const controller = require('../controllers/contratoController');
+const {verifyToken} = require("../jwt");
+
+router.use(verifyToken);
 
 router.get('/contrato', (req, res) => controller.getContratos(req, res));
 router.get('/contrato/:id', (req, res) => controller.getContratosPorId(req, res));

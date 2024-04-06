@@ -32,6 +32,9 @@ server.all("*", (req, res, next) => {
 });
 
 // rotas
+const auth = require('./routers/authRouter');
+server.use(auth);
+
 const farmaceuticoRouter = require('./routers/farmaceuticoRouter');
 server.use(farmaceuticoRouter);
 
@@ -49,6 +52,3 @@ server.use(candidaturaRouter);
 
 const pdf = require('./routers/pdfRouter');
 server.use(pdf);
-
-const auth = require('./routers/authRouter');
-server.use(auth);

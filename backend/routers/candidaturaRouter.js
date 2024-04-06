@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express();
-const controller = require('../controllers/candidaturaController')
+const controller = require('../controllers/candidaturaController');
+const {verifyToken} = require("../jwt");
+
+router.use(verifyToken);
 
 router.get('/candidatura', (req, res) => controller.getCandidaturas(req, res));
 router.get('/candidatura/:id', (req, res) => controller.getCandidaturaPorId(req, res));
