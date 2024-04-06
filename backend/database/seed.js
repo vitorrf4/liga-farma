@@ -84,6 +84,7 @@ class Seeds {
             method: 'POST',
             body: json,
             headers: {
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzEyNDEyODk2fQ.iPmdF_DvyT-2AUTUZjWPngmKVQFbzWIEVnhqPbGnGUo',
                 'Content-Type': 'application/json'
             }
         });
