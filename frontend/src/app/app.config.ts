@@ -2,12 +2,16 @@ import {ApplicationConfig, importProvidersFrom} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors} from "@angular/common/http";
+import {JwtInterceptor} from "./jwt.interceptor";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     // import da classe que fará as chamadas http
-    importProvidersFrom(HttpClientModule)
+    importProvidersFrom(HttpClientModule),
+    provideHttpClient(
+      withInterceptors([JwtInterceptor])
+    )
   ]
 };

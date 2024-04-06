@@ -2,10 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {PdfService} from "../../../services/pdf.service";
 import {AuthService} from "../../../services/auth.service";
-import {Farmaceutico} from "../../../models/farmaceutico";
-import {Usuario} from "../../../models/usuario";
 import {FarmaceuticoService} from "../../../services/farmaceutico.service";
 
 @Component({
@@ -23,7 +20,6 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private authService: AuthService,
-              private farmaceuticoService: FarmaceuticoService,
               private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -48,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.authService.setUsuario(res);
         console.log('login success');
       },
-      error: err => { console.log("erro login") }
+      error: err => { console.log(err) }
     })
   }
 }

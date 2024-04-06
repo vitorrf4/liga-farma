@@ -11,10 +11,19 @@ export class AuthService {
   private baseUrl = environment.urlApi;
   private apiUrl = 'auth';
   usuario?: Usuario;
-  // envia automaticamente os novos valores de usuario
+  // Classe que envia automaticamente os novos valores de usuario
   usuarioObservable = new Subject<Usuario | undefined>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.usuario = JSON.parse(sessionStorage.getItem("usuario")!) || undefined;
+    if (this.usuario) {
+      this.usuarioObservable.next(this.usuario);
+    }
+  }
+
+  get authToken() {
+    return this.usuario?.token;
+  }
 
   setUsuario(usuario: Usuario) {
     this.usuario = usuario;
