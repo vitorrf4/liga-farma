@@ -2,22 +2,22 @@
 
 <form [formGroup]="form" (submit)="atualizarInformacoes()">
   <div class="form-outline">
-    <label class="form-label">Nome</label>
+    <label class="form-label">Nome:</label>
     <input type="text" class="form-control" formControlName="nome" required />
   </div>
 
   <div class="form-outline">
-    <label class="form-label">Endereco</label>
+    <label class="form-label">Especialização: </label>
     <input type="text" class="form-control" formControlName="especializacao" required />
   </div>
 
   <div>
-    <label class="form-label">Email</label>
+    <label class="form-label">Email:</label>
     <input type="text" class="form-control" formControlName="email" required/>
   </div>
 
   <div class="form-outline">
-    <label class="form-label">Telefone</label>
+    <label class="form-label">Telefone:</label>
     <input type="text" class="form-control" formControlName="telefone" />
   </div>
 
@@ -36,7 +36,7 @@
 <!--    </pdf-viewer>-->
 <!--  </div>-->
 
-<!--&lt;!&ndash;  <p>{{debug | json}}</p>&ndash;&gt;-->
+<!--  <p>{{debug | json}}</p>-->
 
   <br>
   <button type="submit">Atualizar</button>
