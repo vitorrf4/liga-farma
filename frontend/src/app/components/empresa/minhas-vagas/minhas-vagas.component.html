@@ -7,8 +7,12 @@
   <li>Salario: {{vaga.salario}}</li>
   <li>Tipo: {{vaga.tipo}}</li>
   <li>Turno: {{vaga.turno}}</li>
-  <li>Status: {{vaga.status}}</li>
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
+  <li>Status: {{vaga.status}}</li>
+
+  <div *ngIf="vaga.status == 'ABERTA'">
+    <button (click)="fecharVaga(vaga)">Fechar vaga</button>
+  </div>
 
   <div *ngIf="vaga.candidaturas.length">
     <strong>Candidaturas</strong>

@@ -46,4 +46,11 @@ export class MinhasVagasComponent implements OnInit {
       }});
   }
 
+  fecharVaga(vaga: Vaga) {
+    vaga.status = 'FECHADA';
+    this.vagaService.atualizar(vaga).subscribe(res => {
+      console.log(res);
+    });
+  }
+
 }

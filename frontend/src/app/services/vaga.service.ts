@@ -23,4 +23,8 @@ export class VagaService {
   cadastrar(vaga: Vaga) {
     return this.http.post<Vaga>(`${this.urlBase}/${this.urlVaga}`, vaga);
   }
+
+  atualizar(vaga: Vaga) {
+    return this.http.put(`${this.urlBase}/${this.urlVaga}`, vaga);
+  }
 }
