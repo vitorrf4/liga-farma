@@ -1,34 +1,40 @@
 <h3>Farmácia</h3>
 
 <form [formGroup]="form" (submit)="cadastrarCliente()">
-  <div class="form-outline">
+  <div>
     <label class="form-label">Nome</label>
-    <input type="text" class="form-control" formControlName="nome" required />
+    <input type="text" formControlName="nome" required />
   </div>
 
-  <div class="form-outline">
+  <div>
     <label class="form-label">CNPJ</label>
-    <input type="text" class="form-control" formControlName="cnpj" required />
+    <input type="text" formControlName="cnpj" required />
   </div>
 
-  <div class="form-outline">
+  <div>
     <label class="form-label">Endereco</label>
-    <input type="text" class="form-control" formControlName="endereco" required />
+    <input type="text"  formControlName="endereco" required />
+  </div>
+
+  <div>
+    <label class="form-label">Descrição</label>
+    <textarea type="text"  formControlName="descricao" required>
+    </textarea>
   </div>
 
   <div>
     <label class="form-label">Email</label>
-    <input type="text" class="form-control" formControlName="email" required/>
+    <input type="text"  formControlName="email" required/>
   </div>
 
   <div >
     <label class="form-label">Senha</label>
-    <input type="password" class="form-control" formControlName="senha" required/>
+    <input type="password"  formControlName="senha" required/>
   </div>
 
-  <div class="form-outline">
+  <div >
     <label class="form-label">Telefone</label>
-    <input type="text" class="form-control" formControlName="telefone" required />
+    <input type="text"  formControlName="telefone" required />
   </div>
 
   <button type="submit">Cadastrar</button>

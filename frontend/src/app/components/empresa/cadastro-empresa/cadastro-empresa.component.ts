@@ -31,9 +31,10 @@ export class CadastroEmpresaComponent implements OnInit {
       nome: ["", Validators.required],
       cnpj: ["", Validators.required],
       endereco: ["", Validators.required],
+      descricao: ["", Validators.required],
       email: ["", Validators.required],
       senha: ["", Validators.required],
-      telefone: ["", Validators.required]
+      telefone: [""]
     });
   }
 
