@@ -14,8 +14,10 @@ import {CriarVagaComponent} from "./components/empresa/criar-vaga/criar-vaga.com
 import {EditarEmpresaComponent} from "./components/empresa/editar-empresa/editar-empresa.component";
 import {EditarPessoaComponent} from "./components/pessoa/editar-pessoa/editar-pessoa.component";
 import {authGuard} from "./misc/auth.guard";
+import { HomeComponent } from './components/geral/home/home.component';
 
 export const routes: Routes = [
+  {path: 'home', component: HomeComponent},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent, children: [
       {path:'pessoa', component: CadastroPessoaComponent},

@@ -1,0 +1,39 @@
+<header>
+    <div class="header-menu">
+        <nav>
+            
+            <table>
+            <tr>
+                <div class="general-menu">
+                    <td class="logo-liga-farma"><button class="btn-home" routerLink="/sobre-nos"><img src="../../../../assets/LigaFarma-logo-header.png" width="170" height="58" alt="Logo Liga Farma Colorido"></button></td>
+                    <td><button routerLink="/home">Home</button></td>
+                    <td><button routerLink="/sobre-nos">Sobre Nós</button></td>
+                    <td><button routerLink="/vagas">Ver Vagas</button></td>
+                </div>
+                <div class="user-menu">
+                    <div *ngIf="usuario?.tipo == 'EMPRESA'">
+                        <td><button routerLink="/minhas-vagas">Minhas Vagas</button></td>
+                        <td><button routerLink="/criar-vaga">Criar Vaga</button></td>
+                    </div>
+                    <div *ngIf="usuario?.tipo == 'PESSOA'">
+                        <td><button class="btn-candidaturas" routerLink="/minhas-candidaturas">Minhas Candidaturas</button></td>
+                    </div>
+                    <div class="div-login-cadastro" *ngIf="!usuario">
+                        <td><button class="btn-login" crouterLink="/login">Entrar</button></td>
+                        <td><button class="btn-cadastro" routerLink="/cadastro/pessoa">Cadastre-se</button></td>
+                    </div>
+                    <div class="div-perfil-logout" *ngIf="usuario">
+                        <td><button class="btn-perfil" routerLink="/perfil">Perfil</button></td>
+                        <td><button class="btn-logout" (click)="logout()">Logout</button></td>
+                    </div>
+                </div>
+            </tr>
+        </table>
+
+        <div>
+
+        </div>
+        </nav>
+    </div>
+</header>
+<router-outlet />
