@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Usuario} from "../models/usuario";
 import {Subject} from "rxjs";
+import {Farmacia} from "../models/farmacia";
+import {Farmaceutico} from "../models/farmaceutico";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,14 @@ export class LoginService {
 
   get authToken() {
     return this.usuario?.token;
+  }
+
+  atualizarInformacoes(entidade: Farmacia | Farmaceutico) {
+    if (!this.usuario) return;
+
+    this.usuario.informacoes = entidade;
+    this.usuarioObservable.next(this.usuario);
+    sessionStorage.setItem('usuario', JSON.stringify(this.usuario));
   }
 
   setUsuario(usuario: Usuario) {
