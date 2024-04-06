@@ -1,6 +1,8 @@
 const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const secret = process.env.SECRET;
 
 class AuthController {
     async cadastrarUsuario(req, res) {
@@ -53,10 +55,12 @@ class AuthController {
             }
             
             delete entidade.dataValues.senha;
-            
+            const token = jwt.sign({ id: entidade.id }, secret);
+
             const usuario = {
                 tipo: tipo, 
-                informacoes: entidade.dataValues
+                informacoes: entidade.dataValues,
+                token: token
             };
             
             return res.status(200).json(usuario);
