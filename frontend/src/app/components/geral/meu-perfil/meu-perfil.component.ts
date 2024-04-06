@@ -4,7 +4,7 @@ import {JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {AuthService} from "../../../services/auth.service";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {Farmaceutico} from "../../../models/farmaceutico";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {Farmacia} from "../../../models/farmacia";
 import {LoginService} from "../../../services/login.service";
 
@@ -15,7 +15,8 @@ import {LoginService} from "../../../services/login.service";
     JsonPipe,
     NgIf,
     PdfViewerModule,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './meu-perfil.component.html',
   styleUrl: './meu-perfil.component.css'
@@ -56,5 +57,16 @@ export class MeuPerfilComponent implements OnInit {
 
   get empresa() {
     return this.usuario.informacoes as Farmacia;
+  }
+
+  async irParaEdicao() {
+    switch (this.tipo) {
+      case 'EMPRESA':
+        return await this.router.navigateByUrl('/editar-e');
+      case 'PESSOA':
+        return await this.router.navigateByUrl('/editar-p');
+      default:
+        return;
+    }
   }
 }
