@@ -7,6 +7,7 @@ import {Farmaceutico} from "../../../models/farmaceutico";
 import {Router, RouterLink} from "@angular/router";
 import {Farmacia} from "../../../models/farmacia";
 import {LoginService} from "../../../services/login.service";
+import {PdfService} from "../../../services/pdf.service";
 
 @Component({
   selector: 'app-perfil',
@@ -24,9 +25,10 @@ import {LoginService} from "../../../services/login.service";
 export class MeuPerfilComponent implements OnInit {
   usuario!: Usuario;
   tipo: string = '';
-  file: any;
+  curriculo: any;
 
   constructor(private loginService: LoginService,
+              private pdfService: PdfService,
               private router: Router) { }
 
   async ngOnInit() {
@@ -39,11 +41,11 @@ export class MeuPerfilComponent implements OnInit {
     this.tipo = this.usuario.tipo;
 
     if (this.tipo === 'PESSOA') {
-      const farma = this.usuario.informacoes as Farmaceutico;
-      this.file = farma.curriculo;
+      this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
+        next: res => this.curriculo = res,
+      });
     }
 
-    console.log(this.empresa);
     return;
   }
 
@@ -61,12 +63,9 @@ export class MeuPerfilComponent implements OnInit {
 
   async irParaEdicao() {
     switch (this.tipo) {
-      case 'EMPRESA':
-        return await this.router.navigateByUrl('/editar-e');
-      case 'PESSOA':
-        return await this.router.navigateByUrl('/editar-p');
-      default:
-        return;
+      case 'EMPRESA': return await this.router.navigateByUrl('/editar-e');
+      case 'PESSOA': return await this.router.navigateByUrl('/editar-p');
+      default: return;
     }
   }
 }

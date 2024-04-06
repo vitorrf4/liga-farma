@@ -10,7 +10,7 @@ export class PdfService {
 
   constructor(private http: HttpClient) { }
 
-  getPdfByUsuarioId(userId: string) {
+  getPdfByUsuarioId(userId: number) {
     return this.http.get<any>(`${this.urlBase}/pdf/${userId}`);
   }
 

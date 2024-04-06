@@ -23,4 +23,8 @@ export class FarmaceuticoService {
   cadastrar(farmaceutico: Farmaceutico) {
     return this.http.post<Farmaceutico>(`${this.urlBase}/${this.farmaceuticoUrl}`, farmaceutico);
   }
+
+  atualizar(farmaceutico: Farmaceutico) {
+    return this.http.put(`${this.urlBase}/${this.farmaceuticoUrl}`, farmaceutico);
+  }
 }

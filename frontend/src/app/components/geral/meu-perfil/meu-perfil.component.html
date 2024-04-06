@@ -13,9 +13,9 @@
         Especialização: {{pessoa.especializacao}}
       </li>
 
-      <div *ngIf="file" id="curriculo">
+      <div *ngIf="curriculo" id="curriculo">
         <h1>Curriculo</h1>
-        <pdf-viewer [src]="file.data"
+        <pdf-viewer [src]="curriculo.data"
                     [original-size]="false"
                     [autoresize]="true"
                     style="width: 40vh; height: 45vh;">
