@@ -1,0 +1,11 @@
+* {
+  font-size: 25px;
+}
+.block {
+  display: block;
+}
+
+button[type=submit] {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}

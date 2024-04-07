@@ -3,38 +3,38 @@
 <form [formGroup]="form" (submit)="cadastrarCliente()">
   <div>
     <label class="form-label">Nome</label>
-    <input type="text" formControlName="nome" required />
+    <input type="text" class="block" formControlName="nome" required />
   </div>
 
   <div>
     <label class="form-label">CNPJ</label>
-    <input type="text" formControlName="cnpj" required />
+    <input type="text" class="block" formControlName="cnpj" required />
   </div>
 
   <div>
     <label class="form-label">Endereco</label>
-    <input type="text"  formControlName="endereco" required />
+    <input type="text" class="block" formControlName="endereco" required />
   </div>
 
   <div>
     <label class="form-label">Descrição</label>
-    <textarea type="text"  formControlName="descricao" required>
+    <textarea type="text" class="block" formControlName="descricao" required>
     </textarea>
   </div>
 
   <div>
     <label class="form-label">Email</label>
-    <input type="text"  formControlName="email" required/>
+    <input type="text" class="block" formControlName="email" required/>
   </div>
 
-  <div >
+  <div>
     <label class="form-label">Senha</label>
-    <input type="password"  formControlName="senha" required/>
+    <input type="password" class="block" formControlName="senha" required/>
   </div>
 
   <div >
     <label class="form-label">Telefone</label>
-    <input type="text"  formControlName="telefone" required />
+    <input type="text" class="block" formControlName="telefone" required />
   </div>
 
   <button type="submit">Cadastrar</button>

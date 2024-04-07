@@ -1,46 +1,43 @@
 <h3>Farmacêutico</h3>
 
 <form [formGroup]="form" (submit)="cadastrarCliente()">
-  <div class="form-outline">
-    <label class="form-label">Nome</label>
-    <input type="text" class="form-control" formControlName="nome" required />
-  </div>
+  <label class="block">Nome</label>
+  <input type="text" class="block" formControlName="nome" required />
 
   <div class="form-outline">
     <label class="form-label">CPF</label>
-    <input type="text" class="form-control" formControlName="cpf" required />
+    <input type="text" class="block" formControlName="cpf" required />
   </div>
 
   <div class="form-outline">
     <label class="form-label">CRF</label>
-    <input type="text" class="form-control" formControlName="crf" required />
+    <input type="text" class="block" formControlName="crf" required />
   </div>
 
   <div>
     <label class="form-label">Email</label>
-    <input type="text" class="form-control" formControlName="email" required/>
+    <input type="text" class="block" formControlName="email" required/>
   </div>
 
   <div>
     <label class="form-label">Senha</label>
-    <input type="password" class="form-control" formControlName="senha" required/>
+    <input type="password" class="block" formControlName="senha" required/>
   </div>
 
   <div class="form-outline">
     <label class="form-label">Telefone</label>
-    <input type="text" class="form-control" formControlName="telefone" required />
+    <input type="text" class="block" formControlName="telefone" required />
   </div>
 
-  <p>Curriculo:
+  <label>Curriculo:
     <input type="file" (change)="onFileSelected($event)" accept=".pdf">
-  </p>
+  </label>
   <div *ngIf="selectedFile" id="curriculo">
     <pdf-viewer [src]="fileUrl"
                 [original-size]="false"
                 [autoresize]="true"
                 style="width: 40vh; height: 45vh;"></pdf-viewer>
   </div>
-  <br><br>
 
-  <button type="submit">Cadastrar</button>
+  <button type="submit" class="block">Cadastrar</button>
 </form>
