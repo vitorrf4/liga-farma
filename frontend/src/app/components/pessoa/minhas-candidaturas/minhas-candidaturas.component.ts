@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DatePipe, NgForOf, NgIf} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
 import {Candidatura} from "../../../models/candidatura";
 import {CandidaturaService} from "../../../services/candidatura.service";
 import {AuthService} from "../../../services/auth.service";
@@ -10,11 +10,12 @@ import {LoginService} from "../../../services/login.service";
 @Component({
   selector: 'app-minhas-candidaturas',
   standalone: true,
-	imports: [
-		DatePipe,
-		NgForOf,
-		NgIf
-	],
+  imports: [
+    DatePipe,
+    NgForOf,
+    NgIf,
+    CurrencyPipe
+  ],
   templateUrl: './minhas-candidaturas.component.html',
   styleUrl: './minhas-candidaturas.component.css'
 })

@@ -1,10 +1,10 @@
-<h2>Candidaturas</h2>
+<h2>Minhas Candidaturas</h2>
 <ul *ngFor="let candidatura of candidaturas">
   <strong>Candidatura {{candidatura.id}}</strong>
   <li>Empresa: {{candidatura.vaga.farmacia.nome}}</li>
   <li>Local: {{candidatura.vaga.cidade}} - {{candidatura.vaga.estado}}</li>
   <li>Descricao: {{candidatura.vaga.descricao}}</li>
-  <li>Salario: {{candidatura.vaga.salario}}</li>
+  <li>Salario: {{candidatura.vaga.salario | currency: 'BRL'}}</li>
   <li>Tipo: {{candidatura.vaga.tipo}}</li>
   <li>Turno: {{candidatura.vaga.turno}}</li>
   <li>Status da Vaga: {{candidatura.vaga.status}}</li>

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
-import {DatePipe, NgIf} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgIf} from "@angular/common";
 import {Router} from "@angular/router";
 import {LoginService} from "../../../services/login.service";
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
@@ -11,7 +11,8 @@ import {Usuario} from "../../../models/usuario";
   standalone: true,
   imports: [
     NgIf,
-    DatePipe
+    DatePipe,
+    CurrencyPipe
   ],
   templateUrl: './vaga-pagina.component.html',
   styleUrl: './vaga-pagina.component.css'
@@ -27,7 +28,7 @@ export class VagaPaginaComponent {
   }
 
   get isPessoa() {
-    return this.usuario?.tipo === 'PESSOA';
+    return this.usuario?.tipo === 'PESSOA' || true;
   }
 
   get jaCandidadato() {

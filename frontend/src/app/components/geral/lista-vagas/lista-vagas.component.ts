@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
 import {VagaService} from "../../../services/vaga.service";
-import {NgForOf, NgIf} from "@angular/common";
+import {CurrencyPipe, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {VagaPaginaComponent} from "../vaga-pagina/vaga-pagina.component";
 
@@ -12,7 +12,8 @@ import {VagaPaginaComponent} from "../vaga-pagina/vaga-pagina.component";
     NgForOf,
     RouterLink,
     VagaPaginaComponent,
-    NgIf
+    NgIf,
+    CurrencyPipe
   ],
   templateUrl: './lista-vagas.component.html',
   styleUrl: './lista-vagas.component.css'

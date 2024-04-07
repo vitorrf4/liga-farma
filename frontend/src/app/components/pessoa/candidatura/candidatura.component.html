@@ -4,7 +4,7 @@
   <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
   <li>Descricao: {{vaga.descricao}}</li>
   <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
-  <li>Salario: {{vaga.salario}}</li>
+  <li>Salario: {{vaga.salario | currency: 'BRL'}}</li>
   <li>Tipo: {{vaga.tipo}}</li>
   <li>Turno: {{vaga.turno}}</li>
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>

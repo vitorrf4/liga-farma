@@ -7,7 +7,7 @@
         <strong>Vaga {{vaga.id}}</strong>
         <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
         <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
-        <li>Salario: {{vaga.salario}}</li>
+        <li>Salario: {{vaga.salario | currency: 'BRL'}}</li>
       </a>
     </ul>
   </div>

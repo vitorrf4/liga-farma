@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
 import {ActivatedRoute} from "@angular/router";
-import {DatePipe, NgIf} from "@angular/common";
+import {CurrencyPipe, DatePipe, NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {AuthService} from "../../../services/auth.service";
 import {Farmaceutico} from "../../../models/farmaceutico";
@@ -16,7 +16,8 @@ import {LoginService} from "../../../services/login.service";
     DatePipe,
     NgIf,
     PdfViewerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CurrencyPipe
   ],
   templateUrl: './candidatura.component.html',
   styleUrl: './candidatura.component.css'
