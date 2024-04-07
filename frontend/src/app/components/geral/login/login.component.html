@@ -1,15 +1,38 @@
-<h3>Usuário</h3>
+<section class="vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-black" id="form">
 
-<form [formGroup]="form" (submit)="logarCliente()">
-  <div>
-    <label class="form-label">Email</label>
-    <input type="text" class="form-control" formControlName="email" required/>
+        <div class="content">
+          <div class="top">
+            <button routerLink="/home">Home</button>
+
+            <h2 class="heading">Bem-Vindo!</h2>
+            <strong class="heading">Acesse sua conta:</strong>
+          </div>
+
+          <form [formGroup]="form" (submit)="logarCliente()">
+            <div>
+              <label class="form-label">Email</label>
+              <input type="text" class="form-control" formControlName="email" required/>
+            </div>
+
+            <div >
+              <label class="form-label">Senha</label>
+              <input type="password" class="form-control" formControlName="senha" required/>
+            </div>
+
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-sm-6 vh-100" id="image">
+        <img src="./assets/imagem_cadastro.jpeg"
+             alt="Login image" class="image vh-100">
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <div >
-    <label class="form-label">Senha</label>
-    <input type="password" class="form-control" formControlName="senha" required/>
-  </div>
-
-  <button type="submit">Login</button>
-</form>

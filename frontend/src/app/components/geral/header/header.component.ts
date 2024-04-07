@@ -33,7 +33,7 @@ export class HeaderComponent {
 
   async logout() {
     this.loginService.logout();
-    await this.router.navigateByUrl('/login');
+    await this.router.navigateByUrl('/home');
   }
 
 }

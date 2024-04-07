@@ -5,16 +5,18 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {AuthService} from "../../../services/auth.service";
 import {FarmaceuticoService} from "../../../services/farmaceutico.service";
 import {LoginService} from "../../../services/login.service";
-import {Router} from "@angular/router";
+import {Router, RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-	imports: [
-		NgIf,
-		PdfViewerModule,
-		ReactiveFormsModule
-	],
+  imports: [
+    NgIf,
+    PdfViewerModule,
+    ReactiveFormsModule,
+    RouterLink,
+    RouterOutlet
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
