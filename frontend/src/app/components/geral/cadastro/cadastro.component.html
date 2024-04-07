@@ -1,4 +1,26 @@
-<button routerLink="pessoa">Para profissionais</button>
-<button routerLink="empresa">Para empresas</button>
+<section class="vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-black" id="form">
 
-<router-outlet></router-outlet>
+        <div class="content">
+          <h2 class="heading">Cadastre-se Já</h2>
+          <button routerLink="pessoa">Para profissionais</button>
+          <button routerLink="empresa">Para empresas</button>
+
+          <div id="router">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-6 vh-100" id="image">
+        <img src="./assets/imagem_cadastro.jpeg"
+             alt="Login image" class="image vh-100" style="object-fit: cover;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
