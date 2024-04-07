@@ -1,0 +1,190 @@
+section{
+    width: 1440px;
+    height: auto;
+    padding: 0;
+    padding-bottom: 50px;
+    margin: 0 auto !important;
+    display: table;
+}
+
+p{
+    color: #5b5e5e;
+    line-height: 1.5;
+}
+
+.first-steps .first-steps-text{
+    float: left;
+    padding-top: 150px;
+    width: 50%;
+}
+
+.first-steps .first-steps-text h2, .first-steps .first-steps-text p{
+    padding-left: 70px;
+}
+     
+.first-steps .first-steps-text h2{
+    font-size: 52px;
+    font-weight: 600;
+    color: #0EBFEB;
+    margin-bottom: 20px;
+}
+
+.first-steps .first-steps-text p{
+    color: #7b7f80;
+}
+
+.first-steps .first-steps-image{
+    float: right;
+}
+
+.caminho-rapido{
+    padding-top: 30px;
+}
+
+.caminho-rapido h3, .explore-vagas-intro h3{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.caminho-rapido h4{
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.caminho-rapido-text-full, .caminho-rapido-image{
+    float: left;
+}
+
+.caminho-rapido-text-full{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.caminho-rapido-text{
+    float: right;
+    width: 40%;
+}
+
+.caminho-rapido-text p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 65%;
+}
+
+.caminho-rapido-text button{
+    color: #336699;
+    border: 1px solid #336699;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 10px;
+}
+
+.caminho-rapido-text button:hover{
+    color: #FFF;
+    background-color: #0ebfeb;
+    border: 1px solid #0ebfeb;
+}
+
+.inscreva-cadastro{
+    align-content: center;
+    background-color: #d9f3f6;
+}
+
+.inscreva-cadastro div{
+    margin: 50px 300px 0px 300px;
+}
+
+
+.inscreva-cadastro p{
+    font-size: 32px;
+    font-weight: 600;
+    color: #181818;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.inscreva-cadastro ul{
+    width: fit-content;
+    margin: 0 auto !important;
+}
+
+.inscreva-cadastro  button{
+    color: #FFF;
+    background-color: #0ebfeb;
+    border: 1px solid #0ebfeb;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.inscreva-cadastro  button:hover{
+    color: #336699;
+    border: 1px solid #336699;
+}
+
+.explore-vagas-lista ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.explore-vagas-lista ul li{
+    float: left;
+}
+
+.explore-vagas-lista ul li img{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+.explore-vagas-lista ul li h6{
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.explore-vagas-lista ul li span{
+    color: #336699;
+    font-weight: 600;
+}
+
+
+.explore-vagas-intro{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.explore-vagas-intro p{
+    width: 50%;
+    margin: 0 auto !important;
+}
+
+.explore-vagas-button{
+    text-align: center;
+}
+
+.explore-vagas-button button{
+    margin: 0 auto !important;
+    color: #FFF;
+    background-color: #336699;
+    border: 1px solid #336699;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.explore-vagas-button button:hover{
+    color: #336699;
+    border: 1px solid #336699;
+    background-color: #0ebfeb;
+}

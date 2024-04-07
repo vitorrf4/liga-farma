@@ -1,5 +1,44 @@
 <footer>
     <section class="footer-menu">
+        <div>
+            <button routerLink="/home"><img src="../../../../assets/LigaFarma-logo-footer.png" width="288" height="108" alt="Logo Liga Farma Black and White"></button>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <h6>Institucional</h6>
+                </li>
+                <li>
+                    <button routerLink="/home">Página Inicial</button>
+                </li>
+                <li>
+                    <button routerLink="/sobre-nos">Sobre Nós</button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <h6>Para Profissionais</h6>
+                </li>
+                <li>
+                    <button routerLink="/vagas">Ver Vagas</button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <h6>Para Empresas</h6> 
+                </li>
+                <li *ngIf="usuario?.tipo == 'EMPRESA'">
+                    <button routerLink="/criar-vaga">Criar Vaga</button>
+                </li>
+                <li *ngIf="!usuario">
+                    <button routerLink="/login">Criar Vaga</button>
+                </li>
+            </ul>
+        </div>
 
     </section>
 

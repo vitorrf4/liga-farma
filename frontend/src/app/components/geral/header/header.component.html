@@ -5,7 +5,7 @@
             <table>
             <tr>
                 <div class="general-menu">
-                    <td class="logo-liga-farma"><button class="btn-home" routerLink="/sobre-nos"><img src="../../../../assets/LigaFarma-logo-header.png" width="170" height="58" alt="Logo Liga Farma Colorido"></button></td>
+                    <td class="logo-liga-farma"><button class="btn-home" routerLink="/home"><img src="../../../../assets/LigaFarma-logo-header.png" width="170" height="58" alt="Logo Liga Farma Colorido"></button></td>
                     <td><button routerLink="/home">Home</button></td>
                     <td><button routerLink="/sobre-nos">Sobre Nós</button></td>
                     <td><button routerLink="/vagas">Ver Vagas</button></td>
@@ -19,7 +19,7 @@
                         <td><button class="btn-candidaturas" routerLink="/minhas-candidaturas">Minhas Candidaturas</button></td>
                     </div>
                     <div class="div-login-cadastro" *ngIf="!usuario">
-                        <td><button class="btn-login" crouterLink="/login">Entrar</button></td>
+                        <td><button class="btn-login" routerLink="/login">Entrar</button></td>
                         <td><button class="btn-cadastro" routerLink="/cadastro/pessoa">Cadastre-se</button></td>
                     </div>
                     <div class="div-perfil-logout" *ngIf="usuario">
