@@ -9,6 +9,8 @@ import {Farmacia} from "../../../models/farmacia";
 import {LoginService} from "../../../services/login.service";
 import {PdfService} from "../../../services/pdf.service";
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
+import {MinhasCandidaturasComponent} from "../../pessoa/minhas-candidaturas/minhas-candidaturas.component";
+import {MinhasVagasComponent} from "../../empresa/minhas-vagas/minhas-vagas.component";
 
 @Component({
   selector: 'app-perfil',
@@ -18,7 +20,9 @@ import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
     NgIf,
     PdfViewerModule,
     NgForOf,
-    RouterLink
+    RouterLink,
+    MinhasCandidaturasComponent,
+    MinhasVagasComponent
   ],
   templateUrl: './meu-perfil.component.html',
   styleUrl: './meu-perfil.component.css'
