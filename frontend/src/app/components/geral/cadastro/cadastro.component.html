@@ -4,10 +4,11 @@
       <div class="col-sm-6 text-black" id="form">
 
         <div class="content">
-          <h2 class="heading">Cadastre-se Já</h2>
-          <button routerLink="pessoa">Para profissionais</button>
-          <button routerLink="empresa">Para empresas</button>
-
+          <div>
+            <h2 class="heading">Cadastre-se Já</h2>
+            <button routerLink="pessoa">Para profissionais</button>
+            <button routerLink="empresa">Para empresas</button>
+          </div>
           <div id="router">
             <router-outlet></router-outlet>
           </div>
@@ -17,10 +18,9 @@
 
       <div class="col-sm-6 vh-100" id="image">
         <img src="./assets/imagem_cadastro.jpeg"
-             alt="Login image" class="image vh-100" style="object-fit: cover;">
+             alt="Login image" class="image vh-100">
       </div>
 
     </div>
   </div>
 </section>
-
