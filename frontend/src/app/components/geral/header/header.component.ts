@@ -4,6 +4,7 @@ import { ListaVagasComponent } from '../lista-vagas/lista-vagas.component';
 import { Usuario } from '../../../models/usuario';
 import {NgIf} from "@angular/common";
 import { LoginService } from '../../../services/login.service';
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,8 @@ import { LoginService } from '../../../services/login.service';
     RouterOutlet,
     ListaVagasComponent,
     RouterLink,
-    NgIf
+    NgIf,
+    FooterComponent
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

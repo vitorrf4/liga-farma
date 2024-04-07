@@ -1,1 +1,69 @@
-<p>home works!</p>
+<section class="first-steps">
+    <div class="first-steps-text">
+        <div>
+        <h2>Dê o primeiro passo e encontre a vaga perfeita para você</h2>
+        <p>Crie seu perfil, acesse a vagas de trabalho e receba ofertas que combinam com seu momento de carreira.</p>
+        </div>
+    </div>
+    <div class="first-steps-image">
+        <img src="../../../../assets/bg-img-01-home.png" width="675" height="715" alt="Farmacêutica mulher com tablet na mão retirando remédio de prateleira">
+    </div>
+</section>
+
+<section class="caminho-rapido">
+    <div class="caminho-rapido-text-full">
+        <h3>O caminho mais rápido para a sua próxima oportunidade</h3>
+        <p>Nosso propósito é facilitar sua procura.
+        <br>Esse é o motivo de criarmos uma plataforma exclusiva que liga farmácias a farmacêuticos.</p>
+    </div>
+    <div class="caminho-rapido-image">
+        <img src="../../../../assets/bg-img-02-home.png" width="812" height="506" alt="Pessoas verificando exame em laboratório">
+    </div>
+    <div class="caminho-rapido-text">
+        <h4>Crie seu currículo.</h4>
+        <p>Seja avaliado a cada contratação e construa uma rede de conexões e contatos para novas oportunidades sempre disponíveis para você de acordo com suas avaliações.</p>
+        <ul>
+            <li *ngIf="usuario?.tipo == 'PESSOA'">
+                <button routerLink="/perfil">Criar perfil</button>
+            </li>
+            <li *ngIf="!usuario">
+                <button routerLink="/cadastro/pessoa">Criar perfil</button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="explore-vagas">
+    <div class="explore-vagas-intro">
+        <h3>Explore as melhores vagas disponíveis</h3>
+        <p>Visualize as melhores vagas do mercado em uma única plataforma a um  clique de distância e se candidate nas que melhor se encaixam para o seu perfil.</p>
+    </div>
+    <div class="explore-vagas-lista">
+        <ul>
+            <li *ngFor="let vaga of vagas | slice:0:4; let i=index">
+                <img src="../../../../assets/star.png" height="80" width="80" alt="Estrela azul">
+                <h6>{{vaga.titulo}}</h6>
+                <span>{{vaga.turno}}</span> | {{vaga.cidade}} - {{vaga.estado}}
+            </li>
+        </ul>
+    </div>
+    <div class="explore-vagas-button">
+        <button routerLink="/vagas">Ver Vagas</button>
+    </div>
+</section>
+
+<section class="inscreva-cadastro">
+    <div>
+        <p>Inscreva-se e encontre as melhores vagas que combinam com seu perfil.</p>
+        <ul>
+            <li *ngIf="usuario?.tipo == 'PESSOA'">
+                <button routerLink="/perfil">Cadastre-se</button>
+            </li>
+            <li *ngIf="!usuario">
+                <button routerLink="/cadastro/pessoa">Cadastre-se</button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section></section>
