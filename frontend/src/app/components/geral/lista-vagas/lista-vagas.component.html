@@ -4,10 +4,10 @@
   <div id="lista">
     <ul *ngFor="let vaga of vagas" class="square">
       <a (click)="mudarVagaSelecionada(vaga)">
-        <strong>Vaga {{vaga.id}}</strong>
-        <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
-        <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
-        <li>Salario: {{vaga.salario | currency: 'BRL'}}</li>
+        <strong>{{vaga.titulo}}</strong> <br>
+        <strong>{{vaga.farmacia.nome}}</strong>
+        <li>{{vaga.cidade}} - {{vaga.estado}}</li>
+        <li>Publicada em {{vaga.dataPublicada | date: 'dd/MM/YYYY'}}</li>
       </a>
     </ul>
   </div>
