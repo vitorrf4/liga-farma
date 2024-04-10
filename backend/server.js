@@ -7,6 +7,8 @@ require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
 const { createAssociations } = require('./database/sequelize');
 const seed = require('./database/seed');
+// ngrok gera uma URL pública para o servidor 
+const ngrok = require('./config/ngrok');
 
 server.use(express.json());
 server.use(cors());
@@ -16,7 +18,8 @@ server.listen(port, async () => {
     await createAssociations();
     // inclui valores inicias na database
     await seed.seedTodos();
-    
+    ngrok.then(r => console.log(`Ngrok iniciado na url ${r.url()}`));
+
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
 });
