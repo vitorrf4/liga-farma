@@ -15,7 +15,6 @@ import {EditarEmpresaComponent} from "./components/empresa/editar-empresa/editar
 import {EditarPessoaComponent} from "./components/pessoa/editar-pessoa/editar-pessoa.component";
 import {authGuard} from "./misc/auth.guard";
 import { HomeComponent } from './components/geral/home/home.component';
-import {HeaderComponent} from "./components/geral/header/header.component";
 
 export const routes: Routes = [
   {path: "login", component: LoginComponent},
@@ -23,7 +22,6 @@ export const routes: Routes = [
       {path:'pessoa', component: CadastroPessoaComponent},
       {path:'empresa', component: CadastroEmpresaComponent}
   ]},
-  {path: '', component: HeaderComponent, children: [
     {path: 'home', component: HomeComponent},
     {path: "vagas", component: ListaVagasComponent},
     {path: "sobre-nos", component: SobreNosComponent},
@@ -36,5 +34,4 @@ export const routes: Routes = [
     {path: "criar-vaga", component: CriarVagaComponent, canActivate: [authGuard]},
     {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, canActivate: [authGuard]},
     {path: "**", redirectTo: ''}
-  ]},
 ];

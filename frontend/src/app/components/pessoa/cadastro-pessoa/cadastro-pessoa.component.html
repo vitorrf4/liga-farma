@@ -1,43 +1,240 @@
-<h3>Farmacêutico</h3>
+<!-- <h3>Farmacêutico</h3> -->
 
 <form [formGroup]="form" (submit)="cadastrarCliente()">
-  <label class="block">Nome</label>
-  <input type="text" class="block" formControlName="nome" required />
+    <div class="cadastro-container">
+        <div class="cadastro-cadastro">
+            <img
+                src="/assets/imagem115-7chq-900w.png"
+                alt="Imagem115"
+                class="cadastro-imagem1"/>
+            <div class="cadastro-divcadastro">
+                <!-- <div class="cadastro-group5"> -->
+                    <!-- <div class="cadastro-divtitulo">
 
-  <div class="form-outline">
-    <label class="form-label">CPF</label>
-    <input type="text" class="block" formControlName="cpf" required />
-  </div>
+                        <span class="titulo-text">
+                            <span>Cadastre-se já!</span>
+                        </span >
 
-  <div class="form-outline">
-    <label class="form-label">CRF</label>
-    <input type="text" class="block" formControlName="crf" required />
-  </div>
+                    </div> -->
+                    <div class="cadastro-nomegroup">
+                        <div class="cadastro-divlabel">
 
-  <div>
-    <label class="form-label">Email</label>
-    <input type="text" class="block" formControlName="email" required/>
-  </div>
+                            <label class="label-text" for="nome">
+                                <span>Nome</span>
+                            </label>
 
-  <div>
-    <label class="form-label">Senha</label>
-    <input type="password" class="block" formControlName="senha" required/>
-  </div>
+                        </div >
 
-  <div class="form-outline">
-    <label class="form-label">Telefone</label>
-    <input type="text" class="block" formControlName="telefone" required />
-  </div>
+                        <input
+                            type="text"
+                            class="cadastro-divinput"
+                            formControlName="nome"
+                            required="required"
+                            placeholder="Insira seu nome completo"/>
 
-  <label>Curriculo:
-    <input type="file" (change)="onFileSelected($event)" accept=".pdf">
-  </label>
-  <div *ngIf="selectedFile" id="curriculo">
-    <pdf-viewer [src]="fileUrl"
-                [original-size]="false"
-                [autoresize]="true"
-                style="width: 40vh; height: 45vh;"></pdf-viewer>
-  </div>
+                    </div>
 
-  <button type="submit" class="block">Cadastrar</button>
+                    <div class="cadastro-cpfgroup">
+                        <div class="cadastro-divlabel">
+
+                            <label class="label-text" for="cpf">
+                                <span>CPF</span>
+                            </label>
+
+                        </div>
+
+                        <input
+                            type="number"
+                            class="cadastro-divinput"
+                            formControlName="cpf"
+                            required="required"
+                            placeholder="Insira seu CPF"/>
+
+                    </div>
+
+                    <div class="cadastro-crfgroup">
+                        <div class="cadastro-divlabel">
+
+                            <label class="label-text" for="crf">
+                                <span>CRF</span>
+                            </label>
+
+                        </div>
+
+                        <input
+                            type="number"
+                            class="cadastro-divinput"
+                            formControlName="crf"
+                            required="required"
+                            placeholder="Insira seu CRF"/>
+
+                    </div>
+
+                    <div class="cadastro-senhagroup">
+                      <div class="cadastro-divlabel">
+
+                        <label class="label-text" for="senha">
+                            <span>Senha</span>
+                        </label>
+
+                    </div >
+
+                        <input
+                            type="password"
+                            class="cadastro-divinput"
+                            formControlName="senha"
+                            required="required"
+                            placeholder="Crie uma senha"/>
+
+                    </div >
+
+                    <div class="cadastro-telefonegroup">
+                      <div class="cadastro-divlabel">
+
+                        <label class="label-text" for="telefone">
+                            <span>Telefone</span>
+                        </label >
+
+                    </div >
+
+                      <input
+                        type="tel"
+                        class="cadastro-divinput"
+                        formControlName="telefone"
+                        required="required"
+                        placeholder="Digite seu telefone"/>
+                        
+                    </div >
+                    <div class="cadastro-curriculogroup">
+                      <div class="cadastro-divlabel">
+                        <label class="label-text">
+                                <span>Currículo</span>
+                            </label >
+                      </div>
+                      <div class="cadastro-curriculoinput">
+                        <input 
+                            type="file"
+                            (change)="onFileSelected($event)"
+                            accept=".pdf"/>
+
+                            <div *ngIf="selectedFile" id="curriculo">
+                                <pdf-viewer
+                                    [src]="fileUrl"
+                                    [original-size]="false"
+                                    [autoresize]="true"
+                                    style="width: 40vh; height: 45vh;"></pdf-viewer>
+                            </div>
+                      </div>
+                        
+
+                        </div>
+
+
+                    
+                    <button type="submit" class="cadastro-divbutton">
+                        <span class="cadastro-text06">
+                            <span>Cadastrar</span>
+                        </span>
+                    </button>
+                    <div class="cadastro-divou"><img
+                        src="/assets/line11226-2axa.svg"
+                        alt="Line11226"
+                        class="cadastro-line1"/>
+                        <span class="cadastro-text04">
+                            <span>ou</span>
+                        </span ><img
+                            src="/assets/line21227-y25v.svg"
+                            alt="Line21227"
+                            class="cadastro-line2"/>
+                    </div >
+                    <div class="cadastro-divcadastroalt">
+                        <div class="cadastro-divgoogle"><img
+                            src="/assets/icons8google1187-39l.svg"
+                            alt="icons8google1187"
+                            class="cadastro-icons8google1"/>
+                            <span class="cadastro-text">
+                                <span>Sign in with Google</span>
+                            </span >
+                        </div >
+                        <div class="cadastro-divapple"><img
+                            src="/assets/icons8applelogo1195-f8v.svg"
+                            alt="icons8applelogo1195"
+                            class="cadastro-icons8applelogo1"/>
+                            <span class="cadastro-text02">
+                                <span>Sign in with Apple</span>
+                            </span >
+                        </div >
+                    </div >
+                  </div>
+              </div>
+          </div>
+      <!-- </div> -->
 </form>
+
+<!--         <div class="form-outline">
+            <label class="form-label">Nome</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="nome"
+                required="required"/>
+        </div>
+
+        <div class="form-outline">
+            <label class="form-label">CPF</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="cpf"
+                required="required"/>
+        </div>
+
+        <div class="form-outline">
+            <label class="form-label">CRF</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="crf"
+                required="required"/>
+        </div>
+
+        <div>
+            <label class="form-label">nome</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="nome"
+                required="required"/>
+        </div>
+
+        <div>
+            <label class="form-label">Senha</label>
+            <input
+                type="password"
+                class="form-control"
+                formControlName="senha"
+                required="required"/>
+        </div>
+
+        <div class="form-outline">
+            <label class="form-label">Telefone</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="telefone"
+                required="required"/>
+        </div>
+
+        <p>Curriculo:
+            <input type="file" (change)="onFileSelected($event)" accept=".pdf"></p>
+            <div *ngIf="selectedFile" id="curriculo">
+                <pdf-viewer
+                    [src]="fileUrl"
+                    [original-size]="false"
+                    [autoresize]="true"
+                    style="width: 40vh; height: 45vh;"></pdf-viewer>
+            </div>
+            <br>
+                <br>
+
+                    <button type="submit">Cadastrar</button> -->
