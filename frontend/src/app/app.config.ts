@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors} from "@angular/common/http";
-import {JwtInterceptor} from "./jwt.interceptor";
+//import {JwtInterceptor} from "./misc/jwt.interceptor";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
     // import da classe que fará as chamadas http
     importProvidersFrom(HttpClientModule),
     provideHttpClient(
-      withInterceptors([JwtInterceptor])
+      /* withInterceptors([JwtInterceptor]) */
     )
   ]
 };
