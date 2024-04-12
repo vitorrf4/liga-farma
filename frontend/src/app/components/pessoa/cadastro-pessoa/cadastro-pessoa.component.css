@@ -4,12 +4,15 @@
 :host {
   display: contents;
 }
+label {
+  font-weight: bold;
+  margin-left: 1vh;
+}
 .cadastro-container {
   width:max-content;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  /*min-height: 100vh;*/
   align-items: center;
 }
 .cadastro-cadastro {
@@ -40,40 +43,44 @@
   display: flex;
   border-radius: 10px;
   background-color: rgba(25, 118, 210, 1);
+  justify-content: center;
+  width: 314px;
   /*top: 598px;*/
   /*left: 143px;*/
-  /*width: 314px;*/
   /*height: 45px;*/
   /*overflow: hidden;*/
   /*position: absolute;*/
   /*align-items: flex-start;*/
   /*flex-shrink: 0;*/
 }
+#submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 3vh;
+}
 .cadastro-text06 {
   color: rgba(255, 255, 255, 1);
-  padding: 15px;
+  padding: 10px 50px;
+  font-size: 20px;
+  width: 104px;
+  height: auto;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  /*text-align: left;*/
   /*top: 8px;*/
   /*left: 105px;*/
   /*position: absolute;*/
-  /*width: 104px;*/
-  /*height: auto;*/
-  /*font-size: 20px;*/
-  /*font-style: Medium;*/
-  /*text-align: left;*/
-  /*font-weight: 500;*/
-  /*line-height: normal;*/
-  /*font-stretch: normal;*/
-  /*text-decoration: none;*/
 }
 
 .cadastro-group5 {
+  display: block;
+  flex-direction: column;
   /*width: 600px;*/
   /*height: 880px;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
   /*position: relative;*/
   /*align-items: flex-start;*/
-  /*flex-direction: column;*/
   /*flex-shrink: 0;*/
   /*border-style:ridge;*/
   /*border-width: 1px;*/
@@ -215,81 +222,82 @@
 /*  align-items: flex-start;*/
 /*  flex-shrink: 1;*/
 /*}*/
-/*.cadastro-telefonegroup {*/
-/*  top: 400px;*/
-/*  left: 0px;*/
-/*  width: 600px;*/
-/*  height: 100px;*/
-/*  margin-top: 10px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: flex-start;*/
-/*  flex-shrink: 1;*/
-/*}*/
-/*.cadastro-curriculogroup {*/
-/*  top: 500px;*/
-/*  left: 0px;*/
-/*  width: 600px;*/
-/*  height: 100px;*/
-/*  margin-top: 10px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: flex-start;*/
-/*  flex-shrink: 1;*/
-/*}*/
+.cadastro-telefonegroup {
+  /*top: 400px;*/
+  /*left: 0px;*/
+  /*width: 600px;*/
+  /*height: 100px;*/
+  /*margin-top: 10px;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*position: absolute;*/
+  /*align-items: flex-start;*/
+  /*flex-shrink: 1;*/
+}
+.cadastro-curriculogroup {
+  /*top: 500px;*/
+  /*left: 0px;*/
+  /*width: 600px;*/
+  /*height: 100px;*/
+  /*margin-top: 10px;*/
+  /*display: flex;*/
+  /*position: absolute;*/
+  /*align-items: flex-start;*/
+  /*flex-shrink: 1;*/
+}
 
 /* == OTIMIZAÇÕES A PARTIR DAQUI == */
 
-/*.titulo-text {*/
-/*  color: rgba(0, 0, 0, 1);*/
-/*  height: auto;*/
-/*  font-size: 40px;*/
-/*  font-style: Medium;*/
-/*  text-align: left;*/
-/*  font-weight: 500;*/
-/*  line-height: normal;*/
-/*  font-stretch: normal;*/
-/*  text-decoration: none;*/
-/*}*/
-/*.label-text{*/
-/*  color: rgba(0, 0, 0, 1);*/
-/*  height: auto;*/
-/*  font-size: 20px;*/
-/*  font-weight: bold;*/
-/*  text-align: left;*/
-/*  line-height: normal;*/
-/*  font-stretch: normal;*/
-/*  text-decoration: none;*/
-/*}*/
-/*.cadastro-divlabel {*/
-/*  top: 5px;*/
-/*  left: 10px;*/
-/*  width: 80px;*/
-/*  height: 35px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: center;*/
-/*  flex-shrink: 0;*/
-/*}*/
-/*.cadastro-divinput {*/
-/*  top: 40px;*/
-/*  left:0px;*/
-/*  color: rgba(217, 217, 217, 1);*/
-/*  width: 600px;*/
-/*  height: 55px;*/
-/*  display: flex;*/
-/*  padding-left: 10px;*/
-/*  overflow: hidden;*/
-/*  position: absolute;*/
-/*  font-size: 20px;*/
-/*  text-align: left;*/
-/*  align-items: left;*/
-/*  font-weight: 500;*/
-/*  border-color: rgba(217, 217, 217, 1);*/
-/*  border-style: solid;*/
-/*  border-width: 1px;*/
-/*  border-radius: 10px;*/
-/*}*/
-/*.cadastro-curriculoinput{*/
-/*  margin-top: 45px;*/
-/*}*/
+.label-text{
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cadastro-divlabel {
+  top: 5px;
+  left: 10px;
+  width: 80px;
+  height: 35px;
+  display: flex;
+  /*position: absolute;*/
+  align-items: center;
+  flex-shrink: 0;
+}
+.cadastro-divinput {
+  color: rgba(217, 217, 217, 1);
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 10px;
+
+  top: 40px;
+  left:0px;
+  width: 600px;
+  height: 55px;
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+  /*position: absolute;*/
+  /*align-items: left;*/
+}
+.cadastro-curriculoinput{
+  /*margin-top: 45px;*/
+}
+
+.titulo-text {
+  /*color: rgba(0, 0, 0, 1);*/
+  /*height: auto;*/
+  /*font-size: 40px;*/
+  /*font-style: Medium;*/
+  /*text-align: left;*/
+  /*font-weight: 500;*/
+  /*line-height: normal;*/
+  /*font-stretch: normal;*/
+  /*text-decoration: none;*/
+}
