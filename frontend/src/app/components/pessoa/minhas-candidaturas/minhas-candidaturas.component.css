@@ -32,4 +32,20 @@ hr {
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
-
+.div-candidaturas {
+  border: 2px #370000 solid;
+  border-radius: 6px;
+  background-color: #006ca5;
+  padding: 0.5vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+.btn-green {
+  border: 2px green solid;
+  border-radius: 6px;
+  background-color: #51ff51;
+  padding: 0.5vh;
+}
+p {
+  font-size: 30px;
+}
