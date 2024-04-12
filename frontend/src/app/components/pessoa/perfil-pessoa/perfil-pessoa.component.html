@@ -1,0 +1,25 @@
+<div>
+  <button routerLink="editar-p">Editar perfil</button>
+  <h2>{{usuario.informacoes.nome}}</h2>
+  <p>Email: {{usuario.informacoes.email}}</p>
+  <p>Telefone: {{usuario.informacoes.telefone}}</p>
+
+    <p>CRF: {{pessoa.crf}}</p>
+    <p *ngIf="pessoa.especializacao">
+      Especialização: {{pessoa.especializacao}}
+    </p>
+
+<!--    <div *ngIf="curriculo" id="curriculo">-->
+<!--      <h1>Curriculo</h1>-->
+<!--      <pdf-viewer [src]="curriculo.data"-->
+<!--                  [original-size]="false"-->
+<!--                  [autoresize]="true"-->
+<!--                  style="width: 40vh; height: 45vh;">-->
+<!--      </pdf-viewer>-->
+<!--    </div>-->
+
+    <div class="div-vagas">
+      <app-minhas-candidaturas></app-minhas-candidaturas>
+    </div>
+</div>
+

@@ -1,40 +1,10 @@
-<div *ngIf="usuario">
-    <!-- Informacoes gerais -->
-  <button (click)="irParaEdicao()">Editar perfil</button>
-    <h2>{{usuario.informacoes.nome}}</h2>
-    <p>Email: {{usuario.informacoes.email}}</p>
-    <p>Telefone: {{usuario.informacoes.telefone}}</p>
-
-    <!-- Informacoes pessoa -->
+<div>
     <div *ngIf='isPessoa;else empresa_div'>
-      <p>CRF: {{pessoa.crf}}</p>
-      <p *ngIf="pessoa.especializacao">
-        Especialização: {{pessoa.especializacao}}
-      </p>
-
-      <div *ngIf="curriculo" id="curriculo">
-        <h1>Curriculo</h1>
-        <pdf-viewer [src]="curriculo.data"
-                    [original-size]="false"
-                    [autoresize]="true"
-                    style="width: 40vh; height: 45vh;">
-        </pdf-viewer>
-      </div>
-
-      <app-minhas-candidaturas></app-minhas-candidaturas>
+      <app-perfil-pessoa></app-perfil-pessoa>
     </div>
 
-    <!-- Informacoes empresa -->
     <ng-template #empresa_div>
-      <li>Descricao da empresa: {{empresa.descricao}}</li>
-      <li>Endereço: {{empresa.endereco}}</li>
-      <li>CNPJ: {{empresa.cnpj}}</li>
-
-      <div>
-        <h2>Minhas vagas</h2>
-        <button routerLink="criar-vaga">Criar vaga</button>
-        <app-minhas-vagas></app-minhas-vagas>
-      </div>
+      <app-perfil-empresa></app-perfil-empresa>
     </ng-template>
 </div>
 
