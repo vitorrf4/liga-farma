@@ -25,12 +25,11 @@ export class HeaderComponent {
 
   constructor(private loginService: LoginService,
               private router: Router) {
-    if (loginService.estaLogado) {
-      this.usuario = loginService.usuario;
-      loginService.usuarioObservable.subscribe(res => {
-        this.usuario = res;
-      });
-    }
+    this.usuario = loginService.usuario;
+
+    loginService.usuarioObservable.subscribe(res => {
+      this.usuario = res;
+    });
   }
 
   async logout() {

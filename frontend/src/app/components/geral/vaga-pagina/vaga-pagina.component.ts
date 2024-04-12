@@ -35,7 +35,6 @@ export class VagaPaginaComponent {
     const id = this.usuario?.informacoes.id;
     let estaCandidato = false;
 
-    console.log(this.vaga);
     this.vaga?.candidaturas.forEach(c => {
       if (c.farmaceuticoId === id) {
         estaCandidato = true;
