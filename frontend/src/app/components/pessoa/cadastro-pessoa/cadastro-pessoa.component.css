@@ -1,20 +1,20 @@
+
+/** {*/
+/*  font-size: 25px;*/
+/*}*/
+/*.block {*/
+/*  display: block;*/
+/*}*/
+
+/*button[type=submit] {*/
+/*  margin-top: 5%;*/
+/*  margin-bottom: 10%;*/
+/*}*/
+
 *{
   font-family: Arial, Helvetica, sans-serif;
 }
-/*<<<<<<< HEAD*/
-* {
-  font-size: 25px;
-}
-.block {
-  display: block;
-}
-
-button[type=submit] {
-  margin-top: 5%;
-  margin-bottom: 10%;
-}
 /*=======*/
-
 /*:host { */
 /*  display: contents; */
 /*}*/
