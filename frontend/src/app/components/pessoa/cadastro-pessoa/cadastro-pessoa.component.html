@@ -1,182 +1,137 @@
-<!--<form [formGroup]="form" (submit)="cadastrarCliente()">-->
-<!--  <label class="block">Nome</label>-->
-<!--  <input type="text" class="block" formControlName="nome" required />-->
-
-<!--  <div class="form-outline">-->
-<!--    <label class="form-label">CPF</label>-->
-<!--    <input type="text" class="block" formControlName="cpf" required />-->
-<!--  </div>-->
-
-<!--  <div class="form-outline">-->
-<!--    <label class="form-label">CRF</label>-->
-<!--    <input type="text" class="block" formControlName="crf" required />-->
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label class="form-label">Email</label>-->
-<!--    <input type="text" class="block" formControlName="email" required/>-->
-<!--  </div>-->
-
-<!--  <div>-->
-<!--    <label class="form-label">Senha</label>-->
-<!--    <input type="password" class="block" formControlName="senha" required/>-->
-<!--  </div>-->
-
-<!--  <div class="form-outline">-->
-<!--    <label class="form-label">Telefone</label>-->
-<!--    <input type="text" class="block" formControlName="telefone" required />-->
-<!--  </div>-->
-
-<!--  <label>Curriculo:-->
-<!--    <input type="file" (change)="onFileSelected($event)" accept=".pdf">-->
-<!--  </label>-->
-<!--  <div *ngIf="selectedFile" id="curriculo">-->
-<!--    <pdf-viewer [src]="fileUrl"-->
-<!--                [original-size]="false"-->
-<!--                [autoresize]="true"-->
-<!--                style="width: 40vh; height: 45vh;"></pdf-viewer>-->
-<!--  </div>-->
-
-<!--  <button type="submit" class="block">Cadastrar</button>-->
-
+<form [formGroup]="form" (submit)="cadastrarCliente()">
 <div class="cadastro-container">
-    <div class="cadastro-cadastro">
-        <div class="cadastro-divcadastro">
-          <div class="cadastro-group5">
-            <form [formGroup]="form" (submit)="cadastrarCliente()">
-            <div class="cadastro-nomegroup">
-              <div class="cadastro-divlabel">
-                <label class="label-text" for="nome">Nome</label>
-              </div >
+    <div class="cadastro-nomegroup">
+      <div class="cadastro-divlabel">
+        <label class="label-text" for="nome">Nome</label>
+      </div >
 
-              <input
-                type="text"
-                class="cadastro-divinput"
-                formControlName="nome"
-                required="required"
-                placeholder="Insira seu nome completo"/>
+      <input
+        type="text"
+        class="cadastro-divinput"
+        formControlName="nome"
+        required="required"
+        placeholder="Insira seu nome completo"/>
 
-            </div>
+    </div>
 
-            <div class="cadastro-cpfgroup">
-              <div class="cadastro-divlabel">
+    <div class="cadastro-cpfgroup">
+      <div class="cadastro-divlabel">
 
-                <label class="label-text" for="cpf">
-                  <span>CPF</span>
-                </label>
+        <label class="label-text" for="cpf">
+          <span>CPF</span>
+        </label>
 
-              </div>
+      </div>
 
-              <input
-                type="number"
-                class="cadastro-divinput"
-                formControlName="cpf"
-                required="required"
-                placeholder="Insira seu CPF"/>
+      <input
+        type="number"
+        class="cadastro-divinput"
+        formControlName="cpf"
+        required="required"
+        placeholder="Insira seu CPF"/>
 
-            </div>
+    </div>
 
-            <div class="cadastro-crfgroup">
-              <div class="cadastro-divlabel">
+    <div class="cadastro-crfgroup">
+      <div class="cadastro-divlabel">
 
-                <label class="label-text" for="crf">
-                  <span>CRF</span>
-                </label>
+        <label class="label-text" for="crf">
+          <span>CRF</span>
+        </label>
 
-              </div>
+      </div>
 
-              <input
-                type="number"
-                class="cadastro-divinput"
-                formControlName="crf"
-                required="required"
-                placeholder="Insira seu CRF"/>
+      <input
+        type="number"
+        class="cadastro-divinput"
+        formControlName="crf"
+        required="required"
+        placeholder="Insira seu CRF"/>
 
-            </div>
-              <div class="cadastro-senhagroup">
-                <div class="cadastro-divlabel">
+    </div>
+      <div class="cadastro-senhagroup">
+        <div class="cadastro-divlabel">
 
-                  <label class="label-text" for="email">
-                    <span>Email</span>
-                  </label>
+          <label class="label-text" for="email">
+            <span>Email</span>
+          </label>
 
-                </div>
+        </div>
 
-                <input
-                  type="text"
-                  class="cadastro-divinput"
-                  formControlName="email"
-                  required="required"
-                  placeholder="Crie uma senha"/>
+        <input
+          type="text"
+          class="cadastro-divinput"
+          formControlName="email"
+          required="required"
+          placeholder="Crie uma senha"/>
 
-              </div >
+      </div >
 
-            <div class="cadastro-senhagroup">
-              <div class="cadastro-divlabel">
+    <div class="cadastro-senhagroup">
+      <div class="cadastro-divlabel">
 
-                <label class="label-text" for="senha">
-                  <span>Senha</span>
-                </label>
+        <label class="label-text" for="senha">
+          <span>Senha</span>
+        </label>
 
-              </div >
+      </div >
 
-              <input
-                type="password"
-                class="cadastro-divinput"
-                formControlName="senha"
-                required="required"
-                placeholder="Crie uma senha"/>
+      <input
+        type="password"
+        class="cadastro-divinput"
+        formControlName="senha"
+        required="required"
+        placeholder="Crie uma senha"/>
 
-            </div >
+    </div >
 
-            <div class="cadastro-telefonegroup">
-              <div class="cadastro-divlabel">
+    <div class="cadastro-telefonegroup">
+      <div class="cadastro-divlabel">
 
-                <label class="label-text" for="telefone">
-                  <span>Telefone</span>
-                </label >
+        <label class="label-text" for="telefone">
+          <span>Telefone</span>
+        </label >
 
-              </div >
+      </div >
 
-              <input
-                type="tel"
-                class="cadastro-divinput"
-                formControlName="telefone"
-                required="required"
-                placeholder="Digite seu telefone"/>
+      <input
+        type="tel"
+        class="cadastro-divinput"
+        formControlName="telefone"
+        required="required"
+        placeholder="Digite seu telefone"/>
 
-            </div >
-            <div class="cadastro-curriculogroup">
-              <div class="cadastro-divlabel">
-                <label class="label-text">
-                  <span>Currículo</span>
-                </label >
-              </div>
-              <div class="cadastro-curriculoinput">
-                <input
-                  type="file"
-                  (change)="onFileSelected($event)"
-                  accept=".pdf"/>
+    </div >
+    <div class="cadastro-curriculogroup">
+      <div class="cadastro-divlabel">
+        <label class="label-text">
+          <span>Currículo</span>
+        </label >
+      </div>
+      <div class="cadastro-curriculoinput">
+        <input
+          type="file"
+          (change)="onFileSelected($event)"
+          accept=".pdf"/>
 
-                <div *ngIf="selectedFile" id="curriculo">
-                  <pdf-viewer
-                    [src]="fileUrl"
-                    [original-size]="false"
-                    [autoresize]="true"
-                    style="width: 40vh; height: 45vh; border: 2px black solid">
-                  </pdf-viewer>
-                </div>
-              </div>
+        <div *ngIf="selectedFile" id="curriculo">
+          <pdf-viewer
+            [src]="fileUrl"
+            [original-size]="false"
+            [autoresize]="true"
+            style="width: 40vh; height: 45vh; border: 2px black solid">
+          </pdf-viewer>
+        </div>
+      </div>
 
-          </div>
-          <div id="submit-button">
-            <button type="submit" class="cadastro-divbutton">
-                <span class="cadastro-text06">
-                    Cadastrar
-                </span>
-            </button>
-          </div>
-          </form>
+  </div>
+  <div id="submit-button">
+    <button type="submit" class="cadastro-divbutton">
+        <span class="cadastro-text06">
+            Cadastrar
+        </span>
+    </button>
+  </div>
 <!--              <div class="cadastro-divou"><img-->
 <!--                src="/assets/line11226-2axa.svg"-->
 <!--                alt="Line11226"-->
@@ -205,7 +160,5 @@
 <!--                                <span>Sign in with Apple</span>-->
 <!--                            </span >-->
 <!--                </div >-->
-          </div >
-        </div>
-    </div>
-</div>
+  </div >
+</form>

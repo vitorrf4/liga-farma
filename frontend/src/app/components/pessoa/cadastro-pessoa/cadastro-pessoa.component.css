@@ -15,30 +15,6 @@ label {
   overflow: auto;
   align-items: center;
 }
-.cadastro-cadastro {
-  /*width: 100%;*/
-  /*height:1080px;*/
-  /*display: flex;*/
-  /*overflow: hidden;*/
-  /*position: relative;*/
-  /*align-items: flex-start;*/
-  /*flex-shrink: 0;*/
-  /*background-color: rgba(255, 255, 255, 1);*/
-}
-.cadastro-divcadastro {
-  display: flex;
-  flex-direction: column;
-  /*position: relative;*/
-  /*align-items: flex-start;*/
-  /*flex-shrink: 0;*/
-  /*top: 100px;*/
-  /*left: 250px;*/
-  /*width: 600px;*/
-  /*height: 880px;*/
-  /*border-style:ridge;*/
-  /*border-width: 1px;*/
-  /*border-radius: 10px;*/
-}
 .cadastro-divbutton {
   display: flex;
   border-radius: 10px;
@@ -72,19 +48,6 @@ label {
   /*top: 8px;*/
   /*left: 105px;*/
   /*position: absolute;*/
-}
-
-.cadastro-group5 {
-  display: block;
-  flex-direction: column;
-  /*width: 600px;*/
-  /*height: 880px;*/
-  /*position: relative;*/
-  /*align-items: flex-start;*/
-  /*flex-shrink: 0;*/
-  /*border-style:ridge;*/
-  /*border-width: 1px;*/
-  /*border-radius: 10px;*/
 }
 .cadastro-divcadastroalt {
   /*gap: 23px;*/
@@ -275,7 +238,6 @@ label {
   font-size: 20px;
   border: 1px solid rgba(217, 217, 217, 1);
   border-radius: 10px;
-
   top: 40px;
   left:0px;
   width: 600px;
