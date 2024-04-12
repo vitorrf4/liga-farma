@@ -1,7 +1,7 @@
-#curriculo {
-  display: inline-flex;
-  border: 2px solid black;
+*{
+  font-family: Arial, Helvetica, sans-serif;
 }
+/*<<<<<<< HEAD*/
 * {
   font-size: 25px;
 }
@@ -13,3 +13,314 @@ button[type=submit] {
   margin-top: 5%;
   margin-bottom: 10%;
 }
+/*=======*/
+
+/*:host { */
+/*  display: contents; */
+/*}*/
+/*.cadastro-container {*/
+/*  width:auto;*/
+/*  display: flex;*/
+/*  overflow: auto;*/
+/*  min-height: 100vh;*/
+/*  align-items: center;*/
+/*  flex-direction: column;*/
+/*}*/
+/*.cadastro-cadastro {*/
+/*  width: 100%;*/
+/*  height:1080px;*/
+/*  display: flex;*/
+/*  overflow: hidden;*/
+/*  position: relative;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 0;*/
+/*  background-color: rgba(255, 255, 255, 1);*/
+/*}*/
+/*.cadastro-imagem1 {*/
+/*  top: 0px;*/
+/*  width: 816px;*/
+/*  height: 1080px;*/
+/*  position: absolute;*/
+/*  right: 0px;*/
+/*}*/
+/*.cadastro-divcadastro {*/
+/*  top: 100px;*/
+/*  left: 250px;*/
+/*  width: 600px;*/
+/*  height: 880px;*/
+/*  display: flex;*/
+/*  position: relative;*/
+/*  align-items: flex-start;*/
+/*  flex-direction: column;*/
+/*  flex-shrink: 0;*/
+/*!*   border-style:ridge;*/
+/*  border-width: 1px;*/
+/*  border-radius: 10px; *!*/
+/*}*/
+/*.cadastro-group5 {*/
+/*  width: 600px;*/
+/*  height: 880px;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  position: relative;*/
+/*  align-items: flex-start;*/
+/*  flex-direction: column;*/
+/*  flex-shrink: 0;*/
+/*  border-style:ridge;*/
+/*  border-width: 1px;*/
+/*  border-radius: 10px;*/
+/*}*/
+/*.cadastro-divcadastroalt {*/
+/*  gap: 23px;*/
+/*  top: 827.560546875px;*/
+/*  left: 3.9999990463256836px;*/
+/*  width: 600px;*/
+/*  height: 55px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: center;*/
+/*  flex-shrink: 0;*/
+/*  justify-content: center;*/
+/*}*/
+/*.cadastro-divgoogle {*/
+/*  gap: 10px;*/
+/*  display: flex;*/
+/*  padding: 4px 20px;*/
+/*  overflow: hidden;*/
+/*  align-items: center;*/
+/*  border-color: rgba(217, 217, 217, 1);*/
+/*  border-style: solid;*/
+/*  border-width: 1px;*/
+/*  border-radius: 10px;*/
+/*  justify-content: center;*/
+/*}*/
+/*.cadastro-icons8google1 {*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*}*/
+/*.cadastro-text {*/
+/*  color: rgba(0, 0, 0, 1);*/
+/*  width: 193px;*/
+/*  height: auto;*/
+/*  font-size: px;*/
+/*  font-style: Medium;*/
+/*  text-align: left;*/
+/*  font-weight: 500;*/
+/*  line-height: normal;*/
+/*  font-stretch: normal;*/
+/*  text-decoration: none;*/
+/*}*/
+/*.cadastro-divapple {*/
+/*  gap: 10px;*/
+/*  display: flex;*/
+/*  padding: 4px 20px;*/
+/*  overflow: hidden;*/
+/*  align-items: center;*/
+/*  border-color: rgba(217, 217, 217, 1);*/
+/*  border-style: solid;*/
+/*  border-width: 1px;*/
+/*  border-radius: 10px;*/
+/*  justify-content: center;*/
+/*}*/
+/*.cadastro-icons8applelogo1 {*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*}*/
+/*.cadastro-text02 {!* texto do google/apple *!*/
+/*  color: rgba(0, 0, 0, 1);*/
+/*  height: auto;*/
+/*  font-size: 18px;*/
+/*  font-style: Medium;*/
+/*  text-align: left;*/
+/*  font-weight: 500;*/
+/*  line-height: normal;*/
+/*  font-stretch: normal;*/
+/*  text-decoration: none;*/
+/*}*/
+/*.cadastro-divou {*/
+/*  gap: 10px;*/
+/*  top: 712px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 20px;*/
+/*  display: flex;*/
+/*  padding: 0 3px;*/
+/*  overflow: hidden;*/
+/*  position: absolute;*/
+/*  align-items: center;*/
+/*  flex-shrink: 0;*/
+/*}*/
+/*.cadastro-line1 {*/
+/*  width: 280px;*/
+/*  height: 1px;*/
+/*}*/
+/*.cadastro-line2 {*/
+/*  width: 280px;*/
+/*  height: 1px;*/
+/*}*/
+/*.cadastro-divbutton {*/
+/*  top: 598px;*/
+/*  left: 143px;*/
+/*  width: 314px;*/
+/*  height: 45px;*/
+/*  display: flex;*/
+/*  overflow: hidden;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 0;*/
+/*  border-radius: 10px;*/
+/*  background-color: rgba(25, 118, 210, 1);*/
+/*}*/
+/*.cadastro-text06 {*/
+/*  top: 8px;*/
+/*  left: 105px;*/
+/*  color: rgba(255, 255, 255, 1);*/
+/*  width: 104px;*/
+/*  height: auto;*/
+/*  position: absolute;*/
+/*  font-size: 20px;*/
+/*  font-style: Medium;*/
+/*  text-align: left;*/
+/*  font-weight: 500;*/
+/*  line-height: normal;*/
+/*  font-stretch: normal;*/
+/*  text-decoration: none;*/
+/*}*/
+/*!* .cadastro-divtitulo {*/
+/*  gap: 10px;*/
+/*  top: 0px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: center;*/
+/*  flex-shrink: 0;*/
+/*} *!*/
+
+
+/*!* == GRUPOS == *!*/
+
+/*.cadastro-nomegroup {*/
+/*  top: 0px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 100px;*/
+/*  margin-top: 10px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 1;*/
+/*}*/
+/*.cadastro-cpfgroup {*/
+/*  top: 100px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 100px;*/
+/*  margin-top: 10px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 1;*/
+/*}*/
+/*.cadastro-crfgroup {*/
+/*  top: 200px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 100px;*/
+/*  margin-top: 10px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 1;*/
+/*}*/
+/*.cadastro-senhagroup {*/
+/*  top: 300px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 100px;*/
+/*  margin-top: 10px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 1;*/
+/*}*/
+/*.cadastro-telefonegroup {*/
+/*  top: 400px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 100px;*/
+/*  margin-top: 10px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 1;*/
+/*}*/
+/*.cadastro-curriculogroup {*/
+/*  top: 500px;*/
+/*  left: 0px;*/
+/*  width: 600px;*/
+/*  height: 100px;*/
+/*  margin-top: 10px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: flex-start;*/
+/*  flex-shrink: 1;*/
+/*}*/
+
+/*!* == OTIMIZAÇÕES A PARTIR DAQUI == *!*/
+
+/*.titulo-text {*/
+/*  color: rgba(0, 0, 0, 1);*/
+/*  height: auto;*/
+/*  font-size: 40px;*/
+/*  font-style: Medium;*/
+/*  text-align: left;*/
+/*  font-weight: 500;*/
+/*  line-height: normal;*/
+/*  font-stretch: normal;*/
+/*  text-decoration: none;*/
+/*}*/
+/*.label-text{*/
+/*  color: rgba(0, 0, 0, 1);*/
+/*  height: auto;*/
+/*  font-size: 20px;*/
+/*  font-weight: bold;*/
+/*  text-align: left;*/
+/*  line-height: normal;*/
+/*  font-stretch: normal;*/
+/*  text-decoration: none;*/
+/*}*/
+/*.cadastro-divlabel {*/
+/*  top: 5px;*/
+/*  left: 10px;*/
+/*  width: 80px;*/
+/*  height: 35px;*/
+/*  display: flex;*/
+/*  position: absolute;*/
+/*  align-items: center;*/
+/*  flex-shrink: 0;*/
+/*}*/
+/*.cadastro-divinput {*/
+/*  top: 40px;*/
+/*  left:0px;*/
+/*  color: rgba(217, 217, 217, 1);*/
+/*  width: 600px;*/
+/*  height: 55px;*/
+/*  display: flex;*/
+/*  padding-left: 10px;*/
+/*  overflow: hidden;*/
+/*  position: absolute;*/
+/*  font-size: 20px;*/
+/*  text-align: left;*/
+/*  align-items: left;*/
+/*  font-weight: 500;*/
+/*  border-color: rgba(217, 217, 217, 1);*/
+/*  border-style: solid;*/
+/*  border-width: 1px;*/
+/*  border-radius: 10px;*/
+/*}*/
+/*.cadastro-curriculoinput{*/
+/*  margin-top: 45px;*/
+/*  */
+/*}*/
+/*>>>>>>> Vinicius*/
