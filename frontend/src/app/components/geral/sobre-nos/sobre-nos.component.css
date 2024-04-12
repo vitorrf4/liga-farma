@@ -1,510 +1,510 @@
-:host { 
-    display: contents; 
-  }
+:host {
+    display: contents;
+}
 
-  .sobrenos-sobrenos {
-    width: 1900px;
-    height: 2302px;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    align-items: flex-start;
-    flex-shrink: 0;
-    background-color: rgba(246, 254, 255, 1);
-  }
-  .sobrenos-rectangle1 {
-    top: 0px;
-    left: 0px;
-    width: 1440px;
-    height: 135px;
-    position: absolute;
-  }
-  .sobrenos-frame40 {
-    gap: 236px;
-    top: 36px;
-    left: 73px;
-    width: 1321px;
-    display: flex;
-    position: absolute;
-    align-items: center;
-  }
-  .sobrenos-frame38 {
-    gap: 131px;
-    display: flex;
-    align-items: center;
-  }
-  .sobrenos-text {
-    color: rgba(14, 191, 235, 1);
-    height: auto;
-    font-size: 40px;
-    font-style: Bold;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-frame35 {
-    gap: 50px;
-    width: 622px;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .sobrenos-text02 {
-    color: rgba(0, 0, 0, 1);
-    height: auto;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text04 {
-    color: rgba(22, 193, 235, 1);
-    height: auto;
-    font-size: 20px;
-    font-style: Bold;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text06 {
-    color: rgba(24, 24, 24, 1);
-    height: auto;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text08 {
-    color: rgba(0, 0, 0, 1);
-    height: auto;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-frame39 {
-    gap: 40px;
-    display: flex;
-    align-items: center;
-  }
-  .sobrenos-frame36 {
-    gap: 10px;
-    display: flex;
-    padding: 15px 25px;
-    align-items: flex-start;
-    border-color: rgba(14, 191, 235, 1);
-    border-style: solid;
-    border-width: 1px;
-  }
-  .sobrenos-text10 {
-    color: rgba(14, 191, 235, 1);
-    height: auto;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-frame37 {
-    display: flex;
-    align-items: flex-start;
-  }
-  .sobrenos-frame371 {
-    gap: 10px;
-    display: flex;
-    padding: 15px 25px;
-    align-items: flex-start;
-    background-color: rgba(14, 191, 235, 1);
-  }
-  .sobrenos-text12 {
-    color: rgba(255, 255, 255, 1);
-    width: 130px;
-    height: auto;
-    font-size: 20px;
-    font-style: ExtraBold;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 800;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-liga-farmapubli1 {
-    top: 135px;
-    left: 0px;
-    width: 1440px;
-    height: 422px;
-    position: absolute;
-  }
-  .sobrenos-rectangle117 {
-    top: 294px;
-    left: 204px;
-    width: 1035px;
-    height: 909px;
-    position: absolute;
-  }
-  .sobrenos-liga-farma1 {
-    top: 33px;
-    left: 15px;
-    width: 170px;
-    height: 58px;
-    position: absolute;
-  }
-  .sobrenos-text14 {
-    top: 457px;
-    left: 529px;
-    color: rgba(28, 87, 175, 1);
-    width: 430px;
-    height: auto;
-    position: absolute;
-    font-size: 64px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text16 {
-    top: 412px;
-    left: 581px;
-    color: rgba(0, 0, 0, 1);
-    width: 306px;
-    height: auto;
-    position: absolute;
-    font-size: 24px;
-    font-style: Light;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 300;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text18 {
-    top: 839px;
-    left: 41px;
-    color: rgba(0, 0, 0, 1);
-    width: 516px;
-    height: auto;
-    position: absolute;
-    font-size: 48px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text20 {
-    top: 945px;
-    left: 41px;
-    color: rgba(0, 0, 0, 1);
-    width: 644px;
-    height: auto;
-    position: absolute;
-    font-size: 32px;
-    font-style: Regular;
-    text-align: justified;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-line4 {
-    top: 627px;
-    left: 718px;
-    width: 138px;
-    height: 1px;
-    position: absolute;
-  }
-  .sobrenos-rectangle118 {
-    top: 839px;
-    left: 722px;
-    width: 724px;
-    height: 706px;
-    position: absolute;
-    border-color: rgba(51, 102, 153, 1);
-    border-style: solid;
-    border-width: 4px;
-  }
-  .sobrenos-social-icons {
-    top: 1642px;
-    left: 440px;
-    width: 48px;
-    height: 48px;
-    position: absolute;
-  }
-  .sobrenos-text34 {
-    top: 1635px;
-    left: 71px;
-    color: rgba(0, 0, 0, 1);
-    width: 417px;
-    height: auto;
-    position: absolute;
-    font-size: 32px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-rectangle119 {
-    top: 2210px;
-    left: 0px;
-    width: 1440px;
-    height: 92px;
-    position: absolute;
-  }
-  .sobrenos-text38 {
-    top: 2231px;
-    left: 214px;
-    color: rgba(255, 255, 255, 1);
-    width: 1012px;
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: center;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text42 {
-    top: 1900px;
-    left: 13px;
-    color: rgba(51, 102, 153, 1);
-    width: 350px;
-    height: auto;
-    position: absolute;
-    font-size: 32px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-social-icons1 {
-    top: 1642px;
-    left: 531px;
-    width: 48px;
-    height: 48px;
-    position: absolute;
-  }
-  .sobrenos-text44 {
-    top: 1996px;
-    left: 461px;
-    color: rgba(14, 191, 235, 1);
-    height: auto;
-    position: absolute;
-    font-size: 30px;
-    font-style: Bold;
-    text-align: left;
-    font-family: Poppins;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text46 {
-    top: 2070px;
-    left: 461px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text48 {
-    top: 2115px;
-    left: 461px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text50 {
-    top: 2160px;
-    left: 461px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text52 {
-    top: 1998px;
-    left: 751px;
-    color: rgba(14, 191, 235, 1);
-    height: auto;
-    position: absolute;
-    font-size: 30px;
-    font-style: Bold;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text54 {
-    top: 2070px;
-    left: 751px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text56 {
-    top: 2115px;
-    left: 751px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text58 {
-    top: 2160px;
-    left: 751px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text60 {
-    top: 1998px;
-    left: 1118px;
-    color: rgba(14, 191, 235, 1);
-    height: auto;
-    position: absolute;
-    font-size: 30px;
-    font-style: Bold;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text62 {
-    top: 2070px;
-    left: 1118px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text64 {
-    top: 2115px;
-    left: 1118px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-text66 {
-    top: 2160px;
-    left: 1118px;
-    color: rgba(0, 0, 0, 0.5);
-    height: auto;
-    position: absolute;
-    font-size: 20px;
-    font-style: Regular;
-    text-align: left;
-    font-family: Sora;
-    font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    text-decoration: none;
-  }
-  .sobrenos-capturadetela20240330144411removebgpreview1 {
-    top: 2041px;
-    left: 91px;
-    width: 288px;
-    height: 108px;
-    position: absolute;
-  }
+.sobrenos-sobrenos {
+  width: 1900px;
+  height: 2302px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(246, 254, 255, 1);
+}
+.sobrenos-rectangle1 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 135px;
+  position: absolute;
+}
+.sobrenos-frame40 {
+  gap: 236px;
+  top: 36px;
+  left: 73px;
+  width: 1321px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+.sobrenos-frame38 {
+  gap: 131px;
+  display: flex;
+  align-items: center;
+}
+.sobrenos-text {
+  color: rgba(14, 191, 235, 1);
+  height: auto;
+  font-size: 40px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-frame35 {
+  gap: 50px;
+  width: 622px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.sobrenos-text02 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text04 {
+  color: rgba(22, 193, 235, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text06 {
+  color: rgba(24, 24, 24, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text08 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-frame39 {
+  gap: 40px;
+  display: flex;
+  align-items: center;
+}
+.sobrenos-frame36 {
+  gap: 10px;
+  display: flex;
+  padding: 15px 25px;
+  align-items: flex-start;
+  border-color: rgba(14, 191, 235, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+.sobrenos-text10 {
+  color: rgba(14, 191, 235, 1);
+  height: auto;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-frame37 {
+  display: flex;
+  align-items: flex-start;
+}
+.sobrenos-frame371 {
+  gap: 10px;
+  display: flex;
+  padding: 15px 25px;
+  align-items: flex-start;
+  background-color: rgba(14, 191, 235, 1);
+}
+.sobrenos-text12 {
+  color: rgba(255, 255, 255, 1);
+  width: 130px;
+  height: auto;
+  font-size: 20px;
+  font-style: ExtraBold;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 800;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-liga-farmapubli1 {
+  top: 135px;
+  left: 0px;
+  width: 1440px;
+  height: 422px;
+  position: absolute;
+}
+.sobrenos-rectangle117 {
+  top: 294px;
+  left: 204px;
+  width: 1035px;
+  height: 909px;
+  position: absolute;
+}
+.sobrenos-liga-farma1 {
+  top: 33px;
+  left: 15px;
+  width: 170px;
+  height: 58px;
+  position: absolute;
+}
+.sobrenos-text14 {
+  top: 457px;
+  left: 529px;
+  color: rgba(28, 87, 175, 1);
+  width: 430px;
+  height: auto;
+  position: absolute;
+  font-size: 64px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text16 {
+  top: 412px;
+  left: 581px;
+  color: rgba(0, 0, 0, 1);
+  width: 306px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Light;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text18 {
+  top: 839px;
+  left: 41px;
+  color: rgba(0, 0, 0, 1);
+  width: 516px;
+  height: auto;
+  position: absolute;
+  font-size: 48px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text20 {
+  top: 945px;
+  left: 41px;
+  color: rgba(0, 0, 0, 1);
+  width: 644px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  font-style: Regular;
+  text-align: justified;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-line4 {
+  top: 627px;
+  left: 718px;
+  width: 138px;
+  height: 1px;
+  position: absolute;
+}
+.sobrenos-rectangle118 {
+  top: 839px;
+  left: 722px;
+  width: 724px;
+  height: 706px;
+  position: absolute;
+  border-color: rgba(51, 102, 153, 1);
+  border-style: solid;
+  border-width: 4px;
+}
+.sobrenos-social-icons {
+  top: 1642px;
+  left: 440px;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+.sobrenos-text34 {
+  top: 1635px;
+  left: 71px;
+  color: rgba(0, 0, 0, 1);
+  width: 417px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-rectangle119 {
+  top: 2210px;
+  left: 0px;
+  width: 1440px;
+  height: 92px;
+  position: absolute;
+}
+.sobrenos-text38 {
+  top: 2231px;
+  left: 214px;
+  color: rgba(255, 255, 255, 1);
+  width: 1012px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text42 {
+  top: 1900px;
+  left: 13px;
+  color: rgba(51, 102, 153, 1);
+  width: 350px;
+  height: auto;
+  position: absolute;
+  font-size: 32px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-social-icons1 {
+  top: 1642px;
+  left: 531px;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+}
+.sobrenos-text44 {
+  top: 1996px;
+  left: 461px;
+  color: rgba(14, 191, 235, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text46 {
+  top: 2070px;
+  left: 461px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text48 {
+  top: 2115px;
+  left: 461px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text50 {
+  top: 2160px;
+  left: 461px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text52 {
+  top: 1998px;
+  left: 751px;
+  color: rgba(14, 191, 235, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text54 {
+  top: 2070px;
+  left: 751px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text56 {
+  top: 2115px;
+  left: 751px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text58 {
+  top: 2160px;
+  left: 751px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text60 {
+  top: 1998px;
+  left: 1118px;
+  color: rgba(14, 191, 235, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text62 {
+  top: 2070px;
+  left: 1118px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text64 {
+  top: 2115px;
+  left: 1118px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-text66 {
+  top: 2160px;
+  left: 1118px;
+  color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Sora;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sobrenos-capturadetela20240330144411removebgpreview1 {
+  top: 2041px;
+  left: 91px;
+  width: 288px;
+  height: 108px;
+  position: absolute;
+}

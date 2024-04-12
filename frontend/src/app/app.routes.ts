@@ -22,16 +22,16 @@ export const routes: Routes = [
       {path:'pessoa', component: CadastroPessoaComponent},
       {path:'empresa', component: CadastroEmpresaComponent}
   ]},
-    {path: 'home', component: HomeComponent},
-    {path: "vagas", component: ListaVagasComponent},
-    {path: "sobre-nos", component: SobreNosComponent},
-    {path: "perfil", component: MeuPerfilComponent, canActivate: [authGuard]},
-    {path: "editar-e", component: EditarEmpresaComponent, canActivate: [authGuard]},
-    {path: "editar-p", component: EditarPessoaComponent, canActivate: [authGuard]},
-    {path: "candidatura", component: CandidaturaComponent, canActivate: [authGuard]},
-    {path: "contrato", component: ContratoComponent, canActivate: [authGuard]},
-    {path: "minhas-vagas", component: MinhasVagasComponent, canActivate: [authGuard]},
-    {path: "criar-vaga", component: CriarVagaComponent, canActivate: [authGuard]},
-    {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, canActivate: [authGuard]},
-    {path: "**", redirectTo: ''}
+  {path: 'home', component: HomeComponent},
+  {path: "vagas", component: ListaVagasComponent},
+  {path: "sobre-nos", component: SobreNosComponent},
+  {path: "perfil", component: MeuPerfilComponent, canActivate: [authGuard]},
+  {path: "editar-e", component: EditarEmpresaComponent, canActivate: [authGuard]},
+  {path: "editar-p", component: EditarPessoaComponent, canActivate: [authGuard]},
+  {path: "candidatura", component: CandidaturaComponent, canActivate: [authGuard]},
+  {path: "contrato", component: ContratoComponent, canActivate: [authGuard]},
+  {path: "minhas-vagas", component: MinhasVagasComponent, canActivate: [authGuard]},
+  {path: "criar-vaga", component: CriarVagaComponent, canActivate: [authGuard]},
+  {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, canActivate: [authGuard]},
+  {path: "**", redirectTo: ''}
 ];
