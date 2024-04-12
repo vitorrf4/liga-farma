@@ -1,23 +1,26 @@
+<div>
+  <div class="perfil-titulo">
+    <span>Perfil</span>
+    <button routerLink="/editar-p">Editar</button>
+  </div>
+  <div class="div-dados">
+    <h2>{{usuario.informacoes.nome}}</h2>
+    <p><span>Email: </span> {{usuario.informacoes.email}}</p>
+    <p><span>Telefone:</span> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
 
-<div class="div-perfil">
-  <button routerLink="editar-p">Editar perfil</button>
-  <h2>{{usuario.informacoes.nome}}</h2>
-  <p>Email: {{usuario.informacoes.email}}</p>
-  <p>Telefone: {{usuario.informacoes.telefone}}</p>
+    <p><span>CRF:</span> {{pessoa.crf}}</p>
+    <p>
+      <span>Especialização:</span> {{pessoa.especializacao || 'Não Informado'}}
+    </p>
 
-  <p>CRF: {{pessoa.crf}}</p>
-  <p *ngIf="pessoa.especializacao">
-    Especialização: {{pessoa.especializacao}}
-  </p>
-
-  <div *ngIf="curriculo" id="curriculo">
-    <strong>Curriculo</strong> <br>
-    <br>
-    <pdf-viewer [src]="curriculo.data"
-                [original-size]="false"
-                [autoresize]="true"
-                style="width: 40vh; height: 45vh;">
-    </pdf-viewer>
+    <div *ngIf="curriculo" id="curriculo">
+      <span>Curriculo</span>
+      <pdf-viewer [src]="curriculo.data"
+                  [original-size]="false"
+                  [autoresize]="true"
+                  style="width: 45vh; height: 45vh;">
+      </pdf-viewer>
+    </div>
   </div>
 </div>
 

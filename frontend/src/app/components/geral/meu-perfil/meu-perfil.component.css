@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: row;
   border: 2px solid black;
-  justify-content: space-evenly;
 }
 .div-vagas {
   display: flex;
+  flex-direction: column;
   border: 2px solid red;
 }
 .div-perfil {
