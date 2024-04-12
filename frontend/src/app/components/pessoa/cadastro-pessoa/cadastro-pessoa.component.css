@@ -24,9 +24,9 @@
 }
 .cadastro-divcadastro {
   display: flex;
+  flex-direction: column;
   /*position: relative;*/
   /*align-items: flex-start;*/
-  flex-direction: column;
   /*flex-shrink: 0;*/
   /*top: 100px;*/
   /*left: 250px;*/
@@ -37,23 +37,24 @@
   /*border-radius: 10px;*/
 }
 .cadastro-divbutton {
+  display: flex;
+  border-radius: 10px;
+  background-color: rgba(25, 118, 210, 1);
   /*top: 598px;*/
   /*left: 143px;*/
   /*width: 314px;*/
   /*height: 45px;*/
-  /*display: flex;*/
   /*overflow: hidden;*/
   /*position: absolute;*/
   /*align-items: flex-start;*/
   /*flex-shrink: 0;*/
-  border-radius: 10px;
-  background-color: rgba(25, 118, 210, 1);
 }
 .cadastro-text06 {
+  color: rgba(255, 255, 255, 1);
+  padding: 15px;
   /*top: 8px;*/
   /*left: 105px;*/
   /*position: absolute;*/
-  color: rgba(255, 255, 255, 1);
   /*width: 104px;*/
   /*height: auto;*/
   /*font-size: 20px;*/
