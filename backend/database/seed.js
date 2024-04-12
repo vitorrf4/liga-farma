@@ -6,6 +6,7 @@ class Seeds {
         await this.seedVaga();
         await this.seedVaga();
         await this.seedVaga();
+        await this.seedVaga();
         await this.seedCandidatura();
         await this.seedContrato();
     }
