@@ -30,15 +30,22 @@ export class MinhasCandidaturasComponent implements OnInit {
   ngOnInit(): void {
     const pessoaId = this.loginService.usuario?.informacoes.id || 0;
     this.candidaturaService.listarPorPessoaId(pessoaId).subscribe(res => {
-      this.candidaturas = res;
+      this.candidaturas = res.sort((a, b) => b.id - a.id);
     });
   }
 
   aceitarContrato(contrato: Contrato) {
+    // adicionar rejeitar contrato
     contrato.status = 'ACEITO';
     this.contratoService.atualizar(contrato).subscribe(res => {
       console.log(res);
     });
+  }
 
+  getStatusClass(status: string) {
+    switch (status) {
+      default: case 'ABERTA': return 'span-aberta';
+      case 'FECHADA': return 'span-fechada';
+    }
   }
 }

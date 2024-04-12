@@ -1,25 +1,33 @@
-<h2>Minhas Candidaturas</h2>
-<ul *ngFor="let candidatura of candidaturas">
-  <strong>Candidatura {{candidatura.id}}</strong>
-  <li>Empresa: {{candidatura.vaga.farmacia.nome}}</li>
-  <li>Local: {{candidatura.vaga.cidade}} - {{candidatura.vaga.estado}}</li>
-  <li>Descricao: {{candidatura.vaga.descricao}}</li>
-  <li>Salario: {{candidatura.vaga.salario | currency: 'BRL'}}</li>
-  <li>Tipo: {{candidatura.vaga.tipo}}</li>
-  <li>Turno: {{candidatura.vaga.turno}}</li>
-  <li>Status da Vaga: {{candidatura.vaga.status}}</li>
+<div class="candidatura-div">
+  <h2>Minhas Candidaturas</h2>
+</div>
+
+<div *ngFor="let candidatura of candidaturas">
+  <div >
+    <p [class]="getStatusClass(candidatura.vaga.status)">
+      {{candidatura.vaga.status}}
+    </p>
+  </div>
+  <strong>{{candidatura.vaga.titulo}}</strong>
+  <p><strong>Empresa:</strong> {{candidatura.vaga.farmacia.nome}}</p>
+  <p><strong>Local:</strong> {{candidatura.vaga.cidade}} - {{candidatura.vaga.estado}}</p>
+  <p><strong>Descricao:</strong> {{candidatura.vaga.descricao}}</p>
+  <p><strong>Salario:</strong> {{candidatura.vaga.salario | currency: 'BRL'}}</p>
+  <p><strong>Tipo:</strong> {{candidatura.vaga.tipo}}</p>
+  <p><strong>Turno:</strong> {{candidatura.vaga.turno}}</p>
 
   <div *ngIf="candidatura.contrato">
     <strong>Contrato</strong>
-    <li>Data Inicio: {{candidatura.contrato.dataInicio}}</li>
-    <li>Data Fim: {{candidatura.contrato.dataFim}}</li>
-    <li>Status do contrato: {{candidatura.contrato.status}}</li>
+    <p>Data Inicio: {{candidatura.contrato.dataInicio}}</p>
+    <p>Data Fim: {{candidatura.contrato.dataFim}}</p>
+    <p>Status do contrato: {{candidatura.contrato.status}}</p>
 
     <div *ngIf="candidatura.contrato.status == 'ENVIADO'">
       <button (click)="aceitarContrato(candidatura.contrato)">
         Aceitar contrato
       </button>
     </div>
-
   </div>
-</ul>
+  <hr>
+</div>
+

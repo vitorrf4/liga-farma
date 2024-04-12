@@ -31,9 +31,9 @@ class Seeds {
         const body = {
             tipo: 'EMPRESA',
             informacoes: {
-                nome: "nome2",
-                cnpj: "cpf",
-                endereco: "endereco",
+                nome: "Farmacia Unipreco",
+                cnpj: "120397812-21",
+                endereco: "Avenida Presidente Silva 274",
                 descricao: 'empresa farmaceutico descricao placeholder',
                 email: 'e',
                 senha: 'e',
@@ -45,12 +45,12 @@ class Seeds {
 
     async seedVaga() {
         const body = {
-            titulo: "titulo 1",
+            titulo: "Coordenador Farmacêutico",
             descricao: "Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder ",
             salario: 2000.5,
             estado: "PR",
             cidade: "Paranagua",
-            quantidadeVagas: 1,
+            quantidadeVagas: 2,
             farmaciaId: 1,
             tipo: "PJ",
             turno: "Noturno"

@@ -5,9 +5,10 @@ span {
   display: flex;
   flex-direction: row;
   border: 2px solid dodgerblue;
-  background-color: #64d9ff;
+  background-color: #b2e7ff;
   align-items: center;
   justify-content: space-between;
+  padding: 1vh;
 }
 .perfil-titulo>span {
   margin: 5px 10px;
