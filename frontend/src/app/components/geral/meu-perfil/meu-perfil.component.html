@@ -1,10 +1,12 @@
-<div>
-    <div *ngIf='isPessoa;else empresa_div'>
-      <app-perfil-pessoa></app-perfil-pessoa>
-    </div>
-
-    <ng-template #empresa_div>
-      <app-perfil-empresa></app-perfil-empresa>
-    </ng-template>
+<div *ngIf='isPessoa;else empresa_div' class="perfil-container">
+  <app-perfil-pessoa class="div-perfil"></app-perfil-pessoa>
+  <app-minhas-candidaturas class="div-vagas"></app-minhas-candidaturas>
 </div>
+
+<ng-template #empresa_div >
+  <div class='perfil-container'>
+    <app-perfil-empresa class="div-perfil"></app-perfil-empresa>
+    <app-minhas-vagas class="div-vagas"></app-minhas-vagas>
+  </div>
+</ng-template>
 

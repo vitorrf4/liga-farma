@@ -37,7 +37,6 @@ export class MeuPerfilComponent implements OnInit {
   curriculo: any;
 
   constructor(private loginService: LoginService,
-              private pdfService: PdfService,
               private router: Router) { }
 
   async ngOnInit() {
@@ -47,37 +46,10 @@ export class MeuPerfilComponent implements OnInit {
     }
 
     this.usuario = usuario;
-    this.tipo = this.usuario.tipo;
-
-    if (this.tipo !== 'PESSOA') return;
-    if (!this.pessoa.curriculoId) return;
-
-    // carrega curriculo se o usuário tiver um
-    this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
-      next: res => this.curriculo = res,
-      error: () => console.log('Erro ao carregar curriculo')
-    });
-
-    return;
+    return this.tipo = this.usuario.tipo;
   }
 
   get isPessoa() {
     return this.tipo == 'PESSOA';
-  }
-
-  get pessoa() {
-    return this.usuario.informacoes as Farmaceutico;
-  }
-
-  get empresa() {
-    return this.usuario.informacoes as Farmacia;
-  }
-
-  async irParaEdicao() {
-    switch (this.tipo) {
-      case 'EMPRESA': return await this.router.navigateByUrl('/editar-e');
-      case 'PESSOA': return await this.router.navigateByUrl('/editar-p');
-      default: return;
-    }
   }
 }
