@@ -13,21 +13,28 @@ import {MinhasCandidaturasComponent} from "./components/pessoa/minhas-candidatur
 import {CriarVagaComponent} from "./components/empresa/criar-vaga/criar-vaga.component";
 import {EditarEmpresaComponent} from "./components/empresa/editar-empresa/editar-empresa.component";
 import {EditarPessoaComponent} from "./components/pessoa/editar-pessoa/editar-pessoa.component";
+//import {authGuard} from "./misc/auth.guard";
+import { HomeComponent } from './components/geral/home/home.component';
+import {HeaderComponent} from "./components/geral/header/header.component";
 
 export const routes: Routes = [
-  {path: "vagas", component: ListaVagasComponent},
-  {path: "perfil", component: MeuPerfilComponent},
-  {path: "editar-e", component: EditarEmpresaComponent},
-  {path: "editar-p", component: EditarPessoaComponent},
-  {path: "sobre-nos", component: SobreNosComponent},
-  {path: "candidatura", component: CandidaturaComponent},
-  {path: "contrato", component: ContratoComponent},
-  {path: "minhas-vagas", component: MinhasVagasComponent},
-  {path: "criar-vaga", component: CriarVagaComponent},
-  {path: "minhas-candidaturas", component: MinhasCandidaturasComponent},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent, children: [
       {path:'pessoa', component: CadastroPessoaComponent},
       {path:'empresa', component: CadastroEmpresaComponent}
+  ]},
+  {path: '', component: HeaderComponent, children: [
+    {path: 'home', component: HomeComponent},
+    {path: "vagas", component: ListaVagasComponent},
+    {path: "sobre-nos", component: SobreNosComponent},
+    {path: "perfil", component: MeuPerfilComponent, /* canActivate: [authGuard] */},
+    {path: "editar-e", component: EditarEmpresaComponent, /* canActivate: [authGuard] */},
+    {path: "editar-p", component: EditarPessoaComponent, /* canActivate: [authGuard] */},
+    {path: "candidatura", component: CandidaturaComponent, /* canActivate: [authGuard] */},
+    {path: "contrato", component: ContratoComponent, /* canActivate: [authGuard] */},
+    {path: "minhas-vagas", component: MinhasVagasComponent, /* canActivate: [authGuard] */},
+    {path: "criar-vaga", component: CriarVagaComponent, /* canActivate: [authGuard] */},
+    {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, /* canActivate: [authGuard] */},
+    {path: "**", redirectTo: ''}
   ]},
 ];
