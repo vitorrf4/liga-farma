@@ -1,15 +1,19 @@
 .perfil-container {
   display: flex;
   flex-direction: row;
-  border: 2px solid black;
+  margin-bottom: 5vh;
 }
 .div-vagas {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  border-radius: 3px;
+  background-color: #d9f3f6;
 }
 .div-perfil {
   display: flex;
   flex-direction: column;
-  border: 2px solid blue;
+  min-width: 30%;
+  margin-right: 2vh;
+  border-radius: 3px;
+  background-color: #d9f3f6;
 }
