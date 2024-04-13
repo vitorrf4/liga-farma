@@ -2,7 +2,7 @@
   <h2>Minhas Vagas</h2>
   <button class="btn-criar" routerLink="/criar-vaga">+ Criar vaga</button>
 </div>
-<div *ngFor="let vaga of vagas">
+<div *ngFor="let vaga of vagas;let vagaIndex=index">
   <div class="div-status">
     <p><strong>{{vaga.titulo}}</strong></p>
     <p [class]="getStatusClass(vaga.status)">
@@ -33,9 +33,15 @@
         <p>Status: {{getContratoStatusString(candidatura.contrato.status)}}</p>
       </div>
       <ng-template #enviar>
-        <button (click)="aceitarCandidatura(candidatura, vaga)" class="btn-green">
+        <button (click)="aceitarCandidatura(candidatura, vaga, vagaIndex)" class="btn-blue">
           Aceitar candidatura
         </button>
+
+        <div *ngIf="contrato && index==vagaIndex">
+          <app-contrato [contrato]="contrato"
+                        (contratoAtualizado)="atualizarContrato($event)">
+          </app-contrato>
+        </div>
       </ng-template>
 
     </div>

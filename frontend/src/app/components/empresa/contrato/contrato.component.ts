@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
 import {Candidatura} from "../../../models/candidatura";
 import {JsonPipe} from "@angular/common";
@@ -17,19 +17,12 @@ import {ContratoService} from "../../../services/contrato.service";
   styleUrl: './contrato.component.css'
 })
 export class ContratoComponent {
-  vaga: Vaga;
-  candidatura: Candidatura;
-  contrato: Contrato = new Contrato();
+  @Input() contrato!: Contrato;
+  @Output() contratoAtualizado = new EventEmitter();
   form: FormGroup;
 
   constructor(private builder: FormBuilder,
               private contratoService: ContratoService) {
-    this.vaga = history.state.vaga;
-    this.candidatura = history.state.candidatura;
-
-    this.contrato.candidaturaId = this.candidatura.id;
-    this.contrato.vagaId = this.vaga.id;
-
     this.form = builder.group({
       dataInicio: [],
       dataFim: []
@@ -40,8 +33,20 @@ export class ContratoComponent {
     this.contrato.dataInicio = this.form.get('dataInicio')?.value;
     this.contrato.dataFim = this.form.get('dataFim')?.value;
 
-    this.contratoService.cadastrar(this.contrato).subscribe(res => {
-      console.log(res);
+    this.contrato.candidatura.farmaceutico.curriculo = undefined;
+    this.contrato.vagaId = this.contrato.vaga.id;
+    this.contrato.candidaturaId = this.contrato.candidatura.id;
+
+    this.contratoService.cadastrar(this.contrato).subscribe({
+      next: res => {
+        alert('Contrato enviado!');
+        this.atualizarContrato(res);
+      },
+      error: () => alert('Erro no envio, tente novamente mais tarde')
     });
+  }
+
+  atualizarContrato(contrato1: Contrato) {
+    this.contratoAtualizado.emit(contrato1);
   }
 }

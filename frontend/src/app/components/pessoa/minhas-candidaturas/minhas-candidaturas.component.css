@@ -21,16 +21,9 @@ hr {
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
-.btn-green {
-  border: 2px green solid;
-  border-radius: 6px;
-  background-color: #51ff51;
-  padding: 0.5vh;
-}
 p {
   font-size: 25px;
 }
-
 .div-status {
   display: inline-flex;
   justify-content: center;

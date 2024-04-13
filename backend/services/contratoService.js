@@ -27,7 +27,7 @@ class ContratoService {
 
     async candidaturaJaTemContrato(candidaturaId) {
         const candidatura = await Candidatura.findByPk(candidaturaId, {include: 'contrato'});
-        return candidatura.contrato;
+        return (candidatura)? candidatura.contrato : false;
     }
 
     async atualizarContrato(contrato) {

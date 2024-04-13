@@ -1,29 +1,35 @@
-import {Component, OnInit} from '@angular/core';
+import {Component,  OnInit,} from '@angular/core';
 import {VagaService} from "../../../services/vaga.service";
 import {Vaga} from "../../../models/vaga";
-import {AuthService} from "../../../services/auth.service";
 import {Farmacia} from "../../../models/farmacia";
 import {CurrencyPipe, DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {Candidatura} from "../../../models/candidatura";
 import {LoginService} from "../../../services/login.service";
+import {Contrato} from "../../../models/contrato";
+import {CandidaturaComponent} from "../../pessoa/candidatura/candidatura.component";
+import {ContratoComponent} from "../contrato/contrato.component";
 
 @Component({
   selector: 'app-minhas-vagas',
   standalone: true,
-	imports: [
-		JsonPipe,
-		NgForOf,
-		DatePipe,
-		NgIf,
-		CurrencyPipe,
-		RouterLink
-	],
+  imports: [
+    JsonPipe,
+    NgForOf,
+    DatePipe,
+    NgIf,
+    CurrencyPipe,
+    RouterLink,
+    CandidaturaComponent,
+    ContratoComponent
+  ],
   templateUrl: './minhas-vagas.component.html',
   styleUrl: './minhas-vagas.component.css'
 })
 export class MinhasVagasComponent implements OnInit {
   vagas: Vaga[] = [];
+  contrato?: Contrato;
+  index = 0;
 
   constructor(private vagaService: VagaService,
               private loginService: LoginService,
@@ -40,12 +46,16 @@ export class MinhasVagasComponent implements OnInit {
     });
   }
 
-  async aceitarCandidatura(candidatura: Candidatura, vaga: Vaga) {
-    await this.router.navigateByUrl('contrato', {
-      state: {
-        candidatura: candidatura,
-        vaga: vaga
-      }});
+  atualizarContrato(contrato: Contrato) {
+    console.log(contrato);
+    this.contrato = undefined;
+  }
+
+  async aceitarCandidatura(candidatura: Candidatura, vaga: Vaga, index: number) {
+    this.contrato = new Contrato();
+    this.contrato.candidatura = candidatura;
+    this.contrato.vaga = vaga;
+    this.index = index;
   }
 
   fecharVaga(vaga: Vaga) {
