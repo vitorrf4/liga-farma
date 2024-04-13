@@ -1,11 +1,78 @@
-* {
-  font-size: 25px;
+*{
+  font-family: "Sora", sans-serif;
 }
 .block {
   display: block;
 }
 
-button[type=submit] {
-  margin-top: 5%;
-  margin-bottom: 10%;
+label {
+  font-weight: 600;
+  margin-left: 1vh;
+}
+
+.cadastro-container {
+  width:max-content;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  align-items: center;
+}
+.cadastro-divbutton {
+  background-color: #057dc9;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  border-radius: 4px;
+  justify-content: center;
+  width: auto;
+  padding: 0px 20px 0px 20px;
+  height: 40px;
+  margin: 10px 10px 0px 10px;
+}
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top:3vh;
+}
+.cadastro-buttontext {
+  font-size: 20px;
+  margin: auto;
+}
+
+.label-text{
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 18px;
+  text-align: left;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cadastro-divlabel {
+  top: 5px;
+  left: 10px;
+  width: auto;
+  height: 35px;
+  display: flex;
+  /*position: absolute;*/
+  align-items: center;
+  flex-shrink: 0;
+}
+.cadastro-divinput {
+  color: #000000;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 10px;
+  top: 40px;
+  left:0px;
+  width: 400px;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+}
+
+.cadastro-container>div{
+  margin: 10px 0px 5px 0px;
 }

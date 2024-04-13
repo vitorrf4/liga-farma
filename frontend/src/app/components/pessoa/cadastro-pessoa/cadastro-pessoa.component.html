@@ -1,6 +1,7 @@
 <form [formGroup]="form" (submit)="cadastrarCliente()">
 <div class="cadastro-container">
-    <div class="cadastro-nomegroup">
+  
+    <div>
       <div class="cadastro-divlabel">
         <label class="label-text" for="nome">Nome</label>
       </div >
@@ -14,7 +15,7 @@
 
     </div>
 
-    <div class="cadastro-cpfgroup">
+    <div>
       <div class="cadastro-divlabel">
 
         <label class="label-text" for="cpf">
@@ -32,7 +33,7 @@
 
     </div>
 
-    <div class="cadastro-crfgroup">
+    <div>
       <div class="cadastro-divlabel">
 
         <label class="label-text" for="crf">
@@ -49,39 +50,22 @@
         placeholder="Insira seu CRF"/>
 
     </div>
-      <div class="cadastro-senhagroup">
-        <div class="cadastro-divlabel">
 
-          <label class="label-text" for="email">
-            <span>Email</span>
-          </label>
-
-        </div>
-
-        <input
-          type="text"
-          class="cadastro-divinput"
-          formControlName="email"
-          required="required"
-          placeholder="Crie uma senha"/>
-
-      </div >
-
-    <div class="cadastro-senhagroup">
+    <div>
       <div class="cadastro-divlabel">
 
-        <label class="label-text" for="senha">
-          <span>Senha</span>
+        <label class="label-text" for="email">
+          <span>Email</span>
         </label>
 
-      </div >
+      </div>
 
       <input
-        type="password"
+        type="text"
         class="cadastro-divinput"
-        formControlName="senha"
+        formControlName="email"
         required="required"
-        placeholder="Crie uma senha"/>
+        placeholder="Insira seu email"/>
 
     </div >
 
@@ -102,12 +86,33 @@
         placeholder="Digite seu telefone"/>
 
     </div >
+
+    <div class="cadastro-senhagroup">
+      <div class="cadastro-divlabel">
+
+        <label class="label-text" for="senha">
+          <span>Senha</span>
+        </label>
+
+      </div >
+
+      <input
+        type="password"
+        class="cadastro-divinput"
+        formControlName="senha"
+        required="required"
+        placeholder="Crie uma senha"/>
+
+    </div >
+    
     <div class="cadastro-curriculogroup">
+
       <div class="cadastro-divlabel">
         <label class="label-text">
           <span>Currículo</span>
         </label >
       </div>
+
       <div class="cadastro-curriculoinput">
         <input
           type="file"
@@ -122,12 +127,13 @@
             style="width: 40vh; height: 45vh; border: 2px black solid">
           </pdf-viewer>
         </div>
-      </div>
 
+      </div>
   </div>
-  <div id="submit-button">
+
+  <div class="submit-button">
     <button type="submit" class="cadastro-divbutton">
-        <span class="cadastro-text06">
+        <span class="cadastro-buttontext">
             Cadastrar
         </span>
     </button>
