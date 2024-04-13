@@ -52,6 +52,11 @@ export class CadastroEmpresaComponent implements OnInit {
       farmaceutico
     );
 
+    if(!this.form.valid){
+      alert("Preencha o formulário corretamente!!");
+      return;
+    }
+
     this.cadastroService.cadastrar(usuario).subscribe({
       next: res => this.logarUsuario(usuario),
       error: () => alert('Email já cadastrado')

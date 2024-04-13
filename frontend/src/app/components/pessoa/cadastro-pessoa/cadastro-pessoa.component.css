@@ -1,11 +1,12 @@
 *{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Sora", sans-serif;
+  transition: 700ms;
 }
 :host {
   display: contents;
 }
 label {
-  font-weight: bold;
+  font-weight: 600;
   margin-left: 1vh;
 }
 .cadastro-container {
@@ -16,39 +17,65 @@ label {
   align-items: center;
 }
 .cadastro-divbutton {
-  display: flex;
-  border-radius: 10px;
-  background-color: rgba(25, 118, 210, 1);
-  justify-content: center;
-  width: 314px;
-  /*top: 598px;*/
-  /*left: 143px;*/
-  /*height: 45px;*/
-  /*overflow: hidden;*/
-  /*position: absolute;*/
-  /*align-items: flex-start;*/
-  /*flex-shrink: 0;*/
-}
-#submit-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 3vh;
-}
-.cadastro-text06 {
+  background-color: #057dc9;
   color: rgba(255, 255, 255, 1);
-  padding: 10px 50px;
+  display: flex;
+  border-radius: 4px;
+  justify-content: center;
+  width: auto;
+  padding: 0px 20px 0px 20px;
+  height: 40px;
+  margin: 10px 10px 0px 10px;
+}
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top:3vh;
+}
+.cadastro-buttontext {
   font-size: 20px;
-  width: 104px;
+  margin: auto;
+}
+
+.label-text{
+  color: rgba(0, 0, 0, 1);
   height: auto;
-  font-weight: 500;
+  font-size: 18px;
+  text-align: left;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
-  /*text-align: left;*/
-  /*top: 8px;*/
-  /*left: 105px;*/
-  /*position: absolute;*/
 }
+.cadastro-divlabel {
+  top: 5px;
+  left: 10px;
+  width: auto;
+  height: 35px;
+  display: flex;
+  /*position: absolute;*/
+  align-items: center;
+  flex-shrink: 0;
+}
+.cadastro-divinput {
+  color: #000000;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 10px;
+  top: 40px;
+  left:0px;
+  width: 400px;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  text-align: left;
+}
+
+.cadastro-container>div{
+  margin: 10px 0px 5px 0px;
+}
+
 .cadastro-divcadastroalt {
   /*gap: 23px;*/
   /*top: 827.560546875px;*/
@@ -141,7 +168,7 @@ label {
 
 /* == GRUPOS == */
 
-/*.cadastro-nomegroup {*/
+.cadastro-nomegroup {
 /*  top: 0px;*/
 /*  left: 0px;*/
 /*  width: 600px;*/
@@ -173,8 +200,8 @@ label {
 /*  position: absolute;*/
 /*  align-items: flex-start;*/
 /*  flex-shrink: 1;*/
-/*}*/
-/*.cadastro-senhagroup {*/
+}
+.cadastro-senhagroup {
 /*  top: 300px;*/
 /*  left: 0px;*/
 /*  width: 600px;*/
@@ -184,70 +211,34 @@ label {
 /*  position: absolute;*/
 /*  align-items: flex-start;*/
 /*  flex-shrink: 1;*/
-/*}*/
+}
 .cadastro-telefonegroup {
-  /*top: 400px;*/
-  /*left: 0px;*/
-  /*width: 600px;*/
-  /*height: 100px;*/
-  /*margin-top: 10px;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*position: absolute;*/
-  /*align-items: flex-start;*/
-  /*flex-shrink: 1;*/
+  /*top: 400px;
+  left: 0px;
+  width: 600px;
+  height: 100px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;*/
 }
 .cadastro-curriculogroup {
-  /*top: 500px;*/
-  /*left: 0px;*/
-  /*width: 600px;*/
-  /*height: 100px;*/
-  /*margin-top: 10px;*/
-  /*display: flex;*/
-  /*position: absolute;*/
-  /*align-items: flex-start;*/
-  /*flex-shrink: 1;*/
+  /*margin: none;
+  top: 500px;
+  left: 0px;
+  width: 600px;
+  height: 100px;
+  margin-top: 10px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;*/
 }
 
 /* == OTIMIZAÇÕES A PARTIR DAQUI == */
 
-.label-text{
-  color: rgba(0, 0, 0, 1);
-  height: auto;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: left;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cadastro-divlabel {
-  top: 5px;
-  left: 10px;
-  width: 80px;
-  height: 35px;
-  display: flex;
-  /*position: absolute;*/
-  align-items: center;
-  flex-shrink: 0;
-}
-.cadastro-divinput {
-  color: rgba(217, 217, 217, 1);
-  padding-left: 10px;
-  font-weight: 500;
-  font-size: 20px;
-  border: 1px solid rgba(217, 217, 217, 1);
-  border-radius: 10px;
-  top: 40px;
-  left:0px;
-  width: 600px;
-  height: 55px;
-  display: flex;
-  overflow: hidden;
-  text-align: left;
-  /*position: absolute;*/
-  /*align-items: left;*/
-}
 .cadastro-curriculoinput{
   /*margin-top: 45px;*/
 }

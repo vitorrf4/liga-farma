@@ -12,6 +12,7 @@
 .row {
   display: flex;
   flex-wrap: nowrap;
+  max-height: 911px;
 }
 
 .col-sm-6 {
@@ -38,15 +39,31 @@
   align-items: center;
 }
 
-#heading>button {
-  background-color: #0e5feb;
-  border: 2px solid black;
-  border-radius: 5px;
-  color: rgba(255, 255, 255, 1);
+#heading>div{
+  margin: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
 }
+
+#heading>div>button {
+  background-color: #057dc9;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  border-radius: 4px;
+  justify-content: center;
+  width:183px;
+  padding: 0px 20px 0px 20px;
+}
+
+#heading>div>button>span{
+  margin: auto;
+  font-size: 18px;
+}
+
 button {
   margin-right: 10px;
   margin-bottom: 10px;
+  height: 40px;
 }
 
 #router {
