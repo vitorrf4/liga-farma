@@ -27,7 +27,9 @@
     <div *ngFor="let candidatura of vaga.candidaturas" class="div-candidatura">
       <p><strong>Candidato:</strong> {{candidatura.farmaceutico.nome}}</p>
       <p><strong>Email:</strong> {{candidatura.farmaceutico.email}}</p>
-      <p><strong>Mensagem:</strong> {{candidatura.mensagem}}</p>
+      <div *ngIf="candidatura.mensagem">
+        <p><strong>Mensagem:</strong> {{candidatura.mensagem}}</p>
+      </div>
 
       <div *ngIf="candidatura.contrato; else enviar">
         <p>Status: {{getContratoStatusString(candidatura.contrato.status)}}</p>

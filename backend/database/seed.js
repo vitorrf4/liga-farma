@@ -4,9 +4,9 @@ class Seeds {
         await this.seedFarmaceutico();
         await this.seedFarmacia();
         await this.seedVaga();
+        await this.seedVaga2();
         await this.seedVaga();
-        await this.seedVaga();
-        await this.seedVaga();
+        await this.seedVaga2();
         await this.seedCandidatura();
         await this.seedContrato();
     }
@@ -53,6 +53,21 @@ class Seeds {
             quantidadeVagas: 2,
             farmaciaId: 1,
             tipo: "PJ",
+            turno: "Noturno"
+        }
+        await this.executarPost(body, 'vaga');
+    }
+
+    async seedVaga2() {
+        const body = {
+            titulo: "Coordenador Farmacêutico",
+            descricao: "Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder ",
+            salario: 4050.20,
+            estado: "SP",
+            cidade: "São Paulo",
+            quantidadeVagas: 5,
+            farmaciaId: 1,
+            tipo: "Temporário",
             turno: "Noturno"
         }
         await this.executarPost(body, 'vaga');

@@ -1,10 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="enviarContrato()">
-  <label>Inicio do Contrato*:</label>
+  <label>Inicio do Contrato:</label>
   <input type="date" formControlName="dataInicio">
   <br>
-  <label>Fim do Contrato:</label>
-  <input type="date" formControlName="dataFim">
-  <br>
+  <div *ngIf="contrato.vaga.tipo.toUpperCase() == 'TEMPORÁRIO'">
+    <label>Fim do Contrato:</label>
+    <input type="date" formControlName="dataFim">
+    <br>
+  </div>
 
   <button class="btn-green">Enviar contrato</button>
 </form>
