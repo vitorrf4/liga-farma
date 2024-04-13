@@ -3,12 +3,12 @@
 </div>
 
 <div *ngFor="let candidatura of candidaturas">
-  <div >
+  <div class="div-status">
+    <p><strong>{{candidatura.vaga.titulo}}</strong></p>
     <p [class]="getStatusClass(candidatura.vaga.status)">
-      {{candidatura.vaga.status}}
+      {{getStatusFormatado(candidatura.vaga.status)}}
     </p>
   </div>
-  <p><strong>{{candidatura.vaga.titulo}}</strong></p>
   <p><strong>Empresa:</strong> {{candidatura.vaga.farmacia.nome}}</p>
   <p><strong>Local:</strong> {{candidatura.vaga.cidade}} - {{candidatura.vaga.estado}}</p>
   <p><strong>Descricao:</strong> {{candidatura.vaga.descricao}}</p>

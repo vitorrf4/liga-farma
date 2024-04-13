@@ -55,4 +55,15 @@ export class MinhasVagasComponent implements OnInit {
     });
   }
 
+  getStatusClass(status: string) {
+    switch (status) {
+      default: case 'ABERTA': return 'span-aberta';
+      case 'FECHADA': return 'span-fechada';
+    }
+  }
+
+  getStatusFormatado(str: string) {
+    str = str.toLowerCase();
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 }

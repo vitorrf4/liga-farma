@@ -48,4 +48,9 @@ export class MinhasCandidaturasComponent implements OnInit {
       case 'FECHADA': return 'span-fechada';
     }
   }
+
+  getStatusFormatado(str: string) {
+    str = str.toLowerCase();
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 }

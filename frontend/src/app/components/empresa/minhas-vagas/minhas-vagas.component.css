@@ -13,24 +13,6 @@ hr {
   justify-content: space-between;
   padding: 1vh;
 }
-.span-aberta {
-  display: inline-flex;
-  border: 2px green solid;
-  border-radius: 6px;
-  background-color: #73ff73;
-  padding: 0.5vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-}
-.span-fechada {
-  display: inline-flex;
-  border: 2px #370000 solid;
-  border-radius: 6px;
-  background-color: #ff5454;
-  padding: 0.5vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-}
 .div-candidaturas {
   border: 2px #370000 solid;
   border-radius: 6px;
@@ -47,4 +29,21 @@ hr {
 }
 p {
   font-size: 25px;
+}
+.div-status {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-status > div {
+  margin-left: 1vh;
+}
+.div-status > p {
+  margin-right: 1vh;
+}
+.btn-criar {
+  background-color: #0EBFEB;
+  border: 3px solid #004a7a;
+  border-radius: 5px;
+  padding: 1vh;
 }

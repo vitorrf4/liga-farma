@@ -1,35 +1,40 @@
 <div class="candidatura-div">
   <h2>Minhas Vagas</h2>
-  <button routerLink="/criar-vaga">Criar vaga</button>
+  <button class="btn-criar" routerLink="/criar-vaga">+ Criar vaga</button>
 </div>
 <div *ngFor="let vaga of vagas">
-  <h2>{{vaga.titulo}}</h2>
-  <p>Empresa: {{vaga.farmacia.nome}}</p>
-  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
-  <li>Descricao: {{vaga.descricao}}</li>
-  <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
-  <li>Salario: {{vaga.salario | currency: 'BRL'}}</li>
-  <li>Tipo: {{vaga.tipo}}</li>
-  <li>Turno: {{vaga.turno}}</li>
-  <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
-  <li>Status: {{vaga.status}}</li>
-
-  <div *ngIf="vaga.status == 'ABERTA'">
-    <button (click)="fecharVaga(vaga)" class="btn-red">Fechar vaga</button>
+  <div class="div-status">
+    <p><strong>{{vaga.titulo}}</strong></p>
+    <p [class]="getStatusClass(vaga.status)">
+      {{getStatusFormatado(vaga.status)}}
+    </p>
+    <div *ngIf="vaga.status == 'ABERTA'">
+      <button (click)="fecharVaga(vaga)" class="btn-red">Fechar vaga</button>
+    </div>
   </div>
+
+  <p><strong>Local:</strong> {{vaga.cidade}} - {{vaga.estado}}</p>
+  <p><strong>Descricao:</strong> {{vaga.descricao}}</p>
+  <p><strong>Quantidade de Vagas:</strong> {{vaga.quantidadeVagas}}</p>
+  <p><strong>Salario:</strong> {{vaga.salario | currency: 'BRL'}}</p>
+  <p><strong>Tipo:</strong> {{vaga.tipo}}</p>
+  <p><strong>Turno:</strong> {{vaga.turno}}</p>
+  <p><strong>Data publicada:</strong> {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</p>
 
   <div *ngIf="vaga.candidaturas.length">
     <strong>Candidaturas</strong>
 
     <ul *ngFor="let candidatura of vaga.candidaturas">
-      <li>Candidato: {{candidatura.farmaceutico.nome}}</li>
-      <li>Mensagem:{{candidatura.mensagem}}</li>
+      <p>Candidato: {{candidatura.farmaceutico.nome}}</p>
+      <p>Mensagem:{{candidatura.mensagem}}</p>
 
       <div *ngIf="candidatura.contrato; else enviar">
-        <li>Status:{{candidatura.contrato.status}}</li>
+        <p>Status:{{candidatura.contrato.status}}</p>
       </div>
       <ng-template #enviar>
-        <button (click)="aceitarCandidatura(candidatura, vaga)">Aceitar candidatura</button>
+        <button (click)="aceitarCandidatura(candidatura, vaga)">
+          Aceitar candidatura
+        </button>
       </ng-template>
 
     </ul>
