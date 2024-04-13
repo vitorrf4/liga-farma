@@ -1,44 +1,35 @@
-<h3>Farmacêutico</h3>
+<div class="outer-div">
+  <div class="perfil-titulo">
+    <h2>Perfil</h2>
+  </div>
+  <div class="div-dados">
+    <form [formGroup]="form" (submit)="atualizarInformacoes()">
+      <div class="form-outline">
+        <label class="form-label">Nome:</label>
+        <input type="text" class="form-control" formControlName="nome" required />
+      </div>
 
-<form [formGroup]="form" (submit)="atualizarInformacoes()">
-  <div class="form-outline">
-    <label class="form-label">Nome:</label>
-    <input type="text" class="form-control" formControlName="nome" required />
+      <div class="form-outline">
+        <label class="form-label">Especialização: </label>
+        <input type="text" class="form-control" formControlName="especializacao" required />
+      </div>
+
+      <div>
+        <label class="form-label">Email:</label>
+        <input type="text" class="form-control" formControlName="email" required/>
+      </div>
+
+      <div class="form-outline">
+        <label class="form-label">Telefone:</label>
+        <input type="text" class="form-control" formControlName="telefone" />
+      </div>
+
+      <br>
+      <button type="submit" class="btn-green">Atualizar</button>
+    </form>
+
   </div>
 
-  <div class="form-outline">
-    <label class="form-label">Especialização: </label>
-    <input type="text" class="form-control" formControlName="especializacao" required />
-  </div>
+</div>
 
-  <div>
-    <label class="form-label">Email:</label>
-    <input type="text" class="form-control" formControlName="email" required/>
-  </div>
-
-  <div class="form-outline">
-    <label class="form-label">Telefone:</label>
-    <input type="text" class="form-control" formControlName="telefone" />
-  </div>
-
-<!--  <h1>Curriculo:</h1>-->
-
-<!--  <label for="fileInput">Mudar arquivo:</label>-->
-<!--  <input type="file" id="fileInput" (change)="onFileSelected($event)" accept=".pdf">-->
-
-<!--  <div *ngIf="file" id="curriculo">-->
-<!--    <a [href]="fileUrl" download="{{ file?.name }}">Baixar</a>-->
-<!--    <br>-->
-<!--    <pdf-viewer *ngIf="fileUrl" [src]="fileUrl"-->
-<!--                [original-size]="false"-->
-<!--                [autoresize]="true"-->
-<!--                style="width: 40vh; height: 45vh;">-->
-<!--    </pdf-viewer>-->
-<!--  </div>-->
-
-<!--  <p>{{debug | json}}</p>-->
-
-  <br>
-  <button type="submit">Atualizar</button>
-</form>
 

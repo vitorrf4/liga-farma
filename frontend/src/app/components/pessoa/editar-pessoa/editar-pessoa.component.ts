@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {LoginService} from "../../../services/login.service";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {Usuario} from "../../../models/usuario";
 import {FarmaceuticoService} from "../../../services/farmaceutico.service";
 import {Farmaceutico} from "../../../models/farmaceutico";
 import {JsonPipe, NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
-import {PdfService} from "../../../services/pdf.service";
+import {PerfilPessoaComponent} from "../perfil-pessoa/perfil-pessoa.component";
 
 @Component({
   selector: 'app-editar-pessoa',
@@ -17,7 +17,9 @@ import {PdfService} from "../../../services/pdf.service";
     ReactiveFormsModule,
     NgIf,
     PdfViewerModule,
-    JsonPipe
+    JsonPipe,
+    PerfilPessoaComponent,
+    RouterLink
   ],
   templateUrl: './editar-pessoa.component.html',
   styleUrl: './editar-pessoa.component.css'
@@ -25,8 +27,6 @@ import {PdfService} from "../../../services/pdf.service";
 export class EditarPessoaComponent implements OnInit {
   form!: FormGroup;
   pessoa!: Farmaceutico;
-  // file: any;
-  // fileUrl: any = '';
 
   constructor(private loginService: LoginService,
               private formBuilder: FormBuilder,
@@ -62,44 +62,5 @@ export class EditarPessoaComponent implements OnInit {
         console.log(err);
       }
     });
-
-    // this.atualizarCurriculo();
   }
-
-  // get debug() {
-  //   return this.file.filename;
-  // }
-
-  // onFileSelected(event: any): void {
-  //   const selectedFile = event.target.files[0];
-  //   if (selectedFile) {
-  //     this.loadFile(selectedFile);
-  //   }
-  // }
-  //
-  // loadFile(selectedFile: File) {
-  //   const reader = new FileReader();
-  //   reader.onload = () => {
-  //     if (reader.result) {
-  //       this.file = selectedFile;
-  //       this.fileUrl = reader.result;
-  //     }
-  //   };
-  //
-  //   reader.readAsArrayBuffer(selectedFile);
-  // }
-  //
-  // atualizarCurriculo() {
-  //   if (this.file) {
-  //     const pdfForm = new FormData();
-  //     pdfForm.append('pdf', this.file);
-  //     pdfForm.append('usuarioId', this.pessoa.id.toString());
-  //
-  //     this.pdfService.uploadPdf(pdfForm).subscribe(res => {
-  //       console.log(res);
-  //     });
-  //   } else {
-  //     console.log('no file');
-  //   }
-  // }
 }
