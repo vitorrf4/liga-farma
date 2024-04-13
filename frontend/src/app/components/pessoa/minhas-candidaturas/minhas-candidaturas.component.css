@@ -3,7 +3,6 @@ strong {
 }
 hr {
   color: black;
-  height: 2px;
 }
 .candidatura-div {
   display: flex;
@@ -47,5 +46,5 @@ hr {
   padding: 0.5vh;
 }
 p {
-  font-size: 30px;
+  font-size: 25px;
 }
