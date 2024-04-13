@@ -2,7 +2,7 @@
   <h2>Minhas Vagas</h2>
   <button routerLink="/criar-vaga">Criar vaga</button>
 </div>
-<div *ngFor="let vaga of vagas">
+<div class="vaga" *ngFor="let vaga of vagas">
   <h2>{{vaga.titulo}}</h2>
   <p>Empresa: {{vaga.farmacia.nome}}</p>
   <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
@@ -14,19 +14,19 @@
   <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
   <li>Status: {{vaga.status}}</li>
 
-  <div *ngIf="vaga.status == 'ABERTA'">
+  <div class="vaga-aberta" *ngIf="vaga.status == 'ABERTA'">
     <button (click)="fecharVaga(vaga)" class="btn-red">Fechar vaga</button>
   </div>
 
-  <div *ngIf="vaga.candidaturas.length">
+  <div class="vaga-candidaturas" *ngIf="vaga.candidaturas.length">
     <strong>Candidaturas</strong>
 
-    <ul *ngFor="let candidatura of vaga.candidaturas">
-      <li>Candidato: {{candidatura.farmaceutico.nome}}</li>
-      <li>Mensagem:{{candidatura.mensagem}}</li>
+    <ul class="vaga-candidatura" *ngFor="let candidatura of vaga.candidaturas">
+      <li><span>Candidato:</span> {{candidatura.farmaceutico.nome}}</li>
+      <li><span>Mensagem:</span> {{candidatura.mensagem}}</li>
 
       <div *ngIf="candidatura.contrato; else enviar">
-        <li>Status:{{candidatura.contrato.status}}</li>
+        <li><span>Status:</span> {{candidatura.contrato.status}}</li>
       </div>
       <ng-template #enviar>
         <button (click)="aceitarCandidatura(candidatura, vaga)">Aceitar candidatura</button>

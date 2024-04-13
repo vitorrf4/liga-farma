@@ -1,14 +1,12 @@
-<div class="perfil-titulo">
-  <h2>Perfil</h2>
-  <button routerLink="/editar-p">Editar</button>
-</div>
-<div class="div-dados">
-  <h2>{{usuario.informacoes.nome}}</h2>
-  <p><span>Email: </span> {{usuario.informacoes.email}}</p>
-  <p><span>Telefone:</span> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
-  <p><span>CNPJ:</span> {{empresa.cnpj}}</p>
-  <p><span>Endereço:</span> {{empresa.endereco || 'Não Informado'}}</p>
-  <p><span>Descrição:</span> {{empresa.descricao}}</p>
-</div>
-
-
+  <div class="perfil-titulo">
+    <h2>Perfil</h2>
+    <button routerLink="/editar-p">Editar</button>
+  </div>
+  <div class="div-dados">
+    <h2>{{usuario.informacoes.nome}}</h2>
+    <p><span>Email: </span> {{usuario.informacoes.email}}</p>
+    <p><span>Telefone:</span> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
+    <p><span>CNPJ:</span> {{empresa.cnpj}}</p>
+    <p><span>Endereço:</span> {{empresa.endereco || 'Não Informado'}}</p>
+    <p><span>Descrição:</span> {{empresa.descricao}}</p>
+  </div>

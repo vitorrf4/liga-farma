@@ -1,50 +1,82 @@
-strong {
-  font-weight: bold;
+.candidatura-div, .vaga{
+  padding: 20px;
+  display: table;
+  width: 100%;
 }
-hr {
-  color: black;
+
+.candidatura-div{
+  background-color: #336699;
 }
-.candidatura-div {
-  display: flex;
-  flex-direction: row;
-  border: 2px solid dodgerblue;
-  background-color: #b2e7ff;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1vh;
+
+.candidatura-div h2{
+  color: #FFF;
+  float: left;
 }
-.span-aberta {
-  display: inline-flex;
-  border: 2px green solid;
-  border-radius: 6px;
-  background-color: #73ff73;
-  padding: 0.5vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+
+.candidatura-div button{
+  float: right;
+  color: #FFF;
+  padding: 10px 20px;
+  background-color: #2D3944;
+  border-radius: 10px;
 }
-.span-fechada {
-  display: inline-flex;
-  border: 2px #370000 solid;
-  border-radius: 6px;
-  background-color: #ff5454;
-  padding: 0.5vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+
+.candidatura-div button:hover{
+  background-color: #CDE6FF;
+  color: #000;
 }
-.div-candidaturas {
-  border: 2px #370000 solid;
-  border-radius: 6px;
-  background-color: #006ca5;
-  padding: 0.5vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+
+.vaga{
+  background-color: #FFF;
 }
-.btn-green {
-  border: 2px green solid;
-  border-radius: 6px;
-  background-color: #51ff51;
-  padding: 0.5vh;
+
+.vaga h2{
+  margin-bottom: 20px;
 }
-p {
+
+.vaga li{
+  margin-bottom: 10px;
+}
+
+.vaga-aberta{
+  border: 1px solid yellowgreen;
+}
+
+.vaga-candidaturas{
+  padding: 20px;
+  background-color: #EFEFEF;
+}
+
+.vaga-candidaturas strong{
+  font-weight: 600;
   font-size: 25px;
+  margin-bottom: 20px;
+  display: table;
 }
+
+.vaga-candidatura{
+  border: 1px solid lightgray;
+  background-color: #FFF;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.vaga-candidatura span{
+  font-weight: 600;
+}
+
+.vaga-candidatura button{
+  background-color: #1976D2;
+  color: #FFF;
+  border: 1px solid #3A5B22;
+  padding: 10px 200px;
+  border-radius: 10px;
+  margin: 30px auto !important;
+  display: table;
+}
+
+.vaga-candidatura button:hover{
+  background-color: #336699;
+  color: #FFF;
+}
+

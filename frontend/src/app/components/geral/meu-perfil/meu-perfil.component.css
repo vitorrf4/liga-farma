@@ -1,19 +1,22 @@
-.perfil-container {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 5vh;
+#pagina-meu-perfil{
+  margin: 50px auto;
+  width: 1440px;
 }
-.div-vagas {
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-  background-color: #d9f3f6;
+
+.perfil-container{
+  margin: 0 auto;
+  width: 100%;
+  display: table !important;
 }
-.div-perfil {
-  display: flex;
-  flex-direction: column;
-  min-width: 30%;
-  margin-right: 2vh;
-  border-radius: 3px;
-  background-color: #d9f3f6;
+
+.div-perfil{
+  width: 500px;
+  display: table;
+  float: left;
+}
+
+.div-vagas{
+  width: 850px;
+  display: table;
+  float: right;
 }
