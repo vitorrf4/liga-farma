@@ -29,13 +29,10 @@
         <div>
             <ul>
                 <li>
-                    <h6>Para Empresas</h6> 
+                    <h6>Para Empresas</h6>
                 </li>
-                <li *ngIf="usuario?.tipo == 'EMPRESA'">
+                <li>
                     <button routerLink="/criar-vaga">Criar Vaga</button>
-                </li>
-                <li *ngIf="!usuario">
-                    <button routerLink="/login">Criar Vaga</button>
                 </li>
             </ul>
         </div>
