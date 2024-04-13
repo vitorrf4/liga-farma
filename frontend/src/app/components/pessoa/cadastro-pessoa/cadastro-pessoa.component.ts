@@ -80,9 +80,14 @@ export class CadastroPessoaComponent implements OnInit{
       farmaceutico
     );
 
+    if(!this.form.valid){
+      alert("Preencha o formulário corretamente!!");
+      return;
+    }
+
     this.authService.cadastrar(usuario).subscribe({
       next: res => {
-        if (this.selectedFile)
+          if (this.selectedFile)
           this.cadastrarCurriculo(res.informacoes.id.toString());
 
         this.logarUsuario(usuario);

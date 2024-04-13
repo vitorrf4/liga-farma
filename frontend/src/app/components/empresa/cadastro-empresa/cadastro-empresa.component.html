@@ -1,42 +1,106 @@
-<h3>Farmácia</h3>
-
 <form [formGroup]="form" (submit)="cadastrarCliente()">
-  <div>
-    <label class="form-label">Nome</label>
-    <input type="text" class="block" formControlName="nome" required />
-  </div>
+  <div class="cadastro-container">
 
-  <div>
-    <label class="form-label">CNPJ</label>
-    <input type="text" class="block" formControlName="cnpj" required />
-  </div>
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text" for="nome">Razão Social</label>
+      </div>
 
-  <div>
-    <label class="form-label">Endereco</label>
-    <input type="text" class="block" formControlName="endereco" required />
-  </div>
+      <input 
+        type="text"
+        class="cadastro-divinput"
+        formControlName="nome"
+        required="required"
+        placeholder="Insira a razão social"/>
 
-  <div>
-    <label class="form-label">Descrição</label>
-    <textarea type="text" class="block" formControlName="descricao" required>
-    </textarea>
-  </div>
+    </div>
 
-  <div>
-    <label class="form-label">Email</label>
-    <input type="text" class="block" formControlName="email" required/>
-  </div>
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text">CNPJ</label>
+      </div>
 
-  <div>
-    <label class="form-label">Senha</label>
-    <input type="password" class="block" formControlName="senha" required/>
-  </div>
+      <input
+        type="number"
+        class="cadastro-divinput"
+        formControlName="cnpj"
+        required="required"
+        placeholder="Insira o CNPJ"/>
+    </div>
 
-  <div >
-    <label class="form-label">Telefone</label>
-    <input type="text" class="block" formControlName="telefone" required />
-  </div>
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text">Endereço</label>
+      </div>
 
-  <button type="submit">Cadastrar</button>
+      <input 
+        type="text" 
+        class="cadastro-divinput"
+        formControlName="endereco"
+        required="required"
+        placeholder="Insira o Endereço"/>
+    </div>
+
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text">Descrição</label>
+      </div>
+
+      <input 
+        type="text" 
+        class="cadastro-divinput"
+        formControlName="descricao"
+        required="required"
+        placeholder="Descrição"/>
+    </div>
+
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text">Email</label>
+      </div>
+
+      <input 
+        type="email" 
+        class="cadastro-divinput"
+        formControlName="email"
+        required="required"
+        placeholder="Insira seu email"/>
+    </div>
+
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text">Telefone</label>
+      </div>
+
+      <input 
+        type="tel" 
+        class="cadastro-divinput"
+        formControlName="telefone"
+        required="required"
+        placeholder="Insira um telefone"/>
+    </div>
+
+    <div>
+      <div class="cadastro-divlabel">
+        <label class="label-text">Senha</label>
+      </div>
+
+        <input 
+          type="password" 
+          class="cadastro-divinput"
+          formControlName="senha"
+          required="required"
+          placeholder="Crie uma senha"/>
+    </div>
+    
+    <div class="submit-button">
+      <button type="submit" class="cadastro-divbutton">
+        <span class="cadastro-buttontext">
+          Cadastrar
+        </span>
+      </button>
+    </div>
+
+  </div>
 </form>
 
