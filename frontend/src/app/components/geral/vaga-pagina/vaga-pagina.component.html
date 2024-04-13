@@ -1,19 +1,16 @@
 <div *ngIf="vaga">
-  <button (click)="deselecionarVaga()">Fechar</button>
+  <button id="btn-fechar" (click)="deselecionarVaga()">Fechar</button>
   <br><br>
-
-  <strong>Vaga {{vaga.titulo}}</strong>
-  <li>Empresa: {{vaga.farmacia.nome}}</li>
-  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
-  <li>{{vaga.descricao}}</li>
-  <li>Quantidade de Vagas: {{vaga.quantidadeVagas}}</li>
-  <li>Salario: {{vaga.salario | currency: 'BRL'}}</li>
-  <li>Tipo: {{vaga.tipo}}</li>
-  <li>Turno: {{vaga.turno}}</li>
-  <li>Vaga publicada em {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
-
-  <button (click)="irParaCandidatura()" [disabled]="!isPessoa || jaCandidadato">
-    Candidatar-se
-  </button>
-
+  <ul>
+    <li><strong>Vaga {{vaga.id}}</strong></li>
+    <li><span>Empresa:</span> {{vaga.farmacia.nome}}</li>
+    <li><span>Local:</span> {{vaga.cidade}} - {{vaga.estado}}</li>
+    <li><span>Descricao:</span> {{vaga.descricao}}</li>
+    <li><span>Quantidade Vagas:</span> {{vaga.quantidadeVagas}}</li>
+    <li><span>Salario:</span> {{vaga.salario}}</li>
+    <li><span>Tipo:</span> {{vaga.tipo}}</li>
+    <li><span>Turno:</span> {{vaga.turno}}</li>
+    <li><span>Data publicada:</span> {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
+    <li><button (click)="irParaCandidatura()">Candidatar-se</button></li>
+  </ul>
 </div>
