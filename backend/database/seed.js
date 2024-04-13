@@ -4,8 +4,8 @@ class Seeds {
         await this.seedFarmaceutico();
         await this.seedFarmacia();
         await this.seedVaga();
-        await this.seedVaga2();
         await this.seedVaga();
+        await this.seedVaga2();
         await this.seedVaga2();
         await this.seedCandidatura();
         await this.seedContrato();
@@ -52,7 +52,7 @@ class Seeds {
             cidade: "Paranagua",
             quantidadeVagas: 2,
             farmaciaId: 1,
-            tipo: "PJ",
+            tipo: "CLT",
             turno: "Noturno"
         }
         await this.executarPost(body, 'vaga');
@@ -60,7 +60,7 @@ class Seeds {
 
     async seedVaga2() {
         const body = {
-            titulo: "Coordenador Farmacêutico",
+            titulo: "Farmacêutico de Balcão",
             descricao: "Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder ",
             salario: 4050.20,
             estado: "SP",
@@ -68,7 +68,7 @@ class Seeds {
             quantidadeVagas: 5,
             farmaciaId: 1,
             tipo: "Temporário",
-            turno: "Noturno"
+            turno: "12:00 as 17:00"
         }
         await this.executarPost(body, 'vaga');
     }
