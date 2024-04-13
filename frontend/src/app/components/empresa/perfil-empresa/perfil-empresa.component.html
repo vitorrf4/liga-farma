@@ -1,13 +1,14 @@
-<button routerLink="editar-e">Editar perfil</button>
-<h2>{{usuario.informacoes.nome}}</h2>
-<p>Email: {{usuario.informacoes.email}}</p>
-<p>Telefone: {{usuario.informacoes.telefone}}</p>
-
-<li>Descricao da empresa: {{empresa.descricao}}</li>
-<li>Endereço: {{empresa.endereco}}</li>
-<li>CNPJ: {{empresa.cnpj}}</li>
-
-<h2>Minhas vagas</h2>
-<button routerLink="criar-vaga">Criar vaga</button>
+<div class="perfil-titulo">
+  <h2>Perfil</h2>
+  <button routerLink="/editar-p">Editar</button>
+</div>
+<div class="div-dados">
+  <h2>{{usuario.informacoes.nome}}</h2>
+  <p><span>Email: </span> {{usuario.informacoes.email}}</p>
+  <p><span>Telefone:</span> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
+  <p><span>CNPJ:</span> {{empresa.cnpj}}</p>
+  <p><span>Endereço:</span> {{empresa.endereco || 'Não Informado'}}</p>
+  <p><span>Descrição:</span> {{empresa.descricao}}</p>
+</div>
 
 

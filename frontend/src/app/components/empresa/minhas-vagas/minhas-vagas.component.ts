@@ -4,20 +4,21 @@ import {Vaga} from "../../../models/vaga";
 import {AuthService} from "../../../services/auth.service";
 import {Farmacia} from "../../../models/farmacia";
 import {CurrencyPipe, DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {Candidatura} from "../../../models/candidatura";
 import {LoginService} from "../../../services/login.service";
 
 @Component({
   selector: 'app-minhas-vagas',
   standalone: true,
-  imports: [
-    JsonPipe,
-    NgForOf,
-    DatePipe,
-    NgIf,
-    CurrencyPipe
-  ],
+	imports: [
+		JsonPipe,
+		NgForOf,
+		DatePipe,
+		NgIf,
+		CurrencyPipe,
+		RouterLink
+	],
   templateUrl: './minhas-vagas.component.html',
   styleUrl: './minhas-vagas.component.css'
 })
