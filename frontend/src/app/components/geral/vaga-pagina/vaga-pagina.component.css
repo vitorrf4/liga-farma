@@ -1,0 +1,30 @@
+#btn-fechar:hover{
+    color: #FFF;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li button{
+    background-color: #16C1EB;
+    color: #FFF;
+    padding: 20px 10px;
+    display: block;
+    margin-top: 20px;
+}
+
+ul li button:hover{
+    background-color: #336699;
+    color: #FFF;
+    border: none;
+}
+
+ul li strong{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+ul li span{
+    font-weight: 600;
+}

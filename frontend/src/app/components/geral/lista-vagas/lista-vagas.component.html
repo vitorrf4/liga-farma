@@ -1,21 +1,22 @@
-<p id="barra-filtros">Barra de filtros placeholder</p>
+<section id="section-lista-vagas">
 
-<div id="container">
-  <div id="lista">
-    <ul *ngFor="let vaga of vagas" class="square">
+  <div id="container-vagas">
+    <div *ngFor="let vaga of vagas" class="containver-vaga">
       <a (click)="mudarVagaSelecionada(vaga)">
-        <strong>Vaga {{vaga.id}}</strong>
-        <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
-        <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
-        <li>Salario: {{vaga.salario}}</li>
+        <img src="../../../../assets/star.png" height="80" width="80" alt="Estrela azul">
+        <ul>
+          <li><strong>Vaga {{vaga.id}}</strong></li>
+          <li><span>Local: {{vaga.cidade}} - {{vaga.estado}}</span></li>
+          <li><span>Quantidade Vagas: {{vaga.quantidadeVagas}}</span></li>
+        </ul>
       </a>
-    </ul>
+    </div>
   </div>
 
   <div id="vaga" *ngIf="vagaSelecionada">
     <app-vaga-pagina [vaga]="vagaSelecionada"
-                     (vagaDeselecionadaEvent)="mudarVagaSelecionada(null)">
+                    (vagaDeselecionadaEvent)="mudarVagaSelecionada(null)">
     </app-vaga-pagina>
   </div>
-</div>
 
+</section>
