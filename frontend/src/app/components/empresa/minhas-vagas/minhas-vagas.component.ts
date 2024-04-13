@@ -66,4 +66,11 @@ export class MinhasVagasComponent implements OnInit {
     str = str.toLowerCase();
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+
+  getContratoStatusString(status: string) {
+    switch (status) {
+      default: case 'ENVIADO': return 'Proposta Enviada';
+      case 'ACEITO': return 'Proposta Aceita';
+    }
+  }
 }

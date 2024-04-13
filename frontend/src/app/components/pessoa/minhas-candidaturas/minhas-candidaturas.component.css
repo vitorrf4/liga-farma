@@ -4,7 +4,7 @@ strong {
 hr {
   color: black;
 }
-.candidatura-div {
+.div-titulo {
   display: flex;
   flex-direction: row;
   border: 2px solid dodgerblue;

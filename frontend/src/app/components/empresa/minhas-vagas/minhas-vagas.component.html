@@ -1,4 +1,4 @@
-<div class="candidatura-div">
+<div class="div-titulo">
   <h2>Minhas Vagas</h2>
   <button class="btn-criar" routerLink="/criar-vaga">+ Criar vaga</button>
 </div>
@@ -21,23 +21,24 @@
   <p><strong>Turno:</strong> {{vaga.turno}}</p>
   <p><strong>Data publicada:</strong> {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</p>
 
-  <div *ngIf="vaga.candidaturas.length">
+  <div *ngIf="vaga.candidaturas.length" class="div-candidaturas">
     <strong>Candidaturas</strong>
 
-    <ul *ngFor="let candidatura of vaga.candidaturas">
-      <p>Candidato: {{candidatura.farmaceutico.nome}}</p>
-      <p>Mensagem:{{candidatura.mensagem}}</p>
+    <div *ngFor="let candidatura of vaga.candidaturas" class="div-candidatura">
+      <p><strong>Candidato:</strong> {{candidatura.farmaceutico.nome}}</p>
+      <p><strong>Email:</strong> {{candidatura.farmaceutico.email}}</p>
+      <p><strong>Mensagem:</strong> {{candidatura.mensagem}}</p>
 
       <div *ngIf="candidatura.contrato; else enviar">
-        <p>Status:{{candidatura.contrato.status}}</p>
+        <p>Status: {{getContratoStatusString(candidatura.contrato.status)}}</p>
       </div>
       <ng-template #enviar>
-        <button (click)="aceitarCandidatura(candidatura, vaga)">
+        <button (click)="aceitarCandidatura(candidatura, vaga)" class="btn-green">
           Aceitar candidatura
         </button>
       </ng-template>
 
-    </ul>
+    </div>
   </div>
   <hr>
 </div>
