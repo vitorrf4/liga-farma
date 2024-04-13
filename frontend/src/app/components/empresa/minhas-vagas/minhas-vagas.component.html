@@ -1,9 +1,10 @@
-<h2>Minhas vagas</h2>
-<button routerLink="criar-vaga">Criar vaga</button>
-
-<ul *ngFor="let vaga of vagas">
-  <strong>Vaga {{vaga.id}}</strong>
-  <li>Empresa: {{vaga.farmacia.nome}}</li>
+<div class="candidatura-div">
+  <h2>Minhas Vagas</h2>
+  <button routerLink="/criar-vaga">Criar vaga</button>
+</div>
+<div *ngFor="let vaga of vagas">
+  <h2>{{vaga.titulo}}</h2>
+  <p>Empresa: {{vaga.farmacia.nome}}</p>
   <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
   <li>Descricao: {{vaga.descricao}}</li>
   <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
@@ -14,7 +15,7 @@
   <li>Status: {{vaga.status}}</li>
 
   <div *ngIf="vaga.status == 'ABERTA'">
-    <button (click)="fecharVaga(vaga)">Fechar vaga</button>
+    <button (click)="fecharVaga(vaga)" class="btn-red">Fechar vaga</button>
   </div>
 
   <div *ngIf="vaga.candidaturas.length">
@@ -33,4 +34,5 @@
 
     </ul>
   </div>
-</ul>
+  <hr>
+</div>
