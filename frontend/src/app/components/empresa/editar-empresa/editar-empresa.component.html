@@ -1,36 +1,44 @@
-<h3>Farmácia</h3>
-
-<form [formGroup]="form" (submit)="atualizarInformacoes()">
-  <div class="form-outline">
-    <label class="form-label">Nome:</label>
-    <input type="text" class="form-control" formControlName="nome" required />
+<div class="outer-div">
+  <div class="perfil-titulo">
+    <h2>Perfil</h2>
   </div>
+  <div class="div-dados">
 
-  <div class="form-outline">
-    <label class="form-label">CNPJ:</label>
-    <input type="text" class="form-control" formControlName="cnpj" required />
+    <form [formGroup]="form" (submit)="atualizarInformacoes()">
+      <div class="form-outline">
+        <label >Nome:</label>
+        <input type="text"  formControlName="nome" required />
+      </div>
+
+      <div >
+        <label >CNPJ:</label>
+        <input type="text"  formControlName="cnpj" required />
+      </div>
+
+      <div >
+        <label >Endereco:</label>
+        <input type="text"  formControlName="endereco" required />
+      </div>
+
+      <div >
+        <label >Descricao:</label>
+        <input type="text"  formControlName="descricao" required />
+      </div>
+
+      <div>
+        <label >Email:</label>
+        <input type="text"  formControlName="email" required/>
+      </div>
+
+      <div >
+        <label >Telefone:</label>
+        <input type="text" formControlName="telefone" />
+      </div>
+
+      <button type="submit" class="btn-green">Atualizar</button>
+    </form>
   </div>
+</div>
 
-  <div class="form-outline">
-    <label class="form-label">Endereco:</label>
-    <input type="text" class="form-control" formControlName="endereco" required />
-  </div>
 
-  <div class="form-outline">
-    <label class="form-label">Descricao:</label>
-    <input type="text" class="form-control" formControlName="descricao" required />
-  </div>
-
-  <div>
-    <label class="form-label">Email:</label>
-    <input type="text" class="form-control" formControlName="email" required/>
-  </div>
-
-  <div class="form-outline">
-    <label class="form-label">Telefone:</label>
-    <input type="text" class="form-control" formControlName="telefone" />
-  </div>
-
-  <button type="submit">Atualizar</button>
-</form>
 
