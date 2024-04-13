@@ -14,7 +14,8 @@ import {EditarEmpresaComponent} from "./components/empresa/editar-empresa/editar
 import {EditarPessoaComponent} from "./components/pessoa/editar-pessoa/editar-pessoa.component";
 import {authGuard} from "./misc/auth.guard";
 import { HomeComponent } from './components/geral/home/home.component';
-import {somenteUsuarioGuard} from "./misc/somente-usuario.guard";
+import {somentePessoaGuard} from "./misc/somente-pessoa.guard";
+import {somenteEmpresaGuard} from "./misc/somente-empresa.guard";
 
 export const routes: Routes = [
   {path: "", pathMatch: 'full', redirectTo: 'home'},
@@ -28,11 +29,11 @@ export const routes: Routes = [
   {path: "vagas", component: ListaVagasComponent},
   {path: "sobre-nos", component: SobreNosComponent},
   {path: "perfil", component: MeuPerfilComponent, canActivate: [authGuard]},
-  {path: "editar-e", component: EditarEmpresaComponent, canActivate: [authGuard]},
-  {path: "editar-p", component: EditarPessoaComponent, canActivate: [authGuard]},
-  {path: "minhas-vagas", component: MinhasVagasComponent, canActivate: [authGuard]},
-  {path: "criar-vaga", component: CriarVagaComponent, canActivate: [authGuard]},
-  {path: "candidatura", component: CandidaturaComponent, canActivate: [authGuard, somenteUsuarioGuard]},
-  {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, canActivate: [authGuard, somenteUsuarioGuard]},
+  {path: "editar-e", component: EditarEmpresaComponent, canActivate: [authGuard, somenteEmpresaGuard]},
+  {path: "editar-p", component: EditarPessoaComponent, canActivate: [authGuard, somentePessoaGuard]},
+  {path: "minhas-vagas", component: MinhasVagasComponent, canActivate: [authGuard, somenteEmpresaGuard]},
+  {path: "criar-vaga", component: CriarVagaComponent, canActivate: [authGuard, somenteEmpresaGuard]},
+  {path: "candidatura", component: CandidaturaComponent, canActivate: [authGuard, somentePessoaGuard]},
+  {path: "minhas-candidaturas", component: MinhasCandidaturasComponent, canActivate: [authGuard, somentePessoaGuard]},
   {path: "**", redirectTo: ''}
 ];

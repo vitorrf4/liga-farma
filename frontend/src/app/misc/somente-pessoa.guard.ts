@@ -1,13 +1,12 @@
-import {CanActivateFn, Router} from '@angular/router';
+import {CanActivateFn} from '@angular/router';
 import {inject} from "@angular/core";
 import {LoginService} from "../services/login.service";
 
-export const somenteUsuarioGuard: CanActivateFn = (route, state) => {
+export const somentePessoaGuard: CanActivateFn = (route, state) => {
   const usuario = inject(LoginService).usuario
-  const router = inject(Router);
 
   if (usuario?.tipo != 'PESSOA') {
-    alert('Somente para indivíduos');
+    alert('Funcionalidade disponivel somente para indivíduos');
     return false
   }
 
