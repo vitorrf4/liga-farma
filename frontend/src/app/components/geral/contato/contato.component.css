@@ -1,0 +1,81 @@
+*{
+    font-family: "Sora", sans-serif;
+    transition: 700ms;
+  }
+
+#topo-contato{
+    background-image: url("../../../../assets/BG-contato.jpg");
+    height: 400px;
+}
+
+#titulo-contato{
+    margin-left: 50px;
+}
+
+#titulo-contato h1{
+    padding-top: 300px;
+}
+
+#conteudo{
+    margin: 30px auto !important;
+    width: 1140px;
+    background-color: white;
+    padding: 30px;
+}
+
+h4{
+    font-weight: 600;
+    margin-left: 1vh;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: #19427D;
+}
+
+form{
+    margin-top: 10px;
+    margin-left: 50px;
+    display: table;
+}
+
+fieldset{
+    float: left;
+    width: 49%;
+}
+
+label{
+    font-weight: 600;
+    margin-left: 1vh;
+    color: #21214B;
+}
+
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    font-size: 19px;
+    font-weight: 400;
+    border: 1px solid #C1E8EA;
+    background-color: #fff;
+    padding: 5px;
+}
+
+#label-textarea{
+    margin-top: 30px;
+}
+
+textarea{
+    margin-top: 15px;
+    width: 80%;
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+button{
+    background-color: #094387;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+    width: 200px;
+    height: 60px;
+}

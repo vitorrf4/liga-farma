@@ -15,6 +15,7 @@ import {EditarEmpresaComponent} from "./components/empresa/editar-empresa/editar
 import {EditarPessoaComponent} from "./components/pessoa/editar-pessoa/editar-pessoa.component";
 import {authGuard} from "./misc/auth.guard";
 import { HomeComponent } from './components/geral/home/home.component';
+import { ContatoComponent } from './components/geral/contato/contato.component';
 
 export const routes: Routes = [
   {path: "login", component: LoginComponent},
@@ -25,6 +26,7 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: "vagas", component: ListaVagasComponent},
   {path: "sobre-nos", component: SobreNosComponent},
+  {path: "contato", component:ContatoComponent},
   {path: "perfil", component: MeuPerfilComponent, canActivate: [authGuard]},
   {path: "editar-e", component: EditarEmpresaComponent, canActivate: [authGuard]},
   {path: "editar-p", component: EditarPessoaComponent, canActivate: [authGuard]},
