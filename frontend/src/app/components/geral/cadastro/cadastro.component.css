@@ -2,12 +2,6 @@
   margin-bottom: 3vh;
 }
 
-.row {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
-}
-
 .column {
   display: inline-flex;
   flex: 0 0 55%;
@@ -65,17 +59,16 @@ button {
   height: 100%;
 }
 
-/* DIVIDE */
 .wrap {
   display: flex;
 }
-
 .left {
-  flex-basis: 20%;
-}
-
-.right {
   flex-basis: 80%;
   height: 90vh;
   overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+.right {
+  flex-basis: 20%;
 }
