@@ -76,3 +76,8 @@ button {
   height: 100vh;
   overflow: hidden;
 }
+
+#image>img{
+  float: right;
+  right: 0;
+}

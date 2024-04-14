@@ -1,6 +1,13 @@
 # Liga Farma
 A Liga Farma é uma plataforma online projetada para facilitar a conexão entre farmácias e farmacêuticos em busca de oportunidades de emprego. Esta plataforma visa simplificar o processo de recrutamento e contratação, proporcionando uma experiência intuitiva e eficiente tanto para os empregadores quanto para os candidatos.
 
+**Links Úteis**
+
+**Link da pasta no docs**: https://docs.google.com/document/d/1x5UG4NIbSgGoB2l6IxJciFn3qXHU6PjAmOaB4dJgI7c/edit
+
+**Link do figma**: https://www.figma.com/file/1smRZJgp0l35SZs9UeApdM/Untitled?type=design&node-id=0%3A1&mode=design&t=A1KVo9mWz6xGaVHg-1
+
+**Link no GitHub**: https://github.com/vitorrf4/liga-farma
 
 ⚠️ **_EM DESENVOLVIMENTO_** ⚠️
 
