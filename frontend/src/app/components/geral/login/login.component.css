@@ -47,11 +47,11 @@ button {
   margin-right: auto;
   margin-left: auto;
 }
-#image {
+#div-image {
   height: 100%;
   overflow: clip;
 }
-#image>img {
+#div-image>img {
   height: 100%;
 }
 #div-btn {
