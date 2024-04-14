@@ -47,7 +47,12 @@ export class MinhasVagasComponent implements OnInit {
   }
 
   atualizarContrato(contrato: Contrato) {
-    console.log(contrato);
+    const vagaIndex = this.vagas.findIndex(v => v.id == contrato.vagaId);
+    const candIndex = this.vagas[vagaIndex].candidaturas.findIndex(c => {
+      return c.id == contrato.candidaturaId
+    });
+    this.vagas[vagaIndex].candidaturas[candIndex].contrato = contrato;
+
     this.contrato = undefined;
   }
 
