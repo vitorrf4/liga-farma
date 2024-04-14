@@ -1,38 +1,47 @@
-<section class="vh-100">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 text-black" id="form">
-
-        <div class="content">
-          <div class="top">
-            <button routerLink="/home">Home</button>
-
-            <h2 class="heading">Bem-Vindo!</h2>
-            <strong class="heading">Acesse sua conta:</strong>
+<div id="container">
+  <div id="form">
+    <h2>Bem-Vindo!</h2>
+    <strong class="heading">Acesse sua conta:</strong>
+    <form [formGroup]="form" (submit)="logarCliente()">
+      <div class="cadastro-container">
+        <div>
+          <div class="cadastro-divlabel">
+            <label class="label-text" for="email">Email</label>
           </div>
 
-          <form [formGroup]="form" (submit)="logarCliente()">
-            <div>
-              <label class="form-label">Email</label>
-              <input type="text" class="form-control" formControlName="email" required/>
-            </div>
-
-            <div >
-              <label class="form-label">Senha</label>
-              <input type="password" class="form-control" formControlName="senha" required/>
-            </div>
-
-            <button type="submit">Login</button>
-          </form>
+          <input
+            id="email"
+            type="text"
+            formControlName="email"
+            required="required"
+            placeholder="Insira seu email"/>
         </div>
-      </div>
 
-      <div class="col-sm-6 vh-100" id="image">
-        <img src="./assets/imagem_cadastro.jpeg"
-             alt="Login image" class="image vh-100">
-      </div>
+        <div class="cadastro-senhagroup">
+          <div class="cadastro-divlabel">
+            <label class="label-text" for="senha">Senha</label>
+          </div >
 
-    </div>
+          <input
+            id="senha"
+            type="password"
+            formControlName="senha"
+            required="required"
+            placeholder="Insira sua senha"/>
+        </div >
+
+        <div class="submit-button">
+          <button type="submit" class="cadastro-divbutton">
+            <span class="cadastro-buttontext">Login</span>
+          </button>
+        </div>
+
+      </div>
+    </form>
   </div>
-</section>
+  <div id="image">
+    <img src="./assets/imagem_login.jpeg"
+         alt="Login image">
+  </div>
+</div>
 

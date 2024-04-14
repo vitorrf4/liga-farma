@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.loginService.setUsuario(res);
         await this.router.navigateByUrl('/perfil');
       },
-      error: err => { console.log(err) }
+      error: () => { alert('Login ou senha incorretos'); }
     })
   }
 }
