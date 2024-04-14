@@ -16,6 +16,7 @@ import {authGuard} from "./misc/auth.guard";
 import { HomeComponent } from './components/geral/home/home.component';
 import {somentePessoaGuard} from "./misc/somente-pessoa.guard";
 import {somenteEmpresaGuard} from "./misc/somente-empresa.guard";
+import { ContatoComponent } from './components/geral/contato/contato.component';
 
 export const routes: Routes = [
   {path: "", pathMatch: 'full', redirectTo: 'home'},
@@ -28,6 +29,7 @@ export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: "vagas", component: ListaVagasComponent},
   {path: "sobre-nos", component: SobreNosComponent},
+  {path: "contato", component:ContatoComponent},
   {path: "perfil", component: MeuPerfilComponent, canActivate: [authGuard]},
   {path: "editar-e", component: EditarEmpresaComponent, canActivate: [authGuard, somenteEmpresaGuard]},
   {path: "editar-p", component: EditarPessoaComponent, canActivate: [authGuard, somentePessoaGuard]},
