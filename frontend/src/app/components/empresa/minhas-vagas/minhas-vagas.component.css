@@ -13,11 +13,13 @@ span {
 .div-titulo {
   display: flex;
   flex-direction: row;
-  border: 2px solid dodgerblue;
-  background-color: #b2e7ff;
+  background-color: #336699;
   align-items: center;
   justify-content: space-between;
-  padding: 1vh;
+  padding: 20px;
+}
+.div-titulo>h2 {
+  color: #FFF;
 }
 .div-status > h2 {
   margin-right: 2vh;
@@ -42,10 +44,14 @@ span {
   margin-right: 1vh;
 }
 .btn-criar {
-  background-color: #3dd7ff;
-  border: 3px solid #00426c;
-  border-radius: 5px;
-  padding: 1vh;
+  color: #FFF;
+  padding: 10px 20px;
+  background-color: #2D3944;
+  border-radius: 10px;
+}
+.btn-criar:hover{
+  background-color: #CDE6FF;
+  color: #000;
 }
 .div-candidatura {
   border: 1px solid #003380;
@@ -54,10 +60,10 @@ span {
   padding: 1vh;
   margin: 1vh 0.5vh 0.5vh;
 }
-
 .div-candidatura > button {
   margin-top: 10px;
 }
 #div-vagas {
   padding: 2vh;
+  line-height: 40px;
 }
