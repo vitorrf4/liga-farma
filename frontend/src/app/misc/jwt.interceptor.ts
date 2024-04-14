@@ -6,11 +6,16 @@ import {LoginService} from "../services/login.service";
 export function JwtInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn) {
   const token = inject(LoginService).authToken;
 
+  req = req.clone({
+    setHeaders: {
+      "ngrok-skip-browser-warning": "69420"
+  }});
+
   // Se o token existir, adiciona no header da requisição
   if (token) {
     req = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`
       },
     });
   }
