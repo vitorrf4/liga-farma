@@ -4,6 +4,9 @@ strong {
 hr {
   color: black;
 }
+p {
+  font-size: 25px;
+}
 .div-titulo {
   display: flex;
   flex-direction: row;
@@ -13,6 +16,9 @@ hr {
   justify-content: space-between;
   padding: 1vh;
 }
+.div-status > h2 {
+  margin-right: 2vh;
+}
 .div-candidaturas {
   border: 2px #370000 solid;
   border-radius: 6px;
@@ -20,9 +26,6 @@ hr {
   padding: 0.5vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
-}
-p {
-  font-size: 25px;
 }
 .div-status {
   display: inline-flex;

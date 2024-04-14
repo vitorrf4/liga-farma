@@ -4,7 +4,7 @@
 </div>
 <div *ngFor="let vaga of vagas;let vagaIndex=index">
   <div class="div-status">
-    <p><strong>{{vaga.titulo}}</strong></p>
+    <h2><strong>{{vaga.titulo}}</strong></h2>
     <p [class]="getStatusClass(vaga.status)">
       {{getStatusFormatado(vaga.status)}}
     </p>
