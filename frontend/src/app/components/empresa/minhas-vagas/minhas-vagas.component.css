@@ -7,6 +7,9 @@ hr {
 p {
   font-size: 25px;
 }
+span {
+  font-size: 16px;
+}
 .div-titulo {
   display: flex;
   flex-direction: row;
@@ -54,4 +57,7 @@ p {
 
 .div-candidatura > button {
   margin-top: 10px;
+}
+#div-vagas {
+  padding: 2vh;
 }

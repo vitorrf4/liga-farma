@@ -2,12 +2,12 @@
   <h2>Minhas Vagas</h2>
   <button class="btn-criar" routerLink="/criar-vaga">+ Criar vaga</button>
 </div>
-<div *ngFor="let vaga of vagas;let vagaIndex=index">
+<div *ngFor="let vaga of vagas;let vagaIndex=index" id="div-vagas">
   <div class="div-status">
     <h2><strong>{{vaga.titulo}}</strong></h2>
-    <p [class]="getStatusClass(vaga.status)">
-      {{getStatusFormatado(vaga.status)}}
-    </p>
+     <span [class]="getStatusClass(vaga.status)">
+       {{getStatusFormatado(vaga.status)}}
+     </span>
     <div *ngIf="vaga.status == 'ABERTA'">
       <button (click)="fecharVaga(vaga)" class="btn-red">Fechar vaga</button>
     </div>

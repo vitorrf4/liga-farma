@@ -107,23 +107,19 @@ button{
   border-radius: 6px;
   background-color: #008f00;
   padding: 1vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 20px;
 }
 .span-fechada {
   display: inline-flex;
   border-radius: 6px;
   background-color: #ff5454;
   padding: 1vh;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
   color: #FFFFFF;
-  font-size: 20px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 500;
 }
 .btn-green {
