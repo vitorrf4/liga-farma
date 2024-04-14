@@ -1,5 +1,6 @@
 .container {
   margin-bottom: 3vh;
+  overflow: clip;
 }
 
 .column {
