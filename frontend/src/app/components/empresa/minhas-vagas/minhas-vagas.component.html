@@ -22,7 +22,7 @@
   <p><strong>Data publicada:</strong> {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</p>
 
   <div *ngIf="vaga.candidaturas.length" class="div-candidaturas">
-    <strong>Candidaturas</strong>
+    <h4>Candidaturas</h4>
 
     <div *ngFor="let candidatura of vaga.candidaturas" class="div-candidatura">
       <p><strong>Candidato:</strong> {{candidatura.farmaceutico.nome}}</p>

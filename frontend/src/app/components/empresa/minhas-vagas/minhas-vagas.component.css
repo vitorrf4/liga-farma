@@ -24,13 +24,26 @@ span {
 .div-status > h2 {
   margin-right: 2vh;
 }
+.btn-criar {
+  color: #FFF;
+  padding: 10px 20px;
+  background-color: #2D3944;
+  border-radius: 10px;
+}
+.btn-criar:hover{
+  background-color: #CDE6FF;
+  color: #000;
+}
 .div-candidaturas {
-  border: 2px #370000 solid;
-  border-radius: 6px;
-  background-color: #0084c8;
-  padding: 0.5vh;
+  padding: 20px;
+  background-color: #EFEFEF;
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+.div-candidaturas > h4 {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 20px;
 }
 .div-status {
   display: inline-flex;
@@ -42,26 +55,26 @@ span {
 }
 .div-status > p {
   margin-right: 1vh;
-}
-.btn-criar {
-  color: #FFF;
-  padding: 10px 20px;
-  background-color: #2D3944;
-  border-radius: 10px;
-}
-.btn-criar:hover{
-  background-color: #CDE6FF;
-  color: #000;
+  font-weight: 600;
 }
 .div-candidatura {
-  border: 1px solid #003380;
-  background-color: #4688ff;
-  border-radius: 5px;
-  padding: 1vh;
-  margin: 1vh 0.5vh 0.5vh;
+  border: 1px solid lightgray;
+  background-color: #FFF;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 .div-candidatura > button {
-  margin-top: 10px;
+  background-color: #1976D2;
+  color: #FFF;
+  border: 1px solid #3A5B22;
+  padding: 10px 200px;
+  border-radius: 10px;
+  margin: 30px auto !important;
+  display: table;
+}
+.div-candidatura > button:hover {
+  background-color: #336699;
+  color: #FFF;
 }
 #div-vagas {
   padding: 2vh;
