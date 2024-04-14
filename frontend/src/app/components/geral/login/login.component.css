@@ -1,6 +1,7 @@
 *{
   font-family: "Sora", sans-serif;
   transition: 700ms;
+  overflow-y: hidden;
 }
 .top {
   display: flex;
@@ -9,45 +10,8 @@
 label {
   font-weight: 600;
   margin-left: 1vh;
-}
-.cadastro-container {
-  width:max-content;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  align-items: center;
-}
-.cadastro-divbutton {
-  background-color: #057dc9;
-  color: rgba(255, 255, 255, 1);
-  display: flex;
-  border-radius: 4px;
-  justify-content: center;
-  width: auto;
-  padding: 0px 20px 0px 20px;
-  height: 40px;
-  margin: 10px 10px 0px 10px;
-}
-.submit-button {
-  display: flex;
-  justify-content: center;
-  margin-top:3vh;
-}
-.cadastro-buttontext {
-  font-size: 20px;
-  margin: auto;
-}
-
-.label-text{
   color: rgba(0, 0, 0, 1);
-  height: auto;
-  font-size: 18px;
-  text-align: left;
   line-height: 5px;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.cadastro-divlabel {
   top: 5px;
   left: 10px;
   width: auto;
@@ -55,6 +19,13 @@ label {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+}
+.cadastro-container {
+  width:max-content;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  align-items: center;
 }
 input {
   color: #000000;
@@ -71,11 +42,32 @@ input {
   overflow: hidden;
   text-align: left;
 }
-
 .cadastro-container>div{
   margin: 10px 0 5px 0;
 }
 
+.cadastro-divbutton {
+  background-color: #057dc9;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  border-radius: 4px;
+  justify-content: center;
+  width: auto;
+  padding: 0 20px 0 20px;
+  height: 40px;
+  margin: 10px 10px 0px 10px;
+}
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top:3vh;
+}
+.cadastro-buttontext {
+  font-size: 20px;
+  margin: auto;
+}
+
+/* MEU */
 #container {
   display: flex;
   margin-bottom: 4vh;
@@ -87,6 +79,7 @@ input {
   margin-right: auto;
   margin-left: auto;
 }
-#image>img {
+#image {
   height: 100%;
+  overflow: clip;
 }
