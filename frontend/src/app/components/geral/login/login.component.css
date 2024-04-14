@@ -1,7 +1,6 @@
 *{
   font-family: "Sora", sans-serif;
   transition: 700ms;
-  overflow-y: hidden;
 }
 .top {
   display: flex;
@@ -45,26 +44,16 @@ input {
 .cadastro-container>div{
   margin: 10px 0 5px 0;
 }
-
 .cadastro-divbutton {
   background-color: #057dc9;
   color: rgba(255, 255, 255, 1);
-  display: flex;
   border-radius: 4px;
+  display: flex;
   justify-content: center;
-  width: auto;
+  align-items: center;
   padding: 0 20px 0 20px;
   height: 40px;
-  margin: 10px 10px 0px 10px;
-}
-.submit-button {
-  display: flex;
-  justify-content: center;
-  margin-top:3vh;
-}
-.cadastro-buttontext {
-  font-size: 20px;
-  margin: auto;
+  margin-top: 20px;
 }
 
 /* MEU */
@@ -82,4 +71,7 @@ input {
 #image {
   height: 100%;
   overflow: clip;
+}
+#image>img {
+  height: 100%;
 }
