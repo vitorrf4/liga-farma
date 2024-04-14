@@ -1,30 +1,37 @@
-<h2>Nova Vaga</h2>
-<form [formGroup]="vagaForm" (submit)="criarVaga()">
-  <label> Titulo:
-    <input type="text" formControlName="titulo">
-  </label><br>
-  <label> Estado:
-    <input type="text" formControlName="estado">
-  </label><br>
-  <label> Cidade:
-    <input type="text" formControlName="cidade">
-  </label><br>
-  <label> Quantidade de vagas:
-    <input type="number" formControlName="quantidadeVagas">
-  </label><br>
-  <label>
-    Descrição:
-    <textarea type="text" formControlName="descricao"> </textarea>
-  </label><br>
-  <label> Turno:
-    <input type="text" formControlName="turno">
-  </label><br>
-  <label> Salário:
-    <input type="text" formControlName="salario">
-  </label><br>
-  <label> Tipo:
-    <input type="text" formControlName="tipo">
-  </label><br>
+<section id="nova-vaga">
+  <aside>
+    <h2>Nova Vaga</h2>
+    <form [formGroup]="vagaForm" (submit)="criarVaga()">
 
-  <button type="submit">Criar</button>
-</form>
+      <label>Titulo:</label>
+      <input type="text" formControlName="titulo">
+      <br>
+      <label> Estado:</label>
+      <input type="text" formControlName="estado">
+      <br>
+      <label> Cidade:</label>
+      <input type="text" formControlName="cidade">
+      <br>
+      <label> Quantidade de vagas:</label>
+      <input type="number" formControlName="quantidadeVagas">
+      <br>
+      <label>Descrição:</label>
+      <textarea type="text" formControlName="descricao" > </textarea>
+      <br>
+      <label> Turno:</label>
+      <input type="text" formControlName="turno">
+      <br>
+      <label> Salário:</label>
+      <input type="text" formControlName="salario">
+      <br>
+      <label> Tipo:</label>
+      <input type="text" formControlName="tipo">
+      <br>
+
+      <button type="submit">Criar</button>
+    </form>
+  </aside>
+
+  <img src="../../../../assets/bg-img-01-cadastro.jpg" width="780">
+
+</section>
