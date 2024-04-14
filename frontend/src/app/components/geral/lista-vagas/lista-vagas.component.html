@@ -3,7 +3,7 @@
   <div id="container-vagas">
     <div *ngFor="let vaga of vagas" class="containver-vaga">
       <a (click)="mudarVagaSelecionada(vaga)">
-        <img src="./assets/star.png" height="80" width="80" alt="Estrela azul">
+        <img src="assets/star.png" height="80" width="80" alt="Estrela azul">
         <ul>
           <li><strong>{{vaga.titulo}}</strong></li>
           <li><span>Local: {{vaga.cidade}} - {{vaga.estado}}</span></li>
