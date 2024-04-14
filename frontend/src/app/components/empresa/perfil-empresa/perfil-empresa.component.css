@@ -4,26 +4,41 @@ span {
 .perfil-titulo {
   display: flex;
   flex-direction: row;
-  border: 2px solid dodgerblue;
-  background-color: #b2e7ff;
+  background-color: #336699;
   align-items: center;
   justify-content: space-between;
-  padding: 1vh;
+  padding: 20px;
 }
-.perfil-titulo>span {
-  margin: 5px 10px;
+.perfil-titulo>h2 {
+  color: #FFF;
 }
 .perfil-titulo>button {
   display: flex;
-  border: 2px solid #002e00;
-  background-color: green;
-  color: white;
-  border-radius: 5px;
-  margin: 5px 10px;
+  color: #FFF;
+  padding: 10px 20px;
+  background-color: #2D3944;
+  border-radius: 10px;
+}
+.perfil-titulo button:hover{
+  background-color: #CDE6FF;
+  color: #000;
 }
 .div-dados {
   padding: 2vh;
+  background-color: #FFF;
 }
 p {
   font-size: 25px;
+}
+
+.div-dados h2{
+  margin-bottom: 20px;
+}
+
+.div-dados p{
+  margin-bottom: 10px;
+}
+
+.div-dados p span{
+  font-weight: 700;
 }
