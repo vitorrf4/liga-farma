@@ -4,6 +4,7 @@ import {AuthService} from "../../../services/auth.service";
 import {Farmacia} from "../../../models/farmacia";
 import {VagaService} from "../../../services/vaga.service";
 import {LoginService} from "../../../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-criar-vaga',
@@ -19,6 +20,7 @@ export class CriarVagaComponent implements OnInit {
 
   constructor(private builder: FormBuilder,
               private loginService: LoginService,
+              private router: Router,
               private vagaService: VagaService) { }
 
   ngOnInit(): void {
@@ -40,8 +42,11 @@ export class CriarVagaComponent implements OnInit {
   criarVaga() {
     const vaga = this.vagaForm.getRawValue();
 
-    this.vagaService.cadastrar(vaga).subscribe(res => {
-      console.log(res);
+    this.vagaService.cadastrar(vaga).subscribe({
+      next: async () => {
+        alert("Vaga criada com sucesso");
+        await  this.router.navigateByUrl('/perfil');
+      }
     });
   }
 }

@@ -3,7 +3,7 @@ import {VagaService} from "../../../services/vaga.service";
 import {Vaga} from "../../../models/vaga";
 import {Farmacia} from "../../../models/farmacia";
 import {CurrencyPipe, DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
-import {Router, RouterLink} from "@angular/router";
+import {RouterLink} from "@angular/router";
 import {Candidatura} from "../../../models/candidatura";
 import {LoginService} from "../../../services/login.service";
 import {Contrato} from "../../../models/contrato";
@@ -32,8 +32,7 @@ export class MinhasVagasComponent implements OnInit {
   index = 0;
 
   constructor(private vagaService: VagaService,
-              private loginService: LoginService,
-              private router: Router) {}
+              private loginService: LoginService) {}
 
   ngOnInit(): void {
     const empresa = this.loginService.usuario?.informacoes as Farmacia;
@@ -42,7 +41,7 @@ export class MinhasVagasComponent implements OnInit {
     }
 
     this.vagaService.listarVagasPorEmpresa(empresa.id).subscribe(res => {
-      this.vagas = res;
+      this.vagas = res.sort((a, b) => b.id - a.id);
     });
   }
 
