@@ -1,0 +1,68 @@
+#candidatura{
+    width: 1440px;
+    margin: 50px auto !important;
+}
+
+#candidatura h1{
+    margin-bottom: 20px;
+}
+
+#candidatura button{
+    background-color: #1976D2;
+    color: #FFF;
+    border: 1px solid #3A5B22;
+    padding: 10px 200px;
+    border-radius: 10px;
+    display: table;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+#candidatura button:hover{
+    background-color: #336699;
+    color: #FFF;
+}
+
+
+
+#candidatura ul li strong{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#candidatura ul li span{
+    font-weight: 600;
+}
+
+#detalhes-vaga{
+    margin-bottom: 20px;
+    background-color: #FFF;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+#perfil, #mensagem-empresa{
+    background-color: #FFF;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+#perfil h2{
+    color: #336699;
+    margin-bottom: 20px;
+}
+#mensagem-empresa label{
+    margin-bottom: 10px;
+    display: table;
+}
+#mensagem-empresa textarea{
+    resize: vertical;
+    width: 50%;
+    min-height: 100px;
+    min-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #D9D9D9;
+}

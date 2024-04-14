@@ -1,36 +1,43 @@
-<p *ngIf="vaga">
-  <strong>Vaga {{vaga.id}}</strong>
-  <li>Empresa: {{vaga.farmacia.nome}}</li>
-  <li>Local: {{vaga.cidade}} - {{vaga.estado}}</li>
-  <li>Descricao: {{vaga.descricao}}</li>
-  <li>Quantidade Vagas: {{vaga.quantidadeVagas}}</li>
-  <li>Salario: {{vaga.salario | currency: 'BRL'}}</li>
-  <li>Tipo: {{vaga.tipo}}</li>
-  <li>Turno: {{vaga.turno}}</li>
-  <li>Data publicada: {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
-</p>
-
-<div *ngIf="perfil">
-  <h1>Meu Perfil</h1>
-  <ul>
-    <li>Nome: {{perfil.nome}}</li>
-    <li>Email: {{perfil.email}}</li>
-    <li>Telefone: {{perfil.telefone}}</li>
-  </ul>
-
-  <div *ngIf="file" id="curriculo">
-    <h1>Curriculo</h1>
-    <pdf-viewer [src]="file.data"
-                [original-size]="false"
-                [autoresize]="true"
-                style="width: 40vh; height: 45vh;">
-    </pdf-viewer>
+<section id="candidatura">
+  <h1>Candidatura</h1>
+  <div id="detalhes-vaga">
+    <ul *ngIf="vaga">
+      <li><strong>Vaga {{vaga.id}}</strong></li>
+      <li><span>Empresa: </span> {{vaga.farmacia.nome}}</li>
+      <li><span>Local: </span> {{vaga.cidade}} - {{vaga.estado}}</li>
+      <li><span>Descricao: </span> {{vaga.descricao}}</li>
+      <li><span>Quantidade Vagas: </span> {{vaga.quantidadeVagas}}</li>
+      <li><span>Salario: </span> {{vaga.salario | currency: 'BRL'}}</li>
+      <li><span>Tipo: </span> {{vaga.tipo}}</li>
+      <li><span>Turno: </span> {{vaga.turno}}</li>
+      <li><span>Data publicada: </span> {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
+    </ul>
   </div>
+  
+  <div id="perfil" *ngIf="perfil">
+    <h2>Meu Perfil</h2>
+    <ul>
+      <li>Nome: {{perfil.nome}}</li>
+      <li>Email: {{perfil.email}}</li>
+      <li>Telefone: {{perfil.telefone}}</li>
+    </ul>
+  
+    <div *ngIf="file" id="curriculo">
+      <h2>Curriculo</h2>
+      <pdf-viewer [src]="file.data"
+                  [original-size]="false"
+                  [autoresize]="true"
+                  style="width: 40vh; height: 45vh;">
+      </pdf-viewer>
+    </div>
+  </div>
+  
+  <div id="mensagem-empresa">
+    <form [formGroup]="perfilForm">
+      <label>Mensagem para a empresa:</label><br>
+      <textarea formControlName="mensagem"></textarea>
+    </form>
+    <button (click)="enviarCandidatura()">Enviar</button>
+  </div>
+</section>
 
-  <form [formGroup]="perfilForm">
-    <label>Mensagem a empresa:</label><br>
-    <textarea formControlName="mensagem"></textarea>
-  </form>
-</div>
-
-<button (click)="enviarCandidatura()">Enviar</button>
