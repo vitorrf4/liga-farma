@@ -32,6 +32,9 @@ p {
 .div-status > div {
   margin-left: 1vh;
 }
-.div-status > p {
-  margin-right: 1vh;
+.div-status > h2 {
+  margin-right: 2vh;
+}
+.outer-div-candidaturas {
+  padding: 2vh;
 }

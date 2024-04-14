@@ -2,7 +2,7 @@
   <h2>Minhas Candidaturas</h2>
 </div>
 
-<div *ngFor="let candidatura of candidaturas">
+<div *ngFor="let candidatura of candidaturas" class="outer-div-candidaturas">
   <div class="div-status">
     <h2><strong>{{candidatura.vaga.titulo}}</strong></h2>
     <span [class]="getStatusClass(candidatura.vaga.status)">
