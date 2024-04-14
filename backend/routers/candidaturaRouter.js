@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 const controller = require('../controllers/candidaturaController');
-const {verifyToken} = require("../jwt");
+const {verifyToken} = require("../config/jwt");
 
 router.use(verifyToken);
 

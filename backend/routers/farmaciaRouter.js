@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 const controller = require('../controllers/farmaciaController.js');
-const {verifyToken} = require("../jwt");
+const {verifyToken} = require("../config/jwt");
 
 router.get('/farmacia', (req, res) => controller.getFarmacias(req, res));
 router.get('/farmacia/:id', (req, res) => controller.getFarmaciaPorId(req, res));

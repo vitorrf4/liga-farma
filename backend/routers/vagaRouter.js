@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 const controller = require('../controllers/vagaController');
-const {verifyToken} = require("../jwt");
+const {verifyToken} = require("../config/jwt");
 
 router.get('/vaga', (req, res) => controller.getVagas(req, res));
 router.get('/vaga/:id', (req, res) => controller.getVagaPorId(req, res));
