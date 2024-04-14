@@ -42,6 +42,7 @@ section{
 }
 
 .containver-vaga ul{
+  max-width: 250px;
   float: left;
 }
 
