@@ -1,43 +1,34 @@
 <div id="container">
   <div id="form">
     <h2>Bem-Vindo!</h2>
-    <strong class="heading">Acesse sua conta:</strong>
+    <strong id="heading">Acesse sua conta:</strong>
+
     <form [formGroup]="form" (submit)="logarCliente()">
-      <div class="cadastro-container">
-        <div>
-          <div class="cadastro-divlabel">
-            <label for="email">Email</label>
-          </div>
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="text"
+        formControlName="email"
+        required="required"
+        placeholder="Insira seu email"/>
 
-          <input
-            id="email"
-            type="text"
-            formControlName="email"
-            required="required"
-            placeholder="Insira seu email"/>
-        </div>
+      <label for="senha">Senha</label>
+      <input
+        id="senha"
+        type="password"
+        formControlName="senha"
+        required="required"
+        placeholder="Insira sua senha"/>
 
-        <div class="cadastro-senhagroup">
-          <div class="cadastro-divlabel">
-            <label for="senha">Senha</label>
-          </div >
-
-          <input
-            id="senha"
-            type="password"
-            formControlName="senha"
-            required="required"
-            placeholder="Insira sua senha"/>
-        </div >
-
-        <button type="submit" class="cadastro-divbutton">Login</button>
-
+      <div id="div-btn">
+        <button type="submit">Login</button>
       </div>
+
     </form>
   </div>
+
   <div id="image">
-    <img src="./assets/imagem_login.jpeg"
-         alt="Login image">
+    <img src="./assets/imagem_login.jpeg" alt="Login image">
   </div>
 </div>
 

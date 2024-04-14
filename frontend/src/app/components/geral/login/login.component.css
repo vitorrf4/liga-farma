@@ -2,29 +2,16 @@
   font-family: "Sora", sans-serif;
   transition: 700ms;
 }
-.top {
-  display: flex;
-  flex-direction: column;
-}
 label {
   font-weight: 600;
   margin-left: 1vh;
   color: rgba(0, 0, 0, 1);
   line-height: 5px;
-  top: 5px;
   left: 10px;
-  width: auto;
   height: 35px;
   display: flex;
   align-items: center;
-  flex-shrink: 0;
-}
-.cadastro-container {
-  width:max-content;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  align-items: center;
+  margin-top: 15px;
 }
 input {
   color: #000000;
@@ -41,22 +28,14 @@ input {
   overflow: hidden;
   text-align: left;
 }
-.cadastro-container>div{
-  margin: 10px 0 5px 0;
-}
-.cadastro-divbutton {
+button {
   background-color: #057dc9;
   color: rgba(255, 255, 255, 1);
   border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 0 20px 0 20px;
   height: 40px;
   margin-top: 20px;
 }
-
-/* MEU */
 #container {
   display: flex;
   margin-bottom: 4vh;
@@ -74,4 +53,11 @@ input {
 }
 #image>img {
   height: 100%;
+}
+#div-btn {
+  display: flex;
+  justify-content: center;
+}
+#heading {
+  margin-top: 10px;
 }
