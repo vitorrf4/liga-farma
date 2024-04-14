@@ -4,25 +4,33 @@ strong {
 hr {
   color: black;
 }
+p {
+  font-size: 25px;
+}
+span {
+  font-size: 16px;
+}
 .div-titulo {
   display: flex;
   flex-direction: row;
-  border: 2px solid dodgerblue;
-  background-color: #b2e7ff;
+  background-color: #336699;
   align-items: center;
   justify-content: space-between;
-  padding: 1vh;
+  padding: 20px;
+  min-height: 43px;
 }
-.div-candidaturas {
-  border: 2px #370000 solid;
-  border-radius: 6px;
-  background-color: #006ca5;
-  padding: 0.5vh;
+.div-titulo>h2 {
+  color: #FFF;
+}
+.div-status > h2 {
+  margin-right: 2vh;
+}
+.outer-div-candidaturas {
+  background-color: #EFEFEF;
   margin-top: 1vh;
   margin-bottom: 1vh;
-}
-p {
-  font-size: 25px;
+  padding: 2vh;
+  line-height: 40px;
 }
 .div-status {
   display: inline-flex;
@@ -32,9 +40,49 @@ p {
 .div-status > div {
   margin-left: 1vh;
 }
-.div-status > h2 {
-  margin-right: 2vh;
+.div-status > p {
+  margin-right: 1vh;
+  font-weight: 600;
 }
-.outer-div-candidaturas {
+.div-candidatura {
+  border: 1px solid #9e9e9e;
+  background-color: #dadada;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.div-candidatura > button {
+  background-color: #1976D2;
+  color: #FFF;
+  border: 1px solid #3A5B22;
+  padding: 10px 200px;
+  border-radius: 10px;
+  margin: 30px auto !important;
+  display: table;
+}
+.div-candidatura > button:hover {
+  background-color: #336699;
+  color: #FFF;
+}
+.div-candidatura > h4 {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+#div-vagas {
   padding: 2vh;
+  line-height: 40px;
 }
+.div-btn-contrato>button {
+  background-color: #1976D2;
+  color: #FFF;
+  border: 1px solid #3A5B22;
+  padding: 10px 200px;
+  border-radius: 10px;
+  margin: 30px auto !important;
+  display: table;
+}
+.div-btn-contrato>button:hover {
+  background-color: #336699;
+  color: #FFF;
+}
+

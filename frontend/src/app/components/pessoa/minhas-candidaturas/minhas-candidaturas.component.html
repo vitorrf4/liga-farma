@@ -16,13 +16,15 @@
   <p><strong>Tipo:</strong> {{candidatura.vaga.tipo}}</p>
   <p><strong>Turno:</strong> {{candidatura.vaga.turno}}</p>
 
-  <div *ngIf="candidatura.contrato" class="div-candidaturas">
-    <strong>Contrato</strong>
-    <p><strong>Data Inicio:</strong> {{candidatura.contrato.dataInicio}}</p>
-    <p><strong>Data Fim:</strong> {{candidatura.contrato.dataFim}}</p>
-    <p>Status do contrato: {{candidatura.contrato.status}}</p>
+  <div *ngIf="candidatura.contrato" class="div-candidatura">
+    <h4>Contrato</h4>
+    <p><strong>Data Inicio:</strong> {{candidatura.contrato.dataInicio | date: 'dd/MM/yyyy'}}</p>
+    <p><strong>Data Fim:</strong> {{candidatura.contrato.dataFim | date: 'dd/MM/yyyy'}}</p>
+    <p><strong>Status do contrato:</strong>
+      {{getStatusFormatado(candidatura.contrato.status)}}
+    </p>
 
-    <div *ngIf="candidatura.contrato.status == 'ENVIADO'">
+    <div *ngIf="candidatura.contrato.status == 'ENVIADO'" class="div-btn-contrato">
       <button (click)="aceitarContrato(candidatura.contrato)" class="btn-green">
         Aceitar contrato
       </button>
