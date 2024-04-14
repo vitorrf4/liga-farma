@@ -52,7 +52,6 @@ label {
   width: auto;
   height: 35px;
   display: flex;
-  /*position: absolute;*/
   align-items: center;
   flex-shrink: 0;
 }
@@ -74,93 +73,4 @@ label {
 
 .cadastro-container>div{
   margin: 10px 0px 5px 0px;
-}
-
-/* == GRUPOS == */
-
-.cadastro-nomegroup {
-/*  top: 0px;*/
-/*  left: 0px;*/
-/*  width: 600px;*/
-/*  height: 100px;*/
-/*  margin-top: 10px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: flex-start;*/
-/*  flex-shrink: 1;*/
-/*}*/
-/*.cadastro-cpfgroup {*/
-/*  top: 100px;*/
-/*  left: 0px;*/
-/*  width: 600px;*/
-/*  height: 100px;*/
-/*  margin-top: 10px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: flex-start;*/
-/*  flex-shrink: 1;*/
-/*}*/
-/*.cadastro-crfgroup {*/
-/*  top: 200px;*/
-/*  left: 0px;*/
-/*  width: 600px;*/
-/*  height: 100px;*/
-/*  margin-top: 10px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: flex-start;*/
-/*  flex-shrink: 1;*/
-}
-.cadastro-senhagroup {
-/*  top: 300px;*/
-/*  left: 0px;*/
-/*  width: 600px;*/
-/*  height: 100px;*/
-/*  margin-top: 10px;*/
-/*  display: flex;*/
-/*  position: absolute;*/
-/*  align-items: flex-start;*/
-/*  flex-shrink: 1;*/
-}
-.cadastro-telefonegroup {
-  /*top: 400px;
-  left: 0px;
-  width: 600px;
-  height: 100px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;*/
-}
-.cadastro-curriculogroup {
-  /*margin: none;
-  top: 500px;
-  left: 0px;
-  width: 600px;
-  height: 100px;
-  margin-top: 10px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;*/
-}
-
-/* == OTIMIZAÇÕES A PARTIR DAQUI == */
-
-.cadastro-curriculoinput{
-  /*margin-top: 45px;*/
-}
-
-.titulo-text {
-  /*color: rgba(0, 0, 0, 1);*/
-  /*height: auto;*/
-  /*font-size: 40px;*/
-  /*font-style: Medium;*/
-  /*text-align: left;*/
-  /*font-weight: 500;*/
-  /*line-height: normal;*/
-  /*font-stretch: normal;*/
-  /*text-decoration: none;*/
 }

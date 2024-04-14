@@ -80,26 +80,38 @@ export class CadastroPessoaComponent implements OnInit{
       farmaceutico
     );
 
-    if(!this.form.valid){
+    if(this.form.invalid){
       alert("Preencha o formulário corretamente!!");
       return;
     }
 
-    this.authService.cadastrar(usuario).subscribe({
-      next: res => {
-          if (this.selectedFile)
-          this.cadastrarCurriculo(res.informacoes.id.toString());
-
-        this.logarUsuario(usuario);
-      },
-      error: () => alert('Email já cadastrado')
-    })
+    try {
+      this.authService.cadastrar(usuario).subscribe({
+        next: res => {
+          try {
+            if (this.selectedFile)
+            this.cadastrarCurriculo(res.informacoes.id.toString());
+          
+            alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
+            setTimeout(() => {
+              this.logarUsuario(usuario);
+            }, 1000);
+  
+          } catch (error) {
+              alert(`Erro interno ao incluir currículo: ${error}`)
+          }
+        },
+        error: () => alert('Erro inesperado')
+      })
+    } catch (error) {
+      alert(`Erro interno ao cadastrar: ${error}`)
+    }
   }
 
   logarUsuario(usuario: Usuario) {
     const email = usuario.informacoes.email;
     const senha = usuario.informacoes.senha;
-
+    
     this.authService.login({email, senha}).subscribe({
       next: async res => {
         this.loginService.setUsuario(res);

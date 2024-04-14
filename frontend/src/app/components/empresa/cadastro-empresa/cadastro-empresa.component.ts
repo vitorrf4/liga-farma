@@ -7,6 +7,7 @@ import {Farmaceutico} from "../../../models/farmaceutico";
 import {Usuario} from "../../../models/usuario";
 import {Router} from "@angular/router";
 import {LoginService} from "../../../services/login.service";
+import { Farmacia } from '../../../models/farmacia';
 
 @Component({
   selector: 'app-cadastro-empresa',
@@ -24,8 +25,7 @@ import {LoginService} from "../../../services/login.service";
 export class CadastroEmpresaComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private cadastroService: AuthService,
-              private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private loginService: LoginService,
               private router: Router) { }
@@ -44,24 +44,33 @@ export class CadastroEmpresaComponent implements OnInit {
   }
 
   cadastrarCliente() {
-    let farmaceutico : Farmaceutico;
-    farmaceutico = this.form.getRawValue();
+    let farmacia : Farmacia;
+    farmacia = this.form.getRawValue();
 
     const usuario = new Usuario(
       'EMPRESA',
-      farmaceutico
+      farmacia
     );
 
-    if(!this.form.valid){
+    if(this.form.invalid){
       alert("Preencha o formulário corretamente!!");
       return;
     }
 
-    this.cadastroService.cadastrar(usuario).subscribe({
-      next: res => this.logarUsuario(usuario),
-      error: () => alert('Email já cadastrado')
-    })
-  }
+    try {
+      this.authService.cadastrar(usuario).subscribe({
+        next: () => {
+          alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
+          setTimeout(() => {
+              this.logarUsuario(usuario);
+            }, 1000);
+        },
+        error: () => alert('Erro inesperado')
+      })
+    } catch (error) {
+      alert(`Erro interno ao cadastrar: ${error}`)
+    }
+}
 
   logarUsuario(usuario: Usuario) {
     const email = usuario.informacoes.email;

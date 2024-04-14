@@ -73,3 +73,8 @@ button {
 .right {
   flex-basis: 20%;
 }
+
+#image>img{
+  float: right;
+  right: 0;
+}
