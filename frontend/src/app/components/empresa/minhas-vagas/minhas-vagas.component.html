@@ -32,7 +32,9 @@
       </div>
 
       <div *ngIf="candidatura.contrato; else enviar">
-        <p>Status: {{getContratoStatusString(candidatura.contrato.status)}}</p>
+        <p><strong>Status: </strong>
+          {{getContratoStatusString(candidatura.contrato.status)}}
+        </p>
       </div>
       <ng-template #enviar>
         <button (click)="aceitarCandidatura(candidatura, vaga, vagaIndex)" class="btn-blue">

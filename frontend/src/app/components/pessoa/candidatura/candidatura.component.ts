@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {CurrencyPipe, DatePipe, NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {AuthService} from "../../../services/auth.service";
@@ -30,6 +30,7 @@ export class CandidaturaComponent implements OnInit {
 
   constructor(private loginService: LoginService,
               private builder: FormBuilder,
+              private router: Router,
               private candidaturaService: CandidaturaService) {
   }
 
@@ -46,12 +47,15 @@ export class CandidaturaComponent implements OnInit {
       farmaceuticoId: this.perfil.id,
       mensagem: ['']
     });
-    }
+  }
 
   enviarCandidatura() {
     const candidatura = this.perfilForm.getRawValue();
-    this.candidaturaService.cadastrar(candidatura).subscribe(res => {
-      console.log(res);
+    this.candidaturaService.cadastrar(candidatura).subscribe({
+      next: async () => {
+        alert("Candidatura enviada com sucesso!");
+        await this.router.navigateByUrl('/vagas');
+      }
     });
   }
 }
