@@ -43,7 +43,7 @@ label {
   height: auto;
   font-size: 18px;
   text-align: left;
-  line-height: normal;
+  line-height: 5px;
   font-stretch: normal;
   text-decoration: none;
 }
@@ -78,6 +78,7 @@ input {
 
 #container {
   display: flex;
+  margin-bottom: 4vh;
 }
 #form {
   display: flex;
