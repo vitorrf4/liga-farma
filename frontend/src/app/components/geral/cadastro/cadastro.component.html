@@ -1,29 +1,27 @@
-<section class="vh-100">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 text-black" id="form">
-        <div class="content">
-          <div id="heading">
-            <h2>Cadastre-se Já</h2>
-            <div>
-              <button routerLink="pessoa"><span>FARMACÊUTICO</span></button>
-              <button routerLink="empresa"><span>FARMÁCIA</span></button>
-            </div>
+<div class="container">
+  <div class="row">
+    <div class="column" id="form">
+      <div class="content">
 
-          </div>
-
-          <div id="router">
-            <router-outlet></router-outlet>
+        <div id="heading">
+          <h2>Cadastre-se Já</h2>
+          <div>
+            <button routerLink="pessoa"><span>FARMACÊUTICO</span></button>
+            <button routerLink="empresa"><span>FARMÁCIA</span></button>
           </div>
         </div>
 
-      </div>
+        <div id="router">
+          <router-outlet></router-outlet>
+        </div>
 
-      <div class="col-sm-6 vh-100" id="image">
-        <img src="./assets/imagem_cadastro.jpeg"
-             alt="Login image" class="image vh-100">
       </div>
-
     </div>
+
+    <div class="column" id="image">
+      <img src="./assets/imagem_cadastro.jpeg"
+           alt="Login image" class="image">
+    </div>
+
   </div>
-</section>
+</div>
