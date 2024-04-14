@@ -144,6 +144,7 @@ button{
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
+  font-family: "Sora", sans-serif;
 }
 .btn-green:focus:not(:focus-visible):not(.focus-visible) {
   box-shadow: none;
@@ -192,6 +193,7 @@ button{
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
+  font-family: "Sora", sans-serif;
 }
 .btn-red:hover,
 .btn-red:active {
@@ -226,6 +228,7 @@ button{
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
+  font-family: "Sora", sans-serif;
 }
 .btn-blue:hover,
 .btn-blue:active {

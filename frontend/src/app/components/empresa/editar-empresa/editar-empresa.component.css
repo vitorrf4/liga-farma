@@ -4,37 +4,32 @@ span {
 .perfil-titulo {
   display: flex;
   flex-direction: row;
-  border: 2px solid dodgerblue;
-  background-color: #b2e7ff;
+  background-color: #336699;
   align-items: center;
   justify-content: space-between;
-  padding: 1vh;
+  padding: 20px;
 }
-.perfil-titulo>span {
-  margin: 5px 10px;
-}
-.perfil-titulo>button {
-  display: flex;
-  border: 2px solid #002e00;
-  background-color: green;
-  color: white;
-  border-radius: 5px;
-  margin: 5px 10px;
+.perfil-titulo>h2 {
+  color: #FFF;
 }
 .div-dados {
   padding: 2vh;
-  background-color: #d9f3f6;
 }
 label {
+  display: flex;
   font-size: 25px;
   font-weight: bold;
   line-height: 35px;
+  margin-bottom: 5px;
+}
+input {
+  display: flex;
+  margin-bottom: 15px;
 }
 .outer-div {
-  margin-right: 5vh;
-  margin-left: 5vh;
+  margin-right: 150px;
+  margin-left: 150px;
 }
-
 input {
   padding-left: 10px;
   font-weight: 500;
