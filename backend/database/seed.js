@@ -34,7 +34,7 @@ class Seeds {
                 nome: "Farmacia Unipreco",
                 cnpj: "120397812-21",
                 endereco: "Avenida Presidente Silva 274",
-                descricao: 'empresa farmaceutico descricao placeholder',
+                descricao: 'Farmácia local em busca de profissionais dedicados para se juntarem à nossa equipe. Oferecemos um ambiente de trabalho dinâmico e colaborativo, onde você terá a oportunidade de ajudar a comunidade fornecendo serviços farmacêuticos de qualidade. Procuramos indivíduos motivados, com habilidades de comunicação excelentes e um forte compromisso com a saúde pública. Se você é apaixonado por ajudar os outros e está em busca de uma carreira gratificante na área de saúde, gostaríamos de conhecê-lo!',
                 email: 'e',
                 senha: 'e',
                 telefone: null
@@ -79,7 +79,7 @@ class Seeds {
             candidaturaId: 1,
             vagaId: 3,
             dataInicio: "2024-04-18",
-            dataFim: "2024-04-17",
+            dataFim: "2024-05-19",
             status: ""
         }
         await this.executarPost(body, 'contrato');
@@ -89,7 +89,7 @@ class Seeds {
         const body = {
             vagaId: 3,
             farmaceuticoId: 1,
-            mensagem: 'teste mensagem'
+            mensagem: 'Estou entusiasmado para me candidatar à vaga anunciada em sua empresa. Minha experiência e habilidades estão alinhadas com os requisitos do cargo, e estou ansioso para contribuir com meu melhor para o sucesso da equipe. Agradeço a oportunidade e aguardo com expectativa a possibilidade de discutir como posso agregar valor à sua organização.'
         }
         await this.executarPost(body, 'candidatura');
     }
