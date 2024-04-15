@@ -1,5 +1,5 @@
 <div *ngIf="vaga">
-  <button id="btn-fechar" (click)="deselecionarVaga()" class="btn-red">X</button>
+  <button (click)="deselecionarVaga()" class="btn-red">X</button>
   <br><br>
   <ul>
     <li><strong>{{vaga.titulo}}</strong></li>
@@ -11,6 +11,14 @@
     <li><span>Tipo:</span> {{vaga.tipo}}</li>
     <li><span>Turno:</span> {{vaga.turno}}</li>
     <li><span>Data publicada:</span> {{vaga.dataPublicada | date: 'dd/MM/yyyy'}}</li>
-    <li><button (click)="irParaCandidatura()">Candidatar-se</button></li>
+    <li>
+      <div *ngIf="jaCandidadato;else candidatar">
+        <a routerLink="/perfil">Candidatura Enviada! Ir para perfil</a>
+      </div>
+
+      <ng-template #candidatar>
+        <button (click)="irParaCandidatura()">Candidatar-se</button>
+      </ng-template>
+    </li>
   </ul>
 </div>

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vaga} from "../../../models/vaga";
 import {CurrencyPipe, DatePipe, NgIf} from "@angular/common";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {LoginService} from "../../../services/login.service";
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 import {Usuario} from "../../../models/usuario";
@@ -12,7 +12,8 @@ import {Usuario} from "../../../models/usuario";
   imports: [
     NgIf,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    RouterLink
   ],
   templateUrl: './vaga-pagina.component.html',
   styleUrl: './vaga-pagina.component.css'
@@ -25,10 +26,6 @@ export class VagaPaginaComponent {
   constructor(private router: Router,
               loginService: LoginService) {
     this.usuario = loginService.usuario;
-  }
-
-  get isPessoa() {
-    return this.usuario?.tipo === 'PESSOA' || true;
   }
 
   get jaCandidadato() {

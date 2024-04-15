@@ -24,3 +24,12 @@ ul li strong{
 ul li span{
     font-weight: 600;
 }
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  background-color: #2c974b;
+  padding: 20px 10px;
+  display: inline-flex;
+  margin-top: 20px;
+}
