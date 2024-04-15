@@ -32,10 +32,7 @@ export class PerfilPessoaComponent {
     // carrega curriculo se o usuário tiver um
     if (this.pessoa.curriculoId) {
       this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
-        next: async res => {
-          this.curriculo = res;
-        },
-        error: () => console.log('Erro ao carregar curriculo')
+        next: async res => this.curriculo = res
       });
     }
   }

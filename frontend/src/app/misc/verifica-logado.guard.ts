@@ -9,6 +9,6 @@ export const verificaLogadoGuard: CanActivateFn = async (route, state) => {
       return true;
     }
 
-    await router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+    await router.navigate(['/login']);
     return false;
 };

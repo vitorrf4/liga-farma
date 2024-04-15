@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {CurrencyPipe, DatePipe, NgForOf, NgIf} from "@angular/common";
 import {Candidatura} from "../../../models/candidatura";
 import {CandidaturaService} from "../../../services/candidatura.service";
-import {AuthService} from "../../../services/auth.service";
 import {Contrato} from "../../../models/contrato";
 import {ContratoService} from "../../../services/contrato.service";
 import {LoginService} from "../../../services/login.service";
+import {HelperService} from "../../../services/helper.service";
 
 @Component({
   selector: 'app-minhas-candidaturas',
@@ -24,8 +24,8 @@ export class MinhasCandidaturasComponent implements OnInit {
 
   constructor(private candidaturaService: CandidaturaService,
               private loginService: LoginService,
-              private contratoService: ContratoService) {
-  }
+              private contratoService: ContratoService,
+              private helperService: HelperService) { }
 
   ngOnInit(): void {
     const pessoaId = this.loginService.usuario?.informacoes.id || 0;
@@ -35,10 +35,10 @@ export class MinhasCandidaturasComponent implements OnInit {
   }
 
   aceitarContrato(contrato: Contrato) {
-    // adicionar rejeitar contrato
     contrato.status = 'ACEITO';
-    this.contratoService.atualizar(contrato).subscribe(res => {
-      console.log(res);
+    this.contratoService.atualizar(contrato).subscribe({
+      next: () => alert('Contrato atualizado'),
+      error: () => alert('Erro ao atualizar')
     });
   }
 
@@ -49,8 +49,7 @@ export class MinhasCandidaturasComponent implements OnInit {
     }
   }
 
-  getStatusFormatado(str: string) {
-    str = str.toLowerCase();
-    return str.charAt(0).toUpperCase() + str.slice(1);
+  getStatusFormatado(status: string) {
+    return this.helperService.getStringComPrimeiraMaiuscula(status);
   }
 }
