@@ -26,8 +26,7 @@ span {
   margin-right: 2vh;
 }
 .outer-div-candidaturas {
-  background-color: #EFEFEF;
-  margin-top: 1vh;
+  background-color: #FFF;
   margin-bottom: 1vh;
   padding: 2vh;
   line-height: 40px;
@@ -45,7 +44,6 @@ span {
   font-weight: 600;
 }
 .div-candidatura {
-  border: 1px solid #9e9e9e;
   background-color: #dadada;
   padding: 10px;
   margin-bottom: 20px;

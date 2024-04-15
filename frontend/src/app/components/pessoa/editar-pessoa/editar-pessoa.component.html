@@ -4,17 +4,17 @@
   </div>
   <div class="div-dados">
     <form [formGroup]="form" (submit)="atualizarInformacoes()">
-      <label class="form-label">Nome:</label>
-      <input type="text" class="form-control" formControlName="nome" required />
+      <label>Nome:</label>
+      <input type="text" formControlName="nome" required />
 
-      <label class="form-label">Especialização: </label>
-      <input type="text" class="form-control" formControlName="especializacao" required />
+      <label>Especialização: </label>
+      <input type="text"  formControlName="especializacao" required />
 
-      <label class="form-label">Email:</label>
-      <input type="text" class="form-control" formControlName="email" required/>
+      <label>Email:</label>
+      <input type="text"  formControlName="email" required/>
 
-      <label class="form-label">Telefone:</label>
-      <input type="text" class="form-control" formControlName="telefone" />
+      <label>Telefone:</label>
+      <input type="text"  formControlName="telefone" />
 
     <button type="submit" class="btn-green">Atualizar</button>
     </form>

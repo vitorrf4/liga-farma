@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {AuthService} from "../../../services/auth.service";
-import {Farmaceutico} from "../../../models/farmaceutico";
 import {Usuario} from "../../../models/usuario";
 import {LoginService} from "../../../services/login.service";
 import {Farmacia} from "../../../models/farmacia";
@@ -43,6 +41,7 @@ export class EditarEmpresaComponent implements OnInit {
 
   atualizarInformacoes() {
     const farmacia = this.form.getRawValue();
+
     this.farmaciaService.atualizar(farmacia).subscribe({
       next: async () => {
         const usuario = new Usuario('EMPRESA', farmacia);
