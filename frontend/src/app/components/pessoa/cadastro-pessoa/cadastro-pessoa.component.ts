@@ -41,7 +41,7 @@ export class CadastroPessoaComponent implements OnInit {
       crf: ["", Validators.required],
       email: ["", Validators.required],
       senha: ["", Validators.required],
-      telefone: ["", Validators.required]
+      telefone: [""]
     });
   }
 

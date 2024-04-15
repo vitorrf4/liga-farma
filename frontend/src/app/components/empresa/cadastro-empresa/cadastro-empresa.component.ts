@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {NgForOf, NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {AuthService} from "../../../services/auth.service";
-import {Farmaceutico} from "../../../models/farmaceutico";
 import {Usuario} from "../../../models/usuario";
 import {Router} from "@angular/router";
 import {LoginService} from "../../../services/login.service";
@@ -44,33 +43,30 @@ export class CadastroEmpresaComponent implements OnInit {
   }
 
   cadastrarCliente() {
-    let farmacia : Farmacia;
-    farmacia = this.form.getRawValue();
+    if (this.form.invalid) {
+      alert("Preencha todos os campos");
+      return;
+    }
 
+    const farmacia: Farmacia = this.form.getRawValue();
     const usuario = new Usuario(
       'EMPRESA',
       farmacia
     );
 
-    if(this.form.invalid){
-      alert("Preencha o formulário corretamente!!");
-      return;
-    }
-
-    try {
-      this.authService.cadastrar(usuario).subscribe({
-        next: () => {
-          alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
-          setTimeout(() => {
-              this.logarUsuario(usuario);
-            }, 1000);
-        },
-        error: () => alert('Erro inesperado')
-      })
-    } catch (error) {
-      alert(`Erro interno ao cadastrar: ${error}`)
-    }
-}
+    this.authService.cadastrar(usuario).subscribe({
+      next: () => {
+        alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
+        this.logarUsuario(usuario);
+      },
+      error: res => {
+        switch (res.status) {
+          case 400: return alert('Email já cadastrado');
+          default: case 500: return alert('Erro ao cadastrado, tente novamente mais tarde');
+        }
+      }
+    });
+  }
 
   logarUsuario(usuario: Usuario) {
     const email = usuario.informacoes.email;
