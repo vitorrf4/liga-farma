@@ -6,7 +6,7 @@
   "scripts": {
     "nodemon": "../node_modules/.bin/nodemon server.js",
     "start": "node server.js",
-    "prod": "NODE_ENV=production nodemon server.js",
+    "prod": "NODE_ENV=production node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
