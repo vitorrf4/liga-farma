@@ -51,6 +51,7 @@ export class CandidaturaComponent implements OnInit {
 
   enviarCandidatura() {
     const candidatura = this.perfilForm.getRawValue();
+
     this.candidaturaService.cadastrar(candidatura).subscribe({
       next: async () => {
         alert("Candidatura enviada com sucesso!");

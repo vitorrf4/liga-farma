@@ -23,7 +23,7 @@ import {Router} from "@angular/router";
   templateUrl: './cadastro-pessoa.component.html',
   styleUrl: './cadastro-pessoa.component.css'
 })
-export class CadastroPessoaComponent implements OnInit{
+export class CadastroPessoaComponent implements OnInit {
   form!: FormGroup;
   selectedFile: any;
   fileUrl: any = '';
@@ -61,57 +61,71 @@ export class CadastroPessoaComponent implements OnInit{
     reader.readAsDataURL(this.selectedFile);
   }
 
-  cadastrarCurriculo(usuarioId: string) {
-    const pdfForm = new FormData();
-    pdfForm.append('pdf', this.selectedFile);
-    pdfForm.append('usuarioId', usuarioId.toString());
-
-    this.pdfService.uploadPdf(pdfForm).subscribe(res => {
-      console.log(res);
-    });
-  }
-
   cadastrarCliente() {
-    let farmaceutico : Farmaceutico;
-    farmaceutico = this.form.getRawValue();
+    if (!this.clienteEstaValido()) return;
 
+    const farmaceutico: Farmaceutico = this.form.getRawValue();
     const usuario = new Usuario(
       'PESSOA',
       farmaceutico
     );
 
-    if(this.form.invalid){
-      alert("Preencha o formulário corretamente!!");
-      return;
+    this.authService.cadastrar(usuario).subscribe({
+      next: res => {
+        if (this.selectedFile) {
+          this.cadastrarCurriculo(res.informacoes.id);
+        }
+
+        alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
+        this.logarUsuario(usuario);
+      },
+      error: res => {
+        switch (res.status) {
+          case 400: return alert('Email já cadastrado');
+          default: case 500: return alert('Erro ao cadastrado, tente novamente mais tarde');
+        }
+      }
+    });
+  }
+
+  clienteEstaValido() {
+    if (this.form.invalid) {
+      alert("Preencha todos os campos");
+      return false;
     }
 
-    try {
-      this.authService.cadastrar(usuario).subscribe({
-        next: res => {
-          try {
-            if (this.selectedFile)
-            this.cadastrarCurriculo(res.informacoes.id.toString());
-          
-            alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
-            setTimeout(() => {
-              this.logarUsuario(usuario);
-            }, 1000);
-  
-          } catch (error) {
-              alert(`Erro interno ao incluir currículo: ${error}`)
-          }
-        },
-        error: () => alert('Erro inesperado')
-      })
-    } catch (error) {
-      alert(`Erro interno ao cadastrar: ${error}`)
+    // retorno precoce caso o usuario nao tenha um curriculo
+    if (!this.selectedFile) {
+      return true;
     }
+
+    if (!this.selectedFile?.name.endsWith('.pdf')) {
+      alert('Currículo deve ser um pdf');
+      return false;
+    }
+
+    if (this.selectedFile?.size > 5000000) {
+      alert("O arquivo deve ter menos de 5mb");
+      return false;
+    }
+
+    return true;
+  }
+
+  cadastrarCurriculo(usuarioId: number) {
+    const pdfForm = new FormData();
+    pdfForm.append('pdf', this.selectedFile);
+    pdfForm.append('usuarioId', usuarioId.toString());
+
+    this.pdfService.uploadPdf(pdfForm).subscribe({
+      error: () => alert('Error ao cadastrar currículo')
+    });
   }
 
   logarUsuario(usuario: Usuario) {
     const email = usuario.informacoes.email;
     const senha = usuario.informacoes.senha;
-    
+
     this.authService.login({email, senha}).subscribe({
       next: async res => {
         this.loginService.setUsuario(res);

@@ -1,6 +1,6 @@
 <form [formGroup]="form" (submit)="cadastrarCliente()">
   <div class="cadastro-container">
-    
+
     <div>
       <div class="cadastro-divlabel">
         <label class="label-text" for="nome">
@@ -73,7 +73,7 @@
       </div >
 
       <input
-        type="tel"
+        type="number"
         class="cadastro-divinput"
         formControlName="telefone"
         required="required"
@@ -96,11 +96,11 @@
         placeholder="Crie uma senha"/>
 
     </div >
-      
+
     <div>
       <div class="cadastro-divlabel">
         <label class="label-text">
-          <span>Currículo</span>
+          <span>Currículo (PDF)</span>
         </label >
       </div>
 
