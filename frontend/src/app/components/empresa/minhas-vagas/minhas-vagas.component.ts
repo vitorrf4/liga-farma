@@ -9,6 +9,7 @@ import {LoginService} from "../../../services/login.service";
 import {Contrato} from "../../../models/contrato";
 import {CandidaturaComponent} from "../../pessoa/candidatura/candidatura.component";
 import {ContratoComponent} from "../contrato/contrato.component";
+import {HelperService} from "../../../services/helper.service";
 
 @Component({
   selector: 'app-minhas-vagas',
@@ -32,7 +33,8 @@ export class MinhasVagasComponent implements OnInit {
   index = 0;
 
   constructor(private vagaService: VagaService,
-              private loginService: LoginService) {}
+              private loginService: LoginService,
+              private helper: HelperService) {}
 
   ngOnInit(): void {
     const empresa = this.loginService.usuario?.informacoes as Farmacia;
@@ -64,8 +66,8 @@ export class MinhasVagasComponent implements OnInit {
 
   fecharVaga(vaga: Vaga) {
     vaga.status = 'FECHADA';
-    this.vagaService.atualizar(vaga).subscribe(res => {
-      console.log(res);
+    this.vagaService.atualizar(vaga).subscribe({
+      error: () => alert('Error ao atualizar')
     });
   }
 
@@ -76,9 +78,8 @@ export class MinhasVagasComponent implements OnInit {
     }
   }
 
-  getStatusFormatado(str: string) {
-    str = str.toLowerCase();
-    return str.charAt(0).toUpperCase() + str.slice(1);
+  getStatusFormatado(status: string) {
+    return this.helper.getStringComPrimeiraMaiuscula(status);
   }
 
   getContratoStatusString(status: string) {
