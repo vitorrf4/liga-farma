@@ -22,8 +22,10 @@ class PdfController {
     async uploadPdf(req, res) {
         try {
             const file = req.file;
-            if (file.mimetype !== 'application/pdf') {
-                return res.status(400).json({message: 'Arquivo não é um pdf'});
+            
+            if (file.mimetype !== 'application/pdf' ||
+                !file.originalname.endsWith('.pdf')) {
+                return res.status(400).json({message: 'Arquivo inválido'});
             }
 
             const pdf = await PdfModel.create({
