@@ -31,6 +31,7 @@ export class MinhasVagasComponent implements OnInit {
   vagas: Vaga[] = [];
   contrato?: Contrato;
   idCandidaturaAtual = 0;
+  curriculoUrl : any;
 
   constructor(private vagaService: VagaService,
               private loginService: LoginService,
@@ -47,7 +48,7 @@ export class MinhasVagasComponent implements OnInit {
   baixarCurriculo(curriculo: any) {
     const byteArray = new Uint8Array(curriculo.data.data);
     const blob = new Blob([byteArray], { type: 'application/pdf' });
-    return URL.createObjectURL(blob);
+    this.curriculoUrl = URL.createObjectURL(blob);
   }
 
   getFilename(curriculo: any) {

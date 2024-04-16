@@ -29,7 +29,8 @@
       <p><strong>Email:</strong> {{candidatura.farmaceutico.email}}</p>
 
       <div *ngIf="candidatura.farmaceutico.curriculo as curriculo">
-        <a [href]="baixarCurriculo(curriculo)" [download]="getFilename(curriculo)">
+        <a [href]="curriculoUrl" (click)="baixarCurriculo(curriculo)"
+           [download]="getFilename(curriculo)">
              <strong>Baixar Currículo</strong>
         </a>
       </div>
