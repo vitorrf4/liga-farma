@@ -31,6 +31,7 @@ export class MinhasVagasComponent implements OnInit {
   vagas: Vaga[] = [];
   contrato?: Contrato;
   index = 0;
+  idCandidaturaAtual = 0;
 
   constructor(private vagaService: VagaService,
               private loginService: LoginService,
@@ -57,16 +58,19 @@ export class MinhasVagasComponent implements OnInit {
     this.contrato = undefined;
   }
 
-  async aceitarCandidatura(candidatura: Candidatura, vaga: Vaga, index: number) {
+  async aceitarCandidatura(candidatura: Candidatura, vaga: Vaga) {
     this.contrato = new Contrato();
     this.contrato.candidatura = candidatura;
     this.contrato.vaga = vaga;
-    this.index = index;
+    this.idCandidaturaAtual = candidatura.id;
   }
 
   fecharVaga(vaga: Vaga) {
-    vaga.status = 'FECHADA';
-    this.vagaService.atualizar(vaga).subscribe({
+    const vagaAtualizada = vaga;
+    vagaAtualizada.status = 'FECHADA';
+
+    this.vagaService.atualizar(vagaAtualizada).subscribe({
+      next: () => vaga = vagaAtualizada,
       error: () => alert('Error ao atualizar')
     });
   }
