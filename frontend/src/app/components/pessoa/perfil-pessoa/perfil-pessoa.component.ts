@@ -46,7 +46,6 @@ export class PerfilPessoaComponent {
     this.curriculoUrl = URL.createObjectURL(blob);
   }
 
-
   get pessoa() {
     return this.usuario.informacoes as Farmaceutico;
   }

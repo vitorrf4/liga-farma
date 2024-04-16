@@ -27,6 +27,13 @@
     <div *ngFor="let candidatura of vaga.candidaturas" class="div-candidatura">
       <p><strong>Candidato:</strong> {{candidatura.farmaceutico.nome}}</p>
       <p><strong>Email:</strong> {{candidatura.farmaceutico.email}}</p>
+
+      <div *ngIf="candidatura.farmaceutico.curriculo as curriculo">
+        <a [href]="baixarCurriculo(curriculo)" [download]="getFilename(curriculo)">
+             <strong>Baixar Currículo</strong>
+        </a>
+      </div>
+
       <div *ngIf="candidatura.mensagem">
         <p><strong>Mensagem:</strong> {{candidatura.mensagem}}</p>
       </div>

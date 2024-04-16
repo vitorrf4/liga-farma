@@ -4,11 +4,17 @@ strong {
 hr {
   color: black;
 }
-p {
+p, a {
   font-size: 25px;
 }
 span {
   font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 .div-titulo {
   display: flex;

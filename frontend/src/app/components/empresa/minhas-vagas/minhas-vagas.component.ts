@@ -47,6 +47,16 @@ export class MinhasVagasComponent implements OnInit {
     });
   }
 
+  baixarCurriculo(curriculo: any) {
+    const byteArray = new Uint8Array(curriculo.data.data);
+    const blob = new Blob([byteArray], { type: 'application/pdf' });
+    return URL.createObjectURL(blob);
+  }
+
+  getFilename(curriculo: any) {
+    return curriculo.filename;
+  }
+
   atualizarContrato(contrato: Contrato) {
     const vagaIndex = this.vagas.findIndex(v => v.id == contrato.vagaId);
     const candIndex = this.vagas[vagaIndex].candidaturas.findIndex(c => {
