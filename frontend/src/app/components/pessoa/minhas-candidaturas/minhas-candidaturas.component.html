@@ -25,8 +25,11 @@
     </p>
 
     <div *ngIf="candidatura.contrato.status == 'ENVIADO'" class="div-btn-contrato">
-      <button (click)="aceitarContrato(candidatura.contrato)" class="btn-green">
+      <button (click)="mudarStatusContrato(candidatura.contrato, 'ACEITO')" class="btn-green">
         Aceitar contrato
+      </button>
+      <button (click)="mudarStatusContrato(candidatura.contrato, 'REJEITADO')" class="btn-red">
+        Rejeitar contrato
       </button>
     </div>
   </div>

@@ -70,17 +70,27 @@ span {
   padding: 2vh;
   line-height: 40px;
 }
+.div-btn-contrato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vh;
+}
 .div-btn-contrato>button {
-  background-color: #1976D2;
-  color: #FFF;
-  border: 1px solid #3A5B22;
-  padding: 10px 200px;
-  border-radius: 10px;
-  margin: 30px auto !important;
-  display: table;
+    padding: 10px 100px;
+    border-radius: 10px;
 }
-.div-btn-contrato>button:hover {
-  background-color: #336699;
-  color: #FFF;
-}
+/*.div-btn-contrato>button {*/
+/*  background-color: #1976D2;*/
+/*  color: #FFF;*/
+/*  border: 1px solid #3A5B22;*/
+/*  padding: 10px 200px;*/
+/*  border-radius: 10px;*/
+/*  margin: 30px auto !important;*/
+/*  !*display: table;*!*/
+/*}*/
+/*.div-btn-contrato>button:hover {*/
+/*  background-color: #336699;*/
+/*  color: #FFF;*/
+/*}*/
 

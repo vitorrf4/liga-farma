@@ -34,10 +34,9 @@ export class MinhasCandidaturasComponent implements OnInit {
     });
   }
 
-  aceitarContrato(contrato: Contrato) {
-    contrato.status = 'ACEITO';
+  mudarStatusContrato(contrato: Contrato, status: string) {
+    contrato.status = status;
     this.contratoService.atualizar(contrato).subscribe({
-      next: () => alert('Contrato atualizado'),
       error: () => alert('Erro ao atualizar')
     });
   }
