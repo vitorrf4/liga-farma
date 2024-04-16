@@ -27,10 +27,16 @@ span {
   padding: 2vh;
   background-color: #FFF;
 }
-p {
+p, a {
   font-size: 25px;
 }
 
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 .div-dados h2{
   margin-bottom: 20px;
 }

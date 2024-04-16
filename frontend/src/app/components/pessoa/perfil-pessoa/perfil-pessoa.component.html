@@ -8,16 +8,16 @@
   <p><span>Telefone:</span> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
   <p><span>CRF:</span> {{pessoa.crf}}</p>
   <p>
-    <span>Especialização:</span> {{pessoa.especializacao || 'Não Informado'}}
+    <span>Especialização:</span> {{pessoa.especializacao || 'Não Informada'}}
   </p>
 
   <div *ngIf="curriculo" id="curriculo">
-    <span>Curriculo</span><br>
-    <span><a [href]="curriculoUrl" [download]="curriculo.filename">Baixar</a></span>
+    <p><span>Curriculo</span></p>
     <pdf-viewer [src]="curriculo.data"
                 [original-size]="false"
                 [autoresize]="true"
                 style="width: 45vh; height: 45vh;">
     </pdf-viewer>
+    <a [href]="curriculoUrl" [download]="curriculo.filename">Baixar</a>
   </div>
 </div>
