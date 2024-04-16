@@ -1,7 +1,8 @@
-<div class="outer-div">
+<div class="container">
   <div class="perfil-titulo">
     <h2>Perfil</h2>
   </div>
+
   <div class="div-dados">
     <form [formGroup]="form" (submit)="atualizarInformacoes()">
       <label>Nome:</label>
@@ -13,19 +14,16 @@
       <label>Endereco:</label>
       <input type="text" formControlName="endereco" required />
 
-      <label>Descricao:</label>
-      <input type="text" formControlName="descricao" required />
-
       <label>Email:</label>
       <input type="text" formControlName="email" required/>
 
       <label>Telefone:</label>
-      <input type="text" formControlName="telefone" />
+      <input type="number" formControlName="telefone" />
+
+      <label>Descrição</label>
+      <textarea formControlName="descricao"></textarea>
 
       <button type="submit" class="btn btn-green">Atualizar</button>
     </form>
   </div>
 </div>
-
-
-
