@@ -1,3 +1,10 @@
+* {
+  line-height: 35px;
+}
+#outer-div {
+  margin-right: 150px;
+  margin-left: 150px;
+}
 .perfil-container {
   display: flex;
   flex-direction: row;
@@ -11,14 +18,20 @@
 .div-perfil {
   display: flex;
   flex-direction: column;
-  min-width: 30%;
+  min-width: 50%;
   margin-right: 2vh;
   border-radius: 3px;
 }
-* {
-  line-height: 35px;
-}
-#outer-div {
-  margin-right: 150px;
-  margin-left: 150px;
+
+@media screen and (max-width: 1300px) {
+  #outer-div {
+    margin-right: 5vh;
+    margin-left: 5vh;
+  }
+
+  .perfil-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+  }
 }
