@@ -4,15 +4,15 @@
 </div>
 <div class="div-dados">
   <h2>{{usuario.informacoes.nome}}</h2>
-  <p><span>Email: </span> {{usuario.informacoes.email}}</p>
-  <p><span>Telefone:</span> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
-  <p><span>CRF:</span> {{pessoa.crf}}</p>
+  <p><strong>Email: </strong> {{usuario.informacoes.email}}</p>
+  <p><strong>Telefone:</strong> {{usuario.informacoes.telefone || 'Não Informado'}}</p>
+  <p><strong>CRF:</strong> {{pessoa.crf}}</p>
   <p>
-    <span>Especialização:</span> {{pessoa.especializacao || 'Não Informada'}}
+    <strong>Especialização:</strong> {{pessoa.especializacao || 'Não Informada'}}
   </p>
 
   <div *ngIf="curriculo" id="curriculo">
-    <p><span>Curriculo</span></p>
+    <p><strong>Curriculo</strong></p>
     <pdf-viewer [src]="curriculo.data"
                 [original-size]="false"
                 [autoresize]="true"

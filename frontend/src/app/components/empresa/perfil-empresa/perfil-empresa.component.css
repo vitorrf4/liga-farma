@@ -1,5 +1,5 @@
-span {
-  font-weight: bold;
+p {
+  font-size: 25px;
 }
 .perfil-titulo {
   display: flex;
@@ -23,22 +23,17 @@ span {
   background-color: #CDE6FF;
   color: #000;
 }
+
 .div-dados {
   padding: 2vh;
   background-color: #FFF;
 }
-p {
-  font-size: 25px;
-}
-
 .div-dados h2{
   margin-bottom: 20px;
 }
-
 .div-dados p{
   margin-bottom: 10px;
 }
-
 .div-dados p span{
   font-weight: 700;
 }
