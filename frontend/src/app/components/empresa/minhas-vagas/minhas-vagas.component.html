@@ -9,7 +9,7 @@
        {{getStatusFormatado(vaga.status)}}
      </span>
     <div *ngIf="vaga.status == 'ABERTA'">
-      <button (click)="fecharVaga(vaga)" class="btn-red">Fechar vaga</button>
+      <button (click)="fecharVaga(vaga)" class="btn btn-red">Fechar vaga</button>
     </div>
   </div>
 
@@ -44,7 +44,7 @@
         </p>
       </div>
       <ng-template #enviar>
-        <button (click)="aceitarCandidatura(candidatura, vaga)" class="btn-blue">
+        <button (click)="aceitarCandidatura(candidatura, vaga)" class="btn btn-blue">
           Aceitar candidatura
         </button>
 
