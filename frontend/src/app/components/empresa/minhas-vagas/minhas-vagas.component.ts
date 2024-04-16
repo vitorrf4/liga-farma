@@ -37,10 +37,7 @@ export class MinhasVagasComponent implements OnInit {
               private helper: HelperService) {}
 
   ngOnInit(): void {
-    const empresa = this.loginService.usuario?.informacoes as Farmacia;
-    if (!empresa) {
-      return;
-    }
+    const empresa = this.loginService.usuario!.informacoes as Farmacia;
 
     this.vagaService.listarVagasPorEmpresa(empresa.id).subscribe(res => {
       this.vagas = res.sort((a, b) => b.id - a.id);
@@ -84,15 +81,15 @@ export class MinhasVagasComponent implements OnInit {
     });
   }
 
-  getStatusClass(status: string) {
-    switch (status) {
-      default: case 'ABERTA': return 'span-aberta';
-      case 'FECHADA': return 'span-fechada';
-    }
-  }
-
   getStatusFormatado(status: string) {
     return this.helper.getStringComPrimeiraMaiuscula(status);
+  }
+
+  getStatusClass(status: string) {
+    switch (status) {
+      default: case 'ABERTA': return 'status status-verde';
+      case 'FECHADA': return 'status status-vermelho';
+    }
   }
 
   getContratoStatusString(status: string) {

@@ -43,8 +43,8 @@ export class MinhasCandidaturasComponent implements OnInit {
 
   getStatusClass(status: string) {
     switch (status) {
-      default: case 'ABERTA': return 'span-aberta';
-      case 'FECHADA': return 'span-fechada';
+      default: case 'ABERTA': return 'status status-verde';
+      case 'FECHADA': return 'status status-vermelho';
     }
   }
 
