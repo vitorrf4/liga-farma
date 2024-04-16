@@ -1,33 +1,28 @@
 <header>
-    <div class="header-menu">
-        <nav>
-          <table>
-            <tr>
-                <div class="general-menu">
-                    <td class="logo-liga-farma">
-                      <button class="btn-home" routerLink="/home">
-                        <img src="assets/LigaFarma-logo-header.png" width="170" height="58"
-                            alt="Logo Liga Farma Colorido">
-                      </button>
-                    </td>
-                    <td><button routerLink="/home">Home</button></td>
-                    <td><button routerLink="/sobre-nos">Sobre Nós</button></td>
-                    <td><button routerLink="/contato">Contato</button></td>
-                    <td><button routerLink="/vagas">Ver Vagas</button></td>
-                </div>
+  <div id="div-logo">
+    <a class="btn-home" routerLink="/home">
+      <img src="assets/LigaFarma-logo-header.png" width="170" height="58"
+           alt="Logo Liga Farma Colorido">
+    </a>
+  </div>
 
-                <div class="user-menu">
-                    <div class="div-login-cadastro" *ngIf="!usuario">
-                        <td><button class="btn-login" routerLink="/login">Entrar</button></td>
-                        <td><button class="btn-cadastro" routerLink="/cadastro/pessoa">Cadastre-se</button></td>
-                    </div>
-                    <div class="div-perfil-logout" *ngIf="usuario">
-                        <td><button class="btn-perfil" routerLink="/perfil">Perfil</button></td>
-                        <td><button class="btn-logout" (click)="logout()">Logout</button></td>
-                    </div>
-                </div>
-            </tr>
-        </table>
-        </nav>
+  <nav>
+    <div class="general-menu">
+      <button routerLink="/home">Home</button>
+      <button routerLink="/sobre-nos">Sobre Nós</button>
+      <button routerLink="/contato">Contato</button>
+      <button routerLink="/vagas">Ver Vagas</button>
     </div>
+
+    <div class="user-menu">
+      <div class="div-login-cadastro" *ngIf="!usuario">
+        <button class="btn-login" routerLink="/login">Entrar</button>
+        <button class="btn-cadastro" routerLink="/cadastro/pessoa">Cadastre-se</button>
+      </div>
+      <div class="div-perfil-logout" *ngIf="usuario">
+        <button class="btn-perfil" routerLink="/perfil">Perfil</button>
+        <button class="btn-logout" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
 </header>

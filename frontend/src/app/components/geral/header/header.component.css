@@ -1,42 +1,34 @@
+* {
+  font-size: 2vh;
+}
 header{
-    width: 100%;
-    height: 135px;
-    background-color: #FFF;
-    padding: 0;
+  background-color: #FFF;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 135px;
+}
+#div-logo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 1vh;
+  margin-right: 4vh;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+  justify-content: space-between;
 }
 
-nav{
-    width: 100%;
-    margin: 0 auto !important;
-}
-
-table {
-    width: 100%;
-}
-
-table tr div{
-    float: left;
-}
-
-table tr .user-menu{
-    float: right;
-}
-
-.general-menu td{
-    padding-right: 20px;
-}
-
-table tr .user-menu td{
-    padding-left: 30px;
-}
-
-table td {
-    vertical-align: middle;
-    height: 135px
+.user-menu > div > button {
+  text-transform: initial;
 }
 
 button {
-    text-transform: uppercase;
+  text-transform: uppercase;
+  margin-right: 2vh;
 }
 
 button:not(.btn-home){
@@ -73,6 +65,15 @@ button:active{
     border: none;
 }
 
-table tr .user-menu button{
-    text-transform: initial;
+@media screen and (max-width: 902px) {
+  header, nav, .general-menu, .user-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+  }
+  #div-logo {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
 }
