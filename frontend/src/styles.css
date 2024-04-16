@@ -101,6 +101,9 @@ button{
   outline: none;
 }
 
+strong {
+  font-weight: bold;
+}
 /* classes */
 .status {
   display: inline-flex;
