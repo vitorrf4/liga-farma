@@ -1,20 +1,3 @@
-span {
-  font-weight: bold;
-}
-.perfil-titulo {
-  display: flex;
-  flex-direction: row;
-  background-color: #336699;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-.perfil-titulo>h2 {
-  color: #FFF;
-}
-.div-dados {
-  padding: 2vh;
-}
 label {
   display: flex;
   font-size: 25px;
@@ -25,12 +8,6 @@ label {
 input {
   display: flex;
   margin-bottom: 15px;
-}
-.outer-div {
-  margin-right: 150px;
-  margin-left: 150px;
-}
-input {
   padding-left: 10px;
   font-weight: 500;
   font-size: 20px;
@@ -39,10 +16,27 @@ input {
   top: 40px;
   width: 600px;
   height: 55px;
-  display: flex;
 }
 button {
   margin-top: 3vh;
   font-size: 25px;
   padding: 15px;
+}
+.perfil-titulo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #336699;
+}
+.perfil-titulo>h2 {
+  color: #FFF;
+}
+.div-dados {
+  padding: 2vh;
+}
+.container {
+  margin-right: 150px;
+  margin-left: 150px;
 }
