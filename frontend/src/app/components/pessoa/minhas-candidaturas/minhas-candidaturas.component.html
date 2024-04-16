@@ -19,7 +19,9 @@
   <div *ngIf="candidatura.contrato" class="div-candidatura">
     <h4>Contrato</h4>
     <p><strong>Data Inicio:</strong> {{candidatura.contrato.dataInicio | date: 'dd/MM/yyyy'}}</p>
-    <p><strong>Data Fim:</strong> {{candidatura.contrato.dataFim | date: 'dd/MM/yyyy'}}</p>
+    <div *ngIf="candidatura.contrato.dataFim">
+      <p><strong>Data Fim:</strong> {{candidatura.contrato.dataFim | date: 'dd/MM/yyyy'}}</p>
+    </div>
     <p><strong>Status do contrato:</strong>
       {{getStatusFormatado(candidatura.contrato.status)}}
     </p>

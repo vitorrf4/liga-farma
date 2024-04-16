@@ -48,19 +48,6 @@ span {
   padding: 10px;
   margin-bottom: 20px;
 }
-.div-candidatura > button {
-  background-color: #1976D2;
-  color: #FFF;
-  border: 1px solid #3A5B22;
-  padding: 10px 200px;
-  border-radius: 10px;
-  margin: 30px auto !important;
-  display: table;
-}
-.div-candidatura > button:hover {
-  background-color: #336699;
-  color: #FFF;
-}
 .div-candidatura > h4 {
   font-weight: 600;
   font-size: 25px;
@@ -79,18 +66,5 @@ span {
 .div-btn-contrato>button {
     padding: 10px 100px;
     border-radius: 10px;
+    margin: 10px;
 }
-/*.div-btn-contrato>button {*/
-/*  background-color: #1976D2;*/
-/*  color: #FFF;*/
-/*  border: 1px solid #3A5B22;*/
-/*  padding: 10px 200px;*/
-/*  border-radius: 10px;*/
-/*  margin: 30px auto !important;*/
-/*  !*display: table;*!*/
-/*}*/
-/*.div-btn-contrato>button:hover {*/
-/*  background-color: #336699;*/
-/*  color: #FFF;*/
-/*}*/
-
