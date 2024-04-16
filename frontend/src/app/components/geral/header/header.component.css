@@ -64,7 +64,7 @@ button:active{
     color: #336699;
 }
 
-.btn-login, .btn-perfil, .btn-candidaturas{
+.btn-login, .btn-perfil{
     background-color: #FFF;
     color: #16C1EB;
     border: 1px solid #16C1EB;
@@ -80,7 +80,7 @@ button:active{
     color: #FFF;
 }
 
-.btn-logout:hover, .btn-cadastro:hover, .btn-login:hover, .btn-perfil:hover, .btn-candidaturas:hover{
+.btn-logout:hover, .btn-cadastro:hover, .btn-login:hover, .btn-perfil:hover{
     background-color: #336699;
     color: #FFF;
     border: none;
