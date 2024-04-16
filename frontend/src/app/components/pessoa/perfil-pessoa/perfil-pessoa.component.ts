@@ -23,19 +23,29 @@ import {NgIf} from "@angular/common";
 export class PerfilPessoaComponent {
   usuario!: Usuario;
   curriculo: any;
+  curriculoUrl: any;
 
   constructor(
     private pdfService: PdfService,
     private login: LoginService) {
     this.usuario = this.login.usuario!;
 
-    // carrega curriculo se o usuário tiver um
     if (this.pessoa.curriculoId) {
       this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
-        next: async res => this.curriculo = res
+        next: async res => {
+          this.curriculo = res;
+          this.baixarCurriculo();
+        }
       });
     }
   }
+
+  baixarCurriculo() {
+    const byteArray = new Uint8Array(this.curriculo.data.data);
+    const blob = new Blob([byteArray], { type: 'application/pdf' });
+    this.curriculoUrl = URL.createObjectURL(blob);
+  }
+
 
   get pessoa() {
     return this.usuario.informacoes as Farmaceutico;

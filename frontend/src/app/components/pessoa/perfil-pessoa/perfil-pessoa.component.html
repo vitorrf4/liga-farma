@@ -12,7 +12,8 @@
   </p>
 
   <div *ngIf="curriculo" id="curriculo">
-    <span>Curriculo</span>
+    <span>Curriculo</span><br>
+    <span><a [href]="curriculoUrl" [download]="curriculo.filename">Baixar</a></span>
     <pdf-viewer [src]="curriculo.data"
                 [original-size]="false"
                 [autoresize]="true"

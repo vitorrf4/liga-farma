@@ -30,7 +30,6 @@ import {HelperService} from "../../../services/helper.service";
 export class MinhasVagasComponent implements OnInit {
   vagas: Vaga[] = [];
   contrato?: Contrato;
-  index = 0;
   idCandidaturaAtual = 0;
 
   constructor(private vagaService: VagaService,
