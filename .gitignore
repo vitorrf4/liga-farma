@@ -4,3 +4,4 @@ backend/node_modules
 *.db
 .angular
 /backend/environments/.env.production
+/backend/contato
