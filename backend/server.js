@@ -41,6 +41,9 @@ server.all("*", (req, res, next) => {
 const auth = require('./routers/authRouter');
 server.use(auth);
 
+const contato = require('./routers/contatoRouter');
+server.use(contato);
+
 const pdf = require('./routers/pdfRouter');
 server.use(pdf);
 

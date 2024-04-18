@@ -5,7 +5,7 @@ const fs = require('fs');
 
 router.use(verifyToken);
 
-router.post('/contrato', (req, res) => {
+router.post('/contato', (req, res) => {
     try {
         let numeroArquivos;
         fs.readdir('contrato', (err, files) => numeroArquivos = files);
