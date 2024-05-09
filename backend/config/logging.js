@@ -2,7 +2,7 @@ function logNoArquivo() {
     const fs = require('fs');
     const path = require('path');
 
-    const logFilePath = path.join(process.cwd(), '/logs/log.txt');
+    const logFilePath = path.join(process.cwd(), '../logs/log.txt');
     const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
 
     const originalLog = console.log;

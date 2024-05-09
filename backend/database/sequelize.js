@@ -8,8 +8,9 @@ const host = process.env.DB_HOST;
 const dialect = process.env.DB_DIALECT;
 const env = process.env.NODE_ENV
 
-const uriConexao = `${dialect}://${username}:${password}@${host}/${database}`;
-const sequelize = new Sequelize(uriConexao, {
+const sequelize = new Sequelize(database, username, password, {
+    host: host,
+    dialect: dialect,
     logging: env == 'development',
     define: {
         freezeTableName: true

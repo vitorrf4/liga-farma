@@ -9,7 +9,9 @@ const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
 const logNoArquivo = require('./config/logging');
-logNoArquivo();
+
+if (env == 'production')
+    logNoArquivo();
 
 server.use(express.json());
 server.use(cors());
