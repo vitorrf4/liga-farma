@@ -8,6 +8,8 @@ const port = process.env.port || 3000;
 const { createAssociations } = require('./database/sequelize');
 const seed = require('./database/seed');
 
+logNoArquivo();
+
 server.use(express.json());
 server.use(cors());
 
@@ -31,18 +33,31 @@ server.listen(port, async () => {
 server.all("*", (req, res, next) => {
     console.log(`${req.method} ${req.url}`);
 
-    if (req.method === "POST" || req.method === "PUT")
+    if (env == 'development' && (req.method === "POST" || req.method === "PUT"))
         console.log(req.body);
 
     next();
 });
 
+function logNoArquivo() {
+    const fs = require('fs');
+    const path = require('path');
+
+    const logFilePath = path.join(__dirname, 'log.txt');
+    const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+
+    const originalLog = console.log;
+    console.log = function(...args) {
+        originalLog(args);
+        const message = args.join(' ');
+        logStream.write(message + '\n');
+        originalLog.apply(console, args);
+    };
+}
+
 // rotas
 const auth = require('./routers/authRouter');
 server.use(auth);
-
-const contato = require('./routers/contatoRouter');
-server.use(contato);
 
 const pdf = require('./routers/pdfRouter');
 server.use(pdf);
