@@ -18,12 +18,6 @@ server.listen(port, async () => {
     await criaAssociacoes();
     // inclui valores inicias na database
     await seed.seedTodos();
-
-    // ngrok gera uma URL pública para o servidor 
-    if (env === 'production') {
-        const ngrok = require('./config/ngrok');
-        ngrok.then(r => console.log(`Ngrok iniciado na url ${r.url()}`));
-    }
     
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
