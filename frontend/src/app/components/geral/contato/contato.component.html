@@ -7,28 +7,28 @@
     <h4>Fale conosco <span><img src="assets/telefone.png" alt="Símbolo de Telefone"></span></h4>
     <form (submit)="enviarMensagem()">
         <fieldset>
-            <label for="" class="label-campo">Nome</label><br>
-            <input type="text" name="" id=""><br>
+            <label for="nome" class="label-campo">Nome</label><br>
+            <input type="text" name="" id="nome" formControlName="nome"><br>
         </fieldset>
 
         <fieldset>
-            <label for="" class="label-campo">Sobrenome</label><br>
-            <input type="text" name="" id=""><br>
+            <label for="sobrenome" class="label-campo">Sobrenome</label><br>
+            <input type="text" name="" id="sobrenome" formControlName="sobrenome"><br>
         </fieldset>
 
         <fieldset>
-            <label for="" class="label-campo">E-mail</label><br>
-            <input type="email" name="" id=""><br>
+            <label for="email" class="label-campo">E-mail</label><br>
+            <input type="email" name="" id="email" formControlName="email"><br>
         </fieldset>
 
         <fieldset>
-            <label for="" class="label-campo">Telefone</label><br>
-            <input type="tel" name="" id=""><br>
+            <label for="telefone" class="label-campo">Telefone</label><br>
+            <input type="tel" name="" id="telefone" formControlName="telefone"><br>
         </fieldset>
 
         <fieldset>
-            <label for="" id="label-textarea">Em que podemos de ajudar?</label><br>
-            <textarea name="" id="" cols="50" rows="8"></textarea><br>
+            <label for="mensagem" id="label-textarea">Em que podemos de ajudar?</label><br>
+            <textarea name="" id="mensagem" cols="50" rows="8" formControlName="mensagem"></textarea><br>
         </fieldset>
 
         <fieldset>

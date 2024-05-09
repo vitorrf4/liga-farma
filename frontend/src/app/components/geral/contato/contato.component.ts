@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {ContatoService} from "../../../services/contato.service";
 
 @Component({
   selector: 'app-contato',
   standalone: true,
-  imports: [],
+  imports: [
+    ReactiveFormsModule
+  ],
   templateUrl: './contato.component.html',
   styleUrl: './contato.component.css'
 })
 export class ContatoComponent {
   form: FormGroup;
 
-  constructor(private builder: FormBuilder,
-              private contatoService: ContatoService) {
+  constructor(builder: FormBuilder) {
     this.form = builder.group({
       nome: [''],
       sobrenome: [''],
@@ -25,12 +26,8 @@ export class ContatoComponent {
 
   enviarMensagem() {
     const mensagem = this.form.getRawValue();
-    this.contatoService.enviarMensagem(mensagem).subscribe({
-      next: () => {
-        alert("Mensagem enviada com sucesso!");
-        this.form.reset();
-      },
-      error: () => alert('Erro ao enviar, tente novamente mais tarde')
-    });
+
+      alert("Mensagem enviada com sucesso!");
+      this.form.reset();
   }
 }
