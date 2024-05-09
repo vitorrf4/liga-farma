@@ -17,7 +17,7 @@ const sequelize = new Sequelize(database, username, password, {
     }
 });
 
-async function createAssociations() {
+async function criaAssociacoes() {
     try {
         const {createAssociation: a} = require('../models/Farmaceutico');
         const {createAssociation: b} = require('../models/Pdf');
@@ -38,4 +38,4 @@ async function createAssociations() {
     }
 }
 
-module.exports = {sequelize, createAssociations};
+module.exports = {sequelize, criaAssociacoes};

@@ -5,7 +5,7 @@ const cors = require('cors');
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.port || 3000;
-const { createAssociations } = require('./database/sequelize');
+const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
 logNoArquivo();
@@ -14,8 +14,7 @@ server.use(express.json());
 server.use(cors());
 
 server.listen(port, async () => {
-    // cria associacoes das entidades
-    await createAssociations();
+    await criaAssociacoes();
     // inclui valores inicias na database
     await seed.seedTodos();
 
@@ -48,9 +47,23 @@ function logNoArquivo() {
 
     const originalLog = console.log;
     console.log = function(...args) {
-        originalLog(args);
         const message = args.join(' ');
-        logStream.write(message + '\n');
+        const dataAtual = new Date(Date.now());
+        
+        const formatacao = new Intl.DateTimeFormat('pt-br', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            day: 'numeric',
+            month: 'numeric',
+            year: 'numeric',
+            timeZone: 'America/Sao_Paulo'
+        });
+        const dataFormatada = formatacao.format(dataAtual);
+        const mensagem = `[${dataFormatada}] ${message}\n`;
+
+        logStream.write(mensagem);
+
         originalLog.apply(console, args);
     };
 }
