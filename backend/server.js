@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const server = express();
 // decide qual env usar
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || (process.env.USER == 'ligafarma') ? 'production' : 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.PORT;
 const { criaAssociacoes } = require('./database/sequelize');
@@ -21,7 +21,7 @@ server.listen(port, async () => {
         // inclui valores inicias na database
         await seed.seedTodos();
     }
-    
+
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
 });
