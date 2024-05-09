@@ -24,7 +24,7 @@ function logNoArquivo() {
 
         logStream.write(mensagem);
 
-        originalLog.apply(console, args);
+        originalLog.apply(console, [mensagem]);
     };
 }
 
