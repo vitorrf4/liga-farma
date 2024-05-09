@@ -1,13 +1,14 @@
 const express = require('express');
-const server = express();
 const cors = require('cors');
+const server = express();
 // decide qual env usar
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
+const logNoArquivo = require('./config/logging');
 logNoArquivo();
 
 server.use(express.json());
@@ -28,45 +29,11 @@ server.listen(port, async () => {
     console.log(`Ambiente: ${env}`);
 });
 
-// middleware de debug
+// loga todas as rotas que foram requisitadas
 server.all("*", (req, res, next) => {
     console.log(`${req.method} ${req.url}`);
-
-    if (env == 'development' && (req.method === "POST" || req.method === "PUT"))
-        console.log(req.body);
-
     next();
 });
-
-function logNoArquivo() {
-    const fs = require('fs');
-    const path = require('path');
-
-    const logFilePath = path.join(__dirname, 'log.txt');
-    const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
-
-    const originalLog = console.log;
-    console.log = function(...args) {
-        const message = args.join(' ');
-        const dataAtual = new Date(Date.now());
-        
-        const formatacao = new Intl.DateTimeFormat('pt-br', {
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            day: 'numeric',
-            month: 'numeric',
-            year: 'numeric',
-            timeZone: 'America/Sao_Paulo'
-        });
-        const dataFormatada = formatacao.format(dataAtual);
-        const mensagem = `[${dataFormatada}] ${message}\n`;
-
-        logStream.write(mensagem);
-
-        originalLog.apply(console, args);
-    };
-}
 
 // rotas
 const auth = require('./routers/authRouter');

@@ -9,6 +9,8 @@ class Seeds {
         await this.seedVaga2();
         await this.seedCandidatura();
         await this.seedContrato();
+
+        console.log("Seed inicial finalizada");
     }
     
     async seedFarmaceutico() {
