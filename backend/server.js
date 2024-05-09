@@ -31,22 +31,26 @@ server.all("*", (req, res, next) => {
 
 // rotas
 const auth = require('./routers/authRouter');
-server.use(auth);
+server.use('/auth', auth);
 
 const pdf = require('./routers/pdfRouter');
-server.use(pdf);
+server.use('/pdf', pdf);
 
 const farmaceuticoRouter = require('./routers/farmaceuticoRouter');
-server.use(farmaceuticoRouter);
+server.use('/farmaceutico', farmaceuticoRouter);
 
 const farmaciaRouter = require('./routers/farmaciaRouter');
-server.use(farmaciaRouter);
+server.use('/farmacia', farmaciaRouter);
 
 const vagaRouter = require('./routers/vagaRouter');
-server.use(vagaRouter);
+server.use('/vaga', vagaRouter);
 
 const contratoRouter = require('./routers/contratoController');
-server.use(contratoRouter);
+server.use('/contrato', contratoRouter);
 
 const candidaturaRouter = require('./routers/candidaturaRouter');
-server.use(candidaturaRouter);
+server.use('/candidatura', candidaturaRouter);
+
+server.use((req, res) => {
+    res.status(404).send('Pagina nao encontrada');
+});
