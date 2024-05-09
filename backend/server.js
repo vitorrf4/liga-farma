@@ -4,7 +4,7 @@ const server = express();
 // decide qual env usar
 const env = process.env.NODE_ENV || 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
@@ -16,15 +16,18 @@ server.use(cors());
 
 server.listen(port, async () => {
     await criaAssociacoes();
-    // inclui valores inicias na database
-    await seed.seedTodos();
+
+    if (env == 'development') {
+        // inclui valores inicias na database
+        await seed.seedTodos();
+    }
     
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
 });
 
 // loga todas as rotas que foram requisitadas
-server.all("*", (req, res, next) => {
+server.all("*", (req, _, next) => {
     console.log(`${req.method} ${req.url}`);
     next();
 });
@@ -51,6 +54,6 @@ server.use('/contrato', contratoRouter);
 const candidaturaRouter = require('./routers/candidaturaRouter');
 server.use('/candidatura', candidaturaRouter);
 
-server.use((req, res) => {
+server.use((_, res) => {
     res.status(404).send('Pagina nao encontrada');
 });

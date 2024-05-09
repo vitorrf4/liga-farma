@@ -98,7 +98,9 @@ class Seeds {
     
     async executarPost(body, url) {
         const json = JSON.stringify(body);
-        await fetch(`http://localhost:3000/${url}`, {
+        const port = process.env.PORT;
+
+        await fetch(`http://localhost:${port}/${url}`, {
             method: 'POST',
             body: json,
             headers: {
