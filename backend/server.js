@@ -9,7 +9,6 @@ const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
 const logNoArquivo = require('./config/logging');
-
 if (env == 'production')
     logNoArquivo();
 

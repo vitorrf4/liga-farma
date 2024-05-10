@@ -9,8 +9,6 @@ A Liga Farma é uma plataforma online projetada para facilitar a conexão entre 
 
 **Link no GitHub**: https://github.com/vitorrf4/liga-farma
 
-⚠️ **_EM DESENVOLVIMENTO_** ⚠️
-
 ## Funcionalidades Principais
 **Registro de Farmácias e Farmacêuticos**: Os usuários podem criar facilmente suas contas, seja como uma farmácia em busca de profissionais qualificados ou como um farmacêutico procurando por oportunidades de emprego.
 
@@ -28,7 +26,7 @@ Para executar esse repositório em seu ambiente local, certifique-se de que seu 
 
 **Angular 17**: A parte do cliente da aplicação é construída com Angular na versão 17. Certifique-se de ter o Angular CLI compatível com essa versão instalado globalmente em seu sistema. Você pode instalá-lo executando o seguinte comando no terminal:
 
-```
+```sh
 npm install -g @angular/cli@17
 ```
 
@@ -36,19 +34,19 @@ npm install -g @angular/cli@17
 Antes de executar a aplicação, siga estas etapas para configurar seu ambiente:
 
 **Clone o Repositório**: Clone o repositório do Liga Farma do GitHub para o seu ambiente local usando o seguinte comando:
-```
+```sh
 git clone https://github.com/seu-usuario/farmacia-connect.git
 ```
 **Instale as Dependências**: Navegue até o diretório do projeto e instale as dependências do servidor e do cliente executando o seguinte comando:
 
 Backend:
-```
+```sh
 cd liga-farma
 cd backend
 npm install
 ```
 Frontend:
-```
+```sh
 cd liga-farma
 cd frontend
 npm install
@@ -56,12 +54,12 @@ npm install
 **Executar a Aplicação**: Após a instalação das dependências, você pode iniciar a aplicação executando o seguinte comando:
 
 Na pasta Backend:
-```
+```sh
 node server.js
 ```
 Na pasta Frontend:
 
-```
+```sh
 npm start
 ```
 
