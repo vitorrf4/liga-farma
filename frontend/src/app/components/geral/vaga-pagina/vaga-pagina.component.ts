@@ -29,6 +29,9 @@ export class VagaPaginaComponent {
   }
 
   get jaCandidadato() {
+    if (!this.usuario) return;
+    if (this.usuario?.tipo == 'EMPRESA') return;
+
     const id = this.usuario?.informacoes.id;
     let estaCandidato = false;
 

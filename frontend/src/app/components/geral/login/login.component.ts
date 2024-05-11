@@ -3,7 +3,6 @@ import {NgIf} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/auth.service";
-import {FarmaceuticoService} from "../../../services/farmaceutico.service";
 import {LoginService} from "../../../services/login.service";
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 
