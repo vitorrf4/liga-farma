@@ -83,3 +83,9 @@ a:hover {
   line-height: 40px;
   background-color: #FFF;
 }
+
+#div-btn-filtro {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}

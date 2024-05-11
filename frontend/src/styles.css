@@ -170,3 +170,6 @@ strong {
 .btn-blue:hover{
   background-color: #3c4dff;
 }
+.btn-blue:focus {
+  background-color: #0032a1;
+}

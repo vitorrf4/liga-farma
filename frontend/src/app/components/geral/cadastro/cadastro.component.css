@@ -50,6 +50,10 @@ button {
   height: 40px;
 }
 
+#heading>div>button:focus {
+  background-color: #0000bd;
+}
+
 #router {
   display: flex;
   flex-grow: 1;
