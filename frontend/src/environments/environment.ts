@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlApi: "http://ligafarma.kinghost.net:21034"
+  urlApi: "https://stable-phoenix-worthy.ngrok-free.app"
 };
