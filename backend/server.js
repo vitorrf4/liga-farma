@@ -23,6 +23,11 @@ server.listen(port, async () => {
         await seed.seedTodos();
     }
 
+    if (env == 'production') {
+        const ngrok = require('./config/ngrok');
+        ngrok.then(res => console.log(`Ngrok iniciado na url ${res.url}`));
+    }
+
     console.log(`Servidor iniciado na porta ${port}`);
     console.log(`Ambiente: ${env}`);
 });
@@ -56,5 +61,5 @@ const candidaturaRouter = require('./routers/candidaturaRouter');
 server.use('/candidatura', candidaturaRouter);
 
 server.use((_, res) => {
-    res.status(404).send('Pagina nao encontrada');
+    res.status(404).send('Endpoint não existente');
 });
