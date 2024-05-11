@@ -7,90 +7,91 @@
       </div>
 
       <input
+        id="nome"
         type="text"
-        class="cadastro-divinput"
         formControlName="nome"
-        required="required"
+        required
         placeholder="Insira a razão social"/>
 
     </div>
 
     <div>
       <div class="cadastro-divlabel">
-        <label class="label-text">CNPJ</label>
+        <label for="cnpj">CNPJ</label>
       </div>
 
       <input
-        type="number"
+        id="cnpj"
+        type="text"
         class="cadastro-divinput"
         formControlName="cnpj"
-        required="required"
+        required
         placeholder="Insira o CNPJ"/>
     </div>
 
     <div>
       <div class="cadastro-divlabel">
-        <label class="label-text">Endereço</label>
+        <label for="endereco">Endereço</label>
       </div>
 
       <input
+        id="endereco"
         type="text"
-        class="cadastro-divinput"
         formControlName="endereco"
-        required="required"
+        required
         placeholder="Insira o Endereço"/>
     </div>
 
     <div>
       <div class="cadastro-divlabel">
-        <label class="label-text">Descrição</label>
+        <label for="descricao">Descrição</label>
       </div>
 
       <input
+        id="descricao"
         type="text"
-        class="cadastro-divinput"
         formControlName="descricao"
-        required="required"
-        placeholder="Descrição"/>
+        required
+        placeholder="Descrição do estabalecimento"/>
     </div>
 
     <div>
       <div class="cadastro-divlabel">
-        <label class="label-text">Email</label>
+        <label for="email">Email</label>
       </div>
 
       <input
+        id="email"
         type="email"
-        class="cadastro-divinput"
         formControlName="email"
-        required="required"
+        required
         placeholder="Insira seu email"/>
     </div>
 
     <div>
       <div class="cadastro-divlabel">
-        <label class="label-text">Telefone</label>
+        <label for="telefone">Telefone</label>
       </div>
 
       <input
-        type="number"
-        class="cadastro-divinput"
+        id="telefone"
+        type="text"
         formControlName="telefone"
-        required="required"
+        required
         placeholder="Insira um telefone"/>
     </div>
 
     <div>
       <div class="cadastro-divlabel">
-        <label class="label-text">Senha</label>
+        <label for="senha">Senha</label>
       </div>
 
-        <input
-          type="password"
-          class="cadastro-divinput"
-          formControlName="senha"
-          required="required"
-          placeholder="Crie uma senha"/>
+      <input
+        id="senha"
+        type="password"
+        formControlName="senha"
+        required
+        placeholder="Crie uma senha"/>
     </div>
 
     <div class="submit-button">
@@ -103,4 +104,3 @@
 
   </div>
 </form>
-

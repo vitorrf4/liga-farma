@@ -8,6 +8,13 @@
 label {
   font-weight: 600;
   margin-left: 1vh;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 18px;
+  text-align: left;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
 }
 
 .cadastro-container {
@@ -17,6 +24,7 @@ label {
   overflow: auto;
   align-items: center;
 }
+
 .cadastro-divbutton {
   background-color: #057dc9;
   color: rgba(255, 255, 255, 1);
@@ -28,36 +36,29 @@ label {
   height: 40px;
   margin: 10px 10px 0px 10px;
 }
+
 .submit-button {
   display: flex;
   justify-content: center;
   margin-top:3vh;
 }
+
 .cadastro-buttontext {
   font-size: 20px;
   margin: auto;
 }
 
-.label-text{
-  color: rgba(0, 0, 0, 1);
-  height: auto;
-  font-size: 18px;
-  text-align: left;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
 .cadastro-divlabel {
   top: 5px;
   left: 10px;
   width: auto;
   height: 35px;
   display: flex;
-  /*position: absolute;*/
-  align-items: center;
+  align-items: initial;
   flex-shrink: 0;
 }
-.cadastro-divinput {
+
+input {
   color: #000000;
   padding: 10px;
   font-weight: 500;
@@ -71,6 +72,11 @@ label {
   display: flex;
   overflow: hidden;
   text-align: left;
+}
+.cadastro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .cadastro-container>div{
