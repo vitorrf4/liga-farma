@@ -2,6 +2,18 @@
   <h2>Minhas Vagas</h2>
   <button class="btn-criar" routerLink="/criar-vaga">+ Criar vaga</button>
 </div>
+
+<div id="div-btn-filtro">
+  <button (click)="filtrarVagas('ABERTA')" class="btn btn-blue btn-filtro">
+    Vagas abertas
+  </button>
+
+  <button (click)="filtrarVagas()" class="btn btn-blue">
+    Todas as vagas
+  </button>
+  <hr>
+</div>
+
 <div *ngFor="let vaga of vagas" id="div-vagas">
   <div class="div-status">
     <h2><strong>{{vaga.titulo}}</strong></h2>

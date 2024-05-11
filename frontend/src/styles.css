@@ -168,7 +168,5 @@ strong {
   color: #FFFFFF;
 }
 .btn-blue:hover{
-  background-color: initial;
-  background-position: 0 0;
-  color: #ffffff;
+  background-color: #3c4dff;
 }

@@ -28,6 +28,7 @@ import {HelperService} from "../../../services/helper.service";
   styleUrl: './minhas-vagas.component.css'
 })
 export class MinhasVagasComponent implements OnInit {
+  vagasDb: Vaga[] = [];
   vagas: Vaga[] = [];
   contrato?: Contrato;
   idCandidaturaAtual = 0;
@@ -41,7 +42,8 @@ export class MinhasVagasComponent implements OnInit {
     const empresa = this.loginService.usuario!.informacoes as Farmacia;
 
     this.vagaService.listarVagasPorEmpresa(empresa.id).subscribe(res => {
-      this.vagas = res.sort((a, b) => b.id - a.id);
+      this.vagasDb = res.sort((a, b) => b.id - a.id);
+      this.vagas = this.vagasDb;
     });
   }
 
@@ -56,11 +58,11 @@ export class MinhasVagasComponent implements OnInit {
   }
 
   atualizarContrato(contrato: Contrato) {
-    const vagaIndex = this.vagas.findIndex(v => v.id == contrato.vagaId);
-    const candIndex = this.vagas[vagaIndex].candidaturas.findIndex(c => {
+    const vagaIndex = this.vagasDb.findIndex(v => v.id == contrato.vagaId);
+    const candIndex = this.vagasDb[vagaIndex].candidaturas.findIndex(c => {
       return c.id == contrato.candidaturaId
     });
-    this.vagas[vagaIndex].candidaturas[candIndex].contrato = contrato;
+    this.vagasDb[vagaIndex].candidaturas[candIndex].contrato = contrato;
 
     this.contrato = undefined;
   }
@@ -98,5 +100,13 @@ export class MinhasVagasComponent implements OnInit {
       default: case 'ENVIADO': return 'Proposta Enviada';
       case 'ACEITO': return 'Proposta Aceita';
     }
+  }
+
+  filtrarVagas(status: string = '') {
+    if (!status) {
+      return this.vagas = this.vagasDb;
+    }
+
+    return this.vagas = this.vagasDb.filter(v => v.status == status);
   }
 }
