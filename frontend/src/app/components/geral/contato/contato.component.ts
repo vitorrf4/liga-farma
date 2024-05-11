@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {ContatoService} from "../../../services/contato.service";
 
 @Component({
   selector: 'app-contato',
@@ -25,9 +24,7 @@ export class ContatoComponent {
   }
 
   enviarMensagem() {
-    const mensagem = this.form.getRawValue();
-
-      alert("Mensagem enviada com sucesso!");
-      this.form.reset();
+    alert("Mensagem enviada com sucesso!");
+    this.form.reset();
   }
 }

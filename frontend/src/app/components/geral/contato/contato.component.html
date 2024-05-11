@@ -4,8 +4,11 @@
     </div>
 </section>
 <section id="conteudo">
-    <h4>Fale conosco <span><img src="assets/telefone.png" alt="Símbolo de Telefone"></span></h4>
-    <form (submit)="enviarMensagem()">
+    <h4>Fale conosco
+      <span><img src="assets/telefone.png" alt="Símbolo de Telefone"></span>
+    </h4>
+
+    <form (submit)="enviarMensagem()" [formGroup]="form">
         <fieldset>
             <label for="nome" class="label-campo">Nome</label><br>
             <input type="text" name="" id="nome" formControlName="nome"><br>
@@ -34,6 +37,5 @@
         <fieldset>
             <button type="submit">Enviar</button>
         </fieldset>
-
     </form>
 </section>
