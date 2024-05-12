@@ -36,6 +36,11 @@ server.listen(port, async () => {
 // loga todas as rotas que foram requisitadas
 server.all("*", (req, _, next) => {
     console.log(`${req.method} ${req.url}`);
+    
+    if (env === 'development') {
+        console.log(req.body);
+    }
+    
     next();
 });
 
@@ -59,7 +64,6 @@ const contratoRouter = require('./routers/contratoController');
 server.use('/contrato', contratoRouter);
 
 const candidaturaRouter = require('./routers/candidaturaRouter');
-const {logger} = require("sequelize/lib/utils/logger");
 server.use('/candidatura', candidaturaRouter);
 
 server.use((_, res) => {

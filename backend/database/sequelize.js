@@ -11,7 +11,7 @@ const env = process.env.NODE_ENV
 const sequelize = new Sequelize(database, username, password, {
     host: host,
     dialect: dialect,
-    logging: env == 'development',
+    logging: env === 'development',
     define: {
         freezeTableName: true
     }

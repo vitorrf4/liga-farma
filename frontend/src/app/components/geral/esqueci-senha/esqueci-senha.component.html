@@ -1,1 +1,25 @@
-<p>esqueci-senha works!</p>
+<div id="container">
+  <div id="form">
+    <h2>Redefinir Senha</h2>
+
+    <form [formGroup]="form" (submit)="enviarEmailRedefinicao()">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="text"
+        formControlName="email"
+        required="required"
+        placeholder="Insira seu email"/>
+
+      <div id="div-btn">
+        <button type="submit">Enviar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="image">
+    <img src="assets/imagem_login.jpeg" alt="Login image">
+  </div>
+</div>
+
