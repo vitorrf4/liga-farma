@@ -1,14 +1,15 @@
+const {logger} = require("sequelize/lib/utils/logger");
+
 class Seeds {
     async seedTodos() {
-        await this.seedFarmaceutico();
-        await this.seedFarmaceutico();
-        await this.seedFarmacia();
-        await this.seedVaga();
-        await this.seedVaga();
-        await this.seedVaga2();
-        await this.seedVaga2();
-        await this.seedCandidatura();
-        await this.seedContrato();
+        const pessoa = await this.seedFarmaceutico().then(r => r.informacoes);
+        const empresa = await this.seedFarmacia().then(r => r.informacoes);
+        const vaga = await this.seedVaga(empresa.id);
+        await this.seedVaga(empresa.id);
+        await this.seedVaga2(empresa.id);
+        await this.seedVaga2(empresa.id);
+        const candidatura = await this.seedCandidatura(vaga.id, pessoa.id);
+        await this.seedContrato(empresa.id, candidatura.id, vaga.id);
 
         console.log("Seed inicial finalizada");
     }
@@ -26,7 +27,7 @@ class Seeds {
                     especializacao: null
             }
         }
-        await this.executarPost(body, 'auth/cadastro');
+        return await this.executarPost(body, 'auth/cadastro');
     }
 
     async seedFarmacia() {
@@ -42,10 +43,10 @@ class Seeds {
                 telefone: null
             }
         }
-        await this.executarPost(body, 'auth/cadastro');
+        return await this.executarPost(body, 'auth/cadastro');
     }
 
-    async seedVaga() {
+    async seedVaga(farmaciaId) {
         const body = {
             titulo: "Coordenador Farmacêutico",
             descricao: "Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder ",
@@ -53,14 +54,14 @@ class Seeds {
             estado: "PR",
             cidade: "Paranagua",
             quantidadeVagas: 2,
-            farmaciaId: 1,
+            farmaciaId: farmaciaId,
             tipo: "CLT",
             turno: "Noturno"
         }
-        await this.executarPost(body, 'vaga');
+        return await this.executarPost(body, 'vaga');
     }
 
-    async seedVaga2() {
+    async seedVaga2(farmaciaId) {
         const body = {
             titulo: "Farmacêutico de Balcão",
             descricao: "Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder ",
@@ -68,39 +69,39 @@ class Seeds {
             estado: "SP",
             cidade: "São Paulo",
             quantidadeVagas: 5,
-            farmaciaId: 1,
+            farmaciaId: farmaciaId,
             tipo: "Temporário",
             turno: "12:00 as 17:00"
         }
-        await this.executarPost(body, 'vaga');
+        return await this.executarPost(body, 'vaga');
     }
     
-    async seedContrato() {
+    async seedContrato(farmaciaId, candidaturaId, vagaId) {
         const body = {
-            farmaciaId: 1,
-            candidaturaId: 1,
-            vagaId: 3,
+            farmaciaId: farmaciaId,
+            candidaturaId: candidaturaId,
+            vagaId: vagaId,
             dataInicio: "2024-04-18",
             dataFim: "2024-05-19",
             status: ""
         }
-        await this.executarPost(body, 'contrato');
+        return await this.executarPost(body, 'contrato');
     }
     
-    async seedCandidatura() {
+    async seedCandidatura(vagaId, farmaceuticoId) {
         const body = {
-            vagaId: 3,
-            farmaceuticoId: 1,
+            vagaId: vagaId,
+            farmaceuticoId: farmaceuticoId,
             mensagem: 'Estou entusiasmado para me candidatar à vaga anunciada em sua empresa. Minha experiência e habilidades estão alinhadas com os requisitos do cargo, e estou ansioso para contribuir com meu melhor para o sucesso da equipe. Agradeço a oportunidade e aguardo com expectativa a possibilidade de discutir como posso agregar valor à sua organização.'
         }
-        await this.executarPost(body, 'candidatura');
+        return await this.executarPost(body, 'candidatura');
     }
     
     async executarPost(body, url) {
         const json = JSON.stringify(body);
         const port = process.env.PORT;
 
-        await fetch(`http://localhost:${port}/${url}`, {
+        const res = await fetch(`http://localhost:${port}/${url}`, {
             method: 'POST',
             body: json,
             headers: {
@@ -108,6 +109,8 @@ class Seeds {
                 'Content-Type': 'application/json'
             }
         });
+        
+        return res.json();
     }
 }
 

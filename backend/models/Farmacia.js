@@ -3,8 +3,8 @@ const {sequelize} = require('../database/sequelize');
 
 const Farmacia = sequelize.define('Farmacia', {
     id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true
     },
     nome: {
