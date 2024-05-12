@@ -21,6 +21,10 @@ export class AuthService {
   }
 
   enviarEmailRedefinicao(usuario: {email: string}) {
-    return this.http.post<Usuario>(`${this.baseUrl}/${this.apiUrl}/reset-link`, usuario);
+    return this.http.post(`${this.baseUrl}/${this.apiUrl}/reset-link`, usuario);
+  }
+
+  redefinirSenha(usuario: {token: string, id: string, senha: string}) {
+    return this.http.post(`${this.baseUrl}/${this.apiUrl}/reset`, usuario);
   }
 }

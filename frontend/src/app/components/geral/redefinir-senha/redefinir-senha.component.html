@@ -1,1 +1,33 @@
-<p>redefinir-senha works!</p>
+<div id="container">
+  <div id="form">
+    <h2>Redefinir senha</h2>
+
+    <form [formGroup]="form" (submit)="redefinirSenha()">
+      <label for="senha">Nova Senha</label>
+      <input
+        id="senha"
+        type="password"
+        formControlName="senha"
+        required="required"
+        placeholder="Crie uma nova senha"/>
+
+      <label for="confirma">Confirmar Senha</label>
+      <input
+        id="confirma"
+        type="password"
+        formControlName="confirmarSenha"
+        required="required"
+        placeholder="Confirme a senha"/>
+
+      <div id="div-btn">
+        <button type="submit">Redefinir</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="image">
+    <img src="assets/imagem_login.jpeg" alt="Login image">
+  </div>
+</div>
+
