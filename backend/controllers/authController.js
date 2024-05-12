@@ -2,6 +2,7 @@ const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const clientUrl = process.env.FRONT_URL;
 const secret = process.env.SECRET;
 
 class AuthController {
@@ -82,8 +83,27 @@ class AuthController {
         }
     }
     
-    async resetarSenha(req, res) {
+    async criarLinkResetSenha(req, res) {
+        const email = req.email;
+        let entidade = await Farmaceutico.findOne({where: {email: email}});
+        if (!entidade) {
+            entidade = await Farmacia.findOne({where: {email: email}});
+        }
         
+        if (!entidade) {
+            return res.status(404).json({error: 'Entidade com esse email não existe'});
+        }
+
+        const token = jwt.sign({id: entidade.id});
+
+        const link = `${clientUrl}/reset-senha?token=${token}&id=${entidade.id}`;
+        sendEmail(user.email,"Password Reset Request",{name: user.name,link: link,},"./template/requestResetPassword.handlebars");
+        
+        return res.status(200).send();
+    }
+    
+    async resetarSenha(req, res) {
+        // TODO implementar metodo
     }
 }
 
