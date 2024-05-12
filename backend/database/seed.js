@@ -22,7 +22,7 @@ class Seeds {
                     cpf: "111111111-11",
                     crf: "1234-5",
                     telefone: "98412-2983",
-                    email: 'vitorrf4@gmail.com',
+                    email: 'p',
                     senha: 'p',
                     especializacao: null
             }
