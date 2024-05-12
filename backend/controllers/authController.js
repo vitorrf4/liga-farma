@@ -83,65 +83,74 @@ class AuthController {
             return res.status(500).json({error: 'Erro do servidor'});
         }
     }
-    
+
     async criarLinkResetSenha(req, res) {
-        const { email } = req.body;
-        
-        let tipo = 'PESSOA';
-        let entidade = await Farmaceutico.findOne({where: {email: email}});
-        if (!entidade) {
-            entidade = await Farmacia.findOne({where: {email: email}});
-            tipo = 'EMPRESA';
-        }
-        
-        if (!entidade) {
-            return res.status(404).json({error: 'Entidade com esse email não existe'});
-        }
+        try {
+            const {email} = req.body;
 
-        const token = jwt.sign({id: entidade.id, tipo: tipo}, secret, {
-            expiresIn: '10m'
-        });
+            let tipo = 'PESSOA';
+            let entidade = await Farmaceutico.findOne({where: {email: email}});
+            if (!entidade) {
+                entidade = await Farmacia.findOne({where: {email: email}});
+                tipo = 'EMPRESA';
+            }
 
-        const link = `${clientUrl}/redefinir-senha?token=${token}&id=${entidade.id}`;
-        const body = `<h2>Liga Farma</h2> Link para resetar sua senha: ${link}`;
-        await Email.enviarEmail(email, 'Redefinição de Senha', body);
-        
-        return res.status(200).send();
+            if (!entidade) {
+                return res.status(404).json({error: 'Entidade com esse email não existe'});
+            }
+
+            const token = jwt.sign({id: entidade.id, tipo: tipo}, secret, {
+                expiresIn: '10m'
+            });
+
+            const link = `${clientUrl}/redefinir-senha?token=${token}&id=${entidade.id}`;
+            const body = `<h2>Liga Farma</h2> 
+            Olá, aqui está o link para resetar sua senha: ${link}`;
+            await Email.enviarEmail(email, 'Redefinição de Senha', body);
+
+            return res.status(200).send();
+        } catch (e) {
+            return res.status(500).send();
+        }
     }
     
     async resetarSenha(req, res) {
-        const { token, id, senha } = req.body;
-        
-        let decodedToken;
         try {
-            decodedToken = jwt.verify(token, secret);
-        } catch(err) {
-            return res.status(403).json({error: 'Token inválido'});
+            const {token, id, senha} = req.body;
+
+            let decodedToken;
+            try {
+                decodedToken = jwt.verify(token, secret);
+            } catch (err) {
+                return res.status(403).json({error: 'Token inválido'});
+            }
+
+            if (decodedToken.id !== id) {
+                return res.status(400).json({error: 'Token incompatível com usuário'});
+            }
+            const hashedSenha = await bcrypt.hash(senha, 10);
+
+            let camposAtualizado = 0;
+            if (decodedToken.tipo === 'EMPRESA') {
+                camposAtualizado = await Farmacia.update(
+                    {senha: hashedSenha},
+                    {where: {id: decodedToken.id}}
+                )
+            } else if (decodedToken.tipo === 'PESSOA') {
+                camposAtualizado = await Farmaceutico.update(
+                    {senha: hashedSenha},
+                    {where: {id: id}}
+                )
+            }
+
+            if (camposAtualizado[0] <= 0) {
+                return res.status(400).json({error: 'Usuário não existente'});
+            }
+
+            return res.status(200).send();
+        } catch (err) {
+            return res.status(500).send();
         }
-        
-        if (decodedToken.id !== id) {
-            return res.status(400).json({error: 'Token incompatível com usuário'});
-        }
-        const hashedSenha = await bcrypt.hash(senha, 10);
-        
-        let camposAtualizado = 0;
-        if (decodedToken.tipo === 'EMPRESA') {
-            camposAtualizado = await Farmacia.update(
-                {senha: hashedSenha},
-                {where: {id: decodedToken.id}}
-            )
-        } else if (decodedToken.tipo === 'PESSOA') {
-            camposAtualizado = await Farmaceutico.update(
-                {senha: hashedSenha},
-                {where: {id: id}}
-            )
-        }
-        
-        if (camposAtualizado[0] <= 0) {
-            return res.status(400).json({error: 'Usuário não existente'});
-        }
-        
-        return res.status(200).send();
     }
 }
 

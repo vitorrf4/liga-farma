@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ActivatedRoute, RouterLink} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
 
 @Component({
@@ -16,8 +16,9 @@ import {AuthService} from "../../../services/auth.service";
 export class RedefinirSenhaComponent {
   form: FormGroup;
 
-  constructor(private builder: FormBuilder,
-              private router: ActivatedRoute,
+  constructor(builder: FormBuilder,
+              private activatedRoute: ActivatedRoute,
+              private router: Router,
               private service: AuthService) {
     this.form = builder.group({
       senha: ['', Validators.required],
@@ -31,18 +32,19 @@ export class RedefinirSenhaComponent {
     }
 
     const senha: string = this.form.value.senha;
-    if (!senha) {
-      return;
+    const confirmar: string = this.form.value.confirmarSenha;
+
+    if (senha !== confirmar) {
+      return alert('As senhas não coincidem');
     }
 
     let token: string | null = '';
     let id: string | null = '';
 
-    this.router.queryParamMap.subscribe(r => {
+    this.activatedRoute.queryParamMap.subscribe(r => {
       token = r.get('token');
       id = r.get('id');
     });
-
 
     const usuario = {
       token: token,
@@ -51,13 +53,17 @@ export class RedefinirSenhaComponent {
     }
 
     this.service.redefinirSenha(usuario).subscribe({
-      next: value => {
-        console.log(value);
+      next: async () => {
+        alert('Senha redefinida com sucesso');
+        await this.router.navigateByUrl('/login');
       },
       error: err => {
-        console.log(err);
+        switch (err.status) {
+          case 403: return alert('Token expirado, solicite outro email de redefinição');
+          case 400: return alert('Token inválido para o usuário com esse ID');
+          case 500: return alert('Erro no sistema, tente novamente mais tarde');
+        }
       }
     });
-
   }
 }
