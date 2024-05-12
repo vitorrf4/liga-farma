@@ -17,26 +17,16 @@ class EmailSender {
         this.transporter = nodemailer.createTransport(smtpConfig);
     }
 
-    sendEmail(to, subject, body) {
+    async enviarEmail(destinatario, assunto, mensagem) {
         const mailOptions = {
             from: 'liga.farma.contato@gmail.com',
-            to: to,
-            subject: subject,
-            html: body
+            to: destinatario,
+            subject: assunto,
+            html: mensagem
         };
 
-        // Sending email
-        return new Promise((resolve, reject) => {
-            this.transporter.sendMail(mailOptions, (error, info) => {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(info);
-                }
-            });
-        });
+        return await this.transporter.sendMail(mailOptions);
     }
 }
-
 
 module.exports = new EmailSender(smtpConfig);

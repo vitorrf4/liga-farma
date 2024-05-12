@@ -99,8 +99,7 @@ class AuthController {
 
         const link = `${clientUrl}/reset-senha?token=${token}&id=${entidade.id}`;
         const body = `<h2>Liga Farma</h2> Link para resetar sua senha: ${link}`;
-        await email.sendEmail(email, 'Email de Redefinição de Senha', body);
-        // sendEmail(user.email,"Password Reset Request",{name: user.name,link: link,},"./template/requestResetPassword.handlebars");
+        await email.sendEmail(email, 'Redefinição de Senha', body);
         
         return res.status(200).send();
     }
