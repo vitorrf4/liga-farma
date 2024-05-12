@@ -3,6 +3,7 @@ const Farmacia = require('../models/Farmacia');
 const Email = require('../util/enviarEmail');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const {logger} = require("sequelize/lib/utils/logger");
 const clientUrl = process.env.FRONT_URL;
 const secret = process.env.SECRET;
 
@@ -87,16 +88,18 @@ class AuthController {
     async criarLinkResetSenha(req, res) {
         const { email } = req.body;
         
+        let tipo = 'PESSOA';
         let entidade = await Farmaceutico.findOne({where: {email: email}});
         if (!entidade) {
             entidade = await Farmacia.findOne({where: {email: email}});
+            tipo = 'EMPRESA';
         }
         
         if (!entidade) {
             return res.status(404).json({error: 'Entidade com esse email não existe'});
         }
 
-        const token = jwt.sign({id: entidade.id}, secret, {
+        const token = jwt.sign({id: entidade.id, tipo: tipo}, secret, {
             expiresIn: '10m'
         });
 
@@ -108,7 +111,38 @@ class AuthController {
     }
     
     async resetarSenha(req, res) {
-        // TODO implementar metodo
+        const { token, id, senha } = req.body;
+        
+        let decodedToken;
+        try {
+            decodedToken = jwt.verify(token, secret);
+        } catch(err) {
+            return res.status(403).json({error: 'Token inválido'});
+        }
+        
+        if (decodedToken.id !== id) {
+            return res.status(400).json({error: 'Token incompatível com usuário'});
+        }
+        const hashedSenha = await bcrypt.hash(senha, 10);
+        
+        let camposAtualizado = 0;
+        if (decodedToken.tipo === 'EMPRESA') {
+            camposAtualizado = await Farmacia.update(
+                {senha: hashedSenha},
+                {where: {id: decodedToken.id}}
+            )
+        } else if (decodedToken.tipo === 'PESSOA') {
+            camposAtualizado = await Farmaceutico.update(
+                {senha: hashedSenha},
+                {where: {id: id}}
+            )
+        }
+        
+        if (camposAtualizado[0] <= 0) {
+            return res.status(400).json({error: 'Usuário não existente'});
+        }
+        
+        return res.status(200).send();
     }
 }
 

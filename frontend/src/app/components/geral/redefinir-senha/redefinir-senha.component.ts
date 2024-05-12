@@ -26,11 +26,11 @@ export class RedefinirSenhaComponent {
   }
 
   redefinirSenha() {
-    if (!this.form.invalid) {
+    if (this.form.invalid) {
       return alert('Preencha todos os campos');
     }
 
-    const senha = String(this.form.get('senha'));
+    const senha: string = this.form.value.senha;
     if (!senha) {
       return;
     }
