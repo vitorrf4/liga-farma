@@ -2,14 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const server = express();
 // decide qual env usar
-const env = process.env.NODE_ENV || (process.env.USER == 'ligafarma') ? 'production' : 'development';
+const env = process.env.NODE_ENV || (process.env.USER === 'ligafarma') ? 'production' : 'development';
 require('dotenv').config({ path: `./environments/.env.${env}`});
 const port = process.env.PORT;
 const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
 const logNoArquivo = require('./config/logging');
-if (env == 'production')
+if (env === 'production')
     logNoArquivo();
 
 server.use(express.json());
@@ -18,12 +18,12 @@ server.use(cors());
 server.listen(port, async () => {
     await criaAssociacoes();
 
-    if (env == 'development') {
+    if (env === 'development') {
         // inclui valores inicias na database
         await seed.seedTodos();
     }
 
-    if (env == 'production') {
+    if (env === 'production') {
         const ngrok = require('./config/ngrok');
         ngrok.then(res => console.log(`Ngrok iniciado na url ${res.url}`));
     }
@@ -58,6 +58,7 @@ const contratoRouter = require('./routers/contratoController');
 server.use('/contrato', contratoRouter);
 
 const candidaturaRouter = require('./routers/candidaturaRouter');
+const {logger} = require("sequelize/lib/utils/logger");
 server.use('/candidatura', candidaturaRouter);
 
 server.use((_, res) => {

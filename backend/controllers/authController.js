@@ -1,5 +1,6 @@
 const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
+const email = require('../util/enviarEmail');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const clientUrl = process.env.FRONT_URL;
@@ -97,7 +98,9 @@ class AuthController {
         const token = jwt.sign({id: entidade.id});
 
         const link = `${clientUrl}/reset-senha?token=${token}&id=${entidade.id}`;
-        sendEmail(user.email,"Password Reset Request",{name: user.name,link: link,},"./template/requestResetPassword.handlebars");
+        const body = `<h2>Liga Farma</h2> Link para resetar sua senha: ${link}`;
+        await email.sendEmail(email, 'Email de Redefinição de Senha', body);
+        // sendEmail(user.email,"Password Reset Request",{name: user.name,link: link,},"./template/requestResetPassword.handlebars");
         
         return res.status(200).send();
     }
