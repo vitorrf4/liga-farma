@@ -81,6 +81,10 @@ class AuthController {
             return res.status(500).json({error: 'Erro do servidor'});
         }
     }
+    
+    async resetarSenha(req, res) {
+        
+    }
 }
 
 module.exports = new AuthController();
