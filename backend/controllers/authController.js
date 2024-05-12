@@ -97,10 +97,10 @@ class AuthController {
         }
 
         const token = jwt.sign({id: entidade.id}, secret, {
-            expiresIn: '600'
+            expiresIn: '10m'
         });
 
-        const link = `${clientUrl}/reset-senha?token=${token}&id=${entidade.id}`;
+        const link = `${clientUrl}/redefinir-senha?token=${token}&id=${entidade.id}`;
         const body = `<h2>Liga Farma</h2> Link para resetar sua senha: ${link}`;
         await Email.enviarEmail(email, 'Redefinição de Senha', body);
         
