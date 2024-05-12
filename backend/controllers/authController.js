@@ -3,7 +3,6 @@ const Farmacia = require('../models/Farmacia');
 const Email = require('../util/enviarEmail');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const {logger} = require("sequelize/lib/utils/logger");
 const clientUrl = process.env.FRONT_URL;
 const secret = process.env.SECRET;
 

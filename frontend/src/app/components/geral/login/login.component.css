@@ -61,3 +61,13 @@ button {
 #heading {
   margin-top: 10px;
 }
+.a-reset {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.a-reset:hover {
+  text-decoration: underline;
+}
