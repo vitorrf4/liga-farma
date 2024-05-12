@@ -12,7 +12,8 @@ section{
 
 #container-vagas{
   margin: 50px !important;
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .containver-vaga{
@@ -66,7 +67,7 @@ section{
   width: min(1000px, 90vw);
   left: max(calc(50vw - 1000px / 2), 4vw);
   top: calc(20vh);
-  
+
   padding: 22px;
   background-color: #EFEFEF;
   border: 2px solid #798587;
