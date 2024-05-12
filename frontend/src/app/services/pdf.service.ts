@@ -15,6 +15,6 @@ export class PdfService {
   }
 
   uploadPdf(pdf: FormData) {
-    return this.http.post<{message: string}>(`${this.urlBase}/pdf/upload`, pdf);
+    return this.http.post<{curriculoId: string}>(`${this.urlBase}/pdf/upload`, pdf);
   }
 }

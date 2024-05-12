@@ -24,7 +24,8 @@ class PdfController {
             const file = req.file;
             
             if (file.mimetype !== 'application/pdf' ||
-                !file.originalname.endsWith('.pdf')) {
+                !file.originalname.endsWith('.pdf')) 
+            {
                 return res.status(400).json({message: 'Arquivo inválido'});
             }
 
@@ -40,7 +41,7 @@ class PdfController {
                 where: {id: req.body.usuarioId}
             });
 
-            return res.status(200).json({message: 'Curriculo salvo'});
+            return res.status(200).json({curriculoId: pdf.id});
         } catch (error) {
             console.error(error);
             return res.status(500).json({message: 'Erro no servidor'});

@@ -19,6 +19,18 @@
       <label>Especialização: </label>
       <input type="text" formControlName="especializacao" required />
 
+      <label class="label-text">Currículo (PDF)</label >
+      <input type="file" (change)="onFileSelected($event)" accept=".pdf"/>
+
+      <div *ngIf="selectedFile" id="curriculo">
+        <pdf-viewer
+          [src]="fileUrl"
+          [original-size]="false"
+          [autoresize]="true"
+          style="width: 40vh; height: 45vh; border: 2px black solid">
+        </pdf-viewer>
+      </div>
+
       <button type="submit" class="btn btn-green">Atualizar</button>
     </form>
   </div>

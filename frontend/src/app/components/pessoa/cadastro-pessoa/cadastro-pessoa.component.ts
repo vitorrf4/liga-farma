@@ -94,7 +94,6 @@ export class CadastroPessoaComponent implements OnInit {
       return false;
     }
 
-    // retorno precoce caso o usuario nao tenha um curriculo
     if (!this.selectedFile) {
       return true;
     }
