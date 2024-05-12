@@ -9,6 +9,7 @@ const { criaAssociacoes } = require('./database/sequelize');
 const seed = require('./database/seed');
 
 const logNoArquivo = require('./config/logging');
+//TODO bloquear requisicoes de todos os ips fora do front em producao 
 if (env === 'production')
     logNoArquivo();
 

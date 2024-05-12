@@ -18,9 +18,11 @@ import {somentePessoaGuard} from "./misc/somente-pessoa.guard";
 import {somenteEmpresaGuard} from "./misc/somente-empresa.guard";
 import { ContatoComponent } from './components/geral/contato/contato.component';
 import {verificaDeslogadoGuard} from "./misc/verifica-deslogado.guard";
+import {EsqueciSenhaComponent} from "./components/geral/esqueci-senha/esqueci-senha.component";
 
 export const routes: Routes = [
   {path: "", pathMatch: 'full', redirectTo: 'home'},
+  {path: "redefinir-senha", component: EsqueciSenhaComponent },
   {path: "login", component: LoginComponent, canActivate: [verificaDeslogadoGuard], },
   {path: "cadastro", component: CadastroComponent, canActivate: [verificaDeslogadoGuard],
     children: [
