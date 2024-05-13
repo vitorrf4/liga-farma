@@ -84,7 +84,17 @@ button {
 }
 
 @media all and (max-width: 1400px) {
-  img {
+  #div-image {
     display: none;
+  }
+  .left {
+    overflow: hidden;
+    height: auto;
+  }
+  .container {
+    overflow: hidden;
+  }
+  .wrap {
+    justify-content: center;
   }
 }
