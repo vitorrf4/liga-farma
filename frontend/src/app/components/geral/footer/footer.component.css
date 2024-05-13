@@ -3,17 +3,12 @@ footer{
 }
 
 .footer-menu{
-    width: 1440px;
     margin: 0 auto !important;
-    padding: 0px;
-}
-
-.footer-menu{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-menu ul {
@@ -39,11 +34,19 @@ footer{
 .footer-copyright{
     width: 100%;
     background-color: #336699;
-    padding: 10px 0px;
+    padding: 10px 0;
     margin: 0 auto !important;
 }
 
 .footer-copyright p{
     color: #FFF;
     text-align: center;
+}
+.flex-wrap {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+#flex-links > div {
+  padding-left: 5vh;
+  padding-right: 5vh;
 }
