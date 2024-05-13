@@ -2,7 +2,17 @@
   <h2>Minhas Candidaturas</h2>
 </div>
 
-<div *ngFor="let candidatura of candidaturas" class="outer-div-candidaturas">
+<div id="div-btn-filtro">
+  <button (click)="filtrarVagas()" class="btn btn-blue">
+    Todas as Candidaturas
+  </button>
+
+  <button (click)="filtrarVagas('CONTRATOS')" class="btn btn-blue">
+    Contratos e Propostas
+  </button>
+</div>
+
+<div *ngFor="let candidatura of candidaturasFiltradas" class="outer-div-candidaturas">
   <div class="div-status">
     <h2><strong>{{candidatura.vaga.titulo}}</strong></h2>
     <span [classList]="getStatusClass(candidatura.vaga.status)">
@@ -29,10 +39,10 @@
 
     <div *ngIf="candidatura.contrato.status == 'ENVIADO'" class="div-btn-contrato">
       <button (click)="mudarStatusContrato(candidatura.contrato, 'ACEITO')" class="btn btn-green">
-        Aceitar contrato
+        Aceitar
       </button>
       <button (click)="mudarStatusContrato(candidatura.contrato, 'REJEITADO')" class="btn btn-red">
-        Rejeitar contrato
+        Rejeitar
       </button>
     </div>
   </div>

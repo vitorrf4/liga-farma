@@ -21,6 +21,7 @@ import {HelperService} from "../../../services/helper.service";
 })
 export class MinhasCandidaturasComponent implements OnInit {
   candidaturas: Candidatura[] = [];
+  candidaturasFiltradas: Candidatura[] = [];
 
   constructor(private candidaturaService: CandidaturaService,
               private loginService: LoginService,
@@ -31,6 +32,7 @@ export class MinhasCandidaturasComponent implements OnInit {
     const pessoaId = this.loginService.usuario?.informacoes.id || 0;
     this.candidaturaService.listarPorPessoaId(pessoaId).subscribe(res => {
       this.candidaturas = res.sort((a, b) => b.id - a.id);
+      this.candidaturasFiltradas = this.candidaturas;
     });
   }
 
@@ -50,5 +52,14 @@ export class MinhasCandidaturasComponent implements OnInit {
 
   getStatusFormatado(status: string) {
     return this.helperService.getStringComPrimeiraMaiuscula(status);
+  }
+
+  filtrarVagas(status?: string) {
+    switch (status) {
+      case 'CONTRATOS':
+        return this.candidaturasFiltradas = this.candidaturas.filter(c => c.contrato);
+      default:
+        return this.candidaturasFiltradas = this.candidaturas;
+    }
   }
 }
