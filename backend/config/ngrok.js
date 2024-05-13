@@ -1,10 +1,11 @@
 const ngrok = require("@ngrok/ngrok");
 require("dotenv").config();
+const port = process.env.PORT;
 
 async function iniciaNgrok() {
     try {
         const ngrokConfig = {
-            addr: 3000,
+            addr: port,
             authtoken: process.env.NGROK_TOKEN,
             domain: "stable-phoenix-worthy.ngrok-free.app"
         }

@@ -26,7 +26,7 @@ server.listen(port, async () => {
 
     if (env === 'production') {
         const ngrok = require('./config/ngrok');
-        ngrok.then(res => console.log(`Ngrok iniciado na url ${res.url}`));
+        ngrok.then(res => console.log(`Ngrok iniciado na url ${res.url()}`));
     }
 
     console.log(`Servidor iniciado na porta ${port}`);
