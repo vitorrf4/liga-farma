@@ -1,19 +1,19 @@
 section{
-  width: 1440px;
+  width: 90vw;
   margin: 50px auto !important;
   height: auto;
-  padding: 0px;
+  padding: 0;
 }
 
 #section-lista-vagas{
   background-color: #D9F2F6;
-  display: table;
 }
 
 #container-vagas{
   margin: 50px !important;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container-vaga{
@@ -73,4 +73,10 @@ section{
   border: 2px solid #798587;
   border-radius: 8px;
   box-shadow: 0px 5px 15px -5px #0000003c;
+}
+
+@media all and (max-width: 1300px) {
+  section {
+    width: auto;
+  }
 }
