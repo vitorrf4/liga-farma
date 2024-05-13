@@ -25,22 +25,22 @@ label {
   align-items: center;
 }
 
-.cadastro-divbutton {
-  background-color: #057dc9;
-  color: rgba(255, 255, 255, 1);
-  display: flex;
-  border-radius: 4px;
-  justify-content: center;
-  width: auto;
-  padding: 0px 20px 0px 20px;
-  height: 40px;
-  margin: 10px 10px 0px 10px;
-}
-
-.submit-button {
+.div-submit {
   display: flex;
   justify-content: center;
   margin-top:3vh;
+  width: 100%;
+}
+
+.btn-submit {
+  height: 40px;
+  padding: 0px 20px 0px 20px;
+  background-color: #057dc9;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cadastro-buttontext {
