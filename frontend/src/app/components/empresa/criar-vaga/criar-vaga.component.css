@@ -2,7 +2,6 @@
     margin: 0px auto 50px auto !important;
     width: 1440px;
     display: table;
-    
 }
 
 #nova-vaga aside{
@@ -32,7 +31,7 @@
 #nova-vaga aside input{
     display: table;
 }
-#nova-vaga aside input, #nova-vaga aside textarea{
+#nova-vaga aside input, #nova-vaga aside textarea, select{
     border: 1px solid #D9D9D9;
     border-radius: 10px;
     width: 90%;
@@ -63,4 +62,3 @@
     background-color: #336699;
     color: #FFF;
 }
-

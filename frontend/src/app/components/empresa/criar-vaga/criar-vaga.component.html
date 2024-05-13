@@ -18,14 +18,18 @@
       <label>Descrição:</label>
       <textarea type="text" formControlName="descricao" > </textarea>
       <br>
-      <label> Turno:</label>
+      <label>Turno:</label>
       <input type="text" formControlName="turno">
       <br>
-      <label> Salário:</label>
+      <label>Salário:</label>
       <input type="number" formControlName="salario">
       <br>
       <label> Tipo:</label>
-      <input type="text" formControlName="tipo">
+      <select formControlName="tipo">
+        <option *ngFor="let tipo of tipoVagas" [value]="tipo">
+          {{tipo}}
+        </option>
+      </select>
       <br>
 
       <button type="submit">Criar</button>
