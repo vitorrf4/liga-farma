@@ -52,6 +52,12 @@ export class EditarPessoaComponent implements OnInit {
       curriculo: [null],
       curriculoId: [this.pessoa.curriculoId],
     });
+
+    if (this.pessoa.curriculoId) {
+      this.pdfService.getPdfByUsuarioId(this.pessoa.id).subscribe({
+        next: async res => this.fileUrl = res.data
+      });
+    }
   }
 
   onFileSelected(event: any): void {

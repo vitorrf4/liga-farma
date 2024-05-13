@@ -10,9 +10,6 @@
       <label>Nome:</label>
       <input type="text" formControlName="nome" required />
 
-      <label>Email:</label>
-      <input type="text" formControlName="email" required/>
-
       <label>Telefone:</label>
       <input type="text" formControlName="telefone" />
 
@@ -22,7 +19,7 @@
       <label class="label-text">Currículo (PDF)</label >
       <input type="file" (change)="onFileSelected($event)" accept=".pdf"/>
 
-      <div *ngIf="selectedFile" id="curriculo">
+      <div *ngIf="fileUrl" id="curriculo">
         <pdf-viewer
           [src]="fileUrl"
           [original-size]="false"
