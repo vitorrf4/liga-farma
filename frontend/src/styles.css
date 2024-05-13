@@ -108,10 +108,13 @@ strong {
 .status {
   display: inline-flex;
   border-radius: 6px;
-  padding: 1vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  align-items: center;
+  outline: none;
+  height: 4vh;
 }
 .status-verde {
   background-color: #008f00;
@@ -123,15 +126,16 @@ strong {
 }
 
 .btn {
+  height: 4vh;
   appearance: none;
-  border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
   box-sizing: border-box;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   padding: 1vh;
   position: relative;

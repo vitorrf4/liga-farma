@@ -24,8 +24,24 @@ a:hover {
 .div-titulo>h2 {
   color: #FFF;
 }
+.div-status {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.div-status > p {
+  margin-right: 1vh;
+  font-weight: 600;
+}
 .div-status > h2 {
   margin-right: 2vh;
+  font-size: xx-large;
+}
+.div-status > div {
+  display: flex;
+  justify-content: center;
+  margin-left: 1vh;
 }
 .btn-criar {
   color: #FFF;
@@ -47,18 +63,6 @@ a:hover {
   font-weight: 600;
   font-size: 25px;
   margin-bottom: 20px;
-}
-.div-status {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-.div-status > div {
-  margin-left: 1vh;
-}
-.div-status > p {
-  margin-right: 1vh;
-  font-weight: 600;
 }
 .div-candidatura {
   border: 1px solid lightgray;

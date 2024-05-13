@@ -16,6 +16,7 @@
 <div *ngFor="let vaga of vagas" id="div-vagas">
   <div class="div-status">
     <h2><strong>{{vaga.titulo}}</strong></h2>
+
      <span [class]="getStatusClass(vaga.status)">
        {{getStatusFormatado(vaga.status)}}
      </span>
