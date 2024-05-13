@@ -21,6 +21,7 @@ class PdfController {
 
     async uploadPdf(req, res) {
         try {
+            const { usuarioId } = req.body;
             const file = req.file;
             
             if (file.mimetype !== 'application/pdf' ||
@@ -28,20 +29,52 @@ class PdfController {
             {
                 return res.status(400).json({message: 'Arquivo inválido'});
             }
+            
+            let pdf = await PdfModel.findOne({where: { usuarioId:  usuarioId}}); 
+            
+            if (!pdf) {
+                pdf = await PdfModel.create({
+                    filename: file.originalname,
+                    data: file.buffer,
+                    usuarioId: req.body.usuarioId
+                });
 
-            const pdf = await PdfModel.create({
+                return res.status(200).send({curriculoId: pdf.id});
+            }
+            
+            pdf.data = file.buffer;
+            pdf.filename = file.originalname;
+            await pdf.save();
+            
+            return res.status(200).send({curriculoId: pdf.id});
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({message: 'Erro no servidor'});
+        }
+    }
+
+    async updatePdf(req, res) {
+        try {
+            const file = req.file;
+
+            if (file.mimetype !== 'application/pdf' ||
+                !file.originalname.endsWith('.pdf'))
+            {
+                return res.status(400).json({message: 'Arquivo inválido'});
+            }
+
+            const atualizacoes = await Farmaceutico.update({
                 filename: file.originalname,
                 data: file.buffer,
-                usuarioId: req.body.usuarioId
-            });
-            
-            await Farmaceutico.update({
-                curriculoId: pdf.id
             }, {
-                where: {id: req.body.usuarioId}
+                where: {id: usuarioId}
             });
 
-            return res.status(200).json({curriculoId: pdf.id});
+            if (atualizacoes[0] <= 0) {
+                return res.status(404).json({error: 'Curriculo não encontrado'});
+            }
+            
+            return res.status(200).send();
         } catch (error) {
             console.error(error);
             return res.status(500).json({message: 'Erro no servidor'});

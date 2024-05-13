@@ -92,13 +92,12 @@ export class EditarPessoaComponent implements OnInit {
     });
   }
 
-  async atualizarCurriculo(): Promise<string> {
+  async atualizarCurriculo() {
     const pdfForm = new FormData();
     pdfForm.append('pdf', this.selectedFile);
     pdfForm.append('usuarioId', this.pessoa.id.toString());
 
-    const curriculoId = await firstValueFrom(this.pdfService.uploadPdf(pdfForm))
-
-    return curriculoId.curriculoId;
+    const res = await firstValueFrom(this.pdfService.uploadPdf(pdfForm));
+    return res.curriculoId;
   }
 }
