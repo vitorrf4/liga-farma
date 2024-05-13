@@ -57,7 +57,11 @@ export class MinhasCandidaturasComponent implements OnInit {
   filtrarVagas(status?: string) {
     switch (status) {
       case 'CONTRATOS':
-        return this.candidaturasFiltradas = this.candidaturas.filter(c => c.contrato);
+        return this.candidaturasFiltradas = this.candidaturas.filter(c =>
+          c.contrato?.status === 'ACEITO');
+      case 'PROPOSTAS':
+        return this.candidaturasFiltradas = this.candidaturas.filter(c =>
+          c.contrato?.status === 'ENVIADO');
       default:
         return this.candidaturasFiltradas = this.candidaturas;
     }
