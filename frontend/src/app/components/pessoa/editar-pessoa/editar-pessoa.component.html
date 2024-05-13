@@ -2,33 +2,40 @@
   <div class="perfil-titulo">
     <h2>Perfil</h2>
   </div>
-
-  <div class="div-dados">
+  <div id="div-atualizar-senha">
     <a href="/esqueci-senha" class="btn btn-blue">Atualizar senha</a>
+  </div>
 
-    <form [formGroup]="form" (submit)="atualizarInformacoes()">
-      <label>Nome:</label>
-      <input type="text" formControlName="nome" required />
+  <form [formGroup]="form" (submit)="atualizarInformacoes()">
+    <div class="column">
+      <div class="div-dados">
+        <label>Nome:</label>
+        <input type="text" formControlName="nome" required />
 
-      <label>Telefone:</label>
-      <input type="text" formControlName="telefone" />
+        <label>Telefone:</label>
+        <input type="text" formControlName="telefone" />
 
-      <label>Especialização: </label>
-      <input type="text" formControlName="especializacao" required />
-
-      <label class="label-text">Currículo (PDF)</label >
-      <input type="file" (change)="onFileSelected($event)" accept=".pdf"/>
-
-      <div *ngIf="fileUrl" id="curriculo">
-        <pdf-viewer
-          [src]="fileUrl"
-          [original-size]="false"
-          [autoresize]="true"
-          style="width: 40vh; height: 45vh; border: 2px black solid">
-        </pdf-viewer>
+        <label>Especialização: </label>
+        <input type="text" formControlName="especializacao" required />
       </div>
 
+      <div id="div-curriculo">
+        <label class="label-text">Currículo (PDF)</label >
+        <input type="file" (change)="onFileSelected($event)" accept=".pdf"/>
+
+        <div *ngIf="fileUrl">
+          <pdf-viewer
+            [src]="fileUrl"
+            [original-size]="false"
+            [autoresize]="true"
+            style="width: 40vh; height: 45vh; border: 2px black solid">
+          </pdf-viewer>
+        </div>
+      </div>
+    </div>
+
+    <div id="div-submit">
       <button type="submit" class="btn btn-green">Atualizar</button>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>

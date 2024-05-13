@@ -14,7 +14,7 @@ input {
   border: 1px solid #7b7f80;
   border-radius: 10px;
   top: 40px;
-  width: 600px;
+  width: 38vh;
   height: 55px;
 }
 button {
@@ -33,13 +33,41 @@ button {
 .perfil-titulo>h2 {
   color: #FFF;
 }
-.div-dados {
-  padding: 2vh;
-}
 .container {
   margin-right: 150px;
   margin-left: 150px;
+  display: flex;
+  flex-direction: column;
 }
-.btn-blue {
+.div-dados {
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+}
+#div-curriculo {
+  padding-left: 2vh;
+  padding-top: 2vh;
   margin-bottom: 15px;
+  border-radius: 10px;
 }
+#div-curriculo > input {
+  border: none;
+  margin-bottom: 2vh;
+  height: auto;
+}
+#div-submit {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4vh;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+#div-atualizar-senha {
+  margin-top: 1vh;
+}
+
