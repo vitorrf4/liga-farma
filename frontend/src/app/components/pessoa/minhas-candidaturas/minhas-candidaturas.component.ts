@@ -21,7 +21,7 @@ import {HelperService} from "../../../services/helper.service";
 })
 export class MinhasCandidaturasComponent implements OnInit {
   candidaturas: Candidatura[] = [];
-  candidaturasFiltradas: Candidatura[] = [];
+  candidaturasSelecionadas: Candidatura[] = [];
 
   constructor(private candidaturaService: CandidaturaService,
               private loginService: LoginService,
@@ -32,7 +32,7 @@ export class MinhasCandidaturasComponent implements OnInit {
     const pessoaId = this.loginService.usuario?.informacoes.id || 0;
     this.candidaturaService.listarPorPessoaId(pessoaId).subscribe(res => {
       this.candidaturas = res.sort((a, b) => b.id - a.id);
-      this.candidaturasFiltradas = this.candidaturas;
+      this.candidaturasSelecionadas = this.candidaturas;
     });
   }
 
@@ -57,13 +57,13 @@ export class MinhasCandidaturasComponent implements OnInit {
   filtrarVagas(status?: string) {
     switch (status) {
       case 'CONTRATOS':
-        return this.candidaturasFiltradas = this.candidaturas.filter(c =>
+        return this.candidaturasSelecionadas = this.candidaturas.filter(c =>
           c.contrato?.status === 'ACEITO');
       case 'PROPOSTAS':
-        return this.candidaturasFiltradas = this.candidaturas.filter(c =>
+        return this.candidaturasSelecionadas = this.candidaturas.filter(c =>
           c.contrato?.status === 'ENVIADO');
       default:
-        return this.candidaturasFiltradas = this.candidaturas;
+        return this.candidaturasSelecionadas = this.candidaturas;
     }
   }
 }

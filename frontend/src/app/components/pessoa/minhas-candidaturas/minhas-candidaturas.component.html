@@ -16,7 +16,7 @@
   </button>
 </div>
 
-<div *ngFor="let candidatura of candidaturasFiltradas" class="outer-div-candidaturas">
+<div *ngFor="let candidatura of candidaturasSelecionadas" class="outer-div-candidaturas">
   <div class="div-status">
     <h2><strong>{{candidatura.vaga.titulo}}</strong></h2>
     <span [classList]="getStatusClass(candidatura.vaga.status)">
