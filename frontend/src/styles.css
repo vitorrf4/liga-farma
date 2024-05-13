@@ -70,6 +70,7 @@ body {
   margin: 0 auto !important;
   background-color: #f6feff;
   min-height: 100vh;
+  height: fit-content;
 }
 
 h1{
@@ -138,7 +139,6 @@ strong {
   font-weight: 500;
   line-height: 20px;
   padding: 1vh;
-  position: relative;
   text-align: center;
   text-decoration: none;
   user-select: none;

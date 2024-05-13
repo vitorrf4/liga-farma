@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   height: 422px;
   position: relative;
+  z-index: 0;
 }
 
 #banner-topo-quadrado{
