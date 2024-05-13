@@ -72,6 +72,9 @@ button:active{
     justify-content: center;
     justify-items: center;
   }
+  header {
+    margin-bottom: 4vh;
+  }
   #div-logo {
     margin-top: 1vh;
     margin-bottom: 1vh;

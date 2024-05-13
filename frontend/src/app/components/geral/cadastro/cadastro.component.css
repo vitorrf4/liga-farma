@@ -82,3 +82,9 @@ button {
   float: right;
   right: 0;
 }
+
+@media all and (max-width: 1400px) {
+  img {
+    display: none;
+  }
+}
