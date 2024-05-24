@@ -27,10 +27,6 @@ const Vaga = sequelize.define('Vaga', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    quantidadeVagas: {
-        type: DataTypes.INTEGER,
-        default: 1,
-    },
     tipo: {
         type: DataTypes.STRING,
         allowNull: true

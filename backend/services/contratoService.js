@@ -40,20 +40,6 @@ class ContratoService {
             contrato,
             { where: { id: contrato.id } }
         );
-
-        return await this.atualizarQuantidadeVagas(contratoDb.vagaId);
-    }
-
-    async atualizarQuantidadeVagas(vagaId) {
-        const vaga = await Vaga.findByPk(vagaId);
-        if (vaga.quantidadeVagas <= 0) {
-            return false;
-        }
-
-        await vaga.decrement('quantidadeVagas');
-        await vaga.save();
-
-        return true;
     }
 }
 

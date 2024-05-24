@@ -53,7 +53,6 @@ class Seeds {
             salario: 2000.5,
             estado: "PR",
             cidade: "Paranagua",
-            quantidadeVagas: 2,
             farmaciaId: farmaciaId,
             tipo: "CLT",
             turno: "Noturno"
@@ -68,7 +67,6 @@ class Seeds {
             salario: 4050.20,
             estado: "SP",
             cidade: "São Paulo",
-            quantidadeVagas: 5,
             farmaciaId: farmaciaId,
             tipo: "Temporário",
             turno: "12:00 as 17:00"

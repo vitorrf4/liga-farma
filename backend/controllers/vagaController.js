@@ -48,10 +48,10 @@ class VagaController {
         try {
             // TODO mudar destructuring para service
             const { titulo, descricao, salario, estado, 
-                cidade, quantidadeVagas, tipo, turno, farmaciaId } = req.body;
+                cidade, tipo, turno, farmaciaId } = req.body;
 
             const novaFarmacia = await service.cadastrarVaga(
-                titulo, descricao, salario, estado, cidade, quantidadeVagas, tipo, turno, farmaciaId);
+                titulo, descricao, salario, estado, cidade, tipo, turno, farmaciaId);
 
             res.status(201).json(novaFarmacia);
         } catch (error) {
