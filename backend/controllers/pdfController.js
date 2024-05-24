@@ -23,9 +23,10 @@ class PdfController {
         try {
             const { usuarioId } = req.body;
             const file = req.file;
+            const extensao = file.originalname.split('.').pop().toLowerCase();
             
             if (file.mimetype !== 'application/pdf' ||
-                !file.originalname.endsWith('.pdf')) 
+                extensao !== 'pdf') 
             {
                 return res.status(400).json({message: 'Arquivo inválido'});
             }
