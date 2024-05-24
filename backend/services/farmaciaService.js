@@ -20,6 +20,11 @@ class FarmaciaService {
         if (!farmaciaDb) {
             return false;
         }
+        
+        const emailJaExiste = await Farmacia.findOne({where: {email: farmacia.email}});
+        if (emailJaExiste && emailJaExiste.id !== farmacia.id) { 
+            return false;
+        }
 
         if (farmacia.senha) {
             farmacia.senha = await bcrypt.hash(farmacia.senha, 10);

@@ -1,5 +1,6 @@
 const {Farmaceutico} = require('../models/Farmaceutico');
 const bcrypt = require("bcryptjs");
+const Farmacia = require("../models/Farmacia");
 
 class FarmaceuticoService {
     async getFarmaceuticos() {
@@ -18,6 +19,11 @@ class FarmaceuticoService {
         const farmaceuticoDb = await this.getFarmaceuticoPorId(farmaceutico.id);
 
         if (!farmaceuticoDb) {
+            return false;
+        }
+
+        const emailJaExiste = await Farmacia.findOne({where: {email: farmaceutico.email}});
+        if (emailJaExiste && emailJaExiste.id !== farmaceutico.id) {
             return false;
         }
         
