@@ -37,6 +37,7 @@ export class EditarEmpresaComponent implements OnInit {
       endereco: [this.empresa.endereco, Validators.required],
       descricao: [this.empresa.descricao, Validators.required],
       email: [this.empresa.email, Validators.required],
+      senha: [''],
       telefone: [this.empresa.telefone]
     });
   }

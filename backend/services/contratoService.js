@@ -1,5 +1,4 @@
 const {Contrato} = require('../models/Contrato');
-const {Vaga} = require('../models/Vaga');
 const {Candidatura} = require('../models/Candidatura');
 
 class ContratoService {
@@ -27,7 +26,7 @@ class ContratoService {
 
     async candidaturaJaTemContrato(candidaturaId) {
         const candidatura = await Candidatura.findByPk(candidaturaId, {include: 'contrato'});
-        return (candidatura)? candidatura.contrato : false;
+        return (candidatura) ? candidatura.contrato : false;
     }
 
     async atualizarContrato(contrato) {

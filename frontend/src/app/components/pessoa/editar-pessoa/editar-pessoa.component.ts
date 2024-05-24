@@ -49,6 +49,7 @@ export class EditarPessoaComponent implements OnInit {
       nome: [this.pessoa.nome, Validators.required],
       crf: [this.pessoa.crf, Validators.required],
       email: [this.pessoa.email, Validators.required],
+      senha: [''],
       telefone: [this.pessoa.telefone],
       especializacao: [this.pessoa.especializacao],
       curriculo: [null],

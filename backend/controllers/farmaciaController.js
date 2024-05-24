@@ -1,4 +1,5 @@
 const service = require('../services/farmaciaService');
+const bcrypt = require("bcryptjs");
 
 class FarmaciaController {
     async getFarmacias(req, res) {

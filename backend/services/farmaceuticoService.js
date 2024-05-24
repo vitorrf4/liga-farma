@@ -1,4 +1,5 @@
 const {Farmaceutico} = require('../models/Farmaceutico');
+const bcrypt = require("bcryptjs");
 
 class FarmaceuticoService {
     async getFarmaceuticos() {
@@ -18,6 +19,12 @@ class FarmaceuticoService {
 
         if (!farmaceuticoDb) {
             return false;
+        }
+        
+        if (farmaceutico.senha) {
+            farmaceutico.senha = await bcrypt.hash(farmaceutico.senha, 10);
+        } else {
+            farmaceutico.senha = farmaceuticoDb.senha;
         }
 
         await Farmaceutico.update(

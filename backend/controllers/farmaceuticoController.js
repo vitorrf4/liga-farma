@@ -1,4 +1,5 @@
 const service = require('../services/farmaceuticoService');
+const bcrypt = require("bcryptjs");
 
 class FarmaceuticoController {
     async getFarmaceuticos(req, res) {
@@ -46,7 +47,7 @@ class FarmaceuticoController {
         try {
             const farmaceutico = req.body;
 
-            const farmaceuticoFoiAtualizado = await service.atualizarFarmaceutico( farmaceutico);
+            const farmaceuticoFoiAtualizado = await service.atualizarFarmaceutico(farmaceutico);
 
             if (!farmaceuticoFoiAtualizado) {
                 return res.status(404).json({error: "Farmacêutico não encontrado"});
@@ -69,7 +70,7 @@ class FarmaceuticoController {
             }
 
             res.status(204).send();
-        } catch(error) {
+        } catch (error) {
             console.error('Erro na exclusão:', error);
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
         }

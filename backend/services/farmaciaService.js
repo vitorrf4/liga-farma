@@ -1,4 +1,5 @@
 const Farmacia = require('../models/Farmacia');
+const bcrypt = require("bcryptjs");
 
 class FarmaciaService {
     async getFarmacia() {
@@ -13,16 +14,22 @@ class FarmaciaService {
         return Farmacia.create({nome, cnpj, endereco, descricao, email, senha, telefone});
     }
 
-    async atualizarFarmacia(farmaceutico) {
-        const farmaciaDb = await this.getFarmaciaPorId(farmaceutico.id);
+    async atualizarFarmacia(farmacia) {
+        const farmaciaDb = await this.getFarmaciaPorId(farmacia.id);
 
         if (!farmaciaDb) {
             return false;
         }
 
+        if (farmacia.senha) {
+            farmacia.senha = await bcrypt.hash(farmacia.senha, 10);
+        } else {
+            farmacia.senha = farmaciaDb.senha;
+        }
+
         await Farmacia.update(
-            farmaceutico,
-            { where: { id: farmaceutico.id } }
+            farmacia,
+            { where: { id: farmacia.id } }
         );
 
         return true;

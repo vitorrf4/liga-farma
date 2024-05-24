@@ -2,9 +2,6 @@
   <div class="perfil-titulo">
     <h2>Perfil</h2>
   </div>
-  <div id="div-atualizar-senha">
-    <a href="/esqueci-senha" class="btn btn-blue">Atualizar senha</a>
-  </div>
 
   <form [formGroup]="form" (submit)="atualizarInformacoes()">
     <div class="column">
@@ -17,6 +14,9 @@
 
         <label>Especialização: </label>
         <input type="text" formControlName="especializacao" required />
+
+        <label>Senha:</label>
+        <input type="password" formControlName="senha" required />
       </div>
 
       <div id="div-curriculo">
