@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import { ListaVagasComponent } from '../lista-vagas/lista-vagas.component';
 import { Usuario } from '../../../models/usuario';
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import { LoginService } from '../../../services/login.service';
 import {FooterComponent} from "../footer/footer.component";
 
@@ -14,7 +14,8 @@ import {FooterComponent} from "../footer/footer.component";
     ListaVagasComponent,
     RouterLink,
     NgIf,
-    FooterComponent
+    FooterComponent,
+    NgOptimizedImage
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

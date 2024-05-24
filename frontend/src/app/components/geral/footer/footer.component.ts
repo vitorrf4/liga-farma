@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from '@angular/router';
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import { Usuario } from '../../../models/usuario';
 
 @Component({
@@ -9,7 +9,8 @@ import { Usuario } from '../../../models/usuario';
   imports: [
     RouterOutlet,
     RouterLink,
-    NgIf
+    NgIf,
+    NgOptimizedImage
   ],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'

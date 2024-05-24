@@ -4,14 +4,15 @@ import {Farmacia} from "../../../models/farmacia";
 import {VagaService} from "../../../services/vaga.service";
 import {LoginService} from "../../../services/login.service";
 import {Router} from "@angular/router";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-criar-vaga',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgForOf
+    NgForOf,
+    NgOptimizedImage
   ],
   templateUrl: './criar-vaga.component.html',
   styleUrl: './criar-vaga.component.css'

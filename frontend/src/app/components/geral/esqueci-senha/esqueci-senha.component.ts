@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-esqueci-senha',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    NgOptimizedImage
   ],
   templateUrl: './esqueci-senha.component.html',
   styleUrl: './esqueci-senha.component.css'

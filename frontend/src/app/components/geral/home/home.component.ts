@@ -3,7 +3,7 @@ import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import { Usuario } from '../../../models/usuario';
 import {Vaga} from "../../../models/vaga";
 import {VagaService} from "../../../services/vaga.service";
-import {NgForOf, NgIf, SlicePipe} from "@angular/common";
+import {NgForOf, NgIf, NgOptimizedImage, SlicePipe} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,8 @@ import {NgForOf, NgIf, SlicePipe} from "@angular/common";
     RouterLink,
     NgForOf,
     NgIf,
-    SlicePipe
+    SlicePipe,
+    NgOptimizedImage
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

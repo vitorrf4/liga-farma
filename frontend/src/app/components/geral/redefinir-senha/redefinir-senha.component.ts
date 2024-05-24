@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {AuthService} from "../../../services/auth.service";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-redefinir-senha',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    NgOptimizedImage
   ],
   templateUrl: './redefinir-senha.component.html',
   styleUrl: './redefinir-senha.component.css'

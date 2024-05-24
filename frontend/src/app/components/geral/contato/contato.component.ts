@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-contato',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   templateUrl: './contato.component.html',
   styleUrl: './contato.component.css'

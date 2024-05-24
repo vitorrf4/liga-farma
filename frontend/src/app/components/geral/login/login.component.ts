@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import {PdfViewerModule} from "ng2-pdf-viewer";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/auth.service";
@@ -14,7 +14,8 @@ import {Router, RouterLink, RouterOutlet} from "@angular/router";
     PdfViewerModule,
     ReactiveFormsModule,
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
+    NgOptimizedImage
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
