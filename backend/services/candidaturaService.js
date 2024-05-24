@@ -20,7 +20,6 @@ class CandidaturaService {
     }
     
     async cadastrarCandidatura(vagaId, farmaceuticoId, mensagem) {
-        // TODO verificar quantidade de vagas antes de cadastrar
         return Candidatura.create({vagaId, farmaceuticoId, mensagem, 
             dataEnviada: Date.now()});
     }

@@ -99,6 +99,8 @@ export class MinhasVagasComponent implements OnInit {
     switch (status) {
       default: case 'ENVIADO': return 'Proposta Enviada';
       case 'ACEITO': return 'Proposta Aceita';
+      case 'REJEITADO': return 'Proposta Rejeitada';
+      case 'FINALIZADO': return 'Contrato Encerrado';
     }
   }
 
