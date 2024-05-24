@@ -84,20 +84,15 @@ export class EditarPessoaComponent implements OnInit {
 
     this.farmaceuticoService.atualizar(farmaceutico).subscribe({
       next: async () => {
-        const usuario = new Usuario('PESSOA', farmaceutico);
-        const pessoa = usuario.informacoes as Farmaceutico;
-
         if (this.selectedFile) {
           const curriculoId = await this.atualizarCurriculo();
-          pessoa.curriculoId = Number(curriculoId);
+          farmaceutico.curriculoId = Number(curriculoId);
         }
 
-        this.loginService.atualizarInformacoes(pessoa);
+        this.loginService.atualizarInformacoes(farmaceutico);
         await this.router.navigateByUrl('/perfil');
       },
-      error: err => {
-        console.log(err);
-      }
+      error: () => alert('Erro ao atualizar, tente novamente mais tarde')
     });
   }
 
