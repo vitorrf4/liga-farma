@@ -8,6 +8,7 @@ import {AuthService} from "../../../services/auth.service";
 import {Usuario} from "../../../models/usuario";
 import {LoginService} from "../../../services/login.service";
 import {Router} from "@angular/router";
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-cadastro-farmaceutico',
@@ -16,6 +17,7 @@ import {Router} from "@angular/router";
     ReactiveFormsModule,
     JsonPipe,
     FormsModule,
+    NgxMaskDirective,
     NgForOf,
     NgIf,
     PdfViewerModule

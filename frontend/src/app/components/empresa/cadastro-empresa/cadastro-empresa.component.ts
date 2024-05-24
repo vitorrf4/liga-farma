@@ -7,6 +7,7 @@ import {Usuario} from "../../../models/usuario";
 import {Router} from "@angular/router";
 import {LoginService} from "../../../services/login.service";
 import { Farmacia } from '../../../models/farmacia';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-cadastro-empresa',
@@ -15,6 +16,7 @@ import { Farmacia } from '../../../models/farmacia';
     FormsModule,
     NgForOf,
     NgIf,
+    NgxMaskDirective,
     PdfViewerModule,
     ReactiveFormsModule
   ],

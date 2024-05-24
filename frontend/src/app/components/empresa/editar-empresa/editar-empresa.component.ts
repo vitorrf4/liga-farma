@@ -5,13 +5,15 @@ import {LoginService} from "../../../services/login.service";
 import {Farmacia} from "../../../models/farmacia";
 import {FarmaciaService} from "../../../services/farmacia.service";
 import {Router} from "@angular/router";
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-editar-empresa',
   standalone: true,
 	imports: [
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+    NgxMaskDirective
 	],
   templateUrl: './editar-empresa.component.html',
   styleUrl: './editar-empresa.component.css'

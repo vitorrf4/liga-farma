@@ -10,6 +10,7 @@ import {PdfViewerModule} from "ng2-pdf-viewer";
 import {PerfilPessoaComponent} from "../perfil-pessoa/perfil-pessoa.component";
 import {PdfService} from "../../../services/pdf.service";
 import {firstValueFrom} from "rxjs";
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-editar-pessoa',
@@ -21,7 +22,8 @@ import {firstValueFrom} from "rxjs";
     PdfViewerModule,
     JsonPipe,
     PerfilPessoaComponent,
-    RouterLink
+    RouterLink,
+    NgxMaskDirective
   ],
   templateUrl: './editar-pessoa.component.html',
   styleUrl: './editar-pessoa.component.css'

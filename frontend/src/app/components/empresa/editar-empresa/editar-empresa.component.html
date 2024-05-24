@@ -9,7 +9,7 @@
       <input type="text" formControlName="nome" required />
 
       <label>CNPJ:</label>
-      <input type="text" formControlName="cnpj" required />
+      <input type="text" mask="00.000.000/0000-00" formControlName="cnpj" required />
 
       <label>Endereco:</label>
       <input type="text" formControlName="endereco" required />
@@ -18,7 +18,7 @@
       <input type="text" formControlName="email" required/>
 
       <label>Telefone:</label>
-      <input type="number" formControlName="telefone" />
+      <input type="number" mask="(00)0000-0000||(00)00000-0000" formControlName="telefone" />
 
       <label>Descrição</label>
       <textarea formControlName="descricao"></textarea>
