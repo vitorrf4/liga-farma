@@ -1,9 +1,10 @@
 const {Vaga} = require('../models/Vaga');
-const {Candidatura} = require("../models/Candidatura");
-
 class VagaService {
     async getVagas() {
-        return await Vaga.findAll({include: ['farmacia', 'candidaturas'], where:{status : "ABERTA"}});
+        return await Vaga.findAll({
+            include: ['farmacia', 'candidaturas'], 
+            where:{status : "ABERTA"}}
+        );
     }
 
     async getVagaPorId(id) {
@@ -38,6 +39,18 @@ class VagaService {
             vaga,
             { where: { id: vaga.id } }
         );
+
+        return true;
+    }
+    
+    async atualizarStatusVaga(vaga) {
+        const vagaDb = await this.getVagaPorId(vaga.id);
+
+        if (!vagaDb) {
+            return false;
+        }
+        vagaDb.status = vaga.status;
+        await vagaDb.save();
 
         return true;
     }

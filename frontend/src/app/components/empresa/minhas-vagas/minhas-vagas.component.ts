@@ -75,11 +75,13 @@ export class MinhasVagasComponent implements OnInit {
   }
 
   fecharVaga(vaga: Vaga) {
-    const vagaAtualizada = vaga;
-    vagaAtualizada.status = 'FECHADA';
+    const vagaAtualizada = {
+      id: vaga.id,
+      status: 'FECHADA'
+    };
 
-    this.vagaService.atualizar(vagaAtualizada).subscribe({
-      next: () => vaga = vagaAtualizada,
+    this.vagaService.atualizarStatus(vagaAtualizada).subscribe({
+      next: () => vaga.status = vagaAtualizada.status,
       error: () => alert('Error ao atualizar')
     });
   }

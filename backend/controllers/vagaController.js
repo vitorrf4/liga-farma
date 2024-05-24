@@ -50,10 +50,10 @@ class VagaController {
             const { titulo, descricao, salario, estado, 
                 cidade, tipo, turno, farmaciaId } = req.body;
 
-            const novaFarmacia = await service.cadastrarVaga(
+            const novaVaga = await service.cadastrarVaga(
                 titulo, descricao, salario, estado, cidade, tipo, turno, farmaciaId);
 
-            res.status(201).json(novaFarmacia);
+            res.status(201).json(novaVaga);
         } catch (error) {
             console.error('Erro na criação:', error);
             res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
@@ -62,9 +62,9 @@ class VagaController {
 
     async atualizarVaga(req, res) {
         try {
-            const farmacia = req.body;
+            const vaga = req.body;
 
-            const vagaFoiAtualizada = await service.atualizarVaga(farmacia);
+            const vagaFoiAtualizada = await service.atualizarVaga(vaga);
 
             if (!vagaFoiAtualizada) {
                 return res.status(404).json({error: "Item não encontrado"});
@@ -77,6 +77,23 @@ class VagaController {
         }
     }
 
+    async atualizarStatusVaga(req, res) {
+        try {
+            const vaga = req.body;
+
+            const vagaFoiAtualizada = await service.atualizarStatusVaga(vaga);
+
+            if (!vagaFoiAtualizada) {
+                return res.status(404).json({error: "Item não encontrado"});
+            }
+
+            return res.status(204).send();
+        } catch(error) {
+            console.error('Erro na alteracao:', error);
+            res.status(500).json({ error: 'Ocorreu um erro na aplicação.' });
+        }
+    }
+    
     async deletarVaga(req, res) {
         try {
             const { id } = req.params;
