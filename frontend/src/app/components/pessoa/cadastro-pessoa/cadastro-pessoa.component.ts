@@ -100,7 +100,9 @@ export class CadastroPessoaComponent implements OnInit {
       return true;
     }
 
-    if (!this.selectedFile?.name.endsWith('.pdf')) {
+    const extensaoCurriculo = this.selectedFile?.name.split('.').pop().toLowerCase();
+
+    if (extensaoCurriculo != 'pdf') {
       alert('Currículo deve ser um pdf');
       return false;
     }
