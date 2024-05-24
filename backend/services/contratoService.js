@@ -39,6 +39,7 @@ class ContratoService {
             contrato,
             { where: { id: contrato.id } }
         );
+        return true;
     }
 }
 

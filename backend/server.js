@@ -60,7 +60,7 @@ server.use('/farmacia', farmaciaRouter);
 const vagaRouter = require('./routers/vagaRouter');
 server.use('/vaga', vagaRouter);
 
-const contratoRouter = require('./routers/contratoController');
+const contratoRouter = require('./routers/contratoRouter');
 server.use('/contrato', contratoRouter);
 
 const candidaturaRouter = require('./routers/candidaturaRouter');
