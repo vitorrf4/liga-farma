@@ -32,7 +32,6 @@ export class CriarVagaComponent implements OnInit {
       titulo: ['', Validators.required],
       estado: ['', Validators.required],
       cidade: ['', Validators.required],
-      quantidadeVagas: [1, Validators.required],
       descricao: ['', Validators.required],
       turno: ['', Validators.required],
       salario: [0, Validators.required],
@@ -68,12 +67,8 @@ export class CriarVagaComponent implements OnInit {
     }
 
     const form = this.vagaForm.value;
-    if (form.quantidadeVagas <= 0) {
-      alert('A quantidade de vagas deve ser maior que 0');
-      return false;
-    }
 
-    if (form.salario <= 0 || form.quantidadeVagas <= 0) {
+    if (form.salario <= 0) {
       alert('Salário deve ser maior que zero');
       return false;
     }

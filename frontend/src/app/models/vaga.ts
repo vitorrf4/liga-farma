@@ -8,7 +8,6 @@ export class Vaga {
   salario: number = 0;
   estado: string = "";
   cidade: string = "";
-  quantidadeVagas: number = 0;
   tipo: string = "";
   turno: string = "";
   status: string = '';
