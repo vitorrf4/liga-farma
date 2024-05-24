@@ -73,18 +73,18 @@ export class CadastroPessoaComponent implements OnInit {
     );
 
     this.authService.cadastrar(usuario).subscribe({
-      next: res => {
+      next: async res => {
         if (this.selectedFile) {
-          this.cadastrarCurriculo(res.informacoes.id);
+          await this.cadastrarCurriculo(res.informacoes.id);
         }
 
-        alert("Cadastro efetuado com sucesso!! Redirecionando para o seu perfil");
+        alert("Cadastro efetuado com sucesso. Redirecionando para o seu perfil");
         this.logarUsuario(usuario);
       },
       error: res => {
         switch (res.status) {
           case 400: return alert('Email já cadastrado');
-          default: case 500: return alert('Erro ao cadastrado, tente novamente mais tarde');
+          default: case 500: return alert('Erro ao cadastrar, tente novamente mais tarde');
         }
       }
     });
@@ -115,13 +115,15 @@ export class CadastroPessoaComponent implements OnInit {
     return true;
   }
 
-  cadastrarCurriculo(usuarioId: number) {
+  async cadastrarCurriculo(usuarioId: number) {
     const pdfForm = new FormData();
     pdfForm.append('pdf', this.selectedFile);
     pdfForm.append('usuarioId', usuarioId.toString());
 
     this.pdfService.uploadPdf(pdfForm).subscribe({
-      error: () => alert('Error ao cadastrar currículo')
+      error: () => {
+        alert('Erro ao cadastrar curriculo');
+      }
     });
   }
 
@@ -134,7 +136,7 @@ export class CadastroPessoaComponent implements OnInit {
         this.loginService.setUsuario(res);
         await this.router.navigateByUrl('perfil');
       },
-      error: () => { console.log('erro ao logar')}
+      error: () => { console.log('Erro ao logar')}
     })
   }
 }
