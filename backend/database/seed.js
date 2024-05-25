@@ -1,9 +1,10 @@
-const {logger} = require("sequelize/lib/utils/logger");
-
 class Seeds {
+    token;
+    
     async seedTodos() {
         const pessoa = await this.seedFarmaceutico().then(r => r.informacoes);
         const empresa = await this.seedFarmacia().then(r => r.informacoes);
+        this.token = await this.getToken(pessoa).then(r => r.token);
         const vaga = await this.seedVaga(empresa.id);
         await this.seedVaga(empresa.id);
         await this.seedVaga2(empresa.id);
@@ -19,12 +20,12 @@ class Seeds {
             tipo: 'PESSOA',
             informacoes: {
                 nome: "João Silva",
-                    cpf: "111111111-11",
-                    crf: "1234-5",
-                    telefone: "98412-2983",
-                    email: 'p',
-                    senha: 'p',
-                    especializacao: null
+                cpf: "111111111-11",
+                crf: "1234-5",
+                telefone: "98412-2983",
+                email: 'p',
+                senha: 'p',
+                especializacao: null
             }
         }
         return await this.executarPost(body, 'auth/cadastro');
@@ -45,6 +46,10 @@ class Seeds {
         }
         return await this.executarPost(body, 'auth/cadastro');
     }
+    
+    async getToken(usuario) {
+        return await this.executarPost(usuario, 'auth/login');
+    }
 
     async seedVaga(farmaciaId) {
         const body = {
@@ -64,7 +69,7 @@ class Seeds {
         const body = {
             titulo: "Farmacêutico de Balcão",
             descricao: "Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder Descricao placeholder ",
-            salario: 4050.20,
+            salario: 2000.50,
             estado: "SP",
             cidade: "São Paulo",
             farmaciaId: farmaciaId,
@@ -103,7 +108,7 @@ class Seeds {
             method: 'POST',
             body: json,
             headers: {
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzEyNDEyODk2fQ.iPmdF_DvyT-2AUTUZjWPngmKVQFbzWIEVnhqPbGnGUo',
+                'Authorization': `Bearer ${this.token}`,
                 'Content-Type': 'application/json'
             }
         });

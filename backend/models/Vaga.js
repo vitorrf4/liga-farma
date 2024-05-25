@@ -40,7 +40,7 @@ const Vaga = sequelize.define('Vaga', {
     },
     status: {
         type: DataTypes.ENUM,
-        values: ['ABERTA', 'FINALIZADA'],
+        values: ['ABERTA', 'FECHADA'],
         defaultValue: 'ABERTA'
     }
 },
