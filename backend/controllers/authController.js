@@ -1,6 +1,6 @@
 const {Farmaceutico} = require('../models/Farmaceutico');
 const Farmacia = require('../models/Farmacia');
-const Email = require('../util/enviarEmail');
+const Email = require('../utils/enviarEmail');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const clientUrl = process.env.FRONT_URL;

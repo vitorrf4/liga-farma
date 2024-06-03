@@ -29,7 +29,6 @@ export class ContatoComponent {
 
   enviarMensagem() {
     const contatoForm = this.form.value;
-    console.log(contatoForm);
 
     this.contatoService.enviarMensagem(contatoForm).subscribe({
       next: () => {
