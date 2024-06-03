@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const emailUtil = require('../utils/enviarEmail');
-const usuario = process.env.EMAIL_USER;
+const emailContato = process.env.EMAIL_USER_CONTATO;
 
 router.post('/', async (req, res) => {
     try {
         const contato = req.body;
 
-        await emailUtil.enviarEmail(usuario, 'Contato', `
+        await emailUtil.enviarEmail(emailContato, 'Contato', `
             <h1>Contato</h1>
             <p>Nome: ${contato.nome}</p>
             <p>Email: ${contato.email}</p>
