@@ -1,6 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Vaga} from "../../../models/vaga";
-import {Candidatura} from "../../../models/candidatura";
 import {JsonPipe, NgIf} from "@angular/common";
 import {Contrato} from "../../../models/contrato";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {NgOptimizedImage} from "@angular/common";
+import { ContatoService } from '../../../services/contato.service';
 
 @Component({
   selector: 'app-contato',
@@ -15,7 +16,8 @@ import {NgOptimizedImage} from "@angular/common";
 export class ContatoComponent {
   form: FormGroup;
 
-  constructor(builder: FormBuilder) {
+  constructor(builder: FormBuilder,
+              private contatoService: ContatoService) {
     this.form = builder.group({
       nome: [''],
       sobrenome: [''],
@@ -26,7 +28,15 @@ export class ContatoComponent {
   }
 
   enviarMensagem() {
-    alert("Mensagem enviada com sucesso!");
-    this.form.reset();
+    const contatoForm = this.form.value;
+    console.log(contatoForm);
+
+    this.contatoService.enviarMensagem(contatoForm).subscribe({
+      next: () => {
+        alert("Mensagem enviada com sucesso!");
+        this.form.reset();
+      },
+      error: () => alert('Erro no envio, tente novamente mais tarde')
+    });
   }
 }
